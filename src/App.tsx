@@ -89,11 +89,17 @@ function App() {
       </header>
 
       {/* Hero */}
-      <section className="border-b border-slate-200 bg-gradient-to-b from-[#0b2d52] to-[#123a68] text-white">
-        <div className="mx-auto max-w-6xl px-6 py-14 text-center">
-          <p className="text-sm uppercase tracking-wide text-[#7fbf95]">Marcliff Gloucestershire County Football League</p>
+      <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-b from-[#7f9ad6] via-[#1c3f6e] to-[#0a2340] text-white">
+        <img
+          src={crest}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-16 -top-16 h-[28rem] w-[28rem] opacity-10 sm:h-[34rem] sm:w-[34rem]"
+        />
+        <div className="relative mx-auto max-w-6xl px-6 py-20 text-center">
+          <p className="text-sm uppercase tracking-wide text-[#a9e0b8]">Marcliff Gloucestershire County Football League</p>
           <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Home of Filton Athletic FC</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-slate-200">
+          <p className="mx-auto mt-4 max-w-2xl text-slate-100">
             First team, reserves and youth football in the north of Bristol since the 1960s. Come down to
             Pen Park or Elm Park and back the lads.
           </p>
