@@ -19,7 +19,7 @@ function SiteFooter() {
           </p>
           <p className="mt-1">Twitter/X: @FiltonAthletic</p>
         </div>
-        <p className="mt-10 text-xs text-slate-400">
+        <p className="mt-10 text-xs text-slate-500">
           &copy; {new Date().getFullYear()} Filton Athletic FC. #FATS #UTF
         </p>
       </div>

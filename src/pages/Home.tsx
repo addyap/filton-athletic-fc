@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import crestTrimmed from '../assets/img/filton-athletic-crest-trimmed.png'
+import crestTrimmed from '../assets/img/filton-athletic-crest-trimmed.webp'
 import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
 import PitchBackdrop from '../components/PitchBackdrop'
@@ -105,7 +105,7 @@ function Home() {
                   <span className="rounded bg-[#e7f0e9] px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-[#2f6b45]">
                     {p.category}
                   </span>
-                  <span className="text-xs text-slate-400">{formatPostDate(p.date)}</span>
+                  <span className="text-xs text-slate-500">{formatPostDate(p.date)}</span>
                 </div>
                 <h4 className="mt-3 font-semibold text-[#0b2d52]">{p.title}</h4>
                 <p className="mt-2 text-sm text-slate-600">{p.excerpt}</p>
@@ -244,7 +244,7 @@ function Home() {
                 {firstTeamFixtures.map((f) => (
                   <tr key={`${f.date}-${f.opponent}`} className="border-t border-slate-200 odd:bg-white even:bg-slate-50">
                     <td className="whitespace-nowrap px-3 py-1.5">
-                      {f.date} <span className="text-slate-400">{f.time}</span>
+                      {f.date} <span className="text-slate-500">{f.time}</span>
                     </td>
                     <td className="px-3 py-1.5">{f.competition}</td>
                     <td className="px-3 py-1.5">{f.opponent}</td>
@@ -293,7 +293,7 @@ function Home() {
               {reserveFixtures.map((f) => (
                 <tr key={`${f.date}-${f.opponent}`} className="border-t border-slate-200 odd:bg-white even:bg-slate-50">
                   <td className="whitespace-nowrap px-3 py-1.5">
-                    {f.date} <span className="text-slate-400">{f.time}</span>
+                    {f.date} <span className="text-slate-500">{f.time}</span>
                   </td>
                   <td className="px-3 py-1.5">{f.competition}</td>
                   <td className="px-3 py-1.5">{f.opponent}</td>
