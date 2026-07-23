@@ -468,7 +468,15 @@ function Home() {
                   className="mb-3 h-16 w-full object-contain object-left"
                 />
               )}
-              <p className="font-semibold text-[#0b2d52]">{s.name}</p>
+              <p className="font-semibold text-[#0b2d52]">
+                {s.website ? (
+                  <a href={s.website} target="_blank" rel="noreferrer" className="hover:underline">
+                    {s.name} &rarr;
+                  </a>
+                ) : (
+                  s.name
+                )}
+              </p>
               <p className="mt-1 text-sm text-slate-600">{s.blurb}</p>
             </div>
           ))}

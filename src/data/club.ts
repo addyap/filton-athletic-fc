@@ -154,15 +154,15 @@ export const reserveTable: TableRow[] = [
 ]
 
 export const sponsors = [
-  { name: 'BBS Plumbing & Heating Supplies', blurb: 'Est. 1933 — ground naming partner, BBS Park North' },
-  { name: 'The Filton Feast', blurb: 'Café & coffee shop, 156 Station Rd, Bristol, BS34 7JL — 0117 969 0216' },
-  { name: 'First Auto Care Techs', blurb: 'Vehicle repairs & servicing at Elberton Garage — 01454 414 670' },
+  { name: 'BBS Plumbing & Heating Supplies', blurb: 'Est. 1933 — ground naming partner, BBS Park North', website: 'https://www.bbsplumb.co.uk/' },
+  { name: 'The Filton Feast', blurb: 'Café & coffee shop, 156 Station Rd, Bristol, BS34 7JL — 0117 969 0216', website: 'https://x.com/thefiltonfeast' },
+  { name: 'First Auto Care Techs', blurb: 'Vehicle repairs & servicing at Elberton Garage — 01454 414 670', website: 'https://fact.repair/' },
   { name: 'DM Flooring', blurb: 'Kit sponsor — 07557 442 701' },
-  { name: 'BS3 Roofing', blurb: 'The complete roofing company — 07922 804 129' },
-  { name: 'GP Rowe Decorating Services', blurb: 'Painting, decorating and wall papering — 07977 910941' },
-  { name: 'The Kitchen Den Design Studio', blurb: 'Kitchen design studio' },
-  { name: 'Clarius', blurb: 'Change delivery & IT recruitment specialists — 0117 214 1263' },
-  { name: 'New Happy Palace', blurb: 'Chinese takeaway, 553 Filton Avenue, BS7 0QH — 0117 969 3739' },
+  { name: 'BS3 Roofing', blurb: 'The complete roofing company — 07922 804 129', website: 'https://bs3roofing.co.uk/' },
+  { name: 'GP Rowe Decorating Services', blurb: 'Painting, decorating and wall papering — 07977 910941', website: 'https://www.facebook.com/garfysv8s/' },
+  { name: 'The Kitchen Den Design Studio', blurb: 'Kitchen design studio', website: 'https://www.thekitchenden.co.uk/' },
+  { name: 'Clarius', blurb: 'Change delivery & IT recruitment specialists — 0117 214 1263', website: 'https://clarius.io/' },
+  { name: 'New Happy Palace', blurb: 'Chinese takeaway, 553 Filton Avenue, BS7 0QH — 0117 969 3739', website: 'https://www.newhappypalace.com/' },
 ]
 
 export const groundInfo = {
