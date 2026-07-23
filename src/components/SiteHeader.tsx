@@ -26,7 +26,7 @@ function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-10 border-b border-slate-200 bg-[#0b2d52] text-white">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-2 py-2 sm:px-3">
+      <div className="flex items-center justify-between gap-4 py-2 pl-0 pr-2 sm:pr-3">
         <Link to="/" className="flex items-center gap-3 sm:gap-5">
           <img
             src={crest}
