@@ -7,3 +7,11 @@
 body {
   margin: 0;
 }
+
+/* Make brand colours print (and export to PDF) faithfully. */
+@media print {
+  .programme-print {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
