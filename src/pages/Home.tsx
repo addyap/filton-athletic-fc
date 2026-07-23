@@ -3,6 +3,34 @@ import { Link, useLocation } from 'react-router-dom'
 import crestTrimmed from '../assets/img/filton-athletic-crest-trimmed.webp'
 import playersWantedPoster from '../assets/img/players-wanted.jpg'
 import u13sGirlsTeamFlyer from '../assets/img/u13s-girls-team.jpg'
+import tomBradleyPhoto from '../assets/img/players/tom-bradley.webp'
+import chrisHillyerPhoto from '../assets/img/players/chris-hillyer.webp'
+import jackColePhoto from '../assets/img/players/jack-cole.webp'
+import jackWillmorPhoto from '../assets/img/players/jack-willmor.webp'
+import tomFryPhoto from '../assets/img/players/tom-fry.webp'
+import joeMitchellPhoto from '../assets/img/players/joe-mitchell.webp'
+import kieranDanielsPhoto from '../assets/img/players/kieran-daniels.webp'
+import danMatthewsPhoto from '../assets/img/players/dan-matthews.webp'
+import callumMitchellPhoto from '../assets/img/players/callum-mitchell.webp'
+import liamDormanPhoto from '../assets/img/players/liam-dorman.webp'
+import charliePeacockPhoto from '../assets/img/players/charlie-peacock.webp'
+import dylanQuickPhoto from '../assets/img/players/dylan-quick.webp'
+import fraserVenablesPhoto from '../assets/img/players/fraser-venables.webp'
+import yusufAbdulrahmanPhoto from '../assets/img/players/yusuf-abdulrahman.webp'
+import kyleThomasPhoto from '../assets/img/players/kyle-thomas.webp'
+import danPaynePhoto from '../assets/img/players/dan-payne.webp'
+import treyMerrettPhoto from '../assets/img/players/trey-merrett.webp'
+import saidHassanPhoto from '../assets/img/players/said-hassan.webp'
+import kieranCooperPhoto from '../assets/img/players/kieran-cooper.webp'
+import bbsPlumbingLogo from '../assets/img/sponsors/bbs-plumbing.webp'
+import filtonFeastLogo from '../assets/img/sponsors/filton-feast.webp'
+import firstAutoCareTechsLogo from '../assets/img/sponsors/first-auto-care-techs.webp'
+import dmFlooringLogo from '../assets/img/sponsors/dm-flooring.webp'
+import bs3RoofingLogo from '../assets/img/sponsors/bs3-roofing.webp'
+import gpRoweLogo from '../assets/img/sponsors/gp-rowe.webp'
+import kitchenDenLogo from '../assets/img/sponsors/kitchen-den.webp'
+import clariusLogo from '../assets/img/sponsors/clarius.webp'
+import newHappyPalaceLogo from '../assets/img/sponsors/new-happy-palace.webp'
 import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
 import PitchBackdrop from '../components/PitchBackdrop'
@@ -20,6 +48,40 @@ import {
   groundInfo,
 } from '../data/club'
 
+
+const playerPhotos: Record<string, string> = {
+  'Tom Bradley': tomBradleyPhoto,
+  'Chris Hillyer': chrisHillyerPhoto,
+  'Jack Cole': jackColePhoto,
+  'Jack Willmor': jackWillmorPhoto,
+  'Tom Fry': tomFryPhoto,
+  'Joe Mitchell': joeMitchellPhoto,
+  'Kieran Daniels': kieranDanielsPhoto,
+  'Dan Matthews': danMatthewsPhoto,
+  'Callum Mitchell': callumMitchellPhoto,
+  'Liam Dorman': liamDormanPhoto,
+  'Charlie Peacock': charliePeacockPhoto,
+  'Dylan Quick': dylanQuickPhoto,
+  'Fraser Venables': fraserVenablesPhoto,
+  'Yusuf Abdulrahman': yusufAbdulrahmanPhoto,
+  'Kyle Thomas': kyleThomasPhoto,
+  'Dan Payne': danPaynePhoto,
+  'Trey Merrett': treyMerrettPhoto,
+  'Said Hassan': saidHassanPhoto,
+  'Kieran Cooper': kieranCooperPhoto,
+}
+
+const sponsorLogos: Record<string, string> = {
+  'BBS Plumbing & Heating Supplies': bbsPlumbingLogo,
+  'The Filton Feast': filtonFeastLogo,
+  'First Auto Care Techs': firstAutoCareTechsLogo,
+  'DM Flooring': dmFlooringLogo,
+  'BS3 Roofing': bs3RoofingLogo,
+  'GP Rowe Decorating Services': gpRoweLogo,
+  'The Kitchen Den Design Studio': kitchenDenLogo,
+  Clarius: clariusLogo,
+  'New Happy Palace': newHappyPalaceLogo,
+}
 
 function resultBadge(result?: string) {
   if (!result) return 'bg-slate-100 text-slate-500'
@@ -258,10 +320,19 @@ function Home() {
         <SectionHeading icon="shirt" title="First team squad" />
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {squad.map((p) => (
-            <div key={p.name} className="rounded-lg border border-slate-200 p-4">
-              <p className="font-semibold text-[#0b2d52]">{p.name}</p>
-              <p className="text-xs font-medium uppercase tracking-wide text-[#3f8a5b]">{p.position}</p>
-              <p className="mt-2 text-sm text-slate-600">{p.blurb}</p>
+            <div key={p.name} className="overflow-hidden rounded-lg border border-slate-200">
+              {playerPhotos[p.name] && (
+                <img
+                  src={playerPhotos[p.name]}
+                  alt={`${p.name} — Filton Athletic FC`}
+                  className="aspect-square w-full object-cover object-top"
+                />
+              )}
+              <div className="p-4">
+                <p className="font-semibold text-[#0b2d52]">{p.name}</p>
+                <p className="text-xs font-medium uppercase tracking-wide text-[#3f8a5b]">{p.position}</p>
+                <p className="mt-2 text-sm text-slate-600">{p.blurb}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -392,6 +463,13 @@ function Home() {
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {sponsors.map((s) => (
             <div key={s.name} className="rounded-lg border border-slate-200 p-4">
+              {sponsorLogos[s.name] && (
+                <img
+                  src={sponsorLogos[s.name]}
+                  alt={`${s.name} logo`}
+                  className="mb-3 h-16 w-full object-contain object-left"
+                />
+              )}
               <p className="font-semibold text-[#0b2d52]">{s.name}</p>
               <p className="mt-1 text-sm text-slate-600">{s.blurb}</p>
             </div>
