@@ -1,5 +1,6 @@
 import { groundInfo } from '../data/club'
 import BackToTop from './BackToTop'
+import SectionHeading from './SectionHeading'
 
 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
   `${groundInfo.name}, ${groundInfo.address}`,
@@ -13,7 +14,7 @@ function SiteFooter() {
     <>
       <footer id="contact" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-6xl px-6 py-14">
-          <h3 className="text-2xl font-bold text-[#0b2d52]">Contact &amp; ground</h3>
+          <SectionHeading icon="pin" title="Contact & ground" />
           <div className="mt-6">
             <p className="font-semibold">Home of the first team, reserves and youth</p>
             <p className="text-slate-700">{groundInfo.name}</p>
