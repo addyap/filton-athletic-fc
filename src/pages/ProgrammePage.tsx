@@ -136,12 +136,21 @@ function ShareBar({ programme }: { programme: Programme }) {
 
   return (
     <div className="flex flex-wrap items-center gap-3 print:hidden">
+      {programme.extras.pdfUrl && (
+        <a
+          className="rounded bg-[#0b2d52] px-3 py-1.5 text-sm font-semibold text-white hover:bg-[#0a2745]"
+          href={programme.extras.pdfUrl}
+          download
+        >
+          Download full programme (PDF)
+        </a>
+      )}
       <button
         type="button"
         onClick={() => window.print()}
-        className="rounded bg-[#0b2d52] px-3 py-1.5 text-sm font-semibold text-white hover:bg-[#0a2745]"
+        className="rounded border border-slate-300 px-3 py-1.5 text-sm text-[#0b2d52] hover:bg-slate-50"
       >
-        Print / Save as PDF
+        Print this page
       </button>
       <a
         className="rounded border border-slate-300 px-3 py-1.5 text-sm text-[#0b2d52] hover:bg-slate-50"
@@ -234,6 +243,17 @@ function ProgrammePage() {
             <p className="mt-4 inline-block rounded-full bg-white/15 px-4 py-1 text-lg font-bold">
               Final: {fixture.result}
             </p>
+          )}
+          {extras.pdfUrl && (
+            <div className="mt-6 print:hidden">
+              <a
+                className="inline-flex items-center gap-2 rounded-full bg-[#a9e0b8] px-5 py-2.5 text-sm font-bold text-[#0b2d52] hover:bg-white"
+                href={extras.pdfUrl}
+                download
+              >
+                &#8681; Download full programme (PDF)
+              </a>
+            </div>
           )}
         </header>
 
