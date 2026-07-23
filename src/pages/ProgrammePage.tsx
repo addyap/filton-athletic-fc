@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import crest from '../assets/img/filton-athletic-crest-transparent.webp'
 import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
+import { SectionIcon } from '../components/SectionHeading'
 import {
   getProgramme,
   filtonTableRow,
@@ -103,16 +104,35 @@ function TeamSheetCard({ sheet }: { sheet: TeamSheet }) {
 function Section({
   id,
   title,
+  icon,
+  quote,
   children,
 }: {
   id: string
   title: string
+  icon?: string
+  quote?: boolean
   children: React.ReactNode
 }) {
   return (
-    <section id={id} className="border-t border-slate-200 py-8">
-      <h3 className="text-xl font-bold text-[#0b2d52]">{title}</h3>
-      <div className="mt-4">{children}</div>
+    <section id={id} className="relative overflow-hidden border-t border-slate-200 py-8">
+      {quote && (
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute right-2 top-6 font-serif text-8xl leading-none text-slate-100"
+        >
+          &rdquo;
+        </span>
+      )}
+      <div className="flex items-center gap-3">
+        {icon && (
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#e7f0e9] text-[#2f6b45]">
+            <SectionIcon name={icon} className="h-5 w-5" />
+          </span>
+        )}
+        <h3 className="relative text-xl font-bold text-[#0b2d52]">{title}</h3>
+      </div>
+      <div className="relative mt-4">{children}</div>
     </section>
   )
 }
@@ -265,7 +285,7 @@ function ProgrammePage() {
 
         {/* Chairman's welcome */}
         {extras.welcome && (
-          <Section id="welcome" title="Welcome to BBS Park North">
+          <Section id="welcome" title="Welcome to BBS Park North" icon="chat" quote>
             <div className="space-y-4 text-slate-700">
               {extras.welcome.paragraphs.map((p) => (
                 <p key={p.slice(0, 32)}>{p}</p>
@@ -279,7 +299,7 @@ function ProgrammePage() {
 
         {/* From the dugout */}
         {extras.dugout && (
-          <Section id="dugout" title="From the dugout">
+          <Section id="dugout" title="From the dugout" icon="chat" quote>
             {extras.dugout.matchTitle && (
               <p className="mb-3 text-sm font-medium text-slate-500">{extras.dugout.matchTitle}</p>
             )}
@@ -295,7 +315,7 @@ function ProgrammePage() {
         )}
 
         {/* How they stand */}
-        <Section id="standings" title="How they stand">
+        <Section id="standings" title="How they stand" icon="standings">
           <div className="grid gap-4 sm:grid-cols-2">
             <StandingCard
               label="The hosts"
@@ -324,7 +344,7 @@ function ProgrammePage() {
 
         {/* Visitors profile */}
         {extras.visitors && (
-          <Section id="visitors" title={`Today's visitors — ${extras.visitors.name}`}>
+          <Section id="visitors" title={`Today's visitors — ${extras.visitors.name}`} icon="shield">
             <div className="space-y-4 text-slate-700">
               {extras.visitors.paragraphs.map((p) => (
                 <p key={p.slice(0, 32)}>{p}</p>
@@ -335,7 +355,7 @@ function ProgrammePage() {
 
         {/* Team sheets */}
         {extras.teamSheets && (
-          <Section id="teamsheets" title="Matchday squads">
+          <Section id="teamsheets" title="Matchday squads" icon="clipboard">
             <div className="grid gap-4 sm:grid-cols-2">
               <TeamSheetCard sheet={extras.teamSheets.home} />
               <TeamSheetCard sheet={extras.teamSheets.away} />
@@ -350,7 +370,7 @@ function ProgrammePage() {
         )}
 
         {/* Meet the squad */}
-        <Section id="squad" title="Meet the Filton squad">
+        <Section id="squad" title="Meet the Filton squad" icon="shirt">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {squad.map((p) => (
               <div key={p.name} className="rounded-lg border border-slate-200 p-4">
@@ -363,7 +383,7 @@ function ProgrammePage() {
         </Section>
 
         {/* League table */}
-        <Section id="table" title="League table">
+        <Section id="table" title="League table" icon="standings">
           <p className="mb-3 text-sm text-slate-500">{programme.competitionName} 2025-26</p>
           <div className="overflow-x-auto rounded-lg border border-slate-200">
             <table className="min-w-full text-sm">
@@ -420,7 +440,7 @@ function ProgrammePage() {
 
         {/* Charity */}
         {extras.charity && (
-          <Section id="charity" title={`Supporting ${extras.charity.name}`}>
+          <Section id="charity" title={`Supporting ${extras.charity.name}`} icon="heart">
             <div className="rounded-lg border border-slate-200 bg-[#f7faf8] p-6">
               <div className="space-y-4 text-slate-700">
                 {extras.charity.paragraphs.map((p) => (
@@ -442,7 +462,7 @@ function ProgrammePage() {
         )}
 
         {/* Sponsors */}
-        <Section id="sponsors" title="Our sponsors">
+        <Section id="sponsors" title="Our sponsors" icon="star">
           <p className="mb-4 text-sm text-slate-500">Thank you to everyone who backs the club.</p>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {sponsors.map((s) => (
@@ -455,7 +475,7 @@ function ProgrammePage() {
         </Section>
 
         {/* Ground */}
-        <Section id="ground" title="Matchday & ground">
+        <Section id="ground" title="Matchday & ground" icon="pin">
           <p className="font-semibold text-[#0b2d52]">{groundInfo.name}</p>
           <p className="text-slate-700">{groundInfo.address}</p>
           <a
