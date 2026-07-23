@@ -34,8 +34,8 @@ function SiteHeader() {
             className="h-20 w-20 object-contain sm:h-28 sm:w-28"
           />
           <div>
-            <h1 className="text-lg font-bold leading-tight sm:text-2xl">Filton Athletic FC</h1>
-            <p className="text-[11px] text-slate-300 sm:text-sm">
+            <h1 className="text-2xl font-bold leading-tight sm:text-4xl lg:text-5xl">Filton Athletic FC</h1>
+            <p className="text-xs text-slate-300 sm:text-base lg:text-lg">
               Est. Filton, Bristol &middot; #FATS #UTF
             </p>
           </div>
