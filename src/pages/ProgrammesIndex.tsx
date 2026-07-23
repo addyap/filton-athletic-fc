@@ -73,9 +73,16 @@ function ProgrammesIndex() {
                   <span className="rounded bg-[#e7f0e9] px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-[#2f6b45]">
                     {p.fixture.competition}
                   </span>
-                  {p.extras.number != null && (
-                    <span className="text-xs font-semibold text-slate-400">No. {p.extras.number}</span>
-                  )}
+                  <span className="flex items-center gap-2">
+                    {p.extras.pdfUrl && (
+                      <span className="rounded bg-[#0b2d52] px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
+                        PDF
+                      </span>
+                    )}
+                    {p.extras.number != null && (
+                      <span className="text-xs font-semibold text-slate-400">No. {p.extras.number}</span>
+                    )}
+                  </span>
                 </div>
                 <h4 className="mt-3 font-semibold text-[#0b2d52]">vs {p.fixture.opponent}</h4>
                 <p className="mt-1 text-sm text-slate-500">{p.longDate}</p>

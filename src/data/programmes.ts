@@ -22,6 +22,8 @@ import {
 export type ProgrammeExtras = {
   /** Sequential programme number, as printed on the cover ("No. 4"). */
   number?: number
+  /** Path to the full printable programme PDF, served from /public. */
+  pdfUrl?: string
   /** Chairman's / club welcome for this specific game. */
   welcome?: { author: string; role: string; paragraphs: string[] }
   /** Manager's "From the Dugout" notes. */
@@ -106,6 +108,7 @@ function longDate(date: string): string {
 const programmeExtras: Record<string, ProgrammeExtras> = {
   'ruardean-hill-rangers': {
     number: 4,
+    pdfUrl: '/programmes/filton-athletic-programme-04-ruardean-hill-rangers.pdf',
     welcome: {
       author: 'Ollie Keeble',
       role: 'Chairman, Filton Athletic FC',
