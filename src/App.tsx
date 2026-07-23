@@ -1,4 +1,4 @@
-import crest from './assets/img/filton-athletic-crest.jpg'
+import crest from './assets/img/filton-athletic-crest-transparent.png'
 import {
   officials,
   squad,
@@ -70,7 +70,7 @@ function App() {
     <div className="min-h-screen bg-white text-slate-900">
       {/* Header */}
       <header className="sticky top-0 z-10 border-b border-slate-200 bg-[#0b2d52] text-white">
-        <div className="mx-auto flex max-w-6xl items-center gap-4 px-6 py-4">
+        <div className="flex items-center gap-4 px-6 py-4">
           <img src={crest} alt="Filton Athletic FC crest" className="h-14 w-14 object-contain" />
           <div>
             <h1 className="text-xl font-bold leading-tight">Filton Athletic FC</h1>
@@ -90,12 +90,6 @@ function App() {
 
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-b from-[#7f9ad6] via-[#1c3f6e] to-[#0a2340] text-white">
-        <img
-          src={crest}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-16 -top-16 h-[28rem] w-[28rem] opacity-10 sm:h-[34rem] sm:w-[34rem]"
-        />
         <div className="relative mx-auto max-w-6xl px-6 py-20 text-center">
           <p className="text-sm uppercase tracking-wide text-[#a9e0b8]">Marcliff Gloucestershire County Football League</p>
           <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Home of Filton Athletic FC</h2>
@@ -103,6 +97,11 @@ function App() {
             First team, reserves and youth football in the north of Bristol since the 1960s. Come down to
             Pen Park or Elm Park and back the lads.
           </p>
+          <img
+            src={crest}
+            alt="Filton Athletic FC crest"
+            className="mx-auto mt-8 h-40 w-40 object-contain drop-shadow-lg sm:h-48 sm:w-48"
+          />
         </div>
       </section>
 
