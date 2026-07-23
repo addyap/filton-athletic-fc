@@ -22,7 +22,7 @@ import {
 export type ProgrammeExtras = {
   /** Sequential programme number, as printed on the cover ("No. 4"). */
   number?: number
-  /** Path to the full printable programme PDF, served from /public. */
+  /** URL of the full printable programme PDF (hosted on Vercel Blob). */
   pdfUrl?: string
   /** Chairman's / club welcome for this specific game. */
   welcome?: { author: string; role: string; paragraphs: string[] }
@@ -108,7 +108,8 @@ function longDate(date: string): string {
 const programmeExtras: Record<string, ProgrammeExtras> = {
   'ruardean-hill-rangers': {
     number: 4,
-    pdfUrl: '/programmes/filton-athletic-programme-04-ruardean-hill-rangers.pdf',
+    pdfUrl:
+      'https://3p4oewzml4cd0fez.public.blob.vercel-storage.com/Filton%20Athletic%20-%20Match%20Day%20Programme%204%20-%2027.09.25.pdf',
     welcome: {
       author: 'Ollie Keeble',
       role: 'Chairman, Filton Athletic FC',
