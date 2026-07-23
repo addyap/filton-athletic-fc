@@ -140,7 +140,8 @@ function ShareBar({ programme }: { programme: Programme }) {
         <a
           className="rounded bg-[#0b2d52] px-3 py-1.5 text-sm font-semibold text-white hover:bg-[#0a2745]"
           href={programme.extras.pdfUrl}
-          download
+          target="_blank"
+          rel="noreferrer"
         >
           Download full programme (PDF)
         </a>
@@ -249,7 +250,8 @@ function ProgrammePage() {
               <a
                 className="inline-flex items-center gap-2 rounded-full bg-[#a9e0b8] px-5 py-2.5 text-sm font-bold text-[#0b2d52] hover:bg-white"
                 href={extras.pdfUrl}
-                download
+                target="_blank"
+                rel="noreferrer"
               >
                 &#8681; Download full programme (PDF)
               </a>
