@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom'
 import crestTrimmed from '../assets/img/filton-athletic-crest-trimmed.webp'
 import playersWantedPoster from '../assets/img/players-wanted.jpg'
 import u13sGirlsTeamFlyer from '../assets/img/u13s-girls-team.jpg'
-import tomBradleyPhoto from '../assets/img/players/tom-bradley.webp'
 import chrisHillyerPhoto from '../assets/img/players/chris-hillyer.webp'
 import jackColePhoto from '../assets/img/players/jack-cole.webp'
 import jackWillmorPhoto from '../assets/img/players/jack-willmor.webp'
@@ -50,7 +49,6 @@ import {
 
 
 const playerPhotos: Record<string, string> = {
-  'Tom Bradley': tomBradleyPhoto,
   'Chris Hillyer': chrisHillyerPhoto,
   'Jack Cole': jackColePhoto,
   'Jack Willmor': jackWillmorPhoto,
