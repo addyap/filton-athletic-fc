@@ -369,9 +369,20 @@ function ProgrammePage() {
             <table className="min-w-full text-sm">
               <thead className="bg-[#0b2d52] text-white">
                 <tr>
-                  {['Pos', 'Team', 'P', 'W', 'D', 'L', 'GD', 'Pts'].map((h) => (
-                    <th key={h} className="px-3 py-2 text-left font-semibold">
-                      {h}
+                  {(
+                    [
+                      { label: 'Pos' },
+                      { label: 'Team' },
+                      { label: 'P' },
+                      { label: 'W', cls: 'hidden sm:table-cell' },
+                      { label: 'D', cls: 'hidden sm:table-cell' },
+                      { label: 'L', cls: 'hidden sm:table-cell' },
+                      { label: 'GD' },
+                      { label: 'Pts' },
+                    ] as const
+                  ).map((h) => (
+                    <th key={h.label} className={`px-3 py-2 text-left font-semibold ${'cls' in h ? h.cls : ''}`}>
+                      {h.label}
                     </th>
                   ))}
                 </tr>
@@ -394,9 +405,9 @@ function ProgrammePage() {
                       <td className="px-3 py-1.5">{r.pos}</td>
                       <td className="px-3 py-1.5">{r.team}</td>
                       <td className="px-3 py-1.5">{r.p}</td>
-                      <td className="px-3 py-1.5">{r.w}</td>
-                      <td className="px-3 py-1.5">{r.d}</td>
-                      <td className="px-3 py-1.5">{r.l}</td>
+                      <td className="hidden px-3 py-1.5 sm:table-cell">{r.w}</td>
+                      <td className="hidden px-3 py-1.5 sm:table-cell">{r.d}</td>
+                      <td className="hidden px-3 py-1.5 sm:table-cell">{r.l}</td>
                       <td className="px-3 py-1.5">{r.gd}</td>
                       <td className="px-3 py-1.5">{r.pts}</td>
                     </tr>
@@ -447,6 +458,14 @@ function ProgrammePage() {
         <Section id="ground" title="Matchday & ground">
           <p className="font-semibold text-[#0b2d52]">{groundInfo.name}</p>
           <p className="text-slate-700">{groundInfo.address}</p>
+          <a
+            className="mt-2 inline-block text-sm font-semibold text-[#0b2d52] underline"
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${groundInfo.name}, ${groundInfo.address}`)}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Get directions &rarr;
+          </a>
           <p className="mt-3 text-sm text-slate-600">
             Stay for the feast after the game — food, a drink and a bit of a disco. #FATS #UTF
           </p>

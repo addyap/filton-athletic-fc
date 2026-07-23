@@ -276,3 +276,23 @@ export function formBefore(beforeIso: string, count = 5): Array<'W' | 'D' | 'L'>
 export function reverseFixtureFor(opponent: string): Fixture | undefined {
   return firstTeamFixtures.find((f) => f.opponent === opponent && f.venue === 'A')
 }
+
+/** The next first-team fixture still to be played (no result recorded yet). */
+export const nextFirstTeamFixture: Fixture | undefined = firstTeamFixtures.find(
+  (f) => !f.result,
+)
+
+/** The most recent completed first-team result (win, draw or loss). */
+export const lastFirstTeamResult: Fixture | undefined = [...firstTeamFixtures]
+  .reverse()
+  .find((f) => f.result != null && /^[WDL]/.test(f.result))
+
+/** The home programme that belongs to a given fixture, if it is a home game. */
+export function programmeForFixture(fixture: Fixture): Programme | undefined {
+  return programmes.find((p) => p.fixture === fixture)
+}
+
+/** Long human date (e.g. "Saturday 27 September 2025") for any fixture date. */
+export function fixtureLongDate(date: string): string {
+  return longDate(date)
+}

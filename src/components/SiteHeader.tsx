@@ -2,7 +2,9 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import crest from '../assets/img/filton-athletic-crest-transparent.webp'
 
-const navLinks = [
+type NavLink = { href: string; label: string; external?: boolean }
+
+const navLinks: NavLink[] = [
   { href: '/#join', label: 'Join Us' },
   { href: '/#news', label: 'News' },
   { href: '/#history', label: 'History' },
@@ -12,6 +14,7 @@ const navLinks = [
   { href: '/#table', label: 'Table' },
   { href: '/#youth', label: 'Youth' },
   { href: '/#sponsors', label: 'Sponsors' },
+  { href: 'https://www.boca-uk.com/webshop/club-shops/filton-athletic-fc/', label: 'Shop', external: true },
   { href: '/#contact', label: 'Contact' },
 ]
 
@@ -68,16 +71,29 @@ function SiteHeader() {
             menuOpen ? 'flex flex-col py-2' : 'hidden lg:flex'
           }`}
         >
-          {navLinks.map((l) => (
-            <Link
-              key={l.href}
-              to={l.href}
-              onClick={() => setMenuOpen(false)}
-              className="whitespace-nowrap py-2 text-sm text-slate-200 hover:text-white lg:py-0"
-            >
-              {l.label}
-            </Link>
-          ))}
+          {navLinks.map((l) =>
+            l.external ? (
+              <a
+                key={l.href}
+                href={l.href}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setMenuOpen(false)}
+                className="whitespace-nowrap py-2 text-sm text-slate-200 hover:text-white lg:py-0"
+              >
+                {l.label}
+              </a>
+            ) : (
+              <Link
+                key={l.href}
+                to={l.href}
+                onClick={() => setMenuOpen(false)}
+                className="whitespace-nowrap py-2 text-sm text-slate-200 hover:text-white lg:py-0"
+              >
+                {l.label}
+              </Link>
+            ),
+          )}
         </div>
       </nav>
     </header>
