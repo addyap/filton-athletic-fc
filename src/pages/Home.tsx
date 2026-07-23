@@ -4,6 +4,7 @@ import crestTrimmed from '../assets/img/filton-athletic-crest-trimmed.webp'
 import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
 import PitchBackdrop from '../components/PitchBackdrop'
+import MatchStrip from '../components/MatchStrip'
 import { posts, formatPostDate } from '../data/posts'
 import {
   officials,
@@ -25,15 +26,30 @@ function resultBadge(result?: string) {
   return 'bg-slate-100 text-slate-500'
 }
 
+// Columns hide progressively on narrow screens so the table fits a phone
+// without sideways scrolling: goals-for/against appear at md, W/D/L at sm.
+const leagueColumns: { key: keyof (typeof leagueTable)[number]; label: string; cls?: string }[] = [
+  { key: 'pos', label: 'Pos' },
+  { key: 'team', label: 'Team' },
+  { key: 'p', label: 'P' },
+  { key: 'w', label: 'W', cls: 'hidden sm:table-cell' },
+  { key: 'd', label: 'D', cls: 'hidden sm:table-cell' },
+  { key: 'l', label: 'L', cls: 'hidden sm:table-cell' },
+  { key: 'f', label: 'F', cls: 'hidden md:table-cell' },
+  { key: 'a', label: 'A', cls: 'hidden md:table-cell' },
+  { key: 'gd', label: 'GD' },
+  { key: 'pts', label: 'Pts' },
+]
+
 function LeagueTable({ rows, highlight }: { rows: typeof leagueTable; highlight: string }) {
   return (
     <div className="overflow-x-auto rounded-lg border border-slate-200">
       <table className="min-w-full text-sm">
         <thead className="bg-[#0b2d52] text-white">
           <tr>
-            {['Pos', 'Team', 'P', 'W', 'D', 'L', 'F', 'A', 'GD', 'Pts'].map((h) => (
-              <th key={h} className="px-3 py-2 text-left font-semibold">
-                {h}
+            {leagueColumns.map((c) => (
+              <th key={c.key} className={`px-3 py-2 text-left font-semibold ${c.cls ?? ''}`}>
+                {c.label}
               </th>
             ))}
           </tr>
@@ -44,16 +60,11 @@ function LeagueTable({ rows, highlight }: { rows: typeof leagueTable; highlight:
               key={r.team}
               className={`border-t border-slate-200 ${r.team === highlight ? 'bg-[#e7f0e9] font-semibold text-[#0b2d52]' : 'odd:bg-white even:bg-slate-50'}`}
             >
-              <td className="px-3 py-1.5">{r.pos}</td>
-              <td className="px-3 py-1.5">{r.team}</td>
-              <td className="px-3 py-1.5">{r.p}</td>
-              <td className="px-3 py-1.5">{r.w}</td>
-              <td className="px-3 py-1.5">{r.d}</td>
-              <td className="px-3 py-1.5">{r.l}</td>
-              <td className="px-3 py-1.5">{r.f}</td>
-              <td className="px-3 py-1.5">{r.a}</td>
-              <td className="px-3 py-1.5">{r.gd}</td>
-              <td className="px-3 py-1.5">{r.pts}</td>
+              {leagueColumns.map((c) => (
+                <td key={c.key} className={`px-3 py-1.5 ${c.cls ?? ''}`}>
+                  {r[c.key]}
+                </td>
+              ))}
             </tr>
           ))}
         </tbody>
@@ -98,6 +109,8 @@ function Home() {
           </p>
         </div>
       </section>
+
+      <MatchStrip />
 
       {/* Join Us */}
       <section id="join" className="border-b border-slate-200 bg-white">
@@ -247,11 +260,11 @@ function Home() {
               <thead className="bg-[#0b2d52] text-white">
                 <tr>
                   <th className="px-3 py-2 text-left font-semibold">Date</th>
-                  <th className="px-3 py-2 text-left font-semibold">Comp</th>
+                  <th className="hidden px-3 py-2 text-left font-semibold sm:table-cell">Comp</th>
                   <th className="px-3 py-2 text-left font-semibold">Opponent</th>
                   <th className="px-3 py-2 text-left font-semibold">Venue</th>
                   <th className="px-3 py-2 text-left font-semibold">Result</th>
-                  <th className="px-3 py-2 text-left font-semibold">Scorers</th>
+                  <th className="hidden px-3 py-2 text-left font-semibold md:table-cell">Scorers</th>
                 </tr>
               </thead>
               <tbody>
@@ -260,7 +273,7 @@ function Home() {
                     <td className="whitespace-nowrap px-3 py-1.5">
                       {f.date} <span className="text-slate-500">{f.time}</span>
                     </td>
-                    <td className="px-3 py-1.5">{f.competition}</td>
+                    <td className="hidden px-3 py-1.5 sm:table-cell">{f.competition}</td>
                     <td className="px-3 py-1.5">{f.opponent}</td>
                     <td className="px-3 py-1.5">{f.venue}</td>
                     <td className="px-3 py-1.5">
@@ -268,7 +281,7 @@ function Home() {
                         {f.result ?? 'Upcoming'}
                       </span>
                     </td>
-                    <td className="px-3 py-1.5 text-slate-600">{f.scorers ?? '-'}</td>
+                    <td className="hidden px-3 py-1.5 text-slate-600 md:table-cell">{f.scorers ?? '-'}</td>
                   </tr>
                 ))}
               </tbody>
@@ -297,10 +310,10 @@ function Home() {
             <thead className="bg-[#0b2d52] text-white">
               <tr>
                 <th className="px-3 py-2 text-left font-semibold">Date</th>
-                <th className="px-3 py-2 text-left font-semibold">Comp</th>
+                <th className="hidden px-3 py-2 text-left font-semibold sm:table-cell">Comp</th>
                 <th className="px-3 py-2 text-left font-semibold">Opponent</th>
                 <th className="px-3 py-2 text-left font-semibold">Venue</th>
-                <th className="px-3 py-2 text-left font-semibold">Ground</th>
+                <th className="hidden px-3 py-2 text-left font-semibold md:table-cell">Ground</th>
               </tr>
             </thead>
             <tbody>
@@ -309,10 +322,10 @@ function Home() {
                   <td className="whitespace-nowrap px-3 py-1.5">
                     {f.date} <span className="text-slate-500">{f.time}</span>
                   </td>
-                  <td className="px-3 py-1.5">{f.competition}</td>
+                  <td className="hidden px-3 py-1.5 sm:table-cell">{f.competition}</td>
                   <td className="px-3 py-1.5">{f.opponent}</td>
                   <td className="px-3 py-1.5">{f.venue}</td>
-                  <td className="px-3 py-1.5 text-slate-600">{f.ground}</td>
+                  <td className="hidden px-3 py-1.5 text-slate-600 md:table-cell">{f.ground}</td>
                 </tr>
               ))}
             </tbody>
