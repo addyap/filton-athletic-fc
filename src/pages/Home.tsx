@@ -75,10 +75,10 @@ function Home() {
           aria-hidden="true"
           className="pointer-events-none absolute inset-y-0 left-1/2 h-full w-auto -translate-x-1/2 object-contain opacity-25"
         />
-        <div className="relative mx-auto flex max-w-6xl flex-col items-center px-6 py-16 text-center">
+        <div className="relative mx-auto flex max-w-6xl flex-col items-center px-4 py-16 text-center sm:px-6 sm:py-20 lg:py-24">
           <p className="text-xs uppercase tracking-wide text-[#a9e0b8] sm:text-sm">Marcliff Gloucestershire County Football League</p>
-          <h2 className="mt-2 text-2xl font-bold sm:text-3xl">Home of Filton Athletic FC</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-sm text-slate-100">
+          <h2 className="mt-2 text-2xl font-bold sm:text-3xl lg:text-4xl">Home of Filton Athletic FC</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-slate-100 sm:text-base">
             First team, reserves and youth football in the north of Bristol since the 1960s. Come down to
             BBS Park North and back the lads.
           </p>
