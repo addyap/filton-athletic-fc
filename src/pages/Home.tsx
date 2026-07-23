@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import crestTrimmed from '../assets/img/filton-athletic-crest-trimmed.webp'
+import playersWantedPoster from '../assets/img/players-wanted.jpg'
+import u13sGirlsTeamFlyer from '../assets/img/u13s-girls-team.jpg'
 import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
 import PitchBackdrop from '../components/PitchBackdrop'
@@ -116,13 +118,22 @@ function Home() {
       {/* Join Us */}
       <section id="join" className="border-b border-slate-200 bg-white">
         <div className="mx-auto max-w-6xl px-6 py-14">
-          <SectionHeading icon="join" title="Join us" />
-          <p className="mt-2 max-w-3xl text-slate-600">
-            Players, coaches and volunteers &mdash; there is a place for everyone at Filton Athletic.
-            Have a look at what we are currently looking for.
-          </p>
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-start">
+            <div className="lg:flex-1">
+              <SectionHeading icon="join" title="Join us" />
+              <p className="mt-2 max-w-3xl text-slate-600">
+                Players, coaches and volunteers &mdash; there is a place for everyone at Filton Athletic.
+                Have a look at what we are currently looking for.
+              </p>
+            </div>
+            <img
+              src={playersWantedPoster}
+              alt="Players wanted — join Filton Athletic FC. First team competing in the County League, Reserves in the Suburban Premier, A's in Suburban Division 4. Training Tuesday and Thursday, 6:30pm at Elm Park. All positions considered, all abilities welcome."
+              className="mx-auto w-full max-w-[280px] rounded-lg border border-slate-200 shadow-sm lg:mx-0"
+            />
+          </div>
 
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {posts.map((p) => (
               <Link
                 key={p.slug}
@@ -345,16 +356,31 @@ function Home() {
       <section id="youth" className="border-t border-slate-200 bg-[#0b2d52] text-white">
         <div className="mx-auto max-w-6xl px-6 py-14">
           <SectionHeading icon="star" title="Filton Athletic Youth FC" tone="dark" />
-          <p className="mt-4 max-w-3xl text-slate-200">
-            Various age groups, mixed groups of boys and girls: YDS (Year 1 and below), U7s (Year 2), U8s
-            (Year 3), U9s (Year 4), U10s (Year 5), U11s (Year 6) and U12s. FA qualified coaches, DBS checked.
-            Be part of a team and most importantly have fun!
-          </p>
-          <p className="mt-4 text-slate-200">Home games at BBS Park North, Elm Park, Filton.</p>
-          <div className="mt-6 flex flex-wrap gap-6 text-sm">
-            <p>Email: <a className="underline" href="mailto:filtonathleticfc@outlook.com">filtonathleticfc@outlook.com</a></p>
-            <p>Kev: 07710 581381</p>
-            <p>Ollie: 07429 595476</p>
+          <div className="mt-4 flex flex-col gap-8 lg:flex-row lg:items-start">
+            <div className="lg:flex-1">
+              <p className="max-w-3xl text-slate-200">
+                Various age groups, mixed groups of boys and girls: YDS (Year 1 and below), U7s (Year 2), U8s
+                (Year 3), U9s (Year 4), U10s (Year 5), U11s (Year 6) and U12s. FA qualified coaches, DBS checked.
+                Be part of a team and most importantly have fun!
+              </p>
+              <p className="mt-4 text-slate-200">Home games at BBS Park North, Elm Park, Filton.</p>
+              <div className="mt-6 flex flex-wrap gap-6 text-sm">
+                <p>Email: <a className="underline" href="mailto:filtonathleticfc@outlook.com">filtonathleticfc@outlook.com</a></p>
+                <p>Kev: 07710 581381</p>
+                <p>Ollie: 07429 595476</p>
+              </div>
+            </div>
+            <div className="lg:w-[280px] lg:flex-none">
+              <img
+                src={u13sGirlsTeamFlyer}
+                alt="Filton Athletic Youth are looking to create a U13s girls team. Date of birth range for the 26/27 season (school year 8): 1 September 2013 to 31 August 2014, with players up to a year older or younger welcome. Training and friendlies in 26/27, looking to join a league for 27/28. FA qualified and UEFA licensed coaches. Interested? Call 07429 595476 or email filtonathleticfc@outlook.com."
+                className="mx-auto w-full max-w-[280px] rounded-lg border border-white/20 shadow-sm lg:mx-0"
+              />
+              <p className="mt-3 text-center text-sm text-slate-200 lg:text-left">
+                New for 2026/27: we&rsquo;re looking to form a U13s girls team &mdash; get in touch if
+                you&rsquo;re interested.
+              </p>
+            </div>
           </div>
         </div>
       </section>
