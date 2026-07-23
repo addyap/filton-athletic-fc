@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import crest from '../assets/img/filton-athletic-crest-transparent.png'
+import crest from '../assets/img/filton-athletic-crest-transparent.webp'
 
 const navLinks = [
   { href: '/#join', label: 'Join Us' },

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import crest from '../assets/img/filton-athletic-crest-transparent.png'
+import crest from '../assets/img/filton-athletic-crest-transparent.webp'
 import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
 import {
@@ -15,7 +15,7 @@ import {
 import { squad, sponsors, groundInfo, leagueTable } from '../data/club'
 
 function FormGuide({ form }: { form: Array<'W' | 'D' | 'L'> }) {
-  if (form.length === 0) return <span className="text-sm text-slate-400">No games played yet</span>
+  if (form.length === 0) return <span className="text-sm text-slate-500">No games played yet</span>
   const colour = { W: 'bg-emerald-600', D: 'bg-amber-500', L: 'bg-red-600' }
   return (
     <span className="inline-flex gap-1">
@@ -233,10 +233,10 @@ function ProgrammePage() {
             {extras.number != null && <span>No. {extras.number}</span>}
           </div>
           <img src={crest} alt="Filton Athletic FC crest" className="mx-auto mt-6 h-24 w-24 object-contain sm:h-28 sm:w-28" />
-          <h1 className="mt-6 text-2xl font-bold sm:text-4xl">
+          <h2 className="mt-6 text-2xl font-bold sm:text-4xl">
             Filton Athletic <span className="block text-base font-normal text-slate-300 sm:inline sm:text-2xl">vs</span>{' '}
             {fixture.opponent}
-          </h1>
+          </h2>
           <p className="mt-4 text-sm text-slate-100 sm:text-base">{programme.longDate}</p>
           <p className="text-sm text-slate-100 sm:text-base">Kick-off {fixture.time} &middot; {groundInfo.name}</p>
           <p className="mt-2 text-xs uppercase tracking-wide text-[#a9e0b8] sm:text-sm">{programme.competitionName}</p>

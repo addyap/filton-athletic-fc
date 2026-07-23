@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import crest from '../assets/img/filton-athletic-crest-transparent.png'
+import crest from '../assets/img/filton-athletic-crest-transparent.webp'
 import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
 import { programmes, nextProgramme } from '../data/programmes'
@@ -80,7 +80,7 @@ function ProgrammesIndex() {
                       </span>
                     )}
                     {p.extras.number != null && (
-                      <span className="text-xs font-semibold text-slate-400">No. {p.extras.number}</span>
+                      <span className="text-xs font-semibold text-slate-500">No. {p.extras.number}</span>
                     )}
                   </span>
                 </div>
