@@ -3,6 +3,7 @@ import {
   officials,
   squad,
   firstTeamFixtures,
+  reserveFixtures,
   leagueTable,
   reserveTable,
   sponsors,
@@ -78,7 +79,7 @@ function App() {
           </div>
         </div>
         <nav className="border-t border-white/10 bg-[#0a2745]">
-          <div className="mx-auto flex max-w-6xl gap-5 overflow-x-auto px-6 py-2 text-sm">
+          <div className="mx-auto flex max-w-6xl justify-center gap-5 overflow-x-auto px-6 py-2 text-sm">
             {navLinks.map((l) => (
               <a key={l.href} href={l.href} className="whitespace-nowrap text-slate-200 hover:text-white">
                 {l.label}
@@ -90,17 +91,17 @@ function App() {
 
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-b from-[#7f9ad6] via-[#1c3f6e] to-[#0a2340] text-white">
-        <div className="relative mx-auto max-w-6xl px-6 py-20 text-center">
-          <p className="text-sm uppercase tracking-wide text-[#a9e0b8]">Marcliff Gloucestershire County Football League</p>
-          <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Home of Filton Athletic FC</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-slate-100">
+        <div className="relative mx-auto flex max-w-6xl flex-col items-center px-6 py-10 text-center">
+          <p className="text-xs uppercase tracking-wide text-[#a9e0b8] sm:text-sm">Marcliff Gloucestershire County Football League</p>
+          <h2 className="mt-2 text-2xl font-bold sm:text-3xl">Home of Filton Athletic FC</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-slate-100">
             First team, reserves and youth football in the north of Bristol since the 1960s. Come down to
-            Pen Park or Elm Park and back the lads.
+            BBS Park North and back the lads.
           </p>
           <img
             src={crest}
             alt="Filton Athletic FC crest"
-            className="mx-auto mt-8 h-40 w-40 object-contain drop-shadow-lg sm:h-48 sm:w-48"
+            className="mt-6 h-28 w-28 object-contain mix-blend-luminosity opacity-90 sm:h-32 sm:w-32"
           />
         </div>
       </section>
@@ -110,10 +111,12 @@ function App() {
         <h3 className="text-2xl font-bold text-[#0b2d52]">Chairman&rsquo;s welcome</h3>
         <div className="mt-4 rounded-lg border border-slate-200 bg-[#f7faf8] p-6">
           <p className="italic text-slate-700">
-            &ldquo;Following our impressive victory against Almondsbury in the cup we are hoping to take
-            that form into the league and move back up the table from our current 8th place. We look
-            forward to welcoming everyone back at the Filton Feast after the game for some amazing food
-            and a few beers.&rdquo;
+            &ldquo;After almost a month of away games we finally get to another game at home, and we are
+            looking forward to seeing everyone cheer the lads on. In that time, we have advanced to the
+            next round of the cup but have only picked up two points in the league. We do love a draw!!
+            We currently sit in fourth place on nine points having picked up two wins and three draws so
+            far. We hope to see all the fans back at the feast after the game for some food, some beer
+            and a bit of a disco.&rdquo;
           </p>
           <p className="mt-4 font-semibold text-[#0b2d52]">Ollie Keeble &mdash; Chairman, Filton Athletic FC</p>
         </div>
@@ -121,15 +124,17 @@ function App() {
         <div className="mt-8 rounded-lg border border-slate-200 p-6">
           <h4 className="text-lg font-semibold text-[#0b2d52]">From the dugout</h4>
           <p className="mt-1 text-sm font-medium text-slate-500">
-            Filton Athletic 3 &ndash; 0 Almondsbury (GFA Cup, 14 December 2024)
+            Filton Athletic vs Ruardean Hill Rangers &mdash; 27 September 2025
           </p>
           <p className="mt-3 text-slate-700">
-            &ldquo;A great performance in the cup against a very good Almondsbury side. Our skipper scored
-            from his own half in the first few seconds, and from there it was a dominant first-half
-            performance. We finished the game with 10 men due to injury and a lack of bench, but 3-0, job
-            done onto the next round.&rdquo;
+            &ldquo;Six games into the season now and still undefeated. Five in the league and through to
+            the next round in the cup. It has been a positive start given new management, new style of
+            play and a new home ground. Lots to build and work on. Similar to last season, we need to
+            start turning some of the draws into wins. There is no easy game in the league this year
+            &mdash; it would be great to finish September still unbeaten, but we need to be at it from
+            the first whistle.&rdquo;
           </p>
-          <p className="mt-2 font-semibold text-[#0b2d52]">Mike Humby &mdash; First Team Manager</p>
+          <p className="mt-2 font-semibold text-[#0b2d52]">Kyle Thomas &mdash; First Team Manager</p>
         </div>
       </section>
 
@@ -145,12 +150,11 @@ function App() {
             We are currently made up of two adult football teams who both play regularly on a Saturday
             afternoon. Our first team compete in the Marcliff Gloucestershire County Football League,
             having been promoted as Champions from the Bristol &amp; Suburban Premier Division in 2023-24.
-            They play their home games at {groundInfo.firstTeam.name}. Our Reserve team compete in the
-            Bristol &amp; Suburban Senior Division, playing home games at {groundInfo.reserves.name}.
+            Our Reserve team compete in the Bristol &amp; Suburban Senior Division. {groundInfo.note}
           </p>
           <p className="mt-3 max-w-3xl text-slate-700">
-            In 2023 we established the Filton Athletic FC Youth Team, consisting of U7, U8, U9, U10, U11
-            and YDS age groups. The club is run by an enthusiastic and committed committee, and is
+            In 2023 we established the Filton Athletic FC Youth Team, consisting of U7, U8, U9, U10, U11,
+            U12 and YDS age groups. The club is run by an enthusiastic and committed committee, and is
             fortunate to be supported by some of the best fans in the world &mdash; the self-proclaimed
             Filton Ultras!
           </p>
@@ -212,7 +216,7 @@ function App() {
         <div className="mx-auto max-w-6xl px-6 py-14">
           <h3 className="text-2xl font-bold text-[#0b2d52]">Fixtures &amp; results</h3>
           <p className="mt-1 text-sm text-slate-500">
-            First team &mdash; Marcliff Gloucestershire County Football League 2024-25
+            First team &mdash; Marcliff Gloucestershire County Football League 2025-26
           </p>
           <div className="mt-6 overflow-x-auto rounded-lg border border-slate-200 bg-white">
             <table className="min-w-full text-sm">
@@ -252,15 +256,43 @@ function App() {
       {/* League table */}
       <section id="table" className="mx-auto max-w-6xl px-6 py-14">
         <h3 className="text-2xl font-bold text-[#0b2d52]">League table</h3>
-        <p className="mt-1 text-sm text-slate-500">Marcliff Gloucestershire County Football League 2024-25</p>
+        <p className="mt-1 text-sm text-slate-500">Marcliff Gloucestershire County Football League 2025-26</p>
         <div className="mt-6">
           <LeagueTable rows={leagueTable} highlight="Filton Athletic" />
         </div>
 
         <h4 className="mt-12 text-xl font-bold text-[#0b2d52]">Filton Reserves</h4>
-        <p className="mt-1 text-sm text-slate-500">Bristol &amp; Suburban Senior League 2024-25</p>
+        <p className="mt-1 text-sm text-slate-500">Bristol &amp; Suburban Senior League 2025-26</p>
         <div className="mt-6">
           <LeagueTable rows={reserveTable} highlight="Filton Athletic Reserves" />
+        </div>
+
+        <h4 className="mt-12 text-xl font-bold text-[#0b2d52]">Reserves fixtures</h4>
+        <div className="mt-6 overflow-x-auto rounded-lg border border-slate-200">
+          <table className="min-w-full text-sm">
+            <thead className="bg-[#0b2d52] text-white">
+              <tr>
+                <th className="px-3 py-2 text-left font-semibold">Date</th>
+                <th className="px-3 py-2 text-left font-semibold">Comp</th>
+                <th className="px-3 py-2 text-left font-semibold">Opponent</th>
+                <th className="px-3 py-2 text-left font-semibold">Venue</th>
+                <th className="px-3 py-2 text-left font-semibold">Ground</th>
+              </tr>
+            </thead>
+            <tbody>
+              {reserveFixtures.map((f) => (
+                <tr key={`${f.date}-${f.opponent}`} className="border-t border-slate-200 odd:bg-white even:bg-slate-50">
+                  <td className="whitespace-nowrap px-3 py-1.5">
+                    {f.date} <span className="text-slate-400">{f.time}</span>
+                  </td>
+                  <td className="px-3 py-1.5">{f.competition}</td>
+                  <td className="px-3 py-1.5">{f.opponent}</td>
+                  <td className="px-3 py-1.5">{f.venue}</td>
+                  <td className="px-3 py-1.5 text-slate-600">{f.ground}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -270,10 +302,10 @@ function App() {
           <h3 className="text-2xl font-bold">Filton Athletic Youth FC</h3>
           <p className="mt-4 max-w-3xl text-slate-200">
             Various age groups, mixed groups of boys and girls: YDS (Year 1 and below), U7s (Year 2), U8s
-            (Year 3), U9s (Year 4), U10s (Year 5) and U11s (Year 6). FA qualified coaches, DBS checked.
+            (Year 3), U9s (Year 4), U10s (Year 5), U11s (Year 6) and U12s. FA qualified coaches, DBS checked.
             Be part of a team and most importantly have fun!
           </p>
-          <p className="mt-4 text-slate-200">Home games at Elm Park Playing Fields, Filton.</p>
+          <p className="mt-4 text-slate-200">Home games at BBS Park North, Elm Park, Filton.</p>
           <div className="mt-6 flex flex-wrap gap-6 text-sm">
             <p>Email: <a className="underline" href="mailto:filtonathleticfc@outlook.com">filtonathleticfc@outlook.com</a></p>
             <p>Kev: 07710 581381</p>
@@ -305,18 +337,11 @@ function App() {
       {/* Contact / footer */}
       <footer id="contact" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-6xl px-6 py-14">
-          <h3 className="text-2xl font-bold text-[#0b2d52]">Contact &amp; grounds</h3>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2">
-            <div>
-              <p className="font-semibold">First team &amp; matchdays</p>
-              <p className="text-slate-700">{groundInfo.firstTeam.name}</p>
-              <p className="text-slate-700">{groundInfo.firstTeam.address}</p>
-            </div>
-            <div>
-              <p className="font-semibold">Reserves &amp; youth</p>
-              <p className="text-slate-700">{groundInfo.reserves.name}</p>
-              <p className="text-slate-700">{groundInfo.reserves.address}</p>
-            </div>
+          <h3 className="text-2xl font-bold text-[#0b2d52]">Contact &amp; ground</h3>
+          <div className="mt-6">
+            <p className="font-semibold">Home of the first team, reserves and youth</p>
+            <p className="text-slate-700">{groundInfo.name}</p>
+            <p className="text-slate-700">{groundInfo.address}</p>
           </div>
           <div className="mt-8 text-sm text-slate-600">
             <p>Email: <a className="text-[#0b2d52] underline" href="mailto:filtonathleticfc@outlook.com">filtonathleticfc@outlook.com</a></p>
