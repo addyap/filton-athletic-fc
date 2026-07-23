@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import crestTrimmed from '../assets/img/filton-athletic-crest-trimmed.webp'
 import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
@@ -62,6 +63,19 @@ function LeagueTable({ rows, highlight }: { rows: typeof leagueTable; highlight:
 }
 
 function Home() {
+  const location = useLocation()
+
+  // Scroll to the section named in the URL hash (e.g. /#squad), including when
+  // arriving from another page via the nav.
+  useEffect(() => {
+    if (!location.hash) {
+      window.scrollTo(0, 0)
+      return
+    }
+    const el = document.getElementById(location.hash.slice(1))
+    if (el) el.scrollIntoView({ behavior: 'smooth' })
+  }, [location.hash, location.key])
+
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <SiteHeader />

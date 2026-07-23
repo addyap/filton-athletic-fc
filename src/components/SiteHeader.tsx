@@ -69,14 +69,14 @@ function SiteHeader() {
           }`}
         >
           {navLinks.map((l) => (
-            <a
+            <Link
               key={l.href}
-              href={l.href}
+              to={l.href}
               onClick={() => setMenuOpen(false)}
               className="whitespace-nowrap py-2 text-sm text-slate-200 hover:text-white lg:py-0"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </div>
       </nav>
