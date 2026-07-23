@@ -41,7 +41,7 @@ function SiteHeader() {
           </div>
         </Link>
 
-        <div className="ml-auto hidden flex-col items-end gap-1 text-xs text-slate-300 sm:flex">
+        <div className="ml-auto hidden flex-col items-end gap-1 whitespace-nowrap text-sm text-slate-300 sm:flex lg:text-base">
           <span className="font-semibold uppercase tracking-wide text-slate-400">Affiliated links</span>
           <a href={countyLeagueUrl} target="_blank" rel="noreferrer" className="hover:text-white hover:underline">
             Marcliff Gloucestershire County Football League
