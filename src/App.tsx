@@ -95,9 +95,9 @@ function App() {
           src={crest}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute left-1/2 top-1/2 h-[86%] w-auto -translate-x-1/2 -translate-y-1/2 object-contain opacity-25"
+          className="pointer-events-none absolute left-1/2 top-1/2 h-full w-auto -translate-x-1/2 -translate-y-1/2 object-contain opacity-25"
         />
-        <div className="relative mx-auto flex max-w-6xl flex-col items-center px-6 py-14 text-center">
+        <div className="relative mx-auto flex max-w-6xl flex-col items-center px-6 py-16 text-center">
           <p className="text-xs uppercase tracking-wide text-[#a9e0b8] sm:text-sm">Marcliff Gloucestershire County Football League</p>
           <h2 className="mt-2 text-2xl font-bold sm:text-3xl">Home of Filton Athletic FC</h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm text-slate-100">
