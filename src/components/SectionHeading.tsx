@@ -44,6 +44,13 @@ const icons: Record<string, ReactNode> = {
       <circle cx="12" cy="10.5" r="2.3" />
     </>
   ),
+  shield: <path d="M12 3l7 2.6v5.2c0 4.6-3 7.7-7 9.2-4-1.5-7-4.6-7-9.2V5.6L12 3z" />,
+  clipboard: (
+    <>
+      <rect x="5.5" y="5" width="13" height="15.5" rx="2" />
+      <path d="M9 5V3.5h6V5M9 11h6M9 15h4" />
+    </>
+  ),
 }
 
 export function SectionIcon({ name, className }: { name: string; className?: string }) {
