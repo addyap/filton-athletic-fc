@@ -5,6 +5,7 @@ import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
 import PitchBackdrop from '../components/PitchBackdrop'
 import MatchStrip from '../components/MatchStrip'
+import SectionHeading, { SectionIcon } from '../components/SectionHeading'
 import { posts, formatPostDate } from '../data/posts'
 import {
   officials,
@@ -115,7 +116,7 @@ function Home() {
       {/* Join Us */}
       <section id="join" className="border-b border-slate-200 bg-white">
         <div className="mx-auto max-w-6xl px-6 py-14">
-          <h3 className="text-2xl font-bold text-[#0b2d52]">Join us</h3>
+          <SectionHeading icon="join" title="Join us" />
           <p className="mt-2 max-w-3xl text-slate-600">
             Players, coaches and volunteers &mdash; there is a place for everyone at Filton Athletic.
             Have a look at what we are currently looking for.
@@ -145,9 +146,10 @@ function Home() {
 
       {/* News / Chairman's welcome */}
       <section id="news" className="mx-auto max-w-6xl px-6 py-14">
-        <h3 className="text-2xl font-bold text-[#0b2d52]">Chairman&rsquo;s welcome</h3>
-        <div className="mt-4 rounded-lg border border-slate-200 bg-[#f7faf8] p-6">
-          <p className="italic text-slate-700">
+        <SectionHeading icon="chat" title="Chairman’s welcome" />
+        <div className="relative mt-4 overflow-hidden rounded-lg border border-slate-200 bg-[#f7faf8] p-6">
+          <span aria-hidden="true" className="pointer-events-none absolute -top-3 right-4 font-serif text-8xl leading-none text-[#e0eee5]">&rdquo;</span>
+          <p className="relative italic text-slate-700">
             &ldquo;After almost a month of away games we finally get to another game at home, and we are
             looking forward to seeing everyone cheer the lads on. In that time, we have advanced to the
             next round of the cup but have only picked up two points in the league. We do love a draw!!
@@ -158,12 +160,18 @@ function Home() {
           <p className="mt-4 font-semibold text-[#0b2d52]">Ollie Keeble &mdash; Chairman, Filton Athletic FC</p>
         </div>
 
-        <div className="mt-8 rounded-lg border border-slate-200 p-6">
-          <h4 className="text-lg font-semibold text-[#0b2d52]">From the dugout</h4>
-          <p className="mt-1 text-sm font-medium text-slate-500">
+        <div className="relative mt-8 overflow-hidden rounded-lg border border-slate-200 p-6">
+          <span aria-hidden="true" className="pointer-events-none absolute -top-3 right-4 font-serif text-8xl leading-none text-slate-100">&rdquo;</span>
+          <div className="flex items-center gap-2">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#e7f0e9] text-[#2f6b45]">
+              <SectionIcon name="chat" className="h-4 w-4" />
+            </span>
+            <h4 className="text-lg font-semibold text-[#0b2d52]">From the dugout</h4>
+          </div>
+          <p className="mt-2 text-sm font-medium text-slate-500">
             Filton Athletic vs Ruardean Hill Rangers &mdash; 27 September 2025
           </p>
-          <p className="mt-3 text-slate-700">
+          <p className="relative mt-3 text-slate-700">
             &ldquo;Six games into the season now and still undefeated. Five in the league and through to
             the next round in the cup. It has been a positive start given new management, new style of
             play and a new home ground. Lots to build and work on. Similar to last season, we need to
@@ -178,7 +186,7 @@ function Home() {
       {/* History */}
       <section id="history" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-6xl px-6 py-14">
-          <h3 className="text-2xl font-bold text-[#0b2d52]">Our history</h3>
+          <SectionHeading icon="clock" title="Our history" />
           <p className="mt-4 max-w-3xl text-slate-700">
             Filton Athletic FC are a long-standing amateur football club based in the north of Bristol. We
             started out as St. Andrews Meth back in the 1960s, then changed to Filton Athletic FC in 1986.
@@ -236,7 +244,7 @@ function Home() {
 
       {/* Squad */}
       <section id="squad" className="mx-auto max-w-6xl px-6 py-14">
-        <h3 className="text-2xl font-bold text-[#0b2d52]">First team squad</h3>
+        <SectionHeading icon="shirt" title="First team squad" />
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {squad.map((p) => (
             <div key={p.name} className="rounded-lg border border-slate-200 p-4">
@@ -251,7 +259,7 @@ function Home() {
       {/* Fixtures & Results */}
       <section id="fixtures" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-6xl px-6 py-14">
-          <h3 className="text-2xl font-bold text-[#0b2d52]">Fixtures &amp; results</h3>
+          <SectionHeading icon="calendar" title="Fixtures & results" />
           <p className="mt-1 text-sm text-slate-500">
             First team &mdash; Marcliff Gloucestershire County Football League 2025-26
           </p>
@@ -292,7 +300,7 @@ function Home() {
 
       {/* League table */}
       <section id="table" className="mx-auto max-w-6xl px-6 py-14">
-        <h3 className="text-2xl font-bold text-[#0b2d52]">League table</h3>
+        <SectionHeading icon="standings" title="League table" />
         <p className="mt-1 text-sm text-slate-500">Marcliff Gloucestershire County Football League 2025-26</p>
         <div className="mt-6">
           <LeagueTable rows={leagueTable} highlight="Filton Athletic" />
@@ -336,7 +344,7 @@ function Home() {
       {/* Youth */}
       <section id="youth" className="border-t border-slate-200 bg-[#0b2d52] text-white">
         <div className="mx-auto max-w-6xl px-6 py-14">
-          <h3 className="text-2xl font-bold">Filton Athletic Youth FC</h3>
+          <SectionHeading icon="star" title="Filton Athletic Youth FC" tone="dark" />
           <p className="mt-4 max-w-3xl text-slate-200">
             Various age groups, mixed groups of boys and girls: YDS (Year 1 and below), U7s (Year 2), U8s
             (Year 3), U9s (Year 4), U10s (Year 5), U11s (Year 6) and U12s. FA qualified coaches, DBS checked.
@@ -353,7 +361,7 @@ function Home() {
 
       {/* Sponsors */}
       <section id="sponsors" className="mx-auto max-w-6xl px-6 py-14">
-        <h3 className="text-2xl font-bold text-[#0b2d52]">Club sponsors</h3>
+        <SectionHeading icon="heart" title="Club sponsors" />
         <p className="mt-1 text-sm text-slate-500">Thank you to our sponsors&hellip;</p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {sponsors.map((s) => (
