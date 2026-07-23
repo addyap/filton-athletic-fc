@@ -4,6 +4,9 @@ import crest from '../assets/img/filton-athletic-crest-transparent.webp'
 
 type NavLink = { href: string; label: string; external?: boolean }
 
+const countyLeagueUrl = 'https://countyleague.co.uk/'
+const fullTimeUrl = 'https://fulltime.thefa.com/index.html?league=5545575'
+
 const navLinks: NavLink[] = [
   { href: '/#join', label: 'Join Us' },
   { href: '/#news', label: 'News' },
@@ -23,20 +26,30 @@ function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-10 border-b border-slate-200 bg-[#0b2d52] text-white">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 sm:py-4">
-        <Link to="/" className="flex items-center gap-3 sm:gap-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2 sm:px-6">
+        <Link to="/" className="flex items-center gap-3 sm:gap-5">
           <img
             src={crest}
             alt="Filton Athletic FC crest"
-            className="h-11 w-11 object-contain sm:h-14 sm:w-14"
+            className="h-20 w-20 object-contain sm:h-28 sm:w-28"
           />
           <div>
-            <h1 className="text-lg font-bold leading-tight sm:text-xl">Filton Athletic FC</h1>
-            <p className="text-[11px] text-slate-300 sm:text-xs">
+            <h1 className="text-lg font-bold leading-tight sm:text-2xl">Filton Athletic FC</h1>
+            <p className="text-[11px] text-slate-300 sm:text-sm">
               Est. Filton, Bristol &middot; #FATS #UTF
             </p>
           </div>
         </Link>
+
+        <div className="ml-auto hidden flex-col items-end gap-1 text-xs text-slate-300 sm:flex">
+          <span className="font-semibold uppercase tracking-wide text-slate-400">Affiliated links</span>
+          <a href={countyLeagueUrl} target="_blank" rel="noreferrer" className="hover:text-white hover:underline">
+            Marcliff Gloucestershire County Football League
+          </a>
+          <a href={fullTimeUrl} target="_blank" rel="noreferrer" className="hover:text-white hover:underline">
+            FA Full-Time &mdash; league tables &amp; results
+          </a>
+        </div>
 
         {/* Mobile menu toggle — hidden on desktop where the full nav is always shown */}
         <button

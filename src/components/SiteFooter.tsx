@@ -8,8 +8,6 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
 
 const shopUrl = 'https://www.boca-uk.com/webshop/club-shops/filton-athletic-fc/'
 const xUrl = 'https://x.com/FiltonAthletic'
-const countyLeagueUrl = 'https://countyleague.co.uk/'
-const fullTimeUrl = 'https://fulltime.thefa.com/index.html?league=5545575'
 
 function SiteFooter() {
   return (
@@ -47,19 +45,6 @@ function SiteFooter() {
               Club shop:{' '}
               <a className="text-[#0b2d52] underline" href={shopUrl} target="_blank" rel="noreferrer">
                 Buy official kit &amp; merchandise
-              </a>
-            </p>
-          </div>
-          <div className="mt-8 text-sm text-slate-600">
-            <p className="font-semibold text-[#0b2d52]">Affiliated links</p>
-            <p className="mt-1">
-              <a className="text-[#0b2d52] underline" href={countyLeagueUrl} target="_blank" rel="noreferrer">
-                Marcliff Gloucestershire County Football League
-              </a>
-            </p>
-            <p className="mt-1">
-              <a className="text-[#0b2d52] underline" href={fullTimeUrl} target="_blank" rel="noreferrer">
-                FA Full-Time &mdash; league tables &amp; results
               </a>
             </p>
           </div>
