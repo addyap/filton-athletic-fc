@@ -91,18 +91,19 @@ function App() {
 
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-b from-[#7f9ad6] via-[#1c3f6e] to-[#0a2340] text-white">
-        <div className="relative mx-auto flex max-w-6xl flex-col items-center px-6 py-10 text-center">
+        <img
+          src={crest}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-1/2 h-[86%] w-auto -translate-x-1/2 -translate-y-1/2 object-contain opacity-25"
+        />
+        <div className="relative mx-auto flex max-w-6xl flex-col items-center px-6 py-14 text-center">
           <p className="text-xs uppercase tracking-wide text-[#a9e0b8] sm:text-sm">Marcliff Gloucestershire County Football League</p>
           <h2 className="mt-2 text-2xl font-bold sm:text-3xl">Home of Filton Athletic FC</h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm text-slate-100">
             First team, reserves and youth football in the north of Bristol since the 1960s. Come down to
             BBS Park North and back the lads.
           </p>
-          <img
-            src={crest}
-            alt="Filton Athletic FC crest"
-            className="mt-6 h-28 w-28 object-contain mix-blend-luminosity opacity-90 sm:h-32 sm:w-32"
-          />
         </div>
       </section>
 
