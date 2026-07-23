@@ -8,6 +8,12 @@ body {
   margin: 0;
 }
 
+/* Offset in-page anchor jumps so section headings clear the sticky header. */
+section[id],
+footer[id] {
+  scroll-margin-top: 6.5rem;
+}
+
 /* Make brand colours print (and export to PDF) faithfully. */
 @media print {
   .programme-print {
