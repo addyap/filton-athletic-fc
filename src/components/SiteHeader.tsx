@@ -92,7 +92,7 @@ function SiteHeader() {
                 target="_blank"
                 rel="noreferrer"
                 onClick={() => setMenuOpen(false)}
-                className="whitespace-nowrap py-2 text-sm text-slate-200 hover:text-white lg:py-0"
+                className="whitespace-nowrap py-2 text-base text-slate-200 hover:text-white lg:py-0"
               >
                 {l.label}
               </a>
@@ -101,7 +101,7 @@ function SiteHeader() {
                 key={l.href}
                 to={l.href}
                 onClick={() => setMenuOpen(false)}
-                className="whitespace-nowrap py-2 text-sm text-slate-200 hover:text-white lg:py-0"
+                className="whitespace-nowrap py-2 text-base text-slate-200 hover:text-white lg:py-0"
               >
                 {l.label}
               </Link>
