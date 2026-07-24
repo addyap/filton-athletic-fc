@@ -185,9 +185,9 @@ function Home() {
       <section id="join" className="border-b border-slate-200 bg-white">
         <div className="mx-auto max-w-6xl px-6 py-14">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start">
-            <div className="lg:flex-1">
-              <SectionHeading icon="join" title="Join us" />
-              <p className="mt-2 max-w-3xl text-slate-600">
+            <div className="text-center lg:flex-1 lg:text-left">
+              <SectionHeading icon="join" title="Join us" className="justify-center lg:justify-start" />
+              <p className="mx-auto mt-2 max-w-3xl text-slate-600 lg:mx-0">
                 Players, coaches and volunteers &mdash; there is a place for everyone at Filton Athletic.
                 Have a look at what we are currently looking for.
               </p>
@@ -225,7 +225,7 @@ function Home() {
 
       {/* News / Chairman's welcome */}
       <section id="news" className="mx-auto max-w-6xl px-6 py-14">
-        <SectionHeading icon="chat" title="Chairman’s welcome" />
+        <SectionHeading icon="chat" title="Chairman’s welcome" className="justify-center" />
         <div className="relative mt-4 overflow-hidden rounded-lg border border-slate-200 bg-[#f7faf8] p-6">
           <span aria-hidden="true" className="pointer-events-none absolute -top-3 right-4 font-serif text-8xl leading-none text-[#e0eee5]">&rdquo;</span>
           <p className="relative italic text-slate-700">
@@ -265,7 +265,7 @@ function Home() {
       {/* History */}
       <section id="history" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-6xl px-6 py-14">
-          <SectionHeading icon="clock" title="Our history" />
+          <SectionHeading icon="clock" title="Our history" className="justify-center" />
           <p className="mt-4 max-w-3xl text-slate-700">
             Filton Athletic FC are a long-standing amateur football club based in the north of Bristol. We
             started out as St. Andrews Meth back in the 1960s, then changed to Filton Athletic FC in 1986.
@@ -323,7 +323,7 @@ function Home() {
 
       {/* Squad */}
       <section id="squad" className="mx-auto max-w-6xl px-6 py-14">
-        <SectionHeading icon="shirt" title="First team squad" />
+        <SectionHeading icon="shirt" title="First team squad" className="justify-center" />
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {squad.map((p) => (
             <div key={p.name} className="overflow-hidden rounded-lg border border-slate-200">
@@ -347,8 +347,8 @@ function Home() {
       {/* Fixtures & Results */}
       <section id="fixtures" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-6xl px-6 py-14">
-          <SectionHeading icon="calendar" title="Fixtures & results" />
-          <p className="mt-1 text-sm text-slate-500">
+          <SectionHeading icon="calendar" title="Fixtures & results" className="justify-center" />
+          <p className="mt-1 text-center text-sm text-slate-500">
             First team &mdash; Marcliff Gloucestershire County Football League 2025-26
           </p>
           <div className="mt-6 overflow-x-auto rounded-lg border border-slate-200 bg-white">
@@ -388,19 +388,19 @@ function Home() {
 
       {/* League table */}
       <section id="table" className="mx-auto max-w-6xl px-6 py-14">
-        <SectionHeading icon="standings" title="League table" />
-        <p className="mt-1 text-sm text-slate-500">Marcliff Gloucestershire County Football League 2025-26</p>
+        <SectionHeading icon="standings" title="League table" className="justify-center" />
+        <p className="mt-1 text-center text-sm text-slate-500">Marcliff Gloucestershire County Football League 2025-26</p>
         <div className="mt-6">
           <LeagueTable rows={leagueTable} highlight="Filton Athletic" />
         </div>
 
-        <h4 className="mt-12 text-xl font-bold text-[#0b2d52]">Filton Reserves</h4>
-        <p className="mt-1 text-sm text-slate-500">Bristol &amp; Suburban Senior League 2025-26</p>
+        <h4 className="mt-12 text-center text-xl font-bold text-[#0b2d52]">Filton Reserves</h4>
+        <p className="mt-1 text-center text-sm text-slate-500">Bristol &amp; Suburban Senior League 2025-26</p>
         <div className="mt-6">
           <LeagueTable rows={reserveTable} highlight="Filton Athletic Reserves" />
         </div>
 
-        <h4 className="mt-12 text-xl font-bold text-[#0b2d52]">Reserves fixtures</h4>
+        <h4 className="mt-12 text-center text-xl font-bold text-[#0b2d52]">Reserves fixtures</h4>
         <div className="mt-6 overflow-x-auto rounded-lg border border-slate-200">
           <table className="min-w-full text-sm">
             <thead className="bg-[#0b2d52] text-white">
@@ -432,16 +432,16 @@ function Home() {
       {/* Youth */}
       <section id="youth" className="border-t border-slate-200 bg-[#0b2d52] text-white">
         <div className="mx-auto max-w-6xl px-6 py-14">
-          <SectionHeading icon="star" title="Filton Athletic Youth FC" tone="dark" />
-          <div className="mt-4 flex flex-col gap-8 lg:flex-row lg:items-start">
+          <SectionHeading icon="star" title="Filton Athletic Youth FC" tone="dark" className="justify-center lg:justify-start" />
+          <div className="mt-4 flex flex-col gap-8 text-center lg:flex-row lg:items-start lg:text-left">
             <div className="lg:flex-1">
-              <p className="max-w-3xl text-slate-200">
+              <p className="mx-auto max-w-3xl text-slate-200 lg:mx-0">
                 Various age groups, mixed groups of boys and girls: YDS (Year 1 and below), U7s (Year 2), U8s
                 (Year 3), U9s (Year 4), U10s (Year 5), U11s (Year 6) and U12s. FA qualified coaches, DBS checked.
                 Be part of a team and most importantly have fun!
               </p>
               <p className="mt-4 text-slate-200">Home games at BBS Park North, Elm Park, Filton.</p>
-              <div className="mt-6 flex flex-wrap gap-6 text-sm">
+              <div className="mt-6 flex flex-wrap justify-center gap-6 text-sm lg:justify-start">
                 <p>Email: <a className="underline" href="mailto:filtonathleticfc@outlook.com">filtonathleticfc@outlook.com</a></p>
                 <p>Kev: 07710 581381</p>
                 <p>Ollie: 07429 595476</p>
@@ -464,8 +464,8 @@ function Home() {
 
       {/* Sponsors */}
       <section id="sponsors" className="mx-auto max-w-6xl px-6 py-14">
-        <SectionHeading icon="heart" title="Club sponsors" />
-        <p className="mt-1 text-sm text-slate-500">Thank you to our sponsors&hellip;</p>
+        <SectionHeading icon="heart" title="Club sponsors" className="justify-center" />
+        <p className="mt-1 text-center text-sm text-slate-500">Thank you to our sponsors&hellip;</p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {sponsors.map((s) => (
             <div key={s.name} className="rounded-lg border border-slate-200 p-4">
@@ -489,7 +489,7 @@ function Home() {
             </div>
           ))}
         </div>
-        <p className="mt-6 text-sm text-slate-500">
+        <p className="mt-6 text-center text-sm text-slate-500">
           Interested in advertising with the club? Contact{' '}
           <a className="text-[#0b2d52] underline" href="mailto:filtonathleticfc@outlook.com">
             filtonathleticfc@outlook.com

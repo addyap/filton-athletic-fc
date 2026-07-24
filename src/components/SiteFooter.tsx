@@ -14,7 +14,7 @@ function SiteFooter() {
     <>
       <footer id="contact" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-6xl px-6 py-14">
-          <SectionHeading icon="pin" title="Contact & ground" />
+          <SectionHeading icon="pin" title="Contact & ground" className="justify-center" />
           <div className="mt-6">
             <p className="font-semibold">Home of the first team, reserves and youth</p>
             <p className="text-slate-700">{groundInfo.name}</p>
