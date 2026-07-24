@@ -192,11 +192,13 @@ function Home() {
                 Have a look at what we are currently looking for.
               </p>
             </div>
-            <img
-              src={playersWantedPoster}
-              alt="Players wanted — join Filton Athletic FC. First team competing in the County League, Reserves in the Suburban Premier, A's in Suburban Division 4. Training Tuesday and Thursday, 6:30pm at Elm Park. All positions considered, all abilities welcome."
-              className="mx-auto w-full max-w-[280px] rounded-lg border border-slate-200 shadow-sm lg:mx-0"
-            />
+            <div className="mx-auto w-full max-w-[300px] rounded-lg border border-slate-200 bg-white p-3 shadow-sm lg:mx-0">
+              <img
+                src={playersWantedPoster}
+                alt="Players wanted — join Filton Athletic FC. First team competing in the County League, Reserves in the Suburban Premier, A's in Suburban Division 4. Training Tuesday and Thursday, 6:30pm at Elm Park. All positions considered, all abilities welcome."
+                className="w-full rounded"
+              />
+            </div>
           </div>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
