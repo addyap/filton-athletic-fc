@@ -85,11 +85,11 @@ function SectionHeading({
   const chip = tone === 'dark' ? 'bg-white/10 text-[#a9e0b8]' : 'bg-[#e7f0e9] text-[#2f6b45]'
   const titleColour = tone === 'dark' ? 'text-white' : 'text-[#0b2d52]'
   return (
-    <div className={`flex items-center gap-3 ${className ?? ''}`}>
-      <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${chip}`}>
-        <SectionIcon name={icon} className="h-5 w-5" />
+    <div className={`flex items-center gap-3 sm:gap-4 ${className ?? ''}`}>
+      <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full sm:h-14 sm:w-14 lg:h-16 lg:w-16 ${chip}`}>
+        <SectionIcon name={icon} className="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8" />
       </span>
-      <h3 className={`text-2xl font-bold ${titleColour}`}>{title}</h3>
+      <h3 className={`text-3xl font-bold sm:text-4xl lg:text-5xl ${titleColour}`}>{title}</h3>
     </div>
   )
 }
