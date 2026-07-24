@@ -2,9 +2,9 @@ import { groundInfo } from '../data/club'
 import BackToTop from './BackToTop'
 import SectionHeading from './SectionHeading'
 
-const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-  `${groundInfo.name}, ${groundInfo.address}`,
-)}`
+const mapsQuery = encodeURIComponent(`${groundInfo.name}, ${groundInfo.address}`)
+const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`
+const mapsEmbedUrl = `https://www.google.com/maps?q=${mapsQuery}&output=embed`
 
 const shopUrl = 'https://www.boca-uk.com/webshop/club-shops/filton-athletic-fc/'
 const xUrl = 'https://x.com/FiltonAthletic'
@@ -15,18 +15,27 @@ function SiteFooter() {
       <footer id="contact" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-6xl px-6 py-14">
           <SectionHeading icon="pin" title="Contact & ground" className="justify-center" />
-          <div className="mt-6">
-            <p className="font-semibold">Home of the first team, reserves and youth</p>
-            <p className="text-slate-700">{groundInfo.name}</p>
-            <p className="text-slate-700">{groundInfo.address}</p>
-            <a
-              className="mt-2 inline-block text-sm font-semibold text-[#0b2d52] underline"
-              href={mapsUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Get directions &rarr;
-            </a>
+          <div className="mt-6 grid gap-8 lg:grid-cols-2 lg:items-start">
+            <div>
+              <p className="font-semibold">Home of the first team, reserves and youth</p>
+              <p className="text-slate-700">{groundInfo.name}</p>
+              <p className="text-slate-700">{groundInfo.address}</p>
+              <a
+                className="mt-2 inline-block text-sm font-semibold text-[#0b2d52] underline"
+                href={mapsUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Get directions &rarr;
+              </a>
+            </div>
+            <iframe
+              title={`Map of ${groundInfo.name}`}
+              src={mapsEmbedUrl}
+              className="h-64 w-full rounded-lg border border-slate-200 lg:h-full lg:min-h-[220px]"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
           <div className="mt-8 text-sm text-slate-600">
             <p>
