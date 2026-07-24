@@ -29,6 +29,41 @@ export function headForPath(pathname: string): PageHead {
     }
   }
 
+  if (path === '/fixtures') {
+    return {
+      ...base,
+      title: 'Fixtures & results — Filton Athletic FC',
+      description:
+        'Filton Athletic FC first team fixtures and results in the Marcliff Gloucestershire County Football League, 2025-26 season.',
+    }
+  }
+
+  if (path === '/table') {
+    return {
+      ...base,
+      title: 'League table — Filton Athletic FC',
+      description:
+        'Marcliff Gloucestershire County Football League and Bristol & Suburban Senior League tables for Filton Athletic FC, 2025-26 season.',
+    }
+  }
+
+  if (path === '/youth') {
+    return {
+      ...base,
+      title: 'Filton Athletic Youth FC',
+      description:
+        'Youth football at Filton Athletic FC — mixed teams from YDS through to U12s, and a new U13s girls team forming for 2026/27. FA qualified, DBS checked coaches.',
+    }
+  }
+
+  if (path === '/contact') {
+    return {
+      ...base,
+      title: 'Contact & ground — Filton Athletic FC',
+      description: 'How to find and contact Filton Athletic FC at BBS Park North, Elm Park, Filton, Bristol.',
+    }
+  }
+
   const programmeMatch = path.match(/^\/programme\/(.+)$/)
   if (programmeMatch) {
     const programme = getProgramme(programmeMatch[1])

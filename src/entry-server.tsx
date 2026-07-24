@@ -20,6 +20,10 @@ export function getRoutePaths(): string[] {
   return [
     '/',
     '/programmes',
+    '/fixtures',
+    '/table',
+    '/youth',
+    '/contact',
     ...programmes.map((p) => `/programme/${p.slug}`),
     ...posts.map((p) => `/join/${p.slug}`),
   ]

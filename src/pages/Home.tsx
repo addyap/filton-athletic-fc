@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import crestTrimmed from '../assets/img/filton-athletic-crest-trimmed.webp'
 import playersWantedPoster from '../assets/img/players-wanted.jpg'
-import u13sGirlsTeamFlyer from '../assets/img/u13s-girls-team.jpg'
 import chrisHillyerPhoto from '../assets/img/players/chris-hillyer.webp'
 import jackColePhoto from '../assets/img/players/jack-cole.webp'
 import jackWillmorPhoto from '../assets/img/players/jack-willmor.webp'
@@ -36,14 +35,13 @@ import PitchBackdrop from '../components/PitchBackdrop'
 import ConcordeMark from '../components/ConcordeMark'
 import MatchStrip from '../components/MatchStrip'
 import SectionHeading, { SectionIcon } from '../components/SectionHeading'
+import FixturesSection from '../components/sections/FixturesSection'
+import TableSection from '../components/sections/TableSection'
+import YouthSection from '../components/sections/YouthSection'
 import { posts, formatPostDate } from '../data/posts'
 import {
   officials,
   squad,
-  firstTeamFixtures,
-  reserveFixtures,
-  leagueTable,
-  reserveTable,
   sponsors,
   groundInfo,
 } from '../data/club'
@@ -80,61 +78,6 @@ const sponsorLogos: Record<string, string> = {
   'The Kitchen Den Design Studio': kitchenDenLogo,
   Clarius: clariusLogo,
   'New Happy Palace': newHappyPalaceLogo,
-}
-
-function resultBadge(result?: string) {
-  if (!result) return 'bg-slate-100 text-slate-500'
-  if (result.startsWith('W')) return 'bg-emerald-100 text-emerald-800'
-  if (result.startsWith('L')) return 'bg-red-100 text-red-800'
-  if (result.startsWith('D')) return 'bg-amber-100 text-amber-800'
-  return 'bg-slate-100 text-slate-500'
-}
-
-// Columns hide progressively on narrow screens so the table fits a phone
-// without sideways scrolling: goals-for/against appear at md, W/D/L at sm.
-const leagueColumns: { key: keyof (typeof leagueTable)[number]; label: string; cls?: string }[] = [
-  { key: 'pos', label: 'Pos' },
-  { key: 'team', label: 'Team' },
-  { key: 'p', label: 'P' },
-  { key: 'w', label: 'W', cls: 'hidden sm:table-cell' },
-  { key: 'd', label: 'D', cls: 'hidden sm:table-cell' },
-  { key: 'l', label: 'L', cls: 'hidden sm:table-cell' },
-  { key: 'f', label: 'F', cls: 'hidden md:table-cell' },
-  { key: 'a', label: 'A', cls: 'hidden md:table-cell' },
-  { key: 'gd', label: 'GD' },
-  { key: 'pts', label: 'Pts' },
-]
-
-function LeagueTable({ rows, highlight }: { rows: typeof leagueTable; highlight: string }) {
-  return (
-    <div className="overflow-x-auto rounded-lg border border-slate-200">
-      <table className="min-w-full text-sm">
-        <thead className="bg-[#0b2d52] text-white">
-          <tr>
-            {leagueColumns.map((c) => (
-              <th key={c.key} className={`px-3 py-2 text-left font-semibold ${c.cls ?? ''}`}>
-                {c.label}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((r) => (
-            <tr
-              key={r.team}
-              className={`border-t border-slate-200 ${r.team === highlight ? 'bg-[#e7f0e9] font-semibold text-[#0b2d52]' : 'odd:bg-white even:bg-slate-50'}`}
-            >
-              {leagueColumns.map((c) => (
-                <td key={c.key} className={`px-3 py-1.5 ${c.cls ?? ''}`}>
-                  {r[c.key]}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  )
 }
 
 function Home() {
@@ -344,123 +287,9 @@ function Home() {
         </div>
       </section>
 
-      {/* Fixtures & Results */}
-      <section id="fixtures" className="border-t border-slate-200 bg-slate-50">
-        <div className="mx-auto max-w-6xl px-6 py-14">
-          <SectionHeading icon="calendar" title="Fixtures & results" className="justify-center" />
-          <p className="mt-1 text-center text-sm text-slate-500">
-            First team &mdash; Marcliff Gloucestershire County Football League 2025-26
-          </p>
-          <div className="mt-6 overflow-x-auto rounded-lg border border-slate-200 bg-white">
-            <table className="min-w-full text-sm">
-              <thead className="bg-[#0b2d52] text-white">
-                <tr>
-                  <th className="px-3 py-2 text-left font-semibold">Date</th>
-                  <th className="hidden px-3 py-2 text-left font-semibold sm:table-cell">Comp</th>
-                  <th className="px-3 py-2 text-left font-semibold">Opponent</th>
-                  <th className="px-3 py-2 text-left font-semibold">Venue</th>
-                  <th className="px-3 py-2 text-left font-semibold">Result</th>
-                  <th className="hidden px-3 py-2 text-left font-semibold md:table-cell">Scorers</th>
-                </tr>
-              </thead>
-              <tbody>
-                {firstTeamFixtures.map((f) => (
-                  <tr key={`${f.date}-${f.opponent}`} className="border-t border-slate-200 odd:bg-white even:bg-slate-50">
-                    <td className="whitespace-nowrap px-3 py-1.5">
-                      {f.date} <span className="text-slate-500">{f.time}</span>
-                    </td>
-                    <td className="hidden px-3 py-1.5 sm:table-cell">{f.competition}</td>
-                    <td className="px-3 py-1.5">{f.opponent}</td>
-                    <td className="px-3 py-1.5">{f.venue}</td>
-                    <td className="px-3 py-1.5">
-                      <span className={`rounded px-2 py-0.5 text-xs font-semibold ${resultBadge(f.result)}`}>
-                        {f.result ?? 'Upcoming'}
-                      </span>
-                    </td>
-                    <td className="hidden px-3 py-1.5 text-slate-600 md:table-cell">{f.scorers ?? '-'}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* League table */}
-      <section id="table" className="mx-auto max-w-6xl px-6 py-14">
-        <SectionHeading icon="standings" title="League table" className="justify-center" />
-        <p className="mt-1 text-center text-sm text-slate-500">Marcliff Gloucestershire County Football League 2025-26</p>
-        <div className="mt-6">
-          <LeagueTable rows={leagueTable} highlight="Filton Athletic" />
-        </div>
-
-        <h4 className="mt-12 text-center text-xl font-bold text-[#0b2d52]">Filton Reserves</h4>
-        <p className="mt-1 text-center text-sm text-slate-500">Bristol &amp; Suburban Senior League 2025-26</p>
-        <div className="mt-6">
-          <LeagueTable rows={reserveTable} highlight="Filton Athletic Reserves" />
-        </div>
-
-        <h4 className="mt-12 text-center text-xl font-bold text-[#0b2d52]">Reserves fixtures</h4>
-        <div className="mt-6 overflow-x-auto rounded-lg border border-slate-200">
-          <table className="min-w-full text-sm">
-            <thead className="bg-[#0b2d52] text-white">
-              <tr>
-                <th className="px-3 py-2 text-left font-semibold">Date</th>
-                <th className="hidden px-3 py-2 text-left font-semibold sm:table-cell">Comp</th>
-                <th className="px-3 py-2 text-left font-semibold">Opponent</th>
-                <th className="px-3 py-2 text-left font-semibold">Venue</th>
-                <th className="hidden px-3 py-2 text-left font-semibold md:table-cell">Ground</th>
-              </tr>
-            </thead>
-            <tbody>
-              {reserveFixtures.map((f) => (
-                <tr key={`${f.date}-${f.opponent}`} className="border-t border-slate-200 odd:bg-white even:bg-slate-50">
-                  <td className="whitespace-nowrap px-3 py-1.5">
-                    {f.date} <span className="text-slate-500">{f.time}</span>
-                  </td>
-                  <td className="hidden px-3 py-1.5 sm:table-cell">{f.competition}</td>
-                  <td className="px-3 py-1.5">{f.opponent}</td>
-                  <td className="px-3 py-1.5">{f.venue}</td>
-                  <td className="hidden px-3 py-1.5 text-slate-600 md:table-cell">{f.ground}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      {/* Youth */}
-      <section id="youth" className="border-t border-slate-200 bg-[#0b2d52] text-white">
-        <div className="mx-auto max-w-6xl px-6 py-14">
-          <SectionHeading icon="star" title="Filton Athletic Youth FC" tone="dark" className="justify-center lg:justify-start" />
-          <div className="mt-4 flex flex-col gap-8 text-center lg:flex-row lg:items-start lg:text-left">
-            <div className="lg:flex-1">
-              <p className="mx-auto max-w-3xl text-slate-200 lg:mx-0">
-                Various age groups, mixed groups of boys and girls: YDS (Year 1 and below), U7s (Year 2), U8s
-                (Year 3), U9s (Year 4), U10s (Year 5), U11s (Year 6) and U12s. FA qualified coaches, DBS checked.
-                Be part of a team and most importantly have fun!
-              </p>
-              <p className="mt-4 text-slate-200">Home games at BBS Park North, Elm Park, Filton.</p>
-              <div className="mt-6 flex flex-wrap justify-center gap-6 text-sm lg:justify-start">
-                <p>Email: <a className="underline" href="mailto:filtonathleticfc@outlook.com">filtonathleticfc@outlook.com</a></p>
-                <p>Kev: 07710 581381</p>
-                <p>Ollie: 07429 595476</p>
-              </div>
-            </div>
-            <div className="lg:w-[280px] lg:flex-none">
-              <img
-                src={u13sGirlsTeamFlyer}
-                alt="Filton Athletic Youth are looking to create a U13s girls team. Date of birth range for the 26/27 season (school year 8): 1 September 2013 to 31 August 2014, with players up to a year older or younger welcome. Training and friendlies in 26/27, looking to join a league for 27/28. FA qualified and UEFA licensed coaches. Interested? Call 07429 595476 or email filtonathleticfc@outlook.com."
-                className="mx-auto w-full max-w-[280px] rounded-lg border border-white/20 shadow-sm lg:mx-0"
-              />
-              <p className="mt-3 text-center text-sm text-slate-200 lg:text-left">
-                New for 2026/27: we&rsquo;re looking to form a U13s girls team &mdash; get in touch if
-                you&rsquo;re interested.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FixturesSection />
+      <TableSection />
+      <YouthSection />
 
       {/* Sponsors */}
       <section id="sponsors" className="mx-auto max-w-6xl px-6 py-14">
