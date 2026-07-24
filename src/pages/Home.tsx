@@ -163,7 +163,7 @@ function Home() {
           aria-hidden="true"
           className="pointer-events-none absolute inset-y-0 left-1/2 h-full w-auto -translate-x-1/2 object-contain opacity-25"
         />
-        <div className="relative mx-auto flex max-w-6xl flex-col items-center px-4 py-16 text-center sm:px-6 sm:py-20 lg:py-24">
+        <div className="relative mx-auto flex max-w-6xl flex-col items-center px-4 pt-20 pb-12 text-center sm:px-6 sm:pt-24 sm:pb-16 lg:pt-28 lg:pb-20">
           <p className="text-sm uppercase tracking-wide text-[#a9e0b8] sm:text-base lg:text-lg">Marcliff Gloucestershire County Football League</p>
           <h2 className="mt-2 text-3xl font-bold sm:text-5xl lg:text-6xl">Home of Filton Athletic FC</h2>
           <p className="mx-auto mt-3 max-w-2xl text-base text-slate-100 sm:text-lg lg:text-xl">
