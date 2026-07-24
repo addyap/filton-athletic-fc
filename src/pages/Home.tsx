@@ -33,6 +33,7 @@ import newHappyPalaceLogo from '../assets/img/sponsors/new-happy-palace.webp'
 import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
 import PitchBackdrop from '../components/PitchBackdrop'
+import ConcordeMark from '../components/ConcordeMark'
 import MatchStrip from '../components/MatchStrip'
 import SectionHeading, { SectionIcon } from '../components/SectionHeading'
 import { posts, formatPostDate } from '../data/posts'
@@ -165,7 +166,10 @@ function Home() {
         />
         <div className="relative mx-auto flex max-w-6xl flex-col items-center px-4 py-16 text-center sm:px-6 sm:py-20 lg:py-24">
           <p className="text-sm uppercase tracking-wide text-[#a9e0b8] sm:text-base lg:text-lg">Marcliff Gloucestershire County Football League</p>
-          <h2 className="mt-6 text-3xl font-bold sm:text-5xl lg:text-6xl">Home of Filton Athletic FC</h2>
+          <div className="mt-6 flex flex-col items-center gap-2 sm:flex-row sm:justify-center sm:gap-6">
+            <h2 className="text-3xl font-bold sm:text-5xl lg:text-6xl">Home of Filton Athletic FC</h2>
+            <ConcordeMark className="h-8 w-auto shrink-0 text-[#a9e0b8] sm:h-10 lg:h-12" />
+          </div>
           <p className="mx-auto -mt-1 max-w-2xl text-base text-slate-100 sm:text-lg lg:text-xl">
             First team, reserves and youth football in the north of Bristol since the 1960s. Come down to
             BBS Park North and back the lads.
