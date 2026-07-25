@@ -16,6 +16,7 @@ import SiteFooter from '../components/SiteFooter'
 import PitchBackdrop from '../components/PitchBackdrop'
 import ConcordeMark from '../components/ConcordeMark'
 import MatchStrip from '../components/MatchStrip'
+import SeasonCountdown from '../components/SeasonCountdown'
 import XTimeline from '../components/XTimeline'
 import NewsFeed from '../components/NewsFeed'
 import SectionHeading from '../components/SectionHeading'
@@ -85,6 +86,8 @@ function Home() {
           </p>
         </div>
       </section>
+
+      <SeasonCountdown />
 
       <MatchStrip
         sidebar={
