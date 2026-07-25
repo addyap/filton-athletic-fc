@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import crest from '../assets/img/filton-athletic-crest-transparent.webp'
 
 type NavLink = { href: string; label: string; external?: boolean; groupEnd?: boolean }
@@ -24,10 +24,48 @@ const navLinks: NavLink[] = [
   { href: '/#contact', label: 'Contact' },
 ]
 
+// In-page section ids to scroll-spy, derived from the hash links.
+const sectionIds = navLinks.filter((l) => l.href.startsWith('/#')).map((l) => l.href.slice(2))
+
 function SiteHeader() {
+  const location = useLocation()
   const [menuOpen, setMenuOpen] = useState(false)
   const [hidden, setHidden] = useState(false)
+  const [activeId, setActiveId] = useState('')
   const lastY = useRef(0)
+
+  // Scroll-spy: highlight the nav link for the section currently in view. Only the
+  // single-page view has these sections; on other routes no id matches and the
+  // active state falls back to pathname matching below.
+  useEffect(() => {
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null)
+    if (sections.length === 0) {
+      setActiveId('')
+      return
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting)
+        if (visible.length === 0) return
+        // The intersecting section nearest the top of the viewport wins.
+        const top = visible.reduce((a, b) =>
+          a.boundingClientRect.top < b.boundingClientRect.top ? a : b,
+        )
+        setActiveId(top.target.id)
+      },
+      { rootMargin: '-45% 0px -50% 0px' },
+    )
+    sections.forEach((s) => observer.observe(s))
+    return () => observer.disconnect()
+  }, [location.pathname])
+
+  function isActive(l: NavLink): boolean {
+    if (l.external) return false
+    if (l.href.startsWith('/#')) return activeId === l.href.slice(2)
+    return location.pathname === l.href
+  }
 
   // Hide the header when scrolling down, reveal it when scrolling up (and always
   // near the top). One combined header — no duplicated brand, and it reclaims the
@@ -57,13 +95,18 @@ function SiteHeader() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [menuOpen])
 
-  // Lock body scroll while the mobile menu overlay is open.
+  // While the mobile menu overlay is open: lock body scroll and close on Escape.
   useEffect(() => {
     if (!menuOpen) return
     const previous = document.body.style.overflow
     document.body.style.overflow = 'hidden'
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMenuOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
     return () => {
       document.body.style.overflow = previous
+      window.removeEventListener('keydown', onKey)
     }
   }, [menuOpen])
 
@@ -146,7 +189,13 @@ function SiteHeader() {
                   {l.label}
                 </a>
               ) : (
-                <Link to={l.href} className="whitespace-nowrap text-[15px] text-slate-200 hover:text-white">
+                <Link
+                  to={l.href}
+                  aria-current={isActive(l) ? 'page' : undefined}
+                  className={`whitespace-nowrap text-[15px] ${
+                    isActive(l) ? 'font-semibold text-white' : 'text-slate-200 hover:text-white'
+                  }`}
+                >
                   {l.label}
                 </Link>
               )}
@@ -187,7 +236,10 @@ function SiteHeader() {
                     <Link
                       to={l.href}
                       onClick={closeMenu}
-                      className="block py-3 text-base text-slate-200 hover:text-white"
+                      aria-current={isActive(l) ? 'page' : undefined}
+                      className={`block py-3 text-base ${
+                        isActive(l) ? 'font-semibold text-white' : 'text-slate-200 hover:text-white'
+                      }`}
                     >
                       {l.label}
                     </Link>
