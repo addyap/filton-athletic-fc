@@ -51,7 +51,12 @@ function MatchStrip({ sidebar }: { sidebar?: ReactNode }) {
   if (!next && !last) {
     return (
       <section aria-label="Season status" className="border-b border-slate-200 bg-slate-50">
-        <div className={`mx-auto max-w-6xl gap-6 px-4 py-8 sm:px-6 ${sidebar ? 'grid sm:grid-cols-5 sm:items-start' : ''}`}>
+        <div className="mx-auto max-w-6xl px-4 pt-8 sm:px-6">
+          <h2 className="text-xs font-bold uppercase tracking-widest text-[#0b2d52]">
+            Matchday <span className="text-slate-400">&middot; #FATS #UTF</span>
+          </h2>
+        </div>
+        <div className={`mx-auto max-w-6xl gap-6 px-4 pb-8 pt-4 sm:px-6 ${sidebar ? 'grid sm:grid-cols-5 sm:items-start' : ''}`}>
           <div className={`rounded-xl border border-[#0b2d52] bg-[#0b2d52] p-5 text-center text-white sm:p-6 ${sidebar ? 'sm:col-span-3' : ''}`}>
             <span className="text-xs font-semibold uppercase tracking-wide text-[#a9e0b8]">
               2026/27 season
@@ -77,7 +82,12 @@ function MatchStrip({ sidebar }: { sidebar?: ReactNode }) {
 
   return (
     <section aria-label="Latest match information" className="border-b border-slate-200 bg-slate-50">
-      <div className={`mx-auto max-w-6xl gap-6 px-4 py-10 sm:px-6 ${hasSecondColumn ? 'grid sm:grid-cols-5 sm:items-start' : ''}`}>
+      <div className="mx-auto max-w-6xl px-4 pt-8 sm:px-6">
+        <h2 className="text-xs font-bold uppercase tracking-widest text-[#0b2d52]">
+          Matchday <span className="text-slate-400">&middot; #FATS #UTF</span>
+        </h2>
+      </div>
+      <div className={`mx-auto max-w-6xl gap-6 px-4 pb-10 pt-4 sm:px-6 ${hasSecondColumn ? 'grid sm:grid-cols-5 sm:items-start' : ''}`}>
         {next && (
           <div
             className={`relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#1c3f6e] via-[#0f2c52] to-[#0a2340] text-white shadow-lg ${hasSecondColumn ? 'sm:col-span-3' : ''}`}
