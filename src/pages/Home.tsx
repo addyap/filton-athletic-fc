@@ -2,9 +2,6 @@ import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import crestTrimmed from '../assets/img/filton-athletic-crest-trimmed.webp'
 import playersWantedPoster from '../assets/img/players-wanted.jpg'
-import councilMeetingPhoto from '../assets/img/council-meeting-ground-improvements.jpg'
-import councilGroundPlansPhoto from '../assets/img/filton-council-ground-plans.jpg'
-import macmillanGolfPhoto from '../assets/img/macmillan-golf-challenge.jpg'
 import bbsPlumbingLogo from '../assets/img/sponsors/bbs-plumbing.webp'
 import filtonFeastLogo from '../assets/img/sponsors/filton-feast.webp'
 import firstAutoCareTechsLogo from '../assets/img/sponsors/first-auto-care-techs.webp'
@@ -20,6 +17,7 @@ import PitchBackdrop from '../components/PitchBackdrop'
 import ConcordeMark from '../components/ConcordeMark'
 import MatchStrip from '../components/MatchStrip'
 import XTimeline from '../components/XTimeline'
+import NewsFeed from '../components/NewsFeed'
 import SectionHeading from '../components/SectionHeading'
 import { BootMark, NewspaperMark, TrophyMark, JerseyMark, RosetteMark } from '../components/SectionArt'
 import FixturesSection from '../components/sections/FixturesSection'
@@ -171,68 +169,8 @@ function Home() {
         <NewspaperMark className="pointer-events-none absolute -right-6 -top-6 h-48 w-48 text-[#0b2d52]/[0.06] sm:h-64 sm:w-64" />
         <div className="relative mx-auto max-w-6xl px-6 py-14">
         <SectionHeading icon="chat" title="Club news" className="justify-center" />
-        <div className="mt-6 grid gap-6 sm:grid-cols-2">
-          <div className="overflow-hidden rounded-lg border border-slate-200">
-            <div className="grid grid-cols-2">
-              <img
-                src={councilMeetingPhoto}
-                alt="Filton Athletic FC and Filton Town Council — thank you to local residents for coming along to the meeting about ground improvements."
-                className="h-full w-full object-cover"
-              />
-              <img
-                src={councilGroundPlansPhoto}
-                alt="Aerial view of BBS Park North, Elm Park, showing the outline plans for potential ground improvements."
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div className="p-5">
-              <div className="flex items-center gap-3">
-                <span className="rounded bg-[#e7f0e9] px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-[#2f6b45]">
-                  Club news
-                </span>
-                <span className="text-xs text-slate-500">{formatPostDate('2026-07-14')}</span>
-              </div>
-              <p className="mt-3 font-semibold text-[#0b2d52]">Thank you to local residents — ground improvements meeting</p>
-              <p className="mt-2 text-sm text-slate-600">
-                Thank you to everyone who came along to this week&rsquo;s meeting with Filton Town Council
-                about improving our ground. Since moving back to Elm Park in 2024, the Club and Council have
-                worked in partnership on the pitch-wide barrier &mdash; and with the first team pushing up the
-                leagues, any future promotion would mean facilities need to meet FA standards. Your feedback
-                and ideas on the outline plans were greatly appreciated, and we&rsquo;re proud to be working
-                with the Council to support our club, our ground and our community.
-              </p>
-            </div>
-          </div>
-          <div className="overflow-hidden rounded-lg border border-slate-200">
-            <img
-              src={macmillanGolfPhoto}
-              alt="Filton's Finest completed the Macmillan Longest Day Golf Challenge on 3rd June 2026, raising £1,750 so far for Macmillan Cancer Support."
-              className="w-full object-cover"
-            />
-            <div className="p-5">
-              <div className="flex items-center gap-3">
-                <span className="rounded bg-[#e7f0e9] px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-[#2f6b45]">
-                  Club news
-                </span>
-                <span className="text-xs text-slate-500">{formatPostDate('2026-06-03')}</span>
-              </div>
-              <p className="mt-3 font-semibold text-[#0b2d52]">Macmillan Longest Day Golf Challenge — £1,750 raised</p>
-              <p className="mt-2 text-sm text-slate-600">
-                Congratulations to Oliver Keeble, Mark Woodrow and Matthew Price for completing the Macmillan
-                Longest Day Golf Challenge on 3 June 2026, raising an amazing &pound;1,750 so far for
-                Macmillan Cancer Support.
-              </p>
-              <a
-                className="mt-3 inline-block text-sm font-semibold text-[#0b2d52] underline"
-                href="https://longestdaygolf.macmillan.org.uk/Team/filtonsfinest"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Donate to Filton&rsquo;s Finest &rarr;
-              </a>
-            </div>
-          </div>
-        </div>
+        <p className="mt-1 text-center text-sm text-slate-500">The latest from across the club and every team.</p>
+        <NewsFeed limit={4} />
         </div>
       </section>
 
