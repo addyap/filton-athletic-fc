@@ -2,24 +2,25 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import crest from '../assets/img/filton-athletic-crest-transparent.webp'
 
-type NavLink = { href: string; label: string; external?: boolean }
+type NavLink = { href: string; label: string; external?: boolean; groupEnd?: boolean }
 
 const countyLeagueUrl = 'https://countyleague.co.uk/'
 const fullTimeUrl = 'https://fulltime.thefa.com/index.html?league=5545575'
 
+// groupEnd marks the last link in a logical cluster — a divider is rendered after it.
 const navLinks: NavLink[] = [
-  { href: '/#join', label: 'Join Us' },
+  { href: '/#join', label: 'Join Us', groupEnd: true },
   { href: '/#squad', label: 'First Team' },
   { href: '/reserves', label: 'Reserves' },
   { href: '/as-team', label: "A's" },
-  { href: '/#youth', label: 'Youth' },
+  { href: '/#youth', label: 'Youth', groupEnd: true },
   { href: '/#fixtures', label: 'Fixtures' },
-  { href: '/#table', label: 'Table' },
+  { href: '/#table', label: 'Table', groupEnd: true },
   { href: '/#news', label: 'News' },
-  { href: '/#history', label: 'History' },
-  { href: '/#sponsors', label: 'Sponsors' },
-  { href: '/archive', label: 'Archive' },
-  { href: 'https://www.boca-uk.com/webshop/club-shops/filton-athletic-fc/', label: 'Shop', external: true },
+  { href: '/#history', label: 'History', groupEnd: true },
+  { href: '/#sponsors', label: 'Sponsors', groupEnd: true },
+  { href: '/archive', label: 'Archive', groupEnd: true },
+  { href: 'https://www.boca-uk.com/webshop/club-shops/filton-athletic-fc/', label: 'Shop', external: true, groupEnd: true },
   { href: '/#contact', label: 'Contact' },
 ]
 
@@ -86,29 +87,30 @@ function SiteHeader() {
             menuOpen ? 'flex flex-col py-2' : 'hidden lg:flex'
           }`}
         >
-          {navLinks.map((l) =>
-            l.external ? (
-              <a
-                key={l.href}
-                href={l.href}
-                target="_blank"
-                rel="noreferrer"
-                onClick={() => setMenuOpen(false)}
-                className="whitespace-nowrap py-2 text-base text-slate-200 hover:text-white lg:py-0"
-              >
-                {l.label}
-              </a>
-            ) : (
-              <Link
-                key={l.href}
-                to={l.href}
-                onClick={() => setMenuOpen(false)}
-                className="whitespace-nowrap py-2 text-base text-slate-200 hover:text-white lg:py-0"
-              >
-                {l.label}
-              </Link>
-            ),
-          )}
+          {navLinks.map((l) => (
+            <div key={l.href} className="flex items-center">
+              {l.external ? (
+                <a
+                  href={l.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setMenuOpen(false)}
+                  className="whitespace-nowrap py-2 text-base text-slate-200 hover:text-white lg:py-0"
+                >
+                  {l.label}
+                </a>
+              ) : (
+                <Link
+                  to={l.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="whitespace-nowrap py-2 text-base text-slate-200 hover:text-white lg:py-0"
+                >
+                  {l.label}
+                </Link>
+              )}
+              {l.groupEnd && <span aria-hidden="true" className="ml-5 hidden h-4 w-px bg-white/20 lg:block" />}
+            </div>
+          ))}
         </div>
       </nav>
     </header>
