@@ -2,22 +2,25 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import crest from '../assets/img/filton-athletic-crest-transparent.webp'
 
-type NavLink = { href: string; label: string; external?: boolean }
+type NavLink = { href: string; label: string; external?: boolean; groupEnd?: boolean }
 
 const countyLeagueUrl = 'https://countyleague.co.uk/'
 const fullTimeUrl = 'https://fulltime.thefa.com/index.html?league=5545575'
 
+// groupEnd marks the last link in a logical cluster — a divider is rendered after it.
 const navLinks: NavLink[] = [
-  { href: '/#join', label: 'Join Us' },
-  { href: '/#youth', label: 'Youth' },
-  { href: '/#news', label: 'News' },
-  { href: '/#history', label: 'History' },
-  { href: '/#squad', label: 'Squad' },
+  { href: '/#join', label: 'Join Us', groupEnd: true },
+  { href: '/#squad', label: 'First Team' },
+  { href: '/reserves', label: 'Reserves' },
+  { href: '/as-team', label: "A's" },
+  { href: '/#youth', label: 'Youth', groupEnd: true },
   { href: '/#fixtures', label: 'Fixtures' },
-  { href: '/programmes', label: '2025/26 Archive' },
-  { href: '/#table', label: 'Table' },
-  { href: '/#sponsors', label: 'Sponsors' },
-  { href: 'https://www.boca-uk.com/webshop/club-shops/filton-athletic-fc/', label: 'Shop', external: true },
+  { href: '/#table', label: 'Table', groupEnd: true },
+  { href: '/#news', label: 'News' },
+  { href: '/#history', label: 'History', groupEnd: true },
+  { href: '/#sponsors', label: 'Sponsors', groupEnd: true },
+  { href: '/archive', label: 'Archive', groupEnd: true },
+  { href: 'https://www.boca-uk.com/webshop/club-shops/filton-athletic-fc/', label: 'Shop', external: true, groupEnd: true },
   { href: '/#contact', label: 'Contact' },
 ]
 
@@ -81,29 +84,31 @@ function SiteHeader() {
             <span className="text-sm font-semibold sm:text-base lg:hidden">Filton Athletic FC</span>
           </Link>
 
-          {/* Desktop links — centred inline row. */}
-          <div className="ml-auto hidden items-center gap-4 lg:flex xl:gap-5">
-            {navLinks.map((l) =>
-              l.external ? (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="whitespace-nowrap text-[15px] text-slate-200 hover:text-white"
-                >
-                  {l.label}
-                </a>
-              ) : (
-                <Link
-                  key={l.href}
-                  to={l.href}
-                  className="whitespace-nowrap text-[15px] text-slate-200 hover:text-white"
-                >
-                  {l.label}
-                </Link>
-              ),
-            )}
+          {/* Desktop links — inline row, right-aligned. groupEnd renders a divider
+              after a cluster (mirrors the mobile menu's grouping). */}
+          <div className="ml-auto hidden items-center gap-3 lg:flex xl:gap-4">
+            {navLinks.map((l) => (
+              <div key={l.href} className="flex items-center gap-3 xl:gap-4">
+                {l.external ? (
+                  <a
+                    href={l.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="whitespace-nowrap text-[15px] text-slate-200 hover:text-white"
+                  >
+                    {l.label}
+                  </a>
+                ) : (
+                  <Link
+                    to={l.href}
+                    className="whitespace-nowrap text-[15px] text-slate-200 hover:text-white"
+                  >
+                    {l.label}
+                  </Link>
+                )}
+                {l.groupEnd && <span aria-hidden="true" className="h-4 w-px bg-white/20" />}
+              </div>
+            ))}
           </div>
 
           {/* Mobile menu toggle. */}

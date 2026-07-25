@@ -2,15 +2,12 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
-import SectionHeading from '../components/SectionHeading'
 import { programmes } from '../data/programmes'
-import { squad2025_26 } from '../data/club'
-import { playerPhotos2025_26 } from '../data/playerPhotos'
 
 function ProgrammesIndex() {
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.title = '2025/26 programmes archive — Filton Athletic FC'
+    document.title = 'Matchday programmes — Filton Athletic FC'
     return () => {
       document.title = 'Filton Athletic FC'
     }
@@ -22,13 +19,14 @@ function ProgrammesIndex() {
 
       <section className="border-b border-slate-200 bg-gradient-to-b from-[#1c3f6e] to-[#0a2340] text-white">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-          <p className="text-xs uppercase tracking-wide text-[#a9e0b8] sm:text-sm">
-            2025/26 season archive
-          </p>
-          <h2 className="mt-2 text-2xl font-bold sm:text-3xl lg:text-4xl">Matchday programmes</h2>
+          <p className="text-xs uppercase tracking-wide text-[#a9e0b8] sm:text-sm">Matchday programmes</p>
+          <h2 className="mt-2 text-2xl font-bold sm:text-3xl lg:text-4xl">Every home programme, in one place</h2>
           <p className="mt-3 max-w-2xl text-sm text-slate-100 sm:text-base">
-            Digital programmes from every home game of the 2025/26 season at BBS Park North. 2026/27
-            programmes will appear here once the new season&rsquo;s fixtures are confirmed.
+            Digital programmes from every home game, past and future. Looking for full-season fixtures,
+            results, the table or the squad instead?{' '}
+            <Link to="/archive" className="underline hover:text-white">
+              Visit the season archive &rarr;
+            </Link>
           </p>
         </div>
       </section>
@@ -72,28 +70,6 @@ function ProgrammesIndex() {
               </Link>
             )
           })}
-        </div>
-
-        <div className="mt-14">
-          <SectionHeading icon="shirt" title="2025/26 squad" className="justify-center" />
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {squad2025_26.map((p) => (
-              <div key={p.name} className="overflow-hidden rounded-lg border border-slate-200">
-                {playerPhotos2025_26[p.name] && (
-                  <img
-                    src={playerPhotos2025_26[p.name]}
-                    alt={`${p.name} — Filton Athletic FC, 2025/26 season`}
-                    className="aspect-square w-full object-cover object-top"
-                  />
-                )}
-                <div className="p-4">
-                  <p className="font-semibold text-[#0b2d52]">{p.name}</p>
-                  <p className="text-xs font-medium uppercase tracking-wide text-[#3f8a5b]">{p.position}</p>
-                  <p className="mt-2 text-sm text-slate-600">{p.blurb}</p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </main>
 
