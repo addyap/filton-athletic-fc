@@ -9,16 +9,16 @@ const fullTimeUrl = 'https://fulltime.thefa.com/index.html?league=5545575'
 
 const navLinks: NavLink[] = [
   { href: '/#join', label: 'Join Us' },
-  { href: '/#youth', label: 'Youth' },
-  { href: '/#news', label: 'News' },
-  { href: '/#history', label: 'History' },
-  { href: '/#squad', label: 'Squad' },
-  { href: '/#fixtures', label: 'Fixtures' },
-  { href: '/#table', label: 'Table' },
+  { href: '/#squad', label: 'First Team' },
   { href: '/reserves', label: 'Reserves' },
   { href: '/as-team', label: "A's" },
-  { href: '/archive', label: 'Archive' },
+  { href: '/#youth', label: 'Youth' },
+  { href: '/#fixtures', label: 'Fixtures' },
+  { href: '/#table', label: 'Table' },
+  { href: '/#news', label: 'News' },
+  { href: '/#history', label: 'History' },
   { href: '/#sponsors', label: 'Sponsors' },
+  { href: '/archive', label: 'Archive' },
   { href: 'https://www.boca-uk.com/webshop/club-shops/filton-athletic-fc/', label: 'Shop', external: true },
   { href: '/#contact', label: 'Contact' },
 ]

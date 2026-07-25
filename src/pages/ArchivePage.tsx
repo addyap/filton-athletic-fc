@@ -4,13 +4,7 @@ import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
 import SectionHeading from '../components/SectionHeading'
 import LeagueTableWidget from '../components/LeagueTableWidget'
-import {
-  firstTeamFixtures2025_26,
-  leagueTable2025_26,
-  reserveTable2025_26,
-  reserveFixtures2025_26,
-  squad2025_26,
-} from '../data/club'
+import { firstTeamFixtures2025_26, leagueTable2025_26, squad2025_26 } from '../data/club'
 import { playerPhotos2025_26 } from '../data/playerPhotos'
 
 function resultBadge(result?: string) {
@@ -89,42 +83,6 @@ function ArchivePage() {
                       </span>
                     </td>
                     <td className="hidden px-3 py-1.5 text-slate-600 md:table-cell">{f.scorers ?? '-'}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div className="mt-14">
-          <SectionHeading icon="standings" title="Reserves — final table" className="justify-center" />
-          <p className="mt-1 text-center text-sm text-slate-500">Bristol &amp; Suburban Senior League 2025/26</p>
-          <div className="mt-6">
-            <LeagueTableWidget rows={reserveTable2025_26} highlight="Filton Athletic Reserves" />
-          </div>
-
-          <h4 className="mt-12 text-center text-xl font-bold text-[#0b2d52]">Reserves fixtures</h4>
-          <div className="mt-6 overflow-x-auto rounded-lg border border-slate-200">
-            <table className="min-w-full text-sm">
-              <thead className="bg-[#0b2d52] text-white">
-                <tr>
-                  <th className="px-3 py-2 text-left font-semibold">Date</th>
-                  <th className="hidden px-3 py-2 text-left font-semibold sm:table-cell">Comp</th>
-                  <th className="px-3 py-2 text-left font-semibold">Opponent</th>
-                  <th className="px-3 py-2 text-left font-semibold">Venue</th>
-                  <th className="hidden px-3 py-2 text-left font-semibold md:table-cell">Ground</th>
-                </tr>
-              </thead>
-              <tbody>
-                {reserveFixtures2025_26.map((f) => (
-                  <tr key={`${f.date}-${f.opponent}`} className="border-t border-slate-200 odd:bg-white even:bg-slate-50">
-                    <td className="whitespace-nowrap px-3 py-1.5">
-                      {f.date} <span className="text-slate-500">{f.time}</span>
-                    </td>
-                    <td className="hidden px-3 py-1.5 sm:table-cell">{f.competition}</td>
-                    <td className="px-3 py-1.5">{f.opponent}</td>
-                    <td className="px-3 py-1.5">{f.venue}</td>
-                    <td className="hidden px-3 py-1.5 text-slate-600 md:table-cell">{f.ground}</td>
                   </tr>
                 ))}
               </tbody>

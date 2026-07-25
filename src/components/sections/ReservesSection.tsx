@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import SectionHeading from '../SectionHeading'
 import LeagueTableWidget from '../LeagueTableWidget'
 import { reserveTable, reserveFixtures } from '../../data/club'
@@ -54,12 +53,6 @@ function ReservesSection() {
           )}
         </>
       )}
-
-      <p className="mt-4 text-center text-sm text-slate-500">
-        <Link to="/archive" className="font-medium text-[#0b2d52] underline">
-          2025/26 reserves archive &rarr;
-        </Link>
-      </p>
     </section>
   )
 }
