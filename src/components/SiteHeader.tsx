@@ -165,36 +165,64 @@ function SiteHeader() {
             onClick={closeMenu}
             className="fixed inset-x-0 bottom-0 top-full z-40 bg-black/40 lg:hidden"
           />
-          <div
+          <nav
             id="mobile-navigation"
+            aria-label="Primary"
             className="absolute inset-x-0 top-full z-50 max-h-[70vh] overflow-y-auto border-t border-white/10 bg-[#0a2745] shadow-xl lg:hidden"
           >
-            <div className="flex flex-col px-4 py-1 sm:px-6">
-              {navLinks.map((l) =>
-                l.external ? (
-                  <a
-                    key={l.href}
-                    href={l.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={closeMenu}
-                    className="border-b border-white/5 py-3 text-base text-slate-200 hover:text-white"
-                  >
-                    {l.label}
-                  </a>
-                ) : (
-                  <Link
-                    key={l.href}
-                    to={l.href}
-                    onClick={closeMenu}
-                    className="border-b border-white/5 py-3 text-base text-slate-200 hover:text-white"
-                  >
-                    {l.label}
-                  </Link>
-                ),
-              )}
+            <div className="flex flex-col px-4 py-2 sm:px-6">
+              {navLinks.map((l) => (
+                <div key={l.href}>
+                  {l.external ? (
+                    <a
+                      href={l.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={closeMenu}
+                      className="block py-3 text-base text-slate-200 hover:text-white"
+                    >
+                      {l.label}
+                    </a>
+                  ) : (
+                    <Link
+                      to={l.href}
+                      onClick={closeMenu}
+                      className="block py-3 text-base text-slate-200 hover:text-white"
+                    >
+                      {l.label}
+                    </Link>
+                  )}
+                  {/* Divider after a logical cluster — mirrors the desktop nav's group separators. */}
+                  {l.groupEnd && <span aria-hidden="true" className="my-1.5 block h-px bg-white/15" />}
+                </div>
+              ))}
+
+              {/* Affiliated links — carried over from the desktop masthead so they're
+                  reachable on mobile too. */}
+              <span aria-hidden="true" className="my-1.5 block h-px bg-white/15" />
+              <p className="pb-1 pt-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
+                Affiliated links
+              </p>
+              <a
+                href={countyLeagueUrl}
+                target="_blank"
+                rel="noreferrer"
+                onClick={closeMenu}
+                className="block py-2 text-base text-slate-200 hover:text-white"
+              >
+                Marcliff Gloucestershire County Football League
+              </a>
+              <a
+                href={fullTimeUrl}
+                target="_blank"
+                rel="noreferrer"
+                onClick={closeMenu}
+                className="block py-2 text-base text-slate-200 hover:text-white"
+              >
+                FA Full-Time &mdash; league tables &amp; results
+              </a>
             </div>
-          </div>
+          </nav>
         </>
       )}
     </header>
