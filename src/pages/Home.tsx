@@ -21,6 +21,7 @@ import ConcordeMark from '../components/ConcordeMark'
 import MatchStrip from '../components/MatchStrip'
 import XTimeline from '../components/XTimeline'
 import SectionHeading from '../components/SectionHeading'
+import { BootMark, NewspaperMark, TrophyMark, JerseyMark, RosetteMark } from '../components/SectionArt'
 import FixturesSection from '../components/sections/FixturesSection'
 import TableSection from '../components/sections/TableSection'
 import YouthSection from '../components/sections/YouthSection'
@@ -121,8 +122,9 @@ function Home() {
       />
 
       {/* Join Us */}
-      <section id="join" className="border-b border-slate-200 bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-14">
+      <section id="join" className="relative overflow-hidden border-b border-slate-200 bg-white">
+        <BootMark className="pointer-events-none absolute -right-6 -top-6 h-48 w-48 text-[#0b2d52]/[0.06] sm:h-64 sm:w-64" />
+        <div className="relative mx-auto max-w-6xl px-6 py-14">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start">
             <div className="text-center lg:flex-1 lg:text-left">
               <SectionHeading icon="join" title="Join us" className="justify-center lg:justify-start" />
@@ -165,7 +167,9 @@ function Home() {
       <YouthSection />
 
       {/* News */}
-      <section id="news" className="mx-auto max-w-6xl px-6 py-14">
+      <section id="news" className="relative overflow-hidden">
+        <NewspaperMark className="pointer-events-none absolute -right-6 -top-6 h-48 w-48 text-[#0b2d52]/[0.06] sm:h-64 sm:w-64" />
+        <div className="relative mx-auto max-w-6xl px-6 py-14">
         <SectionHeading icon="chat" title="Club news" className="justify-center" />
         <div className="mt-6 grid gap-6 sm:grid-cols-2">
           <div className="overflow-hidden rounded-lg border border-slate-200">
@@ -229,11 +233,13 @@ function Home() {
             </div>
           </div>
         </div>
+        </div>
       </section>
 
       {/* History */}
-      <section id="history" className="border-t border-slate-200 bg-slate-50">
-        <div className="mx-auto max-w-6xl px-6 py-14">
+      <section id="history" className="relative overflow-hidden border-t border-slate-200 bg-slate-50">
+        <TrophyMark className="pointer-events-none absolute -right-4 -top-6 h-52 w-44 text-[#0b2d52]/[0.06] sm:h-72 sm:w-60" />
+        <div className="relative mx-auto max-w-6xl px-6 py-14">
           <SectionHeading icon="clock" title="Our history" className="justify-center" />
           <p className="mt-4 max-w-3xl text-slate-700">
             Filton Athletic FC are a long-standing amateur football club based in the north of Bristol. We
@@ -291,7 +297,9 @@ function Home() {
       </section>
 
       {/* Squad */}
-      <section id="squad" className="mx-auto max-w-6xl px-6 py-14">
+      <section id="squad" className="relative overflow-hidden">
+        <JerseyMark className="pointer-events-none absolute -right-6 -top-6 h-48 w-48 text-[#0b2d52]/[0.06] sm:h-64 sm:w-64" />
+        <div className="relative mx-auto max-w-6xl px-6 py-14">
         <SectionHeading icon="shirt" title="First team squad" className="justify-center" />
         {squad.length === 0 ? (
           <div className="mt-6 rounded-lg border border-dashed border-slate-300 bg-slate-50 p-8 text-center">
@@ -327,13 +335,16 @@ function Home() {
             View the 2025/26 archive &rarr;
           </Link>
         </p>
+        </div>
       </section>
 
       <FixturesSection />
       <TableSection />
 
       {/* Sponsors */}
-      <section id="sponsors" className="mx-auto max-w-6xl px-6 py-14">
+      <section id="sponsors" className="relative overflow-hidden">
+        <RosetteMark className="pointer-events-none absolute -right-4 -top-6 h-52 w-44 text-[#0b2d52]/[0.06] sm:h-72 sm:w-60" />
+        <div className="relative mx-auto max-w-6xl px-6 py-14">
         <SectionHeading icon="heart" title="Club sponsors" className="justify-center" />
         <p className="mt-1 text-center text-sm text-slate-500">Thank you to our sponsors&hellip;</p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -365,6 +376,7 @@ function Home() {
             filtonathleticfc@outlook.com
           </a>
         </p>
+        </div>
       </section>
 
       <SiteFooter />

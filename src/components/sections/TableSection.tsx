@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom'
 import SectionHeading from '../SectionHeading'
 import LeagueTableWidget from '../LeagueTableWidget'
+import { PodiumMark } from '../SectionArt'
 import { leagueTable } from '../../data/club'
 
 function TableSection() {
   return (
-    <section id="table" className="mx-auto max-w-6xl px-6 py-14">
+    <section id="table" className="relative overflow-hidden">
+      <PodiumMark className="pointer-events-none absolute -right-6 -top-2 h-40 w-48 text-[#0b2d52]/[0.06] sm:h-52 sm:w-64" />
+      <div className="relative mx-auto max-w-6xl px-6 py-14">
       <SectionHeading icon="standings" title="League table" className="justify-center" />
       <p className="mt-1 text-center text-sm text-slate-500">Marcliff Gloucestershire County Football League 2026-27</p>
       {leagueTable.length === 0 ? (
@@ -27,6 +30,7 @@ function TableSection() {
           2025/26 archive &rarr;
         </Link>
       </p>
+      </div>
     </section>
   )
 }

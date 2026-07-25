@@ -1,10 +1,12 @@
 import SectionHeading from '../SectionHeading'
+import { RisingStarsMark } from '../SectionArt'
 import u13sGirlsTeamFlyer from '../../assets/img/u13s-girls-team.jpg'
 
 function YouthSection() {
   return (
-    <section id="youth" className="border-t border-slate-200 bg-[#0b2d52] text-white">
-      <div className="mx-auto max-w-6xl px-6 py-14">
+    <section id="youth" className="relative overflow-hidden border-t border-slate-200 bg-[#0b2d52] text-white">
+      <RisingStarsMark className="pointer-events-none absolute -right-6 -top-6 h-56 w-56 text-white/[0.08] sm:h-72 sm:w-72" />
+      <div className="relative mx-auto max-w-6xl px-6 py-14">
         <SectionHeading icon="star" title="Filton Athletic Youth FC" tone="dark" className="justify-center lg:justify-start" />
         <div className="mt-4 flex flex-col gap-8 text-center lg:flex-row lg:items-start lg:text-left">
           <div className="lg:flex-1">
