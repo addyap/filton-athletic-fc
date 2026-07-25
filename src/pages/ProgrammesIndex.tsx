@@ -2,7 +2,10 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
+import SectionHeading from '../components/SectionHeading'
 import { programmes } from '../data/programmes'
+import { squad2025_26 } from '../data/club'
+import { playerPhotos2025_26 } from '../data/playerPhotos'
 
 function ProgrammesIndex() {
   useEffect(() => {
@@ -69,6 +72,28 @@ function ProgrammesIndex() {
               </Link>
             )
           })}
+        </div>
+
+        <div className="mt-14">
+          <SectionHeading icon="shirt" title="2025/26 squad" className="justify-center" />
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {squad2025_26.map((p) => (
+              <div key={p.name} className="overflow-hidden rounded-lg border border-slate-200">
+                {playerPhotos2025_26[p.name] && (
+                  <img
+                    src={playerPhotos2025_26[p.name]}
+                    alt={`${p.name} — Filton Athletic FC, 2025/26 season`}
+                    className="aspect-square w-full object-cover object-top"
+                  />
+                )}
+                <div className="p-4">
+                  <p className="font-semibold text-[#0b2d52]">{p.name}</p>
+                  <p className="text-xs font-medium uppercase tracking-wide text-[#3f8a5b]">{p.position}</p>
+                  <p className="mt-2 text-sm text-slate-600">{p.blurb}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </main>
 
