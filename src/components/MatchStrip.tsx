@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import crestTrimmed from '../assets/img/filton-athletic-crest-trimmed.webp'
 import {
@@ -36,7 +36,8 @@ function countdownLabel(days: number) {
   return `In ${days} days`
 }
 
-function MatchStrip() {
+/** `sidebar` renders alongside the Next Match card — e.g. the X timeline — at the same visual level. */
+function MatchStrip({ sidebar }: { sidebar?: ReactNode }) {
   const next = nextFirstTeamFixture
   const last = lastFirstTeamResult
 
@@ -50,8 +51,8 @@ function MatchStrip() {
   if (!next && !last) {
     return (
       <section aria-label="Season status" className="border-b border-slate-200 bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
-          <div className="rounded-xl border border-[#0b2d52] bg-[#0b2d52] p-5 text-center text-white sm:p-6">
+        <div className={`mx-auto max-w-6xl gap-6 px-4 py-8 sm:px-6 ${sidebar ? 'grid sm:grid-cols-5 sm:items-start' : ''}`}>
+          <div className={`rounded-xl border border-[#0b2d52] bg-[#0b2d52] p-5 text-center text-white sm:p-6 ${sidebar ? 'sm:col-span-3' : ''}`}>
             <span className="text-xs font-semibold uppercase tracking-wide text-[#a9e0b8]">
               2026/27 season
             </span>
@@ -65,19 +66,21 @@ function MatchStrip() {
               .
             </p>
           </div>
+          {sidebar && <div className="sm:col-span-2">{sidebar}</div>}
         </div>
       </section>
     )
   }
 
   const nextProgramme = next ? programmeForFixture(next) : undefined
+  const hasSecondColumn = Boolean(last || sidebar)
 
   return (
     <section aria-label="Latest match information" className="border-b border-slate-200 bg-slate-50">
-      <div className={`mx-auto max-w-6xl gap-6 px-4 py-10 sm:px-6 ${last ? 'grid sm:grid-cols-5' : ''}`}>
+      <div className={`mx-auto max-w-6xl gap-6 px-4 py-10 sm:px-6 ${hasSecondColumn ? 'grid sm:grid-cols-5 sm:items-start' : ''}`}>
         {next && (
           <div
-            className={`relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#1c3f6e] via-[#0f2c52] to-[#0a2340] text-white shadow-lg ${last ? 'sm:col-span-3' : ''}`}
+            className={`relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#1c3f6e] via-[#0f2c52] to-[#0a2340] text-white shadow-lg ${hasSecondColumn ? 'sm:col-span-3' : ''}`}
           >
             <img
               src={crestTrimmed}
@@ -121,23 +124,28 @@ function MatchStrip() {
           </div>
         )}
 
-        {last && (
-          <div className={`flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8 ${next ? 'sm:col-span-2' : ''}`}>
-            <span className="w-fit rounded-full bg-[#e7f0e9] px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#2f6b45]">
-              Last result
-            </span>
-            <h3 className="mt-4 text-xl font-bold text-[#0b2d52] sm:text-2xl">
-              Filton Athletic <span className="text-slate-400">vs</span> {last.opponent}
-            </h3>
-            <p className="mt-2 text-sm text-slate-500">
-              {fixtureLongDate(last.date)} &middot; {venueLabel(last.venue)}
-            </p>
-            <div className="mt-4 flex items-center gap-2">
-              <span className={`rounded-full px-3 py-1 text-base font-bold ${resultTone(last.result!)}`}>
-                {last.result}
-              </span>
-            </div>
-            {last.scorers && <p className="mt-2 text-sm text-slate-600">{last.scorers}</p>}
+        {hasSecondColumn && (
+          <div className={`flex flex-col gap-6 ${next ? 'sm:col-span-2' : ''}`}>
+            {last && (
+              <div className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+                <span className="w-fit rounded-full bg-[#e7f0e9] px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#2f6b45]">
+                  Last result
+                </span>
+                <h3 className="mt-4 text-xl font-bold text-[#0b2d52] sm:text-2xl">
+                  Filton Athletic <span className="text-slate-400">vs</span> {last.opponent}
+                </h3>
+                <p className="mt-2 text-sm text-slate-500">
+                  {fixtureLongDate(last.date)} &middot; {venueLabel(last.venue)}
+                </p>
+                <div className="mt-4 flex items-center gap-2">
+                  <span className={`rounded-full px-3 py-1 text-base font-bold ${resultTone(last.result!)}`}>
+                    {last.result}
+                  </span>
+                </div>
+                {last.scorers && <p className="mt-2 text-sm text-slate-600">{last.scorers}</p>}
+              </div>
+            )}
+            {sidebar}
           </div>
         )}
       </div>
