@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
+import SectionHeading from '../components/SectionHeading'
+import NewsFeed from '../components/NewsFeed'
 import AsTeamSection from '../components/sections/AsTeamSection'
 
 function AsTeamPage() {
@@ -16,6 +18,10 @@ function AsTeamPage() {
     <div className="min-h-screen bg-white text-slate-900">
       <SiteHeader />
       <AsTeamSection />
+      <section className="mx-auto max-w-6xl px-6 pb-14">
+        <SectionHeading icon="chat" title="Latest news" className="justify-center" />
+        <NewsFeed team="as" emptyMessage="No A's news yet — check back soon." />
+      </section>
       <SiteFooter />
     </div>
   )
