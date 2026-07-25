@@ -8,10 +8,10 @@ body {
   margin: 0;
 }
 
-/* Offset in-page anchor jumps so section headings clear the sticky header. */
+/* Offset in-page anchor jumps so section headings clear the slim sticky nav bar. */
 section[id],
 footer[id] {
-  scroll-margin-top: 6.5rem;
+  scroll-margin-top: 4rem;
 }
 
 /* Make brand colours print (and export to PDF) faithfully. */

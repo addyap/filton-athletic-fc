@@ -237,9 +237,7 @@ function ProgrammePage() {
 
   return (
     <div className="programme-print min-h-screen bg-white text-slate-900">
-      <div className="print:hidden">
-        <SiteHeader />
-      </div>
+      <SiteHeader />
 
       <article className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
         <Link to="/programmes" className="text-sm text-[#0b2d52] underline print:hidden">
