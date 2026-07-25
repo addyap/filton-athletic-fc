@@ -14,7 +14,7 @@ const navLinks: NavLink[] = [
   { href: '/#history', label: 'History' },
   { href: '/#squad', label: 'Squad' },
   { href: '/#fixtures', label: 'Fixtures' },
-  { href: '/programmes', label: 'Programmes' },
+  { href: '/programmes', label: '2025/26 Archive' },
   { href: '/#table', label: 'Table' },
   { href: '/#sponsors', label: 'Sponsors' },
   { href: 'https://www.boca-uk.com/webshop/club-shops/filton-athletic-fc/', label: 'Shop', external: true },
