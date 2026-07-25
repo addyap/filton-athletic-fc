@@ -21,7 +21,29 @@ function resultTone(result: string) {
 function MatchStrip() {
   const next = nextFirstTeamFixture
   const last = lastFirstTeamResult
-  if (!next && !last) return null
+
+  if (!next && !last) {
+    return (
+      <section aria-label="Season status" className="border-b border-slate-200 bg-slate-50">
+        <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+          <div className="rounded-xl border border-[#0b2d52] bg-[#0b2d52] p-5 text-center text-white sm:p-6">
+            <span className="text-xs font-semibold uppercase tracking-wide text-[#a9e0b8]">
+              2026/27 season
+            </span>
+            <h3 className="mt-2 text-lg font-bold sm:text-xl">Fixtures announced soon</h3>
+            <p className="mx-auto mt-1 max-w-xl text-sm text-slate-200">
+              We&rsquo;re putting the new season&rsquo;s schedule together &mdash; check back shortly for
+              the first fixture, or{' '}
+              <a href="#join" className="font-semibold text-[#a9e0b8] underline hover:text-white">
+                get in touch if you want to play
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   const nextProgramme = next ? programmeForFixture(next) : undefined
 

@@ -13,7 +13,7 @@ import {
   type Programme,
   type TeamSheet,
 } from '../data/programmes'
-import { squad, sponsors, groundInfo, leagueTable } from '../data/club'
+import { squad2025_26 as squad, sponsors, groundInfo, leagueTable2025_26 as leagueTable } from '../data/club'
 
 function FormGuide({ form }: { form: Array<'W' | 'D' | 'L'> }) {
   if (form.length === 0) return <span className="text-sm text-slate-500">No games played yet</span>

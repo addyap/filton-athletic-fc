@@ -34,7 +34,7 @@ import SiteFooter from '../components/SiteFooter'
 import PitchBackdrop from '../components/PitchBackdrop'
 import ConcordeMark from '../components/ConcordeMark'
 import MatchStrip from '../components/MatchStrip'
-import SectionHeading, { SectionIcon } from '../components/SectionHeading'
+import SectionHeading from '../components/SectionHeading'
 import FixturesSection from '../components/sections/FixturesSection'
 import TableSection from '../components/sections/TableSection'
 import YouthSection from '../components/sections/YouthSection'
@@ -166,42 +166,17 @@ function Home() {
         </div>
       </section>
 
-      {/* News / Chairman's welcome */}
-      <section id="news" className="mx-auto max-w-6xl px-6 py-14">
-        <SectionHeading icon="chat" title="Chairman’s welcome" className="justify-center" />
-        <div className="relative mt-4 overflow-hidden rounded-lg border border-slate-200 bg-[#f7faf8] p-6">
-          <span aria-hidden="true" className="pointer-events-none absolute -top-3 right-4 font-serif text-8xl leading-none text-[#e0eee5]">&rdquo;</span>
-          <p className="relative italic text-slate-700">
-            &ldquo;After almost a month of away games we finally get to another game at home, and we are
-            looking forward to seeing everyone cheer the lads on. In that time, we have advanced to the
-            next round of the cup but have only picked up two points in the league. We do love a draw!!
-            We currently sit in fourth place on nine points having picked up two wins and three draws so
-            far. We hope to see all the fans back at the feast after the game for some food, some beer
-            and a bit of a disco.&rdquo;
-          </p>
-          <p className="mt-4 font-semibold text-[#0b2d52]">Ollie Keeble &mdash; Chairman, Filton Athletic FC</p>
-        </div>
+      <YouthSection />
 
-        <div className="relative mt-8 overflow-hidden rounded-lg border border-slate-200 p-6">
-          <span aria-hidden="true" className="pointer-events-none absolute -top-3 right-4 font-serif text-8xl leading-none text-slate-100">&rdquo;</span>
-          <div className="flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#e7f0e9] text-[#2f6b45]">
-              <SectionIcon name="chat" className="h-4 w-4" />
-            </span>
-            <h4 className="text-lg font-semibold text-[#0b2d52]">From the dugout</h4>
-          </div>
-          <p className="mt-2 text-sm font-medium text-slate-500">
-            Filton Athletic vs Ruardean Hill Rangers &mdash; 27 September 2025
+      {/* News */}
+      <section id="news" className="mx-auto max-w-6xl px-6 py-14">
+        <SectionHeading icon="chat" title="Club news" className="justify-center" />
+        <div className="mt-4 rounded-lg border border-dashed border-slate-300 bg-[#f7faf8] p-8 text-center">
+          <p className="font-semibold text-[#0b2d52]">2026/27 season welcome coming soon</p>
+          <p className="mt-1 text-sm text-slate-500">
+            We&rsquo;re putting together the chairman&rsquo;s welcome and season preview for the new
+            campaign &mdash; check back shortly.
           </p>
-          <p className="relative mt-3 text-slate-700">
-            &ldquo;Six games into the season now and still undefeated. Five in the league and through to
-            the next round in the cup. It has been a positive start given new management, new style of
-            play and a new home ground. Lots to build and work on. Similar to last season, we need to
-            start turning some of the draws into wins. There is no easy game in the league this year
-            &mdash; it would be great to finish September still unbeaten, but we need to be at it from
-            the first whistle.&rdquo;
-          </p>
-          <p className="mt-2 font-semibold text-[#0b2d52]">Kyle Thomas &mdash; First Team Manager</p>
         </div>
       </section>
 
@@ -267,29 +242,38 @@ function Home() {
       {/* Squad */}
       <section id="squad" className="mx-auto max-w-6xl px-6 py-14">
         <SectionHeading icon="shirt" title="First team squad" className="justify-center" />
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {squad.map((p) => (
-            <div key={p.name} className="overflow-hidden rounded-lg border border-slate-200">
-              {playerPhotos[p.name] && (
-                <img
-                  src={playerPhotos[p.name]}
-                  alt={`${p.name} — Filton Athletic FC`}
-                  className="aspect-square w-full object-cover object-top"
-                />
-              )}
-              <div className="p-4">
-                <p className="font-semibold text-[#0b2d52]">{p.name}</p>
-                <p className="text-xs font-medium uppercase tracking-wide text-[#3f8a5b]">{p.position}</p>
-                <p className="mt-2 text-sm text-slate-600">{p.blurb}</p>
+        {squad.length === 0 ? (
+          <div className="mt-6 rounded-lg border border-dashed border-slate-300 bg-slate-50 p-8 text-center">
+            <p className="font-semibold text-[#0b2d52]">2026/27 squad announcement coming soon</p>
+            <p className="mt-1 text-sm text-slate-500">
+              We&rsquo;re confirming registrations for the new season &mdash; the squad list will be
+              updated here shortly.
+            </p>
+          </div>
+        ) : (
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {squad.map((p) => (
+              <div key={p.name} className="overflow-hidden rounded-lg border border-slate-200">
+                {playerPhotos[p.name] && (
+                  <img
+                    src={playerPhotos[p.name]}
+                    alt={`${p.name} — Filton Athletic FC`}
+                    className="aspect-square w-full object-cover object-top"
+                  />
+                )}
+                <div className="p-4">
+                  <p className="font-semibold text-[#0b2d52]">{p.name}</p>
+                  <p className="text-xs font-medium uppercase tracking-wide text-[#3f8a5b]">{p.position}</p>
+                  <p className="mt-2 text-sm text-slate-600">{p.blurb}</p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </section>
 
       <FixturesSection />
       <TableSection />
-      <YouthSection />
 
       {/* Sponsors */}
       <section id="sponsors" className="mx-auto max-w-6xl px-6 py-14">

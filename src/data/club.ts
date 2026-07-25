@@ -22,7 +22,14 @@ export const officials = {
 
 export type Squaddie = { name: string; position: string; blurb: string }
 
-export const squad: Squaddie[] = [
+/**
+ * 2026/27 squad — cleared pending confirmation from the club for the new
+ * season. Populate this once player registrations are finalised.
+ */
+export const squad: Squaddie[] = []
+
+/** Archived 2025/26 squad, kept for that season's matchday programmes. */
+export const squad2025_26: Squaddie[] = [
   { name: 'Tom Bradley', position: 'GK', blurb: 'Joined us last season after two extremely successful seasons with Avonmouth, bringing experience at both Gloucester County League and Weston League levels. A huge presence on and off the pitch.' },
   { name: 'Chris Hillyer', position: 'Defender', blurb: 'The modern day centre half. Great on the ball, quick, strong, technically brilliant and a free kick specialist.' },
   { name: 'Jack Cole', position: 'Defender (Captain)', blurb: 'Rolls Royce. Quick, aggressive, physical, fit, long range passing and a leader. Transitioned from midfield last season and has been a revelation.' },
@@ -56,7 +63,14 @@ export type Fixture = {
   scorers?: string
 }
 
-export const firstTeamFixtures: Fixture[] = [
+/**
+ * 2026/27 first-team fixture list — cleared pending the new league
+ * schedule. Populate once fixtures are confirmed.
+ */
+export const firstTeamFixtures: Fixture[] = []
+
+/** Archived 2025/26 first-team fixtures & results. */
+export const firstTeamFixtures2025_26: Fixture[] = [
   { date: '09/08/25', time: '15:00', competition: 'GCL', opponent: 'Henbury & Rockleaze', venue: 'H', result: 'D 0-0' },
   { date: '16/08/25', time: '15:00', competition: 'GCL', opponent: 'Chalford', venue: 'H', result: 'W 4-0', scorers: 'D Quick 3, T Merrett' },
   { date: '23/08/25', time: '15:00', competition: 'GCL', opponent: 'Wick', venue: 'A', result: 'W 4-1', scorers: 'D Quick, K Cooper, T Merrett 2' },
@@ -95,7 +109,11 @@ export const firstTeamFixtures: Fixture[] = [
 
 export type ReserveFixture = { date: string; time: string; competition: string; opponent: string; venue: 'H' | 'A'; ground: string }
 
-export const reserveFixtures: ReserveFixture[] = [
+/** 2026/27 reserve fixtures — cleared pending the new league schedule. */
+export const reserveFixtures: ReserveFixture[] = []
+
+/** Archived 2025/26 reserve fixtures. */
+export const reserveFixtures2025_26: ReserveFixture[] = [
   { date: '27/09/25', time: '14:00', competition: 'SEN', opponent: 'Brislington 2nd', venue: 'A', ground: 'Ironmould Lane' },
   { date: '04/10/25', time: '14:00', competition: 'ABC', opponent: 'Almondsbury Reserves', venue: 'A', ground: 'The Field' },
   { date: '11/10/25', time: '14:00', competition: 'SEN', opponent: 'Hartcliffe FC First', venue: 'A', ground: 'Creswicke Road' },
@@ -119,7 +137,11 @@ export const reserveFixtures: ReserveFixture[] = [
 
 export type TableRow = { pos: number; team: string; p: number; w: number; d: number; l: number; f: number; a: number; gd: number; pts: number }
 
-export const leagueTable: TableRow[] = [
+/** 2026/27 league table — cleared pending the season starting. */
+export const leagueTable: TableRow[] = []
+
+/** Archived final 2025/26 league table. */
+export const leagueTable2025_26: TableRow[] = [
   { pos: 1, team: 'Sharpness', p: 5, w: 5, d: 0, l: 0, f: 13, a: 5, gd: 8, pts: 15 },
   { pos: 2, team: 'Frampton United', p: 5, w: 4, d: 0, l: 1, f: 10, a: 7, gd: 3, pts: 12 },
   { pos: 3, team: 'Quedgeley Wanderers', p: 4, w: 3, d: 1, l: 0, f: 9, a: 3, gd: 6, pts: 10 },
@@ -139,7 +161,11 @@ export const leagueTable: TableRow[] = [
   { pos: 17, team: 'Chalford', p: 3, w: 0, d: 0, l: 3, f: 1, a: 8, gd: -7, pts: 0 },
 ]
 
-export const reserveTable: TableRow[] = [
+/** 2026/27 reserve league table — cleared pending the season starting. */
+export const reserveTable: TableRow[] = []
+
+/** Archived final 2025/26 reserve league table. */
+export const reserveTable2025_26: TableRow[] = [
   { pos: 1, team: 'AFC Bohemia First', p: 2, w: 2, d: 0, l: 0, f: 16, a: 6, gd: 10, pts: 6 },
   { pos: 2, team: 'Cosmos UK Saturday First', p: 2, w: 2, d: 0, l: 0, f: 4, a: 0, gd: 4, pts: 6 },
   { pos: 3, team: 'Wessex Wanderers Reserves', p: 2, w: 1, d: 1, l: 0, f: 6, a: 3, gd: 3, pts: 4 },

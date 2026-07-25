@@ -47,16 +47,29 @@ function LeagueTable({ rows, highlight }: { rows: typeof leagueTable; highlight:
 }
 
 function TableSection() {
+  if (leagueTable.length === 0 && reserveTable.length === 0) {
+    return (
+      <section id="table" className="mx-auto max-w-6xl px-6 py-14">
+        <SectionHeading icon="standings" title="League table" className="justify-center" />
+        <p className="mt-1 text-center text-sm text-slate-500">Marcliff Gloucestershire County Football League 2026-27</p>
+        <div className="mt-6 rounded-lg border border-dashed border-slate-300 bg-white p-8 text-center">
+          <p className="font-semibold text-[#0b2d52]">Table will appear once the 2026/27 season is under way</p>
+          <p className="mt-1 text-sm text-slate-500">No matches played yet &mdash; check back after the first round of fixtures.</p>
+        </div>
+      </section>
+    )
+  }
+
   return (
     <section id="table" className="mx-auto max-w-6xl px-6 py-14">
       <SectionHeading icon="standings" title="League table" className="justify-center" />
-      <p className="mt-1 text-center text-sm text-slate-500">Marcliff Gloucestershire County Football League 2025-26</p>
+      <p className="mt-1 text-center text-sm text-slate-500">Marcliff Gloucestershire County Football League 2026-27</p>
       <div className="mt-6">
         <LeagueTable rows={leagueTable} highlight="Filton Athletic" />
       </div>
 
       <h4 className="mt-12 text-center text-xl font-bold text-[#0b2d52]">Filton Reserves</h4>
-      <p className="mt-1 text-center text-sm text-slate-500">Bristol &amp; Suburban Senior League 2025-26</p>
+      <p className="mt-1 text-center text-sm text-slate-500">Bristol &amp; Suburban Senior League 2026-27</p>
       <div className="mt-6">
         <LeagueTable rows={reserveTable} highlight="Filton Athletic Reserves" />
       </div>

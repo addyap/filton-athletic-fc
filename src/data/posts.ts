@@ -18,15 +18,15 @@ export type Post = {
  */
 export const posts: Post[] = [
   {
-    slug: 'first-team-players-2025-26',
-    title: 'First team players wanted for the 2025/26 season',
-    date: '2025-09-27',
+    slug: 'first-team-players-2026-27',
+    title: 'First team players wanted for the 2026/27 season',
+    date: '2026-07-24',
     category: 'Players',
     excerpt:
       'We are always looking to add to our squad as we push up the Marcliff Gloucestershire County Football League.',
     body: [
-      'Filton Athletic are looking for committed players to add to our first team squad. We compete in the Marcliff Gloucestershire County Football League, having been promoted as Champions from the Bristol & Suburban Premier Division in 2023-24.',
-      'Under new management this season we are building a side that plays on the front foot, and we want players who will work hard for each other. Training and home matches are at BBS Park North, Filton Leisure Centre, Elm Park.',
+      'Filton Athletic are looking for committed players to add to our first team squad ahead of the 2026/27 season. We compete in the Marcliff Gloucestershire County Football League, having been promoted as Champions from the Bristol & Suburban Premier Division in 2023-24.',
+      'We are building a side that plays on the front foot, and we want players who will work hard for each other. Training and home matches are at BBS Park North, Filton Leisure Centre, Elm Park.',
       'Whatever your position, if you think you can add something to the group we would love to hear from you. Come down, meet the lads and see what the club is about.',
     ],
     contactEmail: 'filtonathleticfc@outlook.com',
@@ -34,7 +34,7 @@ export const posts: Post[] = [
   {
     slug: 'reserve-team-players',
     title: 'Reserve team looking for players',
-    date: '2025-09-27',
+    date: '2026-07-24',
     category: 'Players',
     excerpt:
       'Our Reserves compete in the Bristol & Suburban Senior Division and are keen to hear from players of all levels.',
@@ -48,7 +48,7 @@ export const posts: Post[] = [
   {
     slug: 'youth-players-and-coaches',
     title: 'Youth players and volunteer coaches wanted',
-    date: '2025-09-27',
+    date: '2026-07-24',
     category: 'Youth',
     excerpt:
       'Filton Athletic Youth run teams from YDS through to U12s — mixed groups of boys and girls, all welcome.',
@@ -65,7 +65,7 @@ export const posts: Post[] = [
   {
     slug: 'volunteers-and-committee',
     title: 'Get involved off the pitch — volunteers welcome',
-    date: '2025-09-27',
+    date: '2026-07-24',
     category: 'Volunteers',
     excerpt:
       'The club is run entirely by volunteers, and there is always a job to be done on a matchday.',

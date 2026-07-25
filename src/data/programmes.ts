@@ -1,6 +1,7 @@
 import {
   firstTeamFixtures,
-  leagueTable,
+  firstTeamFixtures2025_26,
+  leagueTable2025_26,
   type Fixture,
   type TableRow,
 } from './club'
@@ -212,8 +213,8 @@ const programmeExtras: Record<string, ProgrammeExtras> = {
   },
 }
 
-/** All home first-team fixtures, each turned into a programme, in date order. */
-export const programmes: Programme[] = firstTeamFixtures
+/** All 2025/26 home first-team fixtures, each turned into an archived programme, in date order. */
+export const programmes: Programme[] = firstTeamFixtures2025_26
   .filter((f) => f.venue === 'H')
   .map((fixture) => {
     const base = slugify(fixture.opponent)
@@ -252,10 +253,10 @@ function normaliseTeam(name: string): string {
     .trim()
 }
 
-/** Find a league-table row for a fixture opponent, tolerating naming differences. */
+/** Find a 2025/26 league-table row for a fixture opponent, tolerating naming differences. */
 export function findTableRow(team: string): TableRow | undefined {
   const target = normaliseTeam(team)
-  return leagueTable.find((r) => {
+  return leagueTable2025_26.find((r) => {
     const t = normaliseTeam(r.team)
     return t === target || t.startsWith(target) || target.startsWith(t)
   })
@@ -263,18 +264,18 @@ export function findTableRow(team: string): TableRow | undefined {
 
 export const filtonTableRow = findTableRow('Filton Athletic')
 
-/** Last `count` completed first-team results before `beforeIso`, oldest → newest. */
+/** Last `count` completed 2025/26 first-team results before `beforeIso`, oldest → newest. */
 export function formBefore(beforeIso: string, count = 5): Array<'W' | 'D' | 'L'> {
-  return firstTeamFixtures
+  return firstTeamFixtures2025_26
     .filter((f) => f.result && /^[WDL]/.test(f.result) && isoDate(f.date) < beforeIso)
     .sort((a, b) => isoDate(a.date).localeCompare(isoDate(b.date)))
     .slice(-count)
     .map((f) => f.result![0] as 'W' | 'D' | 'L')
 }
 
-/** The reverse (away) fixture against the same opponent, if any. */
+/** The reverse (away) 2025/26 fixture against the same opponent, if any. */
 export function reverseFixtureFor(opponent: string): Fixture | undefined {
-  return firstTeamFixtures.find((f) => f.opponent === opponent && f.venue === 'A')
+  return firstTeamFixtures2025_26.find((f) => f.opponent === opponent && f.venue === 'A')
 }
 
 /** The next first-team fixture still to be played (no result recorded yet). */
