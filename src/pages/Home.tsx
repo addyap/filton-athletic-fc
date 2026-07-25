@@ -200,8 +200,8 @@ function Home() {
               <p className="font-semibold text-[#0b2d52]">Macmillan Longest Day Golf Challenge — £1,750 raised</p>
               <p className="mt-2 text-sm text-slate-600">
                 Congratulations to Oliver Keeble, Mark Woodrow and Matthew Price for completing the Macmillan
-                Longest Day Golf Challenge, raising an amazing &pound;1,750 so far for Macmillan Cancer
-                Support.
+                Longest Day Golf Challenge on 3 June 2026, raising an amazing &pound;1,750 so far for
+                Macmillan Cancer Support.
               </p>
               <a
                 className="mt-3 inline-block text-sm font-semibold text-[#0b2d52] underline"
