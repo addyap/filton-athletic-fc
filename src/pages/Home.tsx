@@ -2,6 +2,8 @@ import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import crestTrimmed from '../assets/img/filton-athletic-crest-trimmed.webp'
 import playersWantedPoster from '../assets/img/players-wanted.jpg'
+import councilMeetingPhoto from '../assets/img/council-meeting-ground-improvements.jpg'
+import macmillanGolfPhoto from '../assets/img/macmillan-golf-challenge.jpg'
 import chrisHillyerPhoto from '../assets/img/players/chris-hillyer.webp'
 import jackColePhoto from '../assets/img/players/jack-cole.webp'
 import jackWillmorPhoto from '../assets/img/players/jack-willmor.webp'
@@ -138,7 +140,7 @@ function Home() {
             <div className="mx-auto w-full max-w-[300px] rounded-lg border border-slate-200 bg-white p-3 shadow-sm lg:order-first lg:mx-0">
               <img
                 src={playersWantedPoster}
-                alt="Players wanted — join Filton Athletic FC. First team competing in the County League, Reserves in the Suburban Premier, A's in Suburban Division 4. Training Tuesday and Thursday, 6:30pm at Elm Park. All positions considered, all abilities welcome."
+                alt="Players wanted — join Filton Athletic FC. First team competing in the County League, Reserves in the Suburban Premier, A's in Suburban Division 4. Training Tuesday and Thursday, 6:15pm at Elm Park. All positions considered, all abilities welcome."
                 className="w-full rounded"
               />
             </div>
@@ -171,12 +173,46 @@ function Home() {
       {/* News */}
       <section id="news" className="mx-auto max-w-6xl px-6 py-14">
         <SectionHeading icon="chat" title="Club news" className="justify-center" />
-        <div className="mt-4 rounded-lg border border-dashed border-slate-300 bg-[#f7faf8] p-8 text-center">
-          <p className="font-semibold text-[#0b2d52]">2026/27 season welcome coming soon</p>
-          <p className="mt-1 text-sm text-slate-500">
-            We&rsquo;re putting together the chairman&rsquo;s welcome and season preview for the new
-            campaign &mdash; check back shortly.
-          </p>
+        <div className="mt-6 grid gap-6 sm:grid-cols-2">
+          <div className="overflow-hidden rounded-lg border border-slate-200">
+            <img
+              src={councilMeetingPhoto}
+              alt="Filton Athletic FC and Filton Town Council — thank you to local residents for coming along to the meeting about ground improvements."
+              className="w-full object-cover"
+            />
+            <div className="p-5">
+              <p className="font-semibold text-[#0b2d52]">Thank you to local residents — ground improvements meeting</p>
+              <p className="mt-2 text-sm text-slate-600">
+                Thank you to everyone who came along to this week&rsquo;s meeting with Filton Town Council
+                about improving our ground. Your feedback and ideas were greatly appreciated, and we&rsquo;re
+                proud to be working in partnership with the Council to support our club, our ground and our
+                community.
+              </p>
+            </div>
+          </div>
+          <div className="overflow-hidden rounded-lg border border-slate-200">
+            <img
+              src={macmillanGolfPhoto}
+              alt="Filton's Finest completed the Macmillan Longest Day Golf Challenge on 3rd June 2026, raising £1,750 so far for Macmillan Cancer Support."
+              className="w-full object-cover"
+            />
+            <div className="p-5">
+              <p className="font-semibold text-[#0b2d52]">Macmillan Longest Day Golf Challenge — £1,750 raised</p>
+              <p className="mt-2 text-sm text-slate-600">
+                Congratulations to Oliver Keeble, Mark Woodrow and Matthew Price for completing the Macmillan
+                Longest Day Golf Challenge, raising an amazing &pound;1,750 so far for Macmillan Cancer
+                Support.
+              </p>
+              <a
+                className="mt-3 inline-block text-sm font-semibold text-[#0b2d52] underline"
+                href="https://longestdaygolf.macmillan.org.uk/Team/filtonsfinest"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Donate to Filton&rsquo;s Finest &rarr;
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 

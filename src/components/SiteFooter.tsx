@@ -8,6 +8,7 @@ const mapsEmbedUrl = `https://www.google.com/maps?q=${mapsQuery}&output=embed`
 
 const shopUrl = 'https://www.boca-uk.com/webshop/club-shops/filton-athletic-fc/'
 const xUrl = 'https://x.com/FiltonAthletic'
+const facebookUrl = 'https://www.facebook.com/FiltonAthleticFC'
 
 function SiteFooter() {
   return (
@@ -42,6 +43,12 @@ function SiteFooter() {
               Email:{' '}
               <a className="text-[#0b2d52] underline" href="mailto:filtonathleticfc@outlook.com">
                 filtonathleticfc@outlook.com
+              </a>
+            </p>
+            <p className="mt-1">
+              Facebook:{' '}
+              <a className="text-[#0b2d52] underline" href={facebookUrl} target="_blank" rel="noreferrer">
+                Filton Athletic FC
               </a>
             </p>
             <p className="mt-1">
