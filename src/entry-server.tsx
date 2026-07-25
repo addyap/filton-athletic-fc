@@ -19,9 +19,12 @@ export function render(url: string): { appHtml: string; head: PageHead } {
 export function getRoutePaths(): string[] {
   return [
     '/',
+    '/archive',
     '/programmes',
     '/fixtures',
     '/table',
+    '/reserves',
+    '/as-team',
     '/youth',
     '/contact',
     ...programmes.map((p) => `/programme/${p.slug}`),

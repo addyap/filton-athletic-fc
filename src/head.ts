@@ -20,6 +20,15 @@ export function headForPath(pathname: string): PageHead {
   const path = pathname.replace(/\/+$/, '') || '/'
   const base = { canonical: `${SITE_ORIGIN}${path === '/' ? '/' : path}`, ogImage: OG_IMAGE }
 
+  if (path === '/archive') {
+    return {
+      ...base,
+      title: '2025/26 season archive — Filton Athletic FC',
+      description:
+        'Filton Athletic FC 2025/26 season archive — full fixtures, results, final league table and squad. First team finished 2nd in the Marcliff Gloucestershire County Football League.',
+    }
+  }
+
   if (path === '/programmes') {
     return {
       ...base,
@@ -34,7 +43,7 @@ export function headForPath(pathname: string): PageHead {
       ...base,
       title: 'Fixtures & results — Filton Athletic FC',
       description:
-        'Filton Athletic FC first team fixtures and results in the Marcliff Gloucestershire County Football League, 2025-26 season.',
+        'Filton Athletic FC first team fixtures and results in the Marcliff Gloucestershire County Football League, 2026-27 season.',
     }
   }
 
@@ -42,8 +51,24 @@ export function headForPath(pathname: string): PageHead {
     return {
       ...base,
       title: 'League table — Filton Athletic FC',
+      description: 'Marcliff Gloucestershire County Football League table for Filton Athletic FC, 2026-27 season.',
+    }
+  }
+
+  if (path === '/reserves') {
+    return {
+      ...base,
+      title: 'Reserves — Filton Athletic FC',
       description:
-        'Marcliff Gloucestershire County Football League and Bristol & Suburban Senior League tables for Filton Athletic FC, 2025-26 season.',
+        'Filton Athletic FC Reserves fixtures, results and table in the Bristol & Suburban Premier Division, 2026-27 season.',
+    }
+  }
+
+  if (path === '/as-team') {
+    return {
+      ...base,
+      title: "A's — Filton Athletic FC",
+      description: "Filton Athletic FC A's team, competing in the Bristol & Suburban Division 4.",
     }
   }
 
