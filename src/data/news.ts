@@ -1,4 +1,5 @@
 import type { TeamId } from './teams'
+import fatsWorldCupFlag from '../assets/img/fats-world-cup-flag.png'
 import councilMeetingPhoto from '../assets/img/council-meeting-ground-improvements.jpg'
 import councilGroundPlansPhoto from '../assets/img/filton-council-ground-plans.jpg'
 import macmillanGolfPhoto from '../assets/img/macmillan-golf-challenge.jpg'
@@ -32,6 +33,20 @@ export type NewsItem = {
  * edits required.
  */
 export const news: NewsItem[] = [
+  {
+    slug: 'fats-at-the-world-cup',
+    title: 'Flying the flag at the World Cup',
+    date: '2026-07-25',
+    teams: ['first-team'],
+    excerpt:
+      'First Team Manager Kyle Thomas took the #FATS flag all the way to the World Cup — Filton Athletic flying proudly alongside the Three Lions on the game’s biggest stage. Full story and photos to come, so watch this space. #FATS #UTF',
+    images: [
+      {
+        src: fatsWorldCupFlag,
+        alt: 'The Filton Athletic #FATS supporters’ flag — a St George’s Cross with the England crest, the Filton Athletic FC crest and a “Lest We Forget” poppy — taken to the World Cup by First Team Manager Kyle Thomas.',
+      },
+    ],
+  },
   {
     slug: 'ground-improvements-meeting',
     title: 'Thank you to local residents — ground improvements meeting',
