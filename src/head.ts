@@ -3,7 +3,7 @@ import { getPost } from './data/posts'
 import { findSeason } from './data/seasons'
 
 /** Canonical production origin. Update here if the club moves to a custom domain. */
-export const SITE_ORIGIN = 'https://filton-athletic-fc.vercel.app'
+export const SITE_ORIGIN = 'https://filtonathletic.co.uk'
 const OG_IMAGE = `${SITE_ORIGIN}/favicon.jpg`
 
 export type PageHead = {

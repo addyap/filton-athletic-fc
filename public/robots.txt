@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://filton-athletic-fc.vercel.app/sitemap.xml
+Sitemap: https://filtonathletic.co.uk/sitemap.xml
