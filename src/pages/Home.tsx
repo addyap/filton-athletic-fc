@@ -32,8 +32,21 @@ import {
   officials,
   squad,
   sponsors,
-  groundInfo,
 } from '../data/club'
+
+const historyTimeline = [
+  { year: '1960s', text: 'Founded as St. Andrews Meth.' },
+  { year: '1986', text: 'Renamed Filton Athletic FC.' },
+  { year: '2023', text: 'Filton Athletic FC Youth Team established (U7–U12, YDS).' },
+  {
+    year: '2023/24',
+    text: 'Champions of the Bristol & Suburban Premier Division — promoted to the Marcliff Gloucestershire County Football League.',
+  },
+  {
+    year: '2025',
+    text: 'Ground upgrades completed — first team, reserves and youth all now play at BBS Park North.',
+  },
+]
 
 const sponsorLogos: Record<string, string> = {
   'BBS Plumbing & Heating Supplies': bbsPlumbingLogo,
@@ -196,55 +209,53 @@ function Home() {
         <Reveal className="relative mx-auto max-w-6xl px-6 py-14">
           <SectionHeading icon="clock" title="Our history" className="justify-center" />
           <p className="mt-4 max-w-3xl text-slate-700">
-            Filton Athletic FC are a long-standing amateur football club based in the north of Bristol. We
-            started out as St. Andrews Meth back in the 1960s, then changed to Filton Athletic FC in 1986.
+            Filton Athletic FC are a long-standing amateur football club based in the north of Bristol.
           </p>
-          <p className="mt-3 max-w-3xl text-slate-700">
-            We are currently made up of two adult football teams who both play regularly on a Saturday
-            afternoon. Our first team compete in the Marcliff Gloucestershire County Football League,
-            having been promoted as Champions from the Bristol &amp; Suburban Premier Division in 2023-24.
-            Our Reserve team compete in the Bristol &amp; Suburban Premier Division. {groundInfo.note}
-          </p>
-          <p className="mt-3 max-w-3xl text-slate-700">
-            In 2023 we established the Filton Athletic FC Youth Team, consisting of U7, U8, U9, U10, U11,
-            U12 and YDS age groups. The club is run by an enthusiastic and committed committee, and is
-            fortunate to be supported by some of the best fans in the world &mdash; the self-proclaimed
-            Filton Ultras!
+
+          <div className="relative mt-8 max-w-2xl">
+            <div className="absolute bottom-1 left-[7px] top-1 w-0.5 bg-slate-200" aria-hidden="true" />
+            <div className="space-y-7">
+              {historyTimeline.map((item) => (
+                <div key={item.year} className="relative flex gap-4 pl-7">
+                  <span className="absolute left-0 top-1.5 h-3.5 w-3.5 shrink-0 rounded-full border-2 border-slate-50 bg-[#0b2d52] ring-2 ring-[#0b2d52]/20" />
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-wide text-[#2f6b45]">{item.year}</p>
+                    <p className="mt-0.5 text-slate-700">{item.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <p className="mt-8 max-w-3xl text-slate-700">
+            Today we&rsquo;re made up of two adult teams playing every Saturday &mdash; the first team in the
+            Marcliff Gloucestershire County Football League, and the Reserves in the Bristol &amp; Suburban
+            Premier Division &mdash; run by an enthusiastic and committed committee, and fortunate to be
+            supported by some of the best fans in the world: the self-proclaimed Filton Ultras!
           </p>
 
           <h4 className="mt-10 text-lg font-semibold text-[#0b2d52]">Club officials</h4>
-          <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <div>
-              <p className="font-semibold">Chairman</p>
-              <p className="text-slate-700">{officials.chairman}</p>
-            </div>
-            <div>
-              <p className="font-semibold">Vice-Chairman</p>
-              <p className="text-slate-700">{officials.viceChairman}</p>
-            </div>
-            <div>
-              <p className="font-semibold">Club Secretary</p>
-              <p className="text-slate-700">{officials.secretary}</p>
-            </div>
-            <div>
-              <p className="font-semibold">First Team Manager</p>
-              <p className="text-slate-700">{officials.firstTeamManager}</p>
-            </div>
-            <div>
-              <p className="font-semibold">First Team Coaches</p>
-              <p className="text-slate-700">{officials.firstTeamCoaches.join(', ')}</p>
-            </div>
-            <div>
-              <p className="font-semibold">Reserve Team Manager</p>
-              <p className="text-slate-700">{officials.reserveTeamManager}</p>
-            </div>
-            <div>
-              <p className="font-semibold">Reserve Team Coaches</p>
-              <p className="text-slate-700">{officials.reserveTeamCoaches.join(', ')}</p>
-            </div>
-            <div className="sm:col-span-2 lg:col-span-3">
-              <p className="font-semibold">General Committee</p>
-              <p className="text-slate-700">{officials.committee.join(', ')}</p>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { role: 'Chairman', name: officials.chairman },
+              { role: 'Vice-Chairman', name: officials.viceChairman },
+              { role: 'Club Secretary', name: officials.secretary },
+              { role: 'First Team Manager', name: officials.firstTeamManager },
+              { role: 'First Team Coaches', name: officials.firstTeamCoaches.join(', ') },
+              { role: 'Reserve Team Manager', name: officials.reserveTeamManager },
+              { role: 'Reserve Team Coaches', name: officials.reserveTeamCoaches.join(', ') },
+            ].map((o) => (
+              <div
+                key={o.role}
+                className="rounded-lg border border-slate-200 bg-white p-4 transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
+              >
+                <p className="text-xs font-semibold uppercase tracking-wide text-[#2f6b45]">{o.role}</p>
+                <p className="mt-1 font-semibold text-[#0b2d52]">{o.name}</p>
+              </div>
+            ))}
+            <div className="rounded-lg border border-slate-200 bg-white p-4 transition-all duration-200 hover:-translate-y-1 hover:shadow-md sm:col-span-2 lg:col-span-3">
+              <p className="text-xs font-semibold uppercase tracking-wide text-[#2f6b45]">General Committee</p>
+              <p className="mt-1 font-semibold text-[#0b2d52]">{officials.committee.join(', ')}</p>
             </div>
           </div>
         </Reveal>
