@@ -272,7 +272,7 @@ function Home() {
         )}
         <p className="mt-4 text-center text-sm text-slate-500">
           Looking for last season&rsquo;s squad?{' '}
-          <Link to="/archive" className="font-medium text-[#0b2d52] underline">
+          <Link to="/archive/2025-26" className="font-medium text-[#0b2d52] underline">
             View the 2025/26 archive &rarr;
           </Link>
         </p>

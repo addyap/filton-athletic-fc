@@ -61,6 +61,8 @@ export type Fixture = {
   venue: 'H' | 'A' | 'N'
   result?: string
   scorers?: string
+  /** Bookings, formatted e.g. "Y Abdulrahman (Y), D Matthews (R)". */
+  cards?: string
 }
 
 /**
@@ -98,43 +100,85 @@ export const firstTeamFixtures: Fixture[] = [
   { date: '03/04/27', time: '15:00', competition: 'GCL', opponent: 'Chalford', venue: 'H' },
 ]
 
-/** Archived 2025/26 first-team fixtures & results. */
+/**
+ * Archived 2024/25 first-team fixtures & results — Division 1, finished 6th
+ * (P30 W16 D11 L3, 62-35, 59pts). Scorers and cards sourced from FA
+ * Full-Time's per-match lineup detail.
+ */
+export const firstTeamFixtures2024_25: Fixture[] = [
+  { date: '10/08/24', time: '15:00', competition: 'GCL', opponent: 'Wick', venue: 'A', result: 'D 1-1', scorers: 'F Venables', cards: 'L Dorman (Y), C Hillyer (Y)' },
+  { date: '17/08/24', time: '15:00', competition: 'GCL', opponent: 'Stoke Gifford SGS United', venue: 'H', result: 'W 2-0', scorers: 'T Merrett, S Hassan', cards: 'K Cooper (Y), K Thomas (Y), J Wilmor (Y), Y Abdulrahman (Y), C Mitchell (Y)' },
+  { date: '24/08/24', time: '15:00', competition: 'GCL', opponent: 'Gala Wilton', venue: 'H', result: 'W 4-0', scorers: 'T Merrett 2, K Thomas, F Venables', cards: 'K Cooper (Y), T Fry (Y), D Matthews (Y), T Merrett (Y), F Venables (Y), Y Abdulrahman (Y)' },
+  { date: '07/09/24', time: '15:00', competition: 'LJC', opponent: 'Gala Wilton', venue: 'A', result: 'L 1-2', scorers: 'F Venables' },
+  { date: '14/09/24', time: '15:00', competition: 'GCL', opponent: 'Bromley Heath United', venue: 'A', result: 'L 2-4', scorers: 'K Cooper, T Merrett' },
+  { date: '28/09/24', time: '15:00', competition: 'GCL', opponent: 'Cheltenham Civil Service', venue: 'H', result: 'W 4-0', scorers: 'K Cooper 2, T Fry, K Thomas', cards: 'J Cutler (Y), D Matthews (Y)' },
+  { date: '05/10/24', time: '15:00', competition: 'GCL', opponent: 'Broadwell Amateurs', venue: 'H', result: 'D 2-2', scorers: 'C Hillyer, T Merrett', cards: 'J Cole (Y), L Dorman (Y)' },
+  { date: '12/10/24', time: '15:00', competition: 'GCL', opponent: 'Totterdown United', venue: 'A', result: 'W 3-1', scorers: 'T Merrett, K Thomas, Y Abdulrahman', cards: 'T Merrett (Y)' },
+  { date: '26/10/24', time: '15:00', competition: 'GCL', opponent: 'Ruardean Hill Rangers', venue: 'H', result: 'L 1-4', scorers: 'J Cole', cards: 'Y Abdulrahman (Y), J Cutler (Y), F Venables (Y), D Matthews (R)' },
+  { date: '09/11/24', time: '14:00', competition: 'GCL', opponent: 'Henbury & Rockleaze', venue: 'H', result: 'D 1-1', scorers: 'T Merrett' },
+  { date: '30/11/24', time: '14:00', competition: 'GCL', opponent: 'Almondsbury', venue: 'H', result: 'D 2-2', scorers: 'C Mitchell, F Venables', cards: 'J Cutler (Y), C Hillyer (Y), K Thomas (Y), F Venables (Y), S Hassan (Y)' },
+  { date: '21/12/24', time: '14:00', competition: 'GCL', opponent: 'Sharpness', venue: 'H', result: 'W 2-1', scorers: 'F Venables 2', cards: 'Y Abdulrahman (Y)' },
+  { date: '28/12/24', time: '14:00', competition: 'GCL', opponent: 'Wick', venue: 'H', result: 'W 5-3', scorers: 'L Dorman, T Fry 2, T Merrett, K Thomas' },
+  { date: '08/01/25', time: '19:30', competition: 'GCL', opponent: 'Stoke Gifford SGS United', venue: 'A', result: 'D 1-1', scorers: 'T Merrett', cards: 'Y Abdulrahman (Y), L Dorman (Y), T Merrett (Y), C Mitchell (Y), D Matthews (Y)' },
+  { date: '18/01/25', time: '14:00', competition: 'GCL', opponent: 'Gala Wilton', venue: 'A', result: 'W 2-0', scorers: 'F Venables 2' },
+  { date: '25/01/25', time: '14:00', competition: 'GCL', opponent: 'Hanham Athletic', venue: 'A', result: 'W 6-1', scorers: 'Y Abdulrahman, K Cooper 2, T Fry, T Merrett 2', cards: 'Y Abdulrahman (Y), T Merrett (Y), D Matthews (Y), C Peacock (Y)' },
+  { date: '01/02/25', time: '14:00', competition: 'GCL', opponent: 'Bromley Heath United', venue: 'H', result: 'D 2-2', scorers: 'Y Abdulrahman, T Merrett', cards: 'Y Abdulrahman (Y)' },
+  { date: '22/02/25', time: '14:00', competition: 'GCL', opponent: 'Frampton United', venue: 'H', result: 'W 1-0', scorers: 'J Wilmor', cards: 'K Thomas (Y)' },
+  { date: '01/03/25', time: '15:00', competition: 'GCL', opponent: 'Ruardean Hill Rangers', venue: 'A', result: 'W 3-1', scorers: 'K Cooper 2, K Thomas', cards: 'L Dorman (Y), D Matthews (Y), J Wilmor (Y), S Hassan (Y)' },
+  { date: '08/03/25', time: '15:00', competition: 'GCL', opponent: 'Totterdown United', venue: 'H', result: 'W 2-1', scorers: 'T Merrett, F Venables', cards: 'Y Abdulrahman (Y), T Merrett (Y), D Quick (Y)' },
+  { date: '15/03/25', time: '15:00', competition: 'GCL', opponent: 'Broadwell Amateurs', venue: 'A', result: 'W 2-0', scorers: 'K Cooper, T Fry', cards: 'J Cole (Y), L Dorman (Y), T Fry (Y), K Thomas (Y)' },
+  { date: '22/03/25', time: '15:00', competition: 'GCL', opponent: 'Quedgeley Wanderers', venue: 'H', result: 'D 2-2', scorers: 'T Fry, F Pereira', cards: 'K Cooper (Y), C Hillyer (Y), K Thomas (Y), K Daniels (Y)' },
+  { date: '29/03/25', time: '15:00', competition: 'GCL', opponent: 'Almondsbury', venue: 'A', result: 'D 0-0', cards: 'Y Abdulrahman (Y)' },
+  { date: '05/04/25', time: '15:00', competition: 'GCL', opponent: 'Chalford', venue: 'H', result: 'W 2-1', scorers: 'Y Abdulrahman, K Cooper' },
+  { date: '08/04/25', time: '19:30', competition: 'GCL', opponent: 'Quedgeley Wanderers', venue: 'A', result: 'W 3-0', scorers: 'T Merrett 2, S Hassan', cards: 'K Cooper (Y)' },
+  { date: '12/04/25', time: '15:00', competition: 'GCL', opponent: 'Sharpness', venue: 'A', result: 'D 0-0', cards: 'C Hillyer (R)' },
+  { date: '16/04/25', time: '18:30', competition: 'GCL', opponent: 'Henbury & Rockleaze', venue: 'A', result: 'D 1-1', scorers: 'S Hassan' },
+  { date: '19/04/25', time: '15:00', competition: 'GCL', opponent: 'Cheltenham Civil Service', venue: 'A', result: 'D 3-3', scorers: 'T Fry, K Thomas, F Venables', cards: 'K Cooper (Y), D Matthews (Y), T Merrett (R)' },
+  { date: '26/04/25', time: '15:00', competition: 'GCL', opponent: 'Hanham Athletic', venue: 'H', result: 'W 2-1', scorers: 'L Dorman, F Venables', cards: 'Y Abdulrahman (Y), K Cooper (Y)' },
+  { date: '30/04/25', time: '18:30', competition: 'GCL', opponent: 'Chalford', venue: 'A', result: 'W 1-0', scorers: 'T Fry' },
+  { date: '05/05/25', time: '15:00', competition: 'GCL', opponent: 'Frampton United', venue: 'A', result: 'L 0-2' },
+]
+
+/**
+ * Archived 2025/26 first-team fixtures & results. Scorers and cards
+ * sourced from FA Full-Time's per-match lineup detail.
+ */
 export const firstTeamFixtures2025_26: Fixture[] = [
-  { date: '09/08/25', time: '15:00', competition: 'GCL', opponent: 'Henbury & Rockleaze', venue: 'H', result: 'D 0-0' },
-  { date: '16/08/25', time: '15:00', competition: 'GCL', opponent: 'Chalford', venue: 'H', result: 'W 4-0', scorers: 'D Quick 3, T Merrett' },
-  { date: '23/08/25', time: '15:00', competition: 'GCL', opponent: 'Wick', venue: 'A', result: 'W 4-1', scorers: 'D Quick, K Cooper, T Merrett 2' },
-  { date: '06/09/25', time: '15:00', competition: 'LJC', opponent: 'Tewkesbury Town', venue: 'A', result: 'W 4-1', scorers: 'Y Abdulrahman, D Payne, T Merrett 2' },
-  { date: '13/09/25', time: '15:00', competition: 'GCL', opponent: 'Broadwell Amateurs', venue: 'A', result: 'D 0-0' },
-  { date: '20/09/25', time: '15:00', competition: 'GCL', opponent: 'Tewkesbury Town', venue: 'A', result: 'D 1-1', scorers: 'K Thomas' },
-  { date: '27/09/25', time: '15:00', competition: 'GCL', opponent: 'Ruardean Hill Rangers', venue: 'H', result: 'W 2-0' },
-  { date: '04/10/25', time: '15:00', competition: 'GCL', opponent: 'Quedgeley Wanderers', venue: 'A', result: 'L 1-3' },
-  { date: '11/10/25', time: '15:00', competition: 'GCL', opponent: 'Hanham Athletic', venue: 'H', result: 'W 3-1' },
+  { date: '09/08/25', time: '15:00', competition: 'GCL', opponent: 'Henbury & Rockleaze', venue: 'H', result: 'D 0-0', cards: 'K Cooper (Y), J Wilmor (Y), Y Abdulrahman (Y)' },
+  { date: '16/08/25', time: '15:00', competition: 'GCL', opponent: 'Chalford', venue: 'H', result: 'W 4-0', scorers: 'D Quick 3, T Merrett', cards: 'L Dorman (Y)' },
+  { date: '23/08/25', time: '15:00', competition: 'GCL', opponent: 'Wick', venue: 'A', result: 'W 4-1', scorers: 'K Cooper, T Merrett 2, D Quick' },
+  { date: '06/09/25', time: '15:00', competition: 'LJC', opponent: 'Tewkesbury Town', venue: 'A', result: 'W 4-1', scorers: 'Y Abdulrahman, T Merrett 2, D Payne', cards: 'L Dorman (Y)' },
+  { date: '13/09/25', time: '15:00', competition: 'GCL', opponent: 'Broadwell Amateurs', venue: 'A', result: 'D 0-0', cards: 'K Cooper (Y), L Dorman (Y), J Wilmor (Y)' },
+  { date: '20/09/25', time: '15:00', competition: 'GCL', opponent: 'Tewkesbury Town', venue: 'A', result: 'D 1-1', scorers: 'K Thomas', cards: 'Y Abdulrahman (Y)' },
+  { date: '27/09/25', time: '15:00', competition: 'GCL', opponent: 'Ruardean Hill Rangers', venue: 'H', result: 'W 2-0', scorers: 'K Cooper' },
+  { date: '04/10/25', time: '15:00', competition: 'GCL', opponent: 'Quedgeley Wanderers', venue: 'A', result: 'L 1-3', scorers: 'D Quick', cards: 'Y Abdulrahman (Y), L Dorman (Y), T Merrett (Y)' },
+  { date: '11/10/25', time: '15:00', competition: 'GCL', opponent: 'Hanham Athletic', venue: 'H', result: 'W 3-1', scorers: 'K Cooper, T Merrett 2', cards: 'Y Abdulrahman (Y)' },
   { date: '18/10/25', time: '15:00', competition: 'GFA', opponent: 'Saints Old Boys', venue: 'A' },
-  { date: '25/10/25', time: '15:00', competition: 'GCL', opponent: 'Cribbs A', venue: 'A', result: 'D 1-1' },
-  { date: '01/11/25', time: '14:00', competition: 'GCL', opponent: 'Bishops Cleeve Development', venue: 'H', result: 'W 4-1' },
-  { date: '08/11/25', time: '14:00', competition: 'GCL', opponent: 'Totterdown United', venue: 'H', result: 'W 7-0' },
-  { date: '22/11/25', time: '14:00', competition: 'GCL', opponent: 'Bromley Heath United', venue: 'A', result: 'W 2-1' },
+  { date: '25/10/25', time: '15:00', competition: 'GCL', opponent: 'Cribbs A', venue: 'A', result: 'D 1-1', scorers: 'K Cooper' },
+  { date: '01/11/25', time: '14:00', competition: 'GCL', opponent: 'Bishops Cleeve Development', venue: 'H', result: 'W 4-1', scorers: 'K Cooper, T Merrett 2, T Anderson', cards: 'T Merrett (Y)' },
+  { date: '08/11/25', time: '14:00', competition: 'GCL', opponent: 'Totterdown United', venue: 'H', result: 'W 7-0', scorers: 'K Cooper 3, T Merrett, K Simpson, J Wilmor', cards: 'R Nixon (Y)' },
+  { date: '22/11/25', time: '14:00', competition: 'GCL', opponent: 'Bromley Heath United', venue: 'A', result: 'W 2-1', scorers: 'T Fry, D Quick', cards: 'T Fry (Y), E Wilson (Y)' },
   { date: '29/11/25', time: '14:00', competition: 'LJC', opponent: 'Tytherington Rocks', venue: 'A', result: 'L 0-1' },
-  { date: '20/12/25', time: '14:00', competition: 'GCL', opponent: 'Stoke Gifford SGS United', venue: 'H', result: 'W 2-1' },
-  { date: '31/01/26', time: '14:00', competition: 'GCL', opponent: 'Broadwell Amateurs', venue: 'H', result: 'W 5-0' },
-  { date: '14/02/26', time: '14:00', competition: 'GCL', opponent: 'Quedgeley Wanderers', venue: 'H', result: 'W 2-1' },
-  { date: '21/02/26', time: '14:00', competition: 'GCL', opponent: 'Hanham Athletic', venue: 'A', result: 'W 3-2' },
-  { date: '28/02/26', time: '14:00', competition: 'GCL', opponent: 'Cribbs A', venue: 'H', result: 'W 4-0' },
-  { date: '03/03/26', time: '19:45', competition: 'GCL', opponent: 'Bishops Cleeve Development', venue: 'A', result: 'W 4-2' },
-  { date: '07/03/26', time: '15:00', competition: 'GCL', opponent: 'Ruardean Hill Rangers', venue: 'A', result: 'W 2-1' },
-  { date: '18/03/26', time: '19:45', competition: 'GCL', opponent: 'Tytherington Rocks', venue: 'A', result: 'W 1-0' },
-  { date: '21/03/26', time: '15:00', competition: 'GCL', opponent: 'Bromley Heath United', venue: 'H', result: 'W 2-1' },
-  { date: '28/03/26', time: '15:00', competition: 'GCL', opponent: 'Frampton United', venue: 'A', result: 'D 0-0' },
-  { date: '04/04/26', time: '15:00', competition: 'GCL', opponent: 'Sharpness', venue: 'H', result: 'L 1-2' },
-  { date: '06/04/26', time: '15:00', competition: 'GCL', opponent: 'Tytherington Rocks', venue: 'H', result: 'L 1-2' },
-  { date: '18/04/26', time: '15:00', competition: 'GCL', opponent: 'Stoke Gifford SGS United', venue: 'A', result: 'W 3-1' },
-  { date: '21/04/26', time: '18:30', competition: 'GCL', opponent: 'Sharpness', venue: 'A', result: 'W 3-2' },
-  { date: '28/04/26', time: '18:30', competition: 'GCL', opponent: 'Chalford', venue: 'A', result: 'D 1-1' },
-  { date: '02/05/26', time: '15:00', competition: 'GCL', opponent: 'Totterdown United', venue: 'A', result: 'W 2-1' },
-  { date: '04/05/26', time: '15:00', competition: 'GCL', opponent: 'Frampton United', venue: 'H', result: 'L 1-4' },
-  { date: '06/05/26', time: '18:30', competition: 'GCL', opponent: 'Wick', venue: 'H', result: 'D 1-1' },
-  { date: '09/05/26', time: '15:00', competition: 'GCL', opponent: 'Tewkesbury Town', venue: 'H', result: 'L 0-2' },
-  { date: '12/05/26', time: '18:30', competition: 'GCL', opponent: 'Henbury & Rockleaze', venue: 'A', result: 'D 2-2' },
+  { date: '20/12/25', time: '14:00', competition: 'GCL', opponent: 'Stoke Gifford SGS United', venue: 'H', result: 'W 2-1', scorers: 'J Cole, T Merrett', cards: 'T Fry (Y)' },
+  { date: '31/01/26', time: '14:00', competition: 'GCL', opponent: 'Broadwell Amateurs', venue: 'H', result: 'W 5-0', scorers: 'F Joe Frazer, T Merrett 2, K Thomas, T Anderson', cards: 'K Cooper (Y), F Joe Frazer (Y), T Fry (Y), M Tovey (Y)' },
+  { date: '14/02/26', time: '14:00', competition: 'GCL', opponent: 'Quedgeley Wanderers', venue: 'H', result: 'W 2-1', scorers: 'T Merrett', cards: 'K Thomas (Y), J Wilmor (Y), D Quick (Y)' },
+  { date: '21/02/26', time: '14:00', competition: 'GCL', opponent: 'Hanham Athletic', venue: 'A', result: 'W 3-2', scorers: 'T Merrett, D Quick, D Payne', cards: 'F Joe Frazer (Y)' },
+  { date: '28/02/26', time: '14:00', competition: 'GCL', opponent: 'Cribbs A', venue: 'H', result: 'W 4-0', scorers: 'K Cooper, T Merrett 3' },
+  { date: '03/03/26', time: '19:45', competition: 'GCL', opponent: 'Bishops Cleeve Development', venue: 'A', result: 'W 4-2', scorers: 'K Cooper, L Dorman, T Merrett, D Payne', cards: 'T Merrett (Y), J Mitchell (Y)' },
+  { date: '07/03/26', time: '15:00', competition: 'GCL', opponent: 'Ruardean Hill Rangers', venue: 'A', result: 'W 2-1', scorers: 'F Joe Frazer, T Merrett', cards: 'T Bradley (Y), T Merrett (Y), K Thomas (Y)' },
+  { date: '18/03/26', time: '19:45', competition: 'GCL', opponent: 'Tytherington Rocks', venue: 'A', result: 'W 1-0', scorers: 'K Cooper', cards: 'K Cooper (R)' },
+  { date: '21/03/26', time: '15:00', competition: 'GCL', opponent: 'Bromley Heath United', venue: 'H', result: 'W 2-1', scorers: 'K Cooper, F Venables' },
+  { date: '28/03/26', time: '15:00', competition: 'GCL', opponent: 'Frampton United', venue: 'A', result: 'D 0-0', cards: 'M Tovey (Y)' },
+  { date: '04/04/26', time: '15:00', competition: 'GCL', opponent: 'Sharpness', venue: 'H', result: 'L 1-2', scorers: 'T Fry', cards: 'T Bradley (Y), F Joe Frazer (R), C Hillyer (Y), T Merrett (Y), M Tovey (Y)' },
+  { date: '06/04/26', time: '15:00', competition: 'GCL', opponent: 'Tytherington Rocks', venue: 'H', result: 'L 1-2', scorers: 'C Hillyer' },
+  { date: '18/04/26', time: '15:00', competition: 'GCL', opponent: 'Stoke Gifford SGS United', venue: 'A', result: 'W 3-1', scorers: 'K Cooper, T Merrett, F Venables', cards: 'Y Abdulrahman (R), T Bradley (R), K Cooper (Y), L Dorman (Y)' },
+  { date: '21/04/26', time: '18:30', competition: 'GCL', opponent: 'Sharpness', venue: 'A', result: 'W 3-2', scorers: 'J Cole, T Merrett, M Tovey', cards: 'K Cooper (Y), T Merrett (Y)' },
+  { date: '28/04/26', time: '18:30', competition: 'GCL', opponent: 'Chalford', venue: 'A', result: 'D 1-1', scorers: 'F Venables', cards: 'M Tovey (Y)' },
+  { date: '02/05/26', time: '15:00', competition: 'GCL', opponent: 'Totterdown United', venue: 'A', result: 'W 2-1', scorers: 'K Cooper, T Merrett' },
+  { date: '04/05/26', time: '15:00', competition: 'GCL', opponent: 'Frampton United', venue: 'H', result: 'L 1-4', scorers: 'T Fry', cards: 'F Joe Frazer (Y)' },
+  { date: '06/05/26', time: '18:30', competition: 'GCL', opponent: 'Wick', venue: 'H', result: 'D 1-1', scorers: 'T Merrett' },
+  { date: '09/05/26', time: '15:00', competition: 'GCL', opponent: 'Tewkesbury Town', venue: 'H', result: 'L 0-2', cards: 'K Cooper (Y), T Merrett (Y)' },
+  { date: '12/05/26', time: '18:30', competition: 'GCL', opponent: 'Henbury & Rockleaze', venue: 'A', result: 'D 2-2', scorers: 'F Joe Frazer, D Quick' },
 ]
 
 export type ReserveFixture = { date: string; time: string; competition: string; opponent: string; venue: 'H' | 'A'; ground: string }
@@ -169,6 +213,26 @@ export type TableRow = { pos: number; team: string; p: number; w: number; d: num
 
 /** 2026/27 league table — cleared pending the season starting. */
 export const leagueTable: TableRow[] = []
+
+/** Archived final 2024/25 league table — Division 1. */
+export const leagueTable2024_25: TableRow[] = [
+  { pos: 1, team: 'Almondsbury', p: 30, w: 20, d: 4, l: 6, f: 61, a: 30, gd: 31, pts: 64 },
+  { pos: 2, team: 'Stoke Gifford SGS United', p: 30, w: 19, d: 5, l: 6, f: 72, a: 26, gd: 46, pts: 62 },
+  { pos: 3, team: 'Frampton United', p: 30, w: 19, d: 5, l: 6, f: 75, a: 30, gd: 45, pts: 62 },
+  { pos: 4, team: 'Wick', p: 30, w: 19, d: 3, l: 8, f: 89, a: 47, gd: 42, pts: 60 },
+  { pos: 5, team: 'Sharpness', p: 30, w: 17, d: 8, l: 5, f: 65, a: 29, gd: 36, pts: 59 },
+  { pos: 6, team: 'Filton Athletic', p: 30, w: 16, d: 11, l: 3, f: 62, a: 35, gd: 27, pts: 59 },
+  { pos: 7, team: 'Chalford', p: 30, w: 13, d: 8, l: 9, f: 46, a: 35, gd: 11, pts: 47 },
+  { pos: 8, team: 'Bromley Heath United', p: 30, w: 13, d: 3, l: 14, f: 55, a: 44, gd: 11, pts: 42 },
+  { pos: 9, team: 'Henbury & Rockleaze', p: 30, w: 10, d: 10, l: 10, f: 45, a: 48, gd: -3, pts: 40 },
+  { pos: 10, team: 'Totterdown United', p: 30, w: 11, d: 3, l: 16, f: 44, a: 68, gd: -24, pts: 36 },
+  { pos: 11, team: 'Ruardean Hill Rangers', p: 30, w: 10, d: 5, l: 15, f: 47, a: 54, gd: -7, pts: 35 },
+  { pos: 12, team: 'Broadwell Amateurs', p: 30, w: 8, d: 8, l: 14, f: 35, a: 54, gd: -19, pts: 32 },
+  { pos: 13, team: 'Hanham Athletic', p: 30, w: 9, d: 4, l: 17, f: 61, a: 85, gd: -24, pts: 27 },
+  { pos: 14, team: 'Quedgeley Wanderers', p: 30, w: 5, d: 7, l: 18, f: 25, a: 71, gd: -46, pts: 22 },
+  { pos: 15, team: 'Cheltenham Civil Service', p: 30, w: 4, d: 3, l: 23, f: 26, a: 87, gd: -61, pts: 15 },
+  { pos: 16, team: 'Gala Wilton', p: 30, w: 3, d: 1, l: 26, f: 22, a: 87, gd: -65, pts: 10 },
+]
 
 /** Archived final 2025/26 league table. */
 export const leagueTable2025_26: TableRow[] = [

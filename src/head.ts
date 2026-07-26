@@ -1,5 +1,6 @@
 import { getProgramme } from './data/programmes'
 import { getPost } from './data/posts'
+import { findSeason } from './data/seasons'
 
 /** Canonical production origin. Update here if the club moves to a custom domain. */
 export const SITE_ORIGIN = 'https://filton-athletic-fc.vercel.app'
@@ -23,9 +24,20 @@ export function headForPath(pathname: string): PageHead {
   if (path === '/archive') {
     return {
       ...base,
-      title: '2025/26 season archive — Filton Athletic FC',
-      description:
-        'Filton Athletic FC 2025/26 season archive — full fixtures, results, final league table and squad. First team finished 2nd in the Marcliff Gloucestershire County Football League.',
+      title: 'Season archive — Filton Athletic FC',
+      description: 'Filton Athletic FC season archive — fixtures, results, final league tables and squads from past first-team seasons.',
+    }
+  }
+
+  const archiveSeasonMatch = path.match(/^\/archive\/([^/]+)$/)
+  if (archiveSeasonMatch) {
+    const season = findSeason(archiveSeasonMatch[1])
+    if (season) {
+      return {
+        ...base,
+        title: `${season.label} season archive — Filton Athletic FC`,
+        description: `Filton Athletic FC ${season.label} season archive — full fixtures, results, final league table${season.squad ? ' and squad' : ''}. ${season.standing}`,
+      }
     }
   }
 

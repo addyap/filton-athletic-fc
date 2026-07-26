@@ -4,6 +4,7 @@ import AppRoutes from './AppRoutes'
 import { headForPath, type PageHead } from './head'
 import { programmes } from './data/programmes'
 import { posts } from './data/posts'
+import { seasons } from './data/seasons'
 
 /** Render a single route to static HTML plus its resolved <head> metadata. */
 export function render(url: string): { appHtml: string; head: PageHead } {
@@ -29,5 +30,6 @@ export function getRoutePaths(): string[] {
     '/contact',
     ...programmes.map((p) => `/programme/${p.slug}`),
     ...posts.map((p) => `/join/${p.slug}`),
+    ...seasons.map((s) => `/archive/${s.slug}`),
   ]
 }
