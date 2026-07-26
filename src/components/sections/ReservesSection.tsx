@@ -57,8 +57,8 @@ function ReservesSection() {
 
       <p className="mt-6 text-center text-sm text-slate-500">
         Looking for last season?{' '}
-        <Link to="/archive/2025-26" className="font-medium text-[#0b2d52] underline">
-          View the 2025/26 archive &rarr;
+        <Link to="/archive/reserves" className="font-medium text-[#0b2d52] underline">
+          View the Reserves archive &rarr;
         </Link>
       </p>
     </section>

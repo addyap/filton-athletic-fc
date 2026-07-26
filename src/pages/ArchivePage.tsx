@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom'
 import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
 import SectionHeading from '../components/SectionHeading'
-import { seasons } from '../data/seasons'
 
-/** Season archive hub — links off to each fully-archived season's own page. */
+/** Top-level archive directory — links off to the First team and Reserves archive hubs. */
 function ArchivePage() {
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -24,7 +23,7 @@ function ArchivePage() {
           <p className="text-xs uppercase tracking-wide text-[#a9e0b8] sm:text-sm">Season archive</p>
           <h2 className="mt-2 text-2xl font-bold sm:text-3xl lg:text-4xl">Past seasons</h2>
           <p className="mt-3 max-w-2xl text-sm text-slate-100 sm:text-base">
-            Full fixtures, results, final tables and squads from previous first-team seasons &mdash; or{' '}
+            Full fixtures, results, final tables and squads from previous seasons &mdash; or{' '}
             <Link to="/programmes" className="underline hover:text-white">
               read the matchday programmes &rarr;
             </Link>
@@ -33,19 +32,28 @@ function ArchivePage() {
       </section>
 
       <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
-        <SectionHeading icon="standings" title="Choose a season" className="justify-center" />
+        <SectionHeading icon="standings" title="Choose a team" className="justify-center" />
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          {seasons.map((s) => (
-            <Link
-              key={s.slug}
-              to={`/archive/${s.slug}`}
-              className="block rounded-lg border border-slate-200 p-6 transition hover:border-[#0b2d52] hover:shadow-sm"
-            >
-              <h3 className="text-lg font-bold text-[#0b2d52]">{s.label}</h3>
-              <p className="mt-2 text-sm text-slate-600">{s.standing}</p>
-              <span className="mt-3 inline-block text-sm font-medium text-[#0b2d52]">View season &rarr;</span>
-            </Link>
-          ))}
+          <Link
+            to="/archive/first-team"
+            className="block rounded-lg border border-slate-200 p-6 transition hover:border-[#0b2d52] hover:shadow-sm"
+          >
+            <h3 className="text-lg font-bold text-[#0b2d52]">First team archive</h3>
+            <p className="mt-2 text-sm text-slate-600">
+              Fixtures, results, final tables and squads from every archived first-team season.
+            </p>
+            <span className="mt-3 inline-block text-sm font-medium text-[#0b2d52]">View archive &rarr;</span>
+          </Link>
+          <Link
+            to="/archive/reserves"
+            className="block rounded-lg border border-slate-200 p-6 transition hover:border-[#0b2d52] hover:shadow-sm"
+          >
+            <h3 className="text-lg font-bold text-[#0b2d52]">Reserves archive</h3>
+            <p className="mt-2 text-sm text-slate-600">
+              Fixtures, results and final tables from every archived Reserves season.
+            </p>
+            <span className="mt-3 inline-block text-sm font-medium text-[#0b2d52]">View archive &rarr;</span>
+          </Link>
         </div>
       </main>
 

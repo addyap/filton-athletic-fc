@@ -26,8 +26,8 @@ function TableSection() {
           Reserves table &amp; fixtures &rarr;
         </Link>
         {' · '}
-        <Link to="/archive/2025-26" className="font-medium text-[#0b2d52] underline">
-          2025/26 archive &rarr;
+        <Link to="/archive/first-team" className="font-medium text-[#0b2d52] underline">
+          First team archive &rarr;
         </Link>
       </p>
       </div>

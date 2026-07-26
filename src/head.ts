@@ -25,18 +25,46 @@ export function headForPath(pathname: string): PageHead {
     return {
       ...base,
       title: 'Season archive — Filton Athletic FC',
-      description: 'Filton Athletic FC season archive — fixtures, results, final league tables and squads from past first-team seasons.',
+      description: 'Filton Athletic FC season archive — fixtures, results, final league tables and squads from past seasons.',
     }
   }
 
-  const archiveSeasonMatch = path.match(/^\/archive\/([^/]+)$/)
-  if (archiveSeasonMatch) {
-    const season = findSeason(archiveSeasonMatch[1])
+  if (path === '/archive/first-team') {
+    return {
+      ...base,
+      title: 'First team archive — Filton Athletic FC',
+      description: 'Filton Athletic FC first team archive — fixtures, results, final league tables and squads from every archived season.',
+    }
+  }
+
+  if (path === '/archive/reserves') {
+    return {
+      ...base,
+      title: 'Reserves archive — Filton Athletic FC',
+      description: 'Filton Athletic FC Reserves archive — fixtures, results and final league tables from every archived season.',
+    }
+  }
+
+  const firstTeamArchiveMatch = path.match(/^\/archive\/first-team\/([^/]+)$/)
+  if (firstTeamArchiveMatch) {
+    const season = findSeason(firstTeamArchiveMatch[1])
     if (season) {
       return {
         ...base,
-        title: `${season.label} season archive — Filton Athletic FC`,
-        description: `Filton Athletic FC ${season.label} season archive — full fixtures, results, final league table${season.squad ? ' and squad' : ''}. ${season.standing}`,
+        title: `First team ${season.label} archive — Filton Athletic FC`,
+        description: `Filton Athletic FC first team ${season.label} archive — full fixtures, results, final league table${season.squad ? ' and squad' : ''}. ${season.standing}`,
+      }
+    }
+  }
+
+  const reservesArchiveMatch = path.match(/^\/archive\/reserves\/([^/]+)$/)
+  if (reservesArchiveMatch) {
+    const season = findSeason(reservesArchiveMatch[1])
+    if (season?.reserveTable) {
+      return {
+        ...base,
+        title: `Reserves ${season.label} archive — Filton Athletic FC`,
+        description: `Filton Athletic FC Reserves ${season.label} archive — full fixtures, results and final league table. ${season.reserveStanding ?? ''}`,
       }
     }
   }

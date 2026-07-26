@@ -63,8 +63,8 @@ function FixturesSection() {
         )}
         <p className="mt-4 text-center text-sm text-slate-500">
           Looking for last season?{' '}
-          <Link to="/archive/2025-26" className="font-medium text-[#0b2d52] underline">
-            View the 2025/26 archive &rarr;
+          <Link to="/archive/first-team" className="font-medium text-[#0b2d52] underline">
+            View the first team archive &rarr;
           </Link>
         </p>
       </div>

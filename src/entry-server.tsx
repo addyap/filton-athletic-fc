@@ -30,6 +30,9 @@ export function getRoutePaths(): string[] {
     '/contact',
     ...programmes.map((p) => `/programme/${p.slug}`),
     ...posts.map((p) => `/join/${p.slug}`),
-    ...seasons.map((s) => `/archive/${s.slug}`),
+    '/archive/first-team',
+    '/archive/reserves',
+    ...seasons.map((s) => `/archive/first-team/${s.slug}`),
+    ...seasons.filter((s) => s.reserveTable && s.reserveFixtures).map((s) => `/archive/reserves/${s.slug}`),
   ]
 }
