@@ -16,8 +16,8 @@ function SiteFooter({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
       <footer id="contact" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-6xl px-6 py-14">
           <SectionHeading icon="pin" title="Contact & ground" className="justify-center" as={headingLevel} />
-          <div className="mt-6 grid gap-8 lg:grid-cols-2 lg:items-start">
-            <div>
+          <div className="mt-6 grid gap-8 lg:grid-cols-5 lg:items-start">
+            <div className="lg:col-span-2">
               <p className="font-semibold">Home of the first team, reserves and youth</p>
               <p className="text-slate-700">{groundInfo.name}</p>
               <p className="text-slate-700">{groundInfo.address}</p>
@@ -33,7 +33,7 @@ function SiteFooter({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
             <iframe
               title={`Map of ${groundInfo.name}`}
               src={mapsEmbedUrl}
-              className="h-64 w-full rounded-lg border border-slate-200 lg:h-full lg:min-h-[220px]"
+              className="h-80 w-full rounded-lg border border-slate-200 lg:col-span-3 lg:h-full lg:min-h-[320px]"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
