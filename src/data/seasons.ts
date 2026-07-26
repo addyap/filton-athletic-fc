@@ -1,11 +1,15 @@
-import type { Fixture, TableRow, Squaddie } from './club'
+import type { Fixture, ReserveFixture, TableRow, Squaddie } from './club'
 import {
   firstTeamFixtures2023_24,
   leagueTable2023_24,
   firstTeamFixtures2024_25,
   leagueTable2024_25,
+  reserveFixtures2024_25,
+  reserveTable2024_25,
   firstTeamFixtures2025_26,
   leagueTable2025_26,
+  reserveFixtures2025_26,
+  reserveTable2025_26,
   squad2025_26,
 } from './club'
 import { playerPhotos2025_26 } from './playerPhotos'
@@ -18,6 +22,9 @@ export type SeasonArchive = {
   fixtures: Fixture[]
   squad?: Squaddie[]
   playerPhotos?: Record<string, string>
+  reserveStanding?: string
+  reserveTable?: TableRow[]
+  reserveFixtures?: ReserveFixture[]
 }
 
 /** All archived seasons, most recent first. Add a new entry here once a season is fully archived. */
@@ -30,6 +37,9 @@ export const seasons: SeasonArchive[] = [
     fixtures: firstTeamFixtures2025_26,
     squad: squad2025_26,
     playerPhotos: playerPhotos2025_26,
+    reserveStanding: 'Reserves finished 3rd in the Bristol & Suburban League, Senior division.',
+    reserveTable: reserveTable2025_26,
+    reserveFixtures: reserveFixtures2025_26,
   },
   {
     slug: '2024-25',
@@ -37,6 +47,9 @@ export const seasons: SeasonArchive[] = [
     standing: 'First team finished 6th in the Marcliff Gloucestershire County Football League, Division 1.',
     table: leagueTable2024_25,
     fixtures: firstTeamFixtures2024_25,
+    reserveStanding: 'Reserves finished 4th in the Bristol & Suburban League, Division Four.',
+    reserveTable: reserveTable2024_25,
+    reserveFixtures: reserveFixtures2024_25,
   },
   {
     slug: '2023-24',

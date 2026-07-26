@@ -218,32 +218,74 @@ export const firstTeamFixtures2025_26: Fixture[] = [
   { date: '12/05/26', time: '18:30', competition: 'GCL', opponent: 'Henbury & Rockleaze', venue: 'A', result: 'D 2-2', scorers: 'F Joe Frazer, D Quick' },
 ]
 
-export type ReserveFixture = { date: string; time: string; competition: string; opponent: string; venue: 'H' | 'A'; ground: string }
+export type ReserveFixture = {
+  date: string
+  time: string
+  competition: string
+  opponent: string
+  venue: 'H' | 'A'
+  ground: string
+  result?: string
+  scorers?: string
+  cards?: string
+}
 
 /** 2026/27 reserve fixtures — cleared pending the new league schedule. */
 export const reserveFixtures: ReserveFixture[] = []
 
-/** Archived 2025/26 reserve fixtures. */
+/**
+ * Archived 2024/25 reserve fixtures & results — Bristol & Suburban League,
+ * Division Four, finished 4th (P18 W11 D3 L4, 25-13, 36pts).
+ */
+export const reserveFixtures2024_25: ReserveFixture[] = [
+  { date: '07/09/24', time: '14:00', competition: 'BSD4', opponent: 'Hartcliffe FC First', venue: 'H', ground: 'Elm Park', result: 'W 2-1' },
+  { date: '14/09/24', time: '14:00', competition: 'BSD4', opponent: 'Broad Plain House Reserves', venue: 'A', ground: 'Creswicke Road', result: 'L 0-1', cards: 'J Reid (Y), J Phillipps (Y)' },
+  { date: '28/09/24', time: '14:00', competition: 'BSD4', opponent: 'Easton Cowboys Reserves', venue: 'H', ground: 'Elm Park', result: 'W 1-0', scorers: 'R Nixon', cards: 'C Horseman (Y), R Nixon (Y), H Bailey (Y), J Phillipps (Y)' },
+  { date: '12/10/24', time: '14:00', competition: 'ABC', opponent: 'Mendip Broadwalk Res', venue: 'A', ground: 'Filwood Park Playing Fields', result: 'L 1-2', scorers: 'F Pereira' },
+  { date: '26/10/24', time: '14:00', competition: 'BSD4', opponent: 'Phoenix NextGen First', venue: 'A', ground: 'Netham Park', result: 'L 0-4', cards: 'C Horseman (Y), J Reid (Y)' },
+  { date: '02/11/24', time: '14:00', competition: 'BSD4', opponent: 'Avonmouth Reserves', venue: 'H', ground: 'Elm Park', result: 'W 1-0', scorers: 'B Reed' },
+  { date: '09/11/24', time: '14:00', competition: 'BSD4', opponent: 'Fishponds Old Boys 1st', venue: 'H', ground: 'Elm Park', result: 'W 1-0', scorers: 'H Bailey' },
+  { date: '16/11/24', time: '14:00', competition: 'BSD4', opponent: 'Almondsbury Reserves', venue: 'H', ground: 'Elm Park', result: 'D 1-1', scorers: 'B Bennett', cards: 'A Allen (R)' },
+  { date: '23/11/24', time: '14:00', competition: 'BSD4', opponent: 'Lawrence Weston Athletic Saturday First', venue: 'H', ground: 'Elm Park', result: 'W 5-1', scorers: 'L Dart, C Peacock, B Reed, F Pereira' },
+  { date: '14/12/24', time: '14:00', competition: 'BSD4', opponent: 'Brislington 2nd', venue: 'A', ground: 'Brislington 2nd', result: 'W 3-0', scorers: 'H Bailey, J (Jay) Moore, B Reed', cards: 'C Horseman (Y)' },
+  { date: '21/12/24', time: '14:00', competition: 'BSD4', opponent: 'Broad Plain House Reserves', venue: 'H', ground: 'Elm Park', result: 'L 0-1', cards: 'T Brunt (Y), J Phillipps (Y)' },
+  { date: '01/02/25', time: '14:00', competition: 'BSD4', opponent: 'Avonmouth Reserves', venue: 'A', ground: 'St Bedes Catholic College', result: 'L 0-2', cards: 'B Reed (Y)' },
+  { date: '08/02/25', time: '14:00', competition: 'BSD4', opponent: 'Fishponds Old Boys 1st', venue: 'A', ground: 'Downend Sports Centre', result: 'W 2-0', scorers: 'B Reed' },
+  { date: '01/03/25', time: '14:00', competition: 'BSD4', opponent: 'Lawrence Weston Athletic Saturday First', venue: 'A', ground: 'Kings Weston Sports Club', result: 'W 3-1', scorers: 'H Bailey, B Reed', cards: 'H Bailey (Y), C Horseman (Y), R Nixon (Y)' },
+  { date: '08/03/25', time: '14:00', competition: 'BSD4', opponent: 'Brislington 2nd', venue: 'H', ground: 'Elm Park', result: 'W (walkover)' },
+  { date: '22/03/25', time: '14:00', competition: 'BSD4', opponent: 'Hartcliffe FC First', venue: 'A', ground: 'Creswicke Road', result: 'D 1-1', scorers: 'R Nixon', cards: 'J Phillipps (R)' },
+  { date: '05/04/25', time: '14:00', competition: 'BSD4', opponent: 'Easton Cowboys Reserves', venue: 'A', ground: 'Whitehall Sports Ground (Packers)', result: 'W 4-0', scorers: 'L Dart, R Nixon, B Reed, H Bailey' },
+  { date: '09/04/25', time: '18:15', competition: 'BSD4', opponent: 'Phoenix NextGen First', venue: 'H', ground: 'Elm Park', result: 'W 1-0', scorers: 'Y Abdulrahman', cards: 'T Brunt (Y), H Bailey (Y)' },
+  { date: '12/04/25', time: '14:00', competition: 'BSD4', opponent: 'Almondsbury Reserves', venue: 'A', ground: 'Elm Park', result: 'D 0-0', cards: 'A Perry (Y)' },
+]
+
+/**
+ * Archived 2025/26 reserve fixtures & results — Bristol & Suburban League,
+ * Senior division, finished 3rd (P20 W15 D2 L3, 46-15, 47pts). Scorers/cards
+ * are partial where FA Full-Time didn't attribute every goal to a player.
+ */
 export const reserveFixtures2025_26: ReserveFixture[] = [
-  { date: '27/09/25', time: '14:00', competition: 'SEN', opponent: 'Brislington 2nd', venue: 'A', ground: 'Ironmould Lane' },
-  { date: '04/10/25', time: '14:00', competition: 'ABC', opponent: 'Almondsbury Reserves', venue: 'A', ground: 'The Field' },
-  { date: '11/10/25', time: '14:00', competition: 'SEN', opponent: 'Hartcliffe FC First', venue: 'A', ground: 'Creswicke Road' },
-  { date: '18/10/25', time: '14:00', competition: 'GFA', opponent: 'Stoke Gifford SGS United First', venue: 'A', ground: 'Stoke Gifford United' },
-  { date: '25/10/25', time: '14:00', competition: 'SEN', opponent: 'Mendip Broadwalk Res', venue: 'H', ground: 'BBS Park North @ Elm Park' },
-  { date: '08/11/25', time: '14:00', competition: 'SEN', opponent: 'Fishponds Old Boys 1st', venue: 'A', ground: 'King George V Playing Field (Downend)' },
-  { date: '15/11/25', time: '14:00', competition: 'SEN', opponent: 'Wessex Wanderers Reserves', venue: 'H', ground: 'BBS Park North @ Elm Park' },
-  { date: '22/11/25', time: '14:00', competition: 'SEN', opponent: 'Cosmos UK Saturday First', venue: 'H', ground: 'BBS Park North @ Elm Park' },
-  { date: '29/11/25', time: '14:00', competition: 'SEN', opponent: 'Broad Plain House Reserves', venue: 'A', ground: 'Filwood Park Playing Fields' },
-  { date: '13/12/25', time: '14:00', competition: 'SEN', opponent: 'AFC Bohemia First', venue: 'A', ground: 'BAWA Healthcare & Leisure' },
-  { date: '20/12/25', time: '14:00', competition: 'SEN', opponent: 'Lawrence Weston Athletic Saturday First', venue: 'A', ground: 'Kings Weston Sports Club' },
-  { date: '10/01/26', time: '14:00', competition: 'SEN', opponent: 'Brislington 2nd', venue: 'H', ground: 'BBS Park North @ Elm Park' },
-  { date: '24/01/26', time: '14:00', competition: 'SEN', opponent: 'Mendip Broadwalk Res', venue: 'A', ground: 'Filwood Park Playing Fields' },
-  { date: '31/01/26', time: '14:00', competition: 'SEN', opponent: 'Bromley Heath United Reserves', venue: 'A', ground: 'Pomphrey Hill' },
-  { date: '07/02/26', time: '14:00', competition: 'SEN', opponent: 'Fishponds Old Boys 1st', venue: 'H', ground: 'BBS Park North @ Elm Park' },
-  { date: '14/02/26', time: '14:00', competition: 'SEN', opponent: 'Wessex Wanderers Reserves', venue: 'A', ground: 'Lockleaze Sports Club' },
-  { date: '21/02/26', time: '14:00', competition: 'SEN', opponent: 'Broad Plain House Reserves', venue: 'H', ground: 'BBS Park North @ Elm Park' },
-  { date: '07/03/26', time: '14:00', competition: 'SEN', opponent: 'AFC Bohemia First', venue: 'H', ground: 'BBS Park North @ Elm Park' },
-  { date: '04/04/26', time: '13:00', competition: 'SEN', opponent: 'Cosmos UK Saturday First', venue: 'A', ground: "Oakland's Park" },
+  { date: '13/09/25', time: '14:00', competition: 'SEN', opponent: 'Lawrence Weston Athletic Saturday First', venue: 'H', ground: 'Elm Park', result: 'W 6-0', scorers: 'T Boulton, S Hassan, M Hoare, R Nixon', cards: 'B Reed (Y), J Saunders (Y)' },
+  { date: '27/09/25', time: '14:00', competition: 'SEN', opponent: 'Brislington 2nd', venue: 'A', ground: 'Ironmould Lane', result: 'W 1-0', scorers: 'H Fay', cards: 'T Evans (Y), R Whalen (Y), A Allen (Y)' },
+  { date: '04/10/25', time: '14:00', competition: 'ABC', opponent: 'Almondsbury Reserves', venue: 'A', ground: 'The Field', result: 'L 1-3', scorers: 'T Boulton' },
+  { date: '11/10/25', time: '14:00', competition: 'SEN', opponent: 'Hartcliffe FC First', venue: 'A', ground: 'Creswicke Road', result: 'W 3-1', scorers: 'L Dart, J Saunders, K Terry' },
+  { date: '25/10/25', time: '14:00', competition: 'SEN', opponent: 'Mendip Broadwalk Res', venue: 'H', ground: 'Elm Park', result: 'W 2-0', scorers: 'L Dart, R Whalen', cards: 'T Brunt (Y), J Saunders (Y), N Radford (Y)' },
+  { date: '22/11/25', time: '14:00', competition: 'SEN', opponent: 'Cosmos UK Saturday First', venue: 'H', ground: 'Elm Park', result: 'L 0-3', cards: 'T Brunt (Y)' },
+  { date: '10/01/26', time: '14:00', competition: 'SEN', opponent: 'Brislington 2nd', venue: 'H', ground: 'Elm Park', result: 'D 0-0', cards: 'T Evans (Y), R Jones (Y), J Mitchell (Y), B Reed (Y)' },
+  { date: '14/02/26', time: '14:00', competition: 'SEN', opponent: 'Wessex Wanderers Reserves', venue: 'H', ground: 'Patchway School', result: 'W 4-2', scorers: 'S Hassan, M Hoare, K Terry' },
+  { date: '21/02/26', time: '14:00', competition: 'SEN', opponent: 'Broad Plain House Reserves', venue: 'H', ground: 'Elm Park', result: 'W 5-0', scorers: 'M Hoare, R Nixon, K Terry, K Adan, J Mitchell' },
+  { date: '28/02/26', time: '14:00', competition: 'SEN', opponent: 'Fishponds Old Boys 1st', venue: 'H', ground: 'St Bedes Catholic College #1', result: 'W 2-0', scorers: 'S Hassan, B Reed', cards: 'R Jones (Y)' },
+  { date: '07/03/26', time: '14:00', competition: 'SEN', opponent: 'AFC Bohemia First', venue: 'H', ground: 'Elm Park', result: 'L 0-1', cards: 'T Brunt (Y), R Jones (Y), C Mitchell (Y)' },
+  { date: '14/03/26', time: '14:00', competition: 'SEN', opponent: 'Hartcliffe FC First', venue: 'H', ground: 'Elm Park', result: 'W 7-0', scorers: 'T Merrett, B Reed, T Boulton, S Hassan' },
+  { date: '21/03/26', time: '14:00', competition: 'SEN', opponent: 'Fishponds Old Boys 1st', venue: 'A', ground: 'King George V Playing Field (Downend)', result: 'L 0-2', cards: 'A Allen (Y), L Dart (Y), M Hoare (Y)' },
+  { date: '28/03/26', time: '14:00', competition: 'SEN', opponent: 'Bromley Heath United Reserves', venue: 'H', ground: 'Elm Park', result: 'W 4-0', scorers: 'A Allen, K Henry, B Phillips' },
+  { date: '04/04/26', time: '13:00', competition: 'SEN', opponent: 'Cosmos UK Saturday First', venue: 'A', ground: 'Oakland\'s Park', result: 'W 2-0', scorers: 'M Hoare, B Reed' },
+  { date: '11/04/26', time: '14:00', competition: 'SEN', opponent: 'AFC Bohemia First', venue: 'A', ground: 'Bawa Leisure', result: 'W 4-2', scorers: 'A Allen, K Cooper, M Hoare, T Merrett' },
+  { date: '18/04/26', time: '14:00', competition: 'SEN', opponent: 'Wessex Wanderers Reserves', venue: 'A', ground: 'Lockleaze Sports Club', result: 'W 1-0', scorers: 'T Boulton' },
+  { date: '21/04/26', time: '19:30', competition: 'SEN', opponent: 'Mendip Broadwalk Res', venue: 'A', ground: 'Filwood Park Playing Fields', result: 'D 1-1', scorers: 'B Reed' },
+  { date: '25/04/26', time: '14:00', competition: 'SEN', opponent: 'Lawrence Weston Athletic Saturday First', venue: 'A', ground: 'Kings Weston Sports Club', result: 'W 4-3', scorers: 'T Brunt, T Merrett, E Wilson, T Boulton' },
+  { date: '28/04/26', time: '18:30', competition: 'SEN', opponent: 'Bromley Heath United Reserves', venue: 'A', ground: 'Pomphrey Hill', result: 'W (walkover)' },
+  { date: '02/05/26', time: '14:00', competition: 'SEN', opponent: 'Broad Plain House Reserves', venue: 'A', ground: 'Filwood Park Playing Fields', result: 'W (walkover)' },
 ]
 
 export type TableRow = { pos: number; team: string; p: number; w: number; d: number; l: number; f: number; a: number; gd: number; pts: number }
@@ -311,19 +353,33 @@ export const leagueTable2025_26: TableRow[] = [
 /** 2026/27 reserve league table — cleared pending the season starting. */
 export const reserveTable: TableRow[] = []
 
-/** Archived final 2025/26 reserve league table. */
+/** Archived final 2024/25 reserve league table — Division Four. */
+export const reserveTable2024_25: TableRow[] = [
+  { pos: 1, team: 'Avonmouth Reserves', p: 18, w: 15, d: 0, l: 3, f: 48, a: 20, gd: 28, pts: 45 },
+  { pos: 2, team: 'Phoenix NextGen First', p: 17, w: 13, d: 2, l: 2, f: 55, a: 29, gd: 26, pts: 41 },
+  { pos: 3, team: 'Almondsbury Reserves', p: 18, w: 11, d: 3, l: 4, f: 45, a: 30, gd: 15, pts: 36 },
+  { pos: 4, team: 'Filton Athletic Reserves', p: 18, w: 11, d: 3, l: 4, f: 25, a: 13, gd: 12, pts: 36 },
+  { pos: 5, team: 'Hartcliffe FC First', p: 18, w: 7, d: 3, l: 8, f: 34, a: 34, gd: 0, pts: 24 },
+  { pos: 6, team: 'Broad Plain House Reserves', p: 18, w: 7, d: 0, l: 11, f: 22, a: 29, gd: -7, pts: 21 },
+  { pos: 7, team: 'Lawrence Weston Athletic Saturday First', p: 18, w: 5, d: 2, l: 11, f: 34, a: 60, gd: -26, pts: 17 },
+  { pos: 8, team: 'Brislington 2nd', p: 18, w: 4, d: 3, l: 11, f: 26, a: 46, gd: -20, pts: 15 },
+  { pos: 9, team: 'Fishponds Old Boys 1st', p: 17, w: 4, d: 1, l: 12, f: 32, a: 45, gd: -13, pts: 13 },
+  { pos: 10, team: 'Easton Cowboys Reserves', p: 18, w: 2, d: 3, l: 13, f: 30, a: 45, gd: -15, pts: 8 },
+]
+
+/** Archived final 2025/26 reserve league table — Senior division. */
 export const reserveTable2025_26: TableRow[] = [
-  { pos: 1, team: 'AFC Bohemia First', p: 2, w: 2, d: 0, l: 0, f: 16, a: 6, gd: 10, pts: 6 },
-  { pos: 2, team: 'Cosmos UK Saturday First', p: 2, w: 2, d: 0, l: 0, f: 4, a: 0, gd: 4, pts: 6 },
-  { pos: 3, team: 'Wessex Wanderers Reserves', p: 2, w: 1, d: 1, l: 0, f: 6, a: 3, gd: 3, pts: 4 },
-  { pos: 4, team: 'Hartcliffe FC First', p: 2, w: 1, d: 1, l: 0, f: 4, a: 3, gd: 1, pts: 4 },
-  { pos: 5, team: 'Filton Athletic Reserves', p: 1, w: 1, d: 0, l: 0, f: 6, a: 0, gd: 6, pts: 3 },
-  { pos: 6, team: 'Mendip Broadwalk Res', p: 1, w: 1, d: 0, l: 0, f: 6, a: 2, gd: 4, pts: 3 },
-  { pos: 7, team: 'Fishponds Old Boys 1st', p: 2, w: 1, d: 0, l: 1, f: 11, a: 10, gd: 1, pts: 3 },
-  { pos: 8, team: 'Brislington 2nd', p: 2, w: 0, d: 0, l: 2, f: 3, a: 8, gd: -5, pts: 0 },
-  { pos: 9, team: 'Bromley Heath United Reserves', p: 2, w: 0, d: 0, l: 2, f: 2, a: 7, gd: -5, pts: 0 },
-  { pos: 10, team: 'Broad Plain House Reserves', p: 2, w: 0, d: 0, l: 2, f: 1, a: 8, gd: -7, pts: 0 },
-  { pos: 11, team: 'Lawrence Weston Athletic Saturday First', p: 2, w: 0, d: 0, l: 2, f: 2, a: 14, gd: -12, pts: 0 },
+  { pos: 1, team: 'Mendip Broadwalk Res', p: 20, w: 15, d: 3, l: 2, f: 61, a: 13, gd: 48, pts: 48 },
+  { pos: 2, team: 'AFC Bohemia First', p: 20, w: 15, d: 2, l: 3, f: 80, a: 31, gd: 49, pts: 47 },
+  { pos: 3, team: 'Filton Athletic Reserves', p: 20, w: 15, d: 2, l: 3, f: 46, a: 15, gd: 31, pts: 47 },
+  { pos: 4, team: 'Cosmos UK Saturday First', p: 20, w: 14, d: 2, l: 4, f: 57, a: 25, gd: 32, pts: 44 },
+  { pos: 5, team: 'Wessex Wanderers Reserves', p: 20, w: 8, d: 5, l: 7, f: 46, a: 43, gd: 3, pts: 29 },
+  { pos: 6, team: 'Brislington 2nd', p: 20, w: 7, d: 3, l: 10, f: 49, a: 53, gd: -4, pts: 24 },
+  { pos: 7, team: 'Hartcliffe FC First', p: 20, w: 7, d: 3, l: 10, f: 38, a: 64, gd: -26, pts: 24 },
+  { pos: 8, team: 'Bromley Heath United Reserves', p: 20, w: 5, d: 2, l: 13, f: 35, a: 59, gd: -24, pts: 17 },
+  { pos: 9, team: 'Lawrence Weston Athletic Saturday First', p: 20, w: 5, d: 1, l: 14, f: 30, a: 85, gd: -55, pts: 16 },
+  { pos: 10, team: 'Fishponds Old Boys 1st', p: 20, w: 3, d: 3, l: 14, f: 34, a: 66, gd: -32, pts: 12 },
+  { pos: 11, team: 'Broad Plain House Reserves', p: 20, w: 3, d: 0, l: 17, f: 26, a: 48, gd: -22, pts: 9 },
 ]
 
 export const sponsors = [

@@ -139,6 +139,56 @@ function SeasonArchivePage() {
             </div>
           </div>
         )}
+
+        {data.reserveTable && data.reserveFixtures && (
+          <div className="mt-14 border-t border-slate-200 pt-14">
+            <SectionHeading icon="standings" title="Reserves — final table" className="justify-center" />
+            {data.reserveStanding && (
+              <p className="mt-1 text-center text-sm text-slate-500">{data.reserveStanding}</p>
+            )}
+            <div className="mt-6">
+              <LeagueTableWidget rows={data.reserveTable} highlight="Filton Athletic Reserves" />
+            </div>
+
+            <div className="mt-14">
+              <SectionHeading icon="calendar" title="Reserves — fixtures & results" className="justify-center" />
+              <div className="mt-6 overflow-x-auto rounded-lg border border-slate-200">
+                <table className="min-w-full text-sm">
+                  <thead className="bg-[#0b2d52] text-white">
+                    <tr>
+                      <th className="px-3 py-2 text-left font-semibold">Date</th>
+                      <th className="hidden px-3 py-2 text-left font-semibold sm:table-cell">Comp</th>
+                      <th className="px-3 py-2 text-left font-semibold">Opponent</th>
+                      <th className="px-3 py-2 text-left font-semibold">Venue</th>
+                      <th className="px-3 py-2 text-left font-semibold">Result</th>
+                      <th className="hidden px-3 py-2 text-left font-semibold md:table-cell">Scorers</th>
+                      <th className="hidden px-3 py-2 text-left font-semibold lg:table-cell">Cards</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {data.reserveFixtures.map((f) => (
+                      <tr key={`${f.date}-${f.opponent}`} className="border-t border-slate-200 odd:bg-white even:bg-slate-50">
+                        <td className="whitespace-nowrap px-3 py-1.5">
+                          {f.date} <span className="text-slate-500">{f.time}</span>
+                        </td>
+                        <td className="hidden px-3 py-1.5 sm:table-cell">{f.competition}</td>
+                        <td className="px-3 py-1.5">{f.opponent}</td>
+                        <td className="px-3 py-1.5">{f.venue}</td>
+                        <td className="px-3 py-1.5">
+                          <span className={`rounded px-2 py-0.5 text-xs font-semibold ${resultBadge(f.result)}`}>
+                            {f.result ?? 'Upcoming'}
+                          </span>
+                        </td>
+                        <td className="hidden px-3 py-1.5 text-slate-600 md:table-cell">{f.scorers ?? '-'}</td>
+                        <td className="hidden px-3 py-1.5 text-slate-600 lg:table-cell">{f.cards ?? '-'}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
 
       <SiteFooter />
