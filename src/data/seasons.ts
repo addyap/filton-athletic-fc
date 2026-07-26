@@ -1,5 +1,7 @@
 import type { Fixture, TableRow, Squaddie } from './club'
 import {
+  firstTeamFixtures2023_24,
+  leagueTable2023_24,
   firstTeamFixtures2024_25,
   leagueTable2024_25,
   firstTeamFixtures2025_26,
@@ -35,6 +37,13 @@ export const seasons: SeasonArchive[] = [
     standing: 'First team finished 6th in the Marcliff Gloucestershire County Football League, Division 1.',
     table: leagueTable2024_25,
     fixtures: firstTeamFixtures2024_25,
+  },
+  {
+    slug: '2023-24',
+    label: '2023/24',
+    standing: 'First team finished 1st, Champions of the Bristol & Suburban Premier Division — promoted to the Gloucestershire County League.',
+    table: leagueTable2023_24,
+    fixtures: firstTeamFixtures2023_24,
   },
 ]
 

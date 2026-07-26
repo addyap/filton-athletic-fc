@@ -66,6 +66,8 @@ const competitionNames: Record<string, string> = {
   GFA: 'GFA Senior Amateur Cup',
   SEN: 'Bristol & Suburban Senior League',
   ABC: 'Alf Bosley Cup',
+  BSP: 'Bristol & Suburban Premier Division',
+  BSPC: 'Bristol & Suburban League Cup',
 }
 
 export function competitionName(code: string): string {

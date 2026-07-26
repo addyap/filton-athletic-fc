@@ -101,6 +101,43 @@ export const firstTeamFixtures: Fixture[] = [
 ]
 
 /**
+ * Archived 2023/24 first-team fixtures & results — Bristol & Suburban Premier
+ * Division, finished 1st as Champions (P22 W18 D3 L1, 72-18, 57pts),
+ * promoted to the Marcliff Gloucestershire County League for 2024/25. This
+ * league's fixture pages don't record goal scorers or cards, so only
+ * results are available for this season.
+ */
+export const firstTeamFixtures2023_24: Fixture[] = [
+  { date: '02/09/23', time: '14:00', competition: 'BSP', opponent: 'Rockleaze Rangers Res', venue: 'H', result: 'W 3-2' },
+  { date: '09/09/23', time: '14:00', competition: 'BSP', opponent: 'Southmead CS Athletic', venue: 'A', result: 'W 4-1' },
+  { date: '16/09/23', time: '14:00', competition: 'BSP', opponent: 'Stoke Gifford United Res', venue: 'H', result: 'W 4-1' },
+  { date: '30/09/23', time: '14:00', competition: 'BSP', opponent: 'Bristol Spartak', venue: 'A', result: 'W 1-0' },
+  { date: '28/10/23', time: '14:00', competition: 'BSP', opponent: 'Wessex Wanderers', venue: 'H', result: 'D 1-1' },
+  { date: '11/11/23', time: '14:00', competition: 'BSP', opponent: 'Broad Plain House', venue: 'H', result: 'W 2-0' },
+  { date: '18/11/23', time: '14:00', competition: 'BSP', opponent: 'Old Cothamians', venue: 'H', result: 'W 4-2' },
+  { date: '25/11/23', time: '14:00', competition: 'BSP', opponent: 'St Aldhelms', venue: 'H', result: 'W 12-0' },
+  { date: '16/12/23', time: '14:00', competition: 'BSP', opponent: 'Southmead CS Athletic', venue: 'H', result: 'W 4-0' },
+  { date: '06/01/24', time: '14:00', competition: 'BSP', opponent: 'Rockleaze Rangers Res', venue: 'A', result: 'D 1-1' },
+  { date: '13/01/24', time: '14:00', competition: 'BSP', opponent: 'Stoke Gifford United Res', venue: 'A', result: 'W 6-1' },
+  { date: '20/01/24', time: '14:00', competition: 'BSP', opponent: 'Easton Cowboys', venue: 'H', result: 'W 1-0' },
+  { date: '27/01/24', time: '14:00', competition: 'BSPC', opponent: 'Bristol Spartak', venue: 'H', result: 'D 2-2' },
+  { date: '02/03/24', time: '14:00', competition: 'BSPC', opponent: 'Stockwood Wanderers Res', venue: 'H', result: 'W (walkover)' },
+  { date: '09/03/24', time: '14:00', competition: 'BSP', opponent: 'Redbridge', venue: 'H', result: 'W 6-0' },
+  { date: '16/03/24', time: '14:00', competition: 'BSPC', opponent: 'Old Cothamians', venue: 'H', result: 'W 3-1' },
+  { date: '23/03/24', time: '14:00', competition: 'BSP', opponent: 'Old Cothamians', venue: 'A', result: 'W 3-0' },
+  { date: '30/03/24', time: '11:00', competition: 'BSP', opponent: 'Redbridge', venue: 'A', result: 'W 5-2' },
+  { date: '03/04/24', time: '19:30', competition: 'BSPC', opponent: 'Broad Plain House', venue: 'H', result: 'W 6-1' },
+  { date: '06/04/24', time: '14:00', competition: 'BSP', opponent: 'Lawrence Weston Athletic Saturday', venue: 'H', result: 'W (walkover)' },
+  { date: '09/04/24', time: '18:15', competition: 'BSP', opponent: 'St Aldhelms', venue: 'A', result: 'W 4-1' },
+  { date: '13/04/24', time: '14:00', competition: 'BSP', opponent: 'Bristol Spartak', venue: 'H', result: 'D 1-1' },
+  { date: '20/04/24', time: '13:00', competition: 'BSP', opponent: 'Broad Plain House', venue: 'A', result: 'L 0-4' },
+  { date: '23/04/24', time: '18:30', competition: 'BSP', opponent: 'Easton Cowboys', venue: 'A', result: 'W 7-1' },
+  { date: '01/05/24', time: '19:30', competition: 'BSPC', opponent: 'Easton Cowboys', venue: 'A', result: 'L 1-2' },
+  { date: '04/05/24', time: '14:00', competition: 'BSP', opponent: 'Lawrence Weston Athletic Saturday', venue: 'A', result: 'W (walkover)' },
+  { date: '11/05/24', time: '13:00', competition: 'BSP', opponent: 'Wessex Wanderers', venue: 'A', result: 'W 3-0' },
+]
+
+/**
  * Archived 2024/25 first-team fixtures & results — Division 1, finished 6th
  * (P30 W16 D11 L3, 62-35, 59pts). Scorers and cards sourced from FA
  * Full-Time's per-match lineup detail.
@@ -213,6 +250,22 @@ export type TableRow = { pos: number; team: string; p: number; w: number; d: num
 
 /** 2026/27 league table — cleared pending the season starting. */
 export const leagueTable: TableRow[] = []
+
+/** Archived final 2023/24 league table — Bristol & Suburban Premier Division. Filton finished 1st, Champions. */
+export const leagueTable2023_24: TableRow[] = [
+  { pos: 1, team: 'Filton Athletic', p: 22, w: 18, d: 3, l: 1, f: 72, a: 18, gd: 54, pts: 57 },
+  { pos: 2, team: 'Broad Plain House', p: 22, w: 16, d: 3, l: 3, f: 73, a: 34, gd: 39, pts: 51 },
+  { pos: 3, team: 'Wessex Wanderers', p: 22, w: 15, d: 2, l: 5, f: 61, a: 28, gd: 33, pts: 47 },
+  { pos: 4, team: 'Bristol Spartak', p: 22, w: 13, d: 3, l: 6, f: 59, a: 29, gd: 30, pts: 42 },
+  { pos: 5, team: 'Stoke Gifford United Res', p: 22, w: 10, d: 3, l: 9, f: 44, a: 45, gd: -1, pts: 33 },
+  { pos: 6, team: 'Easton Cowboys', p: 21, w: 9, d: 4, l: 8, f: 49, a: 42, gd: 7, pts: 31 },
+  { pos: 7, team: 'Redbridge', p: 22, w: 9, d: 3, l: 10, f: 59, a: 56, gd: 3, pts: 30 },
+  { pos: 8, team: 'Southmead CS Athletic', p: 22, w: 9, d: 2, l: 11, f: 33, a: 46, gd: -13, pts: 29 },
+  { pos: 9, team: 'Old Cothamians', p: 22, w: 6, d: 4, l: 12, f: 36, a: 49, gd: -13, pts: 22 },
+  { pos: 10, team: 'Rockleaze Rangers Res', p: 22, w: 5, d: 4, l: 13, f: 44, a: 64, gd: -20, pts: 19 },
+  { pos: 11, team: 'St Aldhelms', p: 22, w: 3, d: 1, l: 18, f: 31, a: 93, gd: -62, pts: 10 },
+  { pos: 12, team: 'Lawrence Weston Athletic Saturday', p: 21, w: 2, d: 0, l: 19, f: 23, a: 80, gd: -57, pts: 2 },
+]
 
 /** Archived final 2024/25 league table — Division 1. */
 export const leagueTable2024_25: TableRow[] = [
