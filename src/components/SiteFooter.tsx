@@ -29,6 +29,36 @@ function SiteFooter({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
               >
                 Get directions &rarr;
               </a>
+
+              <div className="mt-8 text-sm text-slate-600">
+                <p>
+                  Email:{' '}
+                  <a className="text-[#0b2d52] underline" href="mailto:filtonathleticfc@outlook.com">
+                    filtonathleticfc@outlook.com
+                  </a>
+                </p>
+                <p className="mt-1">
+                  Facebook:{' '}
+                  <a className="text-[#0b2d52] underline" href={facebookUrl} target="_blank" rel="noreferrer">
+                    Filton Athletic FC
+                  </a>
+                </p>
+                <p className="mt-1">
+                  Twitter/X:{' '}
+                  <a className="text-[#0b2d52] underline" href={xUrl} target="_blank" rel="noreferrer">
+                    @FiltonAthletic
+                  </a>
+                </p>
+                <p className="mt-1">
+                  Club shop:{' '}
+                  <a className="text-[#0b2d52] underline" href={shopUrl} target="_blank" rel="noreferrer">
+                    Buy official kit &amp; merchandise
+                  </a>
+                </p>
+              </div>
+              <p className="mt-10 text-xs text-slate-500">
+                &copy; {new Date().getFullYear()} Filton Athletic FC. #FATS #UTF
+              </p>
             </div>
             <iframe
               title={`Map of ${groundInfo.name}`}
@@ -38,35 +68,6 @@ function SiteFooter({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
-          <div className="mt-8 text-sm text-slate-600">
-            <p>
-              Email:{' '}
-              <a className="text-[#0b2d52] underline" href="mailto:filtonathleticfc@outlook.com">
-                filtonathleticfc@outlook.com
-              </a>
-            </p>
-            <p className="mt-1">
-              Facebook:{' '}
-              <a className="text-[#0b2d52] underline" href={facebookUrl} target="_blank" rel="noreferrer">
-                Filton Athletic FC
-              </a>
-            </p>
-            <p className="mt-1">
-              Twitter/X:{' '}
-              <a className="text-[#0b2d52] underline" href={xUrl} target="_blank" rel="noreferrer">
-                @FiltonAthletic
-              </a>
-            </p>
-            <p className="mt-1">
-              Club shop:{' '}
-              <a className="text-[#0b2d52] underline" href={shopUrl} target="_blank" rel="noreferrer">
-                Buy official kit &amp; merchandise
-              </a>
-            </p>
-          </div>
-          <p className="mt-10 text-xs text-slate-500">
-            &copy; {new Date().getFullYear()} Filton Athletic FC. #FATS #UTF
-          </p>
         </div>
       </footer>
       <BackToTop />
