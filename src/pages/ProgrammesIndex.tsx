@@ -20,7 +20,7 @@ function ProgrammesIndex() {
       <section className="border-b border-slate-200 bg-gradient-to-b from-[#1c3f6e] to-[#0a2340] text-white">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
           <p className="text-xs uppercase tracking-wide text-[#a9e0b8] sm:text-sm">Matchday programmes</p>
-          <h2 className="mt-2 text-2xl font-bold sm:text-3xl lg:text-4xl">Every home programme, in one place</h2>
+          <h1 className="mt-2 text-2xl font-bold sm:text-3xl lg:text-4xl">Every home programme, in one place</h1>
           <p className="mt-3 max-w-2xl text-sm text-slate-100 sm:text-base">
             Digital programmes from every home game, past and future. Looking for full-season fixtures,
             results, the table or the squad instead?{' '}

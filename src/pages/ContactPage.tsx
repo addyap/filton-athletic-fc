@@ -14,7 +14,7 @@ function ContactPage() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <SiteHeader />
-      <SiteFooter />
+      <SiteFooter headingLevel="h1" />
     </div>
   )
 }

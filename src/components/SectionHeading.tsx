@@ -70,17 +70,24 @@ export function SectionIcon({ name, className }: { name: string; className?: str
   )
 }
 
-/** Section heading with a symbolic icon chip. `tone="dark"` for navy backgrounds. */
+/**
+ * Section heading with a symbolic icon chip. `tone="dark"` for navy backgrounds.
+ * `as` picks the heading level — defaults to h3 for subsections embedded within
+ * a page that has its own h1; pass `as="h1"` when this is a standalone page's
+ * only heading, so every page has exactly one, unique, descriptive h1.
+ */
 function SectionHeading({
   icon,
   title,
   tone = 'light',
   className,
+  as: Tag = 'h3',
 }: {
   icon: string
   title: string
   tone?: 'light' | 'dark'
   className?: string
+  as?: 'h1' | 'h2' | 'h3'
 }) {
   const chip = tone === 'dark' ? 'bg-white/10 text-[#a9e0b8]' : 'bg-[#e7f0e9] text-[#2f6b45]'
   const titleColour = tone === 'dark' ? 'text-white' : 'text-[#0b2d52]'
@@ -89,7 +96,7 @@ function SectionHeading({
       <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full sm:h-14 sm:w-14 lg:h-16 lg:w-16 ${chip}`}>
         <SectionIcon name={icon} className="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8" />
       </span>
-      <h3 className={`text-3xl font-bold sm:text-4xl lg:text-5xl ${titleColour}`}>{title}</h3>
+      <Tag className={`text-3xl font-bold sm:text-4xl lg:text-5xl ${titleColour}`}>{title}</Tag>
     </div>
   )
 }

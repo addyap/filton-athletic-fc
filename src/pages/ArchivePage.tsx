@@ -21,7 +21,7 @@ function ArchivePage() {
       <section className="border-b border-slate-200 bg-gradient-to-b from-[#1c3f6e] to-[#0a2340] text-white">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
           <p className="text-xs uppercase tracking-wide text-[#a9e0b8] sm:text-sm">Season archive</p>
-          <h2 className="mt-2 text-2xl font-bold sm:text-3xl lg:text-4xl">Past seasons</h2>
+          <h1 className="mt-2 text-2xl font-bold sm:text-3xl lg:text-4xl">Past seasons</h1>
           <p className="mt-3 max-w-2xl text-sm text-slate-100 sm:text-base">
             Full fixtures, results, final tables and squads from previous seasons &mdash; or{' '}
             <Link to="/programmes" className="underline hover:text-white">

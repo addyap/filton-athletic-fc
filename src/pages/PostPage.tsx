@@ -78,7 +78,7 @@ function PostPage() {
       <div className="min-h-screen bg-white text-slate-900">
         <SiteHeader />
         <main className="mx-auto max-w-3xl px-6 py-20 text-center">
-          <h2 className="text-2xl font-bold text-[#0b2d52]">Post not found</h2>
+          <h1 className="text-2xl font-bold text-[#0b2d52]">Post not found</h1>
           <p className="mt-3 text-slate-600">That post may have been removed or the link is wrong.</p>
           <Link to="/#join" className="mt-6 inline-block text-[#0b2d52] underline">
             Back to Join Us
@@ -103,7 +103,7 @@ function PostPage() {
         <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-[#3f8a5b]">
           {post.category}
         </p>
-        <h2 className="mt-2 text-3xl font-bold text-[#0b2d52]">{post.title}</h2>
+        <h1 className="mt-2 text-3xl font-bold text-[#0b2d52]">{post.title}</h1>
         <p className="mt-2 text-sm text-slate-500">{formatPostDate(post.date)}</p>
 
         <div className="mt-6 space-y-4 text-slate-700">

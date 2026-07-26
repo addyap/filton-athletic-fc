@@ -17,7 +17,7 @@ function ReservesPage() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <SiteHeader />
-      <ReservesSection />
+      <ReservesSection headingLevel="h1" />
       <section className="mx-auto max-w-6xl px-6 pb-14">
         <SectionHeading icon="chat" title="Latest news" className="justify-center" />
         <NewsFeed team="reserves" emptyMessage="No Reserves news yet — check back soon." />

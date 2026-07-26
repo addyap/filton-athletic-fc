@@ -15,7 +15,7 @@ function FixturesPage() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <SiteHeader />
-      <FixturesSection />
+      <FixturesSection headingLevel="h1" />
       <SiteFooter />
     </div>
   )

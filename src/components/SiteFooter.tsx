@@ -10,12 +10,12 @@ const shopUrl = 'https://www.boca-uk.com/webshop/club-shops/filton-athletic-fc/'
 const xUrl = 'https://x.com/FiltonAthletic'
 const facebookUrl = 'https://www.facebook.com/FiltonAthleticFC'
 
-function SiteFooter() {
+function SiteFooter({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
   return (
     <>
       <footer id="contact" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-6xl px-6 py-14">
-          <SectionHeading icon="pin" title="Contact & ground" className="justify-center" />
+          <SectionHeading icon="pin" title="Contact & ground" className="justify-center" as={headingLevel} />
           <div className="mt-6 grid gap-8 lg:grid-cols-2 lg:items-start">
             <div>
               <p className="font-semibold">Home of the first team, reserves and youth</p>

@@ -26,7 +26,7 @@ function FirstTeamArchiveHub() {
               Season archive
             </Link>
           </p>
-          <h2 className="mt-2 text-2xl font-bold sm:text-3xl lg:text-4xl">First team archive</h2>
+          <h1 className="mt-2 text-2xl font-bold sm:text-3xl lg:text-4xl">First team archive</h1>
           <p className="mt-3 max-w-2xl text-sm text-slate-100 sm:text-base">
             Full fixtures, results, final tables and squads from every archived first-team season.
           </p>

@@ -219,7 +219,7 @@ function ProgrammePage() {
       <div className="min-h-screen bg-white text-slate-900">
         <SiteHeader />
         <main className="mx-auto max-w-3xl px-6 py-20 text-center">
-          <h2 className="text-2xl font-bold text-[#0b2d52]">Programme not found</h2>
+          <h1 className="text-2xl font-bold text-[#0b2d52]">Programme not found</h1>
           <p className="mt-3 text-slate-600">That match may not have a programme yet.</p>
           <Link to="/programmes" className="mt-6 inline-block text-[#0b2d52] underline">
             Back to all programmes
@@ -251,10 +251,10 @@ function ProgrammePage() {
             {extras.number != null && <span>No. {extras.number}</span>}
           </div>
           <img src={crest} alt="Filton Athletic FC crest" className="mx-auto mt-6 h-24 w-24 object-contain sm:h-28 sm:w-28" />
-          <h2 className="mt-6 text-2xl font-bold sm:text-4xl">
+          <h1 className="mt-6 text-2xl font-bold sm:text-4xl">
             Filton Athletic <span className="block text-base font-normal text-slate-300 sm:inline sm:text-2xl">vs</span>{' '}
             {fixture.opponent}
-          </h2>
+          </h1>
           <p className="mt-4 text-sm text-slate-100 sm:text-base">{programme.longDate}</p>
           <p className="text-sm text-slate-100 sm:text-base">Kick-off {fixture.time} &middot; {groundInfo.name}</p>
           <p className="mt-2 text-xs uppercase tracking-wide text-[#a9e0b8] sm:text-sm">{programme.competitionName}</p>

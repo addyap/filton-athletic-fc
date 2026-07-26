@@ -15,7 +15,7 @@ function TablePage() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <SiteHeader />
-      <TableSection />
+      <TableSection headingLevel="h1" />
       <SiteFooter />
     </div>
   )

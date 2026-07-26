@@ -3,10 +3,10 @@ import SectionHeading from '../SectionHeading'
 import LeagueTableWidget from '../LeagueTableWidget'
 import { reserveTable, reserveFixtures } from '../../data/club'
 
-function ReservesSection() {
+function ReservesSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
   return (
     <section id="reserves" className="mx-auto max-w-6xl px-6 py-14">
-      <SectionHeading icon="shirt" title="Reserves" className="justify-center" />
+      <SectionHeading icon="shirt" title="Reserves" className="justify-center" as={headingLevel} />
       <p className="mt-1 text-center text-sm text-slate-500">Bristol &amp; Suburban Premier Division 2026-27</p>
 
       {reserveTable.length === 0 && reserveFixtures.length === 0 ? (

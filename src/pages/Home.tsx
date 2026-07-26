@@ -75,7 +75,7 @@ function Home() {
           <p className="text-sm uppercase tracking-wide text-white sm:text-base lg:text-lg">Marcliff Gloucestershire County Football League</p>
           <div className="mt-6 flex flex-col items-center gap-2 sm:flex-row sm:justify-center sm:gap-6">
             <ConcordeMark className="invisible hidden h-8 w-auto shrink-0 sm:block sm:h-10 lg:h-12" />
-            <h2 className="text-3xl font-bold sm:text-5xl lg:text-6xl">Home of Filton Athletic FC</h2>
+            <h1 className="text-3xl font-bold sm:text-5xl lg:text-6xl">Home of Filton Athletic FC</h1>
             <ConcordeMark className="h-8 w-auto shrink-0 text-white sm:h-10 lg:h-12" />
           </div>
           <p className="mx-auto mt-5 max-w-2xl text-base text-slate-100 sm:text-lg lg:text-xl">

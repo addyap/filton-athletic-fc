@@ -17,7 +17,7 @@ function YouthPage() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <SiteHeader />
-      <YouthSection />
+      <YouthSection headingLevel="h1" />
       <section className="mx-auto max-w-6xl px-6 py-14">
         <SectionHeading icon="chat" title="Latest news" className="justify-center" />
         <NewsFeed team="youth" emptyMessage="No Youth news yet — check back soon." />
