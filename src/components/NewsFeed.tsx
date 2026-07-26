@@ -37,7 +37,10 @@ function NewsFeed({ team, limit, emptyMessage }: Props) {
   return (
     <div className="mt-6 grid gap-6 sm:grid-cols-2">
       {items.map((item) => (
-        <article key={item.slug} className="flex flex-col overflow-hidden rounded-lg border border-slate-200">
+        <article
+          key={item.slug}
+          className="flex flex-col overflow-hidden rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
+        >
           {item.images && item.images.length > 0 && (
             <div className={item.images.length > 1 ? 'grid grid-cols-2' : ''}>
               {item.images.map((img) => (

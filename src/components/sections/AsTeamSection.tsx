@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
 import SectionHeading from '../SectionHeading'
 import LeagueTableWidget from '../LeagueTableWidget'
+import Reveal from '../Reveal'
 import { asTeamTable } from '../../data/club'
 
 function AsTeamSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
   return (
     <section id="as-team" className="border-t border-slate-200 bg-emerald-50/60">
-      <div className="mx-auto max-w-6xl px-6 py-14">
+      <Reveal className="mx-auto max-w-6xl px-6 py-14">
       <SectionHeading icon="shirt" title="A's" className="justify-center" as={headingLevel} />
       <p className="mt-1 text-center text-sm text-slate-500">Bristol &amp; Suburban Division Three 2026-27</p>
 
@@ -34,7 +35,7 @@ function AsTeamSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
           See all ways to join the club &rarr;
         </Link>
       </p>
-      </div>
+      </Reveal>
     </section>
   )
 }

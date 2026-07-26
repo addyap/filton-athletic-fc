@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
 import SectionHeading from '../SectionHeading'
 import LeagueTableWidget from '../LeagueTableWidget'
+import Reveal from '../Reveal'
 import { reserveTable, reserveFixtures } from '../../data/club'
 
 function ReservesSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
   return (
     <section id="reserves" className="border-t border-slate-200 bg-emerald-50/60">
-      <div className="mx-auto max-w-6xl px-6 py-14">
+      <Reveal className="mx-auto max-w-6xl px-6 py-14">
       <SectionHeading icon="shirt" title="Reserves" className="justify-center" as={headingLevel} />
       <p className="mt-1 text-center text-sm text-slate-500">Bristol &amp; Suburban Premier Division 2026-27</p>
 
@@ -62,7 +63,7 @@ function ReservesSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) 
           View the Reserves archive &rarr;
         </Link>
       </p>
-      </div>
+      </Reveal>
     </section>
   )
 }

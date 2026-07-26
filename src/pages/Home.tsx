@@ -19,6 +19,7 @@ import MatchStrip from '../components/MatchStrip'
 import SeasonCountdown from '../components/SeasonCountdown'
 import NewsFeed from '../components/NewsFeed'
 import SectionHeading from '../components/SectionHeading'
+import Reveal from '../components/Reveal'
 import { BootMark, NewspaperMark, TrophyMark, JerseyMark, RosetteMark } from '../components/SectionArt'
 import FixturesSection from '../components/sections/FixturesSection'
 import TableSection from '../components/sections/TableSection'
@@ -101,7 +102,11 @@ function Home() {
       <MatchStrip
         sidebar={
           <div className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-            <span className="w-fit rounded-full bg-[#e7f0e9] px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#2f6b45]">
+            <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-[#e7f0e9] px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#2f6b45]">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#2f6b45] opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#2f6b45]" />
+              </span>
               Live match updates
             </span>
             <p className="mt-3 text-sm text-slate-600">
@@ -112,9 +117,10 @@ function Home() {
               href="https://x.com/FiltonAthletic"
               target="_blank"
               rel="noreferrer"
-              className="mt-4 inline-flex w-fit items-center gap-2 rounded-full bg-[#0b2d52] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#123a68]"
+              className="group mt-4 inline-flex w-fit items-center gap-2 rounded-full bg-[#0b2d52] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#123a68]"
             >
-              Follow @FiltonAthletic on X &rarr;
+              Follow @FiltonAthletic on X
+              <span className="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
             </a>
             <a
               href="https://www.facebook.com/FiltonAthleticFC"
@@ -131,7 +137,7 @@ function Home() {
       {/* Join Us */}
       <section id="join" className="relative overflow-hidden border-b border-slate-200 bg-slate-50">
         <BootMark className="pointer-events-none absolute -right-6 -top-6 h-48 w-48 text-[#0b2d52]/[0.06] sm:h-64 sm:w-64" />
-        <div className="relative mx-auto max-w-6xl px-6 py-14">
+        <Reveal className="relative mx-auto max-w-6xl px-6 py-14">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start">
             <div className="text-center lg:flex-1 lg:text-left">
               <SectionHeading icon="join" title="Join us" className="justify-center lg:justify-start" />
@@ -154,7 +160,7 @@ function Home() {
               <Link
                 key={p.slug}
                 to={`/join/${p.slug}`}
-                className="block rounded-lg border border-slate-200 p-5 transition hover:border-[#0b2d52] hover:shadow-sm"
+                className="group block rounded-lg border border-slate-200 p-5 transition-all duration-200 hover:-translate-y-1 hover:border-[#0b2d52] hover:shadow-md"
               >
                 <div className="flex items-center gap-3">
                   <span className="rounded bg-[#e7f0e9] px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-[#2f6b45]">
@@ -164,27 +170,30 @@ function Home() {
                 </div>
                 <h4 className="mt-3 font-semibold text-[#0b2d52]">{p.title}</h4>
                 <p className="mt-2 text-sm text-slate-600">{p.excerpt}</p>
-                <span className="mt-3 inline-block text-sm font-medium text-[#0b2d52]">Read more &rarr;</span>
+                <span className="mt-3 inline-block text-sm font-medium text-[#0b2d52]">
+                  Read more{' '}
+                  <span className="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
+                </span>
               </Link>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* News */}
       <section id="news" className="relative overflow-hidden">
         <NewspaperMark className="pointer-events-none absolute -right-6 -top-6 h-48 w-48 text-[#0b2d52]/[0.06] sm:h-64 sm:w-64" />
-        <div className="relative mx-auto max-w-6xl px-6 py-14">
+        <Reveal className="relative mx-auto max-w-6xl px-6 py-14">
         <SectionHeading icon="chat" title="Club news" className="justify-center" />
         <p className="mt-1 text-center text-sm text-slate-500">The latest from across the club and every team.</p>
         <NewsFeed limit={4} />
-        </div>
+        </Reveal>
       </section>
 
       {/* History */}
       <section id="history" className="relative overflow-hidden border-t border-slate-200 bg-slate-50">
         <TrophyMark className="pointer-events-none absolute -right-4 -top-6 h-52 w-44 text-[#0b2d52]/[0.06] sm:h-72 sm:w-60" />
-        <div className="relative mx-auto max-w-6xl px-6 py-14">
+        <Reveal className="relative mx-auto max-w-6xl px-6 py-14">
           <SectionHeading icon="clock" title="Our history" className="justify-center" />
           <p className="mt-4 max-w-3xl text-slate-700">
             Filton Athletic FC are a long-standing amateur football club based in the north of Bristol. We
@@ -238,13 +247,13 @@ function Home() {
               <p className="text-slate-700">{officials.committee.join(', ')}</p>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Squad */}
       <section id="squad" className="relative overflow-hidden">
         <JerseyMark className="pointer-events-none absolute -right-6 -top-6 h-48 w-48 text-[#0b2d52]/[0.06] sm:h-64 sm:w-64" />
-        <div className="relative mx-auto max-w-6xl px-6 py-14">
+        <Reveal className="relative mx-auto max-w-6xl px-6 py-14">
         <SectionHeading icon="shirt" title="First team squad" className="justify-center" />
         {squad.length === 0 ? (
           <div className="mt-6 rounded-lg border border-dashed border-slate-300 bg-slate-50 p-8 text-center">
@@ -257,7 +266,7 @@ function Home() {
         ) : (
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {squad.map((p) => (
-              <div key={p.name} className="overflow-hidden rounded-lg border border-slate-200">
+              <div key={p.name} className="overflow-hidden rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
                 {playerPhotos[p.name] && (
                   <img
                     src={playerPhotos[p.name]}
@@ -280,7 +289,7 @@ function Home() {
             View the first team archive &rarr;
           </Link>
         </p>
-        </div>
+        </Reveal>
       </section>
 
       <FixturesSection />
@@ -292,12 +301,12 @@ function Home() {
       {/* Sponsors */}
       <section id="sponsors" className="relative overflow-hidden">
         <RosetteMark className="pointer-events-none absolute -right-4 -top-6 h-52 w-44 text-[#0b2d52]/[0.06] sm:h-72 sm:w-60" />
-        <div className="relative mx-auto max-w-6xl px-6 py-14">
+        <Reveal className="relative mx-auto max-w-6xl px-6 py-14">
         <SectionHeading icon="heart" title="Club sponsors" className="justify-center" />
         <p className="mt-1 text-center text-sm text-slate-500">Thank you to our sponsors&hellip;</p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {sponsors.map((s) => (
-            <div key={s.name} className="rounded-lg border border-slate-200 p-4">
+            <div key={s.name} className="rounded-lg border border-slate-200 p-4 transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
               {sponsorLogos[s.name] && (
                 <img
                   src={sponsorLogos[s.name]}
@@ -324,7 +333,7 @@ function Home() {
             filtonathleticfc@outlook.com
           </a>
         </p>
-        </div>
+        </Reveal>
       </section>
 
       <SiteFooter />

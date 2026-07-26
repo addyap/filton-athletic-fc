@@ -22,3 +22,32 @@ footer[id] {
     print-color-adjust: exact;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll-reveal: applied only by JS after mount, so static/no-JS output is
+   always fully visible (progressive enhancement, not a requirement to see content). */
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(16px);
+}
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal-hidden {
+    opacity: 1;
+    transform: none;
+  }
+  .reveal-visible {
+    transition: none;
+  }
+}

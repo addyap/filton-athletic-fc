@@ -100,7 +100,11 @@ function MatchStrip({ sidebar }: { sidebar?: ReactNode }) {
             />
             <div className="relative flex flex-col p-6 sm:p-8">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="rounded-full bg-[#a9e0b8] px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#0b2d52]">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#a9e0b8] px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#0b2d52]">
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#0b2d52] opacity-75" />
+                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#0b2d52]" />
+                  </span>
                   Next match
                 </span>
                 <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide">
@@ -125,9 +129,10 @@ function MatchStrip({ sidebar }: { sidebar?: ReactNode }) {
               {nextProgramme && (
                 <Link
                   to={`/programme/${nextProgramme.slug}`}
-                  className="mt-6 inline-block w-fit rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#0b2d52] transition hover:bg-[#a9e0b8]"
+                  className="group mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#0b2d52] transition hover:bg-[#a9e0b8]"
                 >
-                  View matchday programme &rarr;
+                  View matchday programme
+                  <span className="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
                 </Link>
               )}
             </div>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import SectionHeading from '../SectionHeading'
+import Reveal from '../Reveal'
 import { CalendarMark } from '../SectionArt'
 import { firstTeamFixtures } from '../../data/club'
 
@@ -15,7 +16,7 @@ function FixturesSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) 
   return (
     <section id="fixtures" className="relative overflow-hidden border-t border-slate-200 bg-slate-50">
       <CalendarMark className="pointer-events-none absolute -right-6 -top-6 h-48 w-48 text-[#0b2d52]/[0.06] sm:h-64 sm:w-64" />
-      <div className="relative mx-auto max-w-6xl px-6 py-14">
+      <Reveal className="relative mx-auto max-w-6xl px-6 py-14">
         <SectionHeading icon="calendar" title="Fixtures & results" className="justify-center" as={headingLevel} />
         <p className="mt-1 text-center text-sm text-slate-500">
           First team &mdash; Marcliff Gloucestershire County Football League 2026-27
@@ -67,7 +68,7 @@ function FixturesSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) 
             View the first team archive &rarr;
           </Link>
         </p>
-      </div>
+      </Reveal>
     </section>
   )
 }
