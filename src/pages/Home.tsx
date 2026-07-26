@@ -163,8 +163,6 @@ function Home() {
         </div>
       </section>
 
-      <YouthSection />
-
       {/* News */}
       <section id="news" className="relative overflow-hidden">
         <NewspaperMark className="pointer-events-none absolute -right-6 -top-6 h-48 w-48 text-[#0b2d52]/[0.06] sm:h-64 sm:w-64" />
@@ -281,6 +279,7 @@ function Home() {
       <TableSection />
       <ReservesSection />
       <AsTeamSection />
+      <YouthSection />
 
       {/* Sponsors */}
       <section id="sponsors" className="relative overflow-hidden">
