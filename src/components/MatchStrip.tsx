@@ -50,7 +50,7 @@ function MatchStrip({ sidebar }: { sidebar?: ReactNode }) {
 
   if (!next && !last) {
     return (
-      <section aria-label="Season status" className="border-b border-slate-200 bg-slate-50">
+      <section aria-label="Season status" className="border-b border-slate-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 pt-8 sm:px-6">
           <h2 className="text-xs font-bold uppercase tracking-widest text-[#0b2d52]">
             Matchday <span className="text-slate-400">&middot; #FATS #UTF</span>

@@ -65,7 +65,7 @@ function Home() {
       <SiteHeader />
 
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-b from-[#7f9ad6] via-[#1c3f6e] to-[#0a2340] text-white">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#7f9ad6] via-[#1c3f6e] to-[#0a2340] text-white">
         <PitchBackdrop />
         <img
           src={crestTrimmed}
@@ -86,6 +86,14 @@ function Home() {
             Come down to BBS Park North and back the lads.
           </p>
         </div>
+        <svg
+          className="pointer-events-none absolute -bottom-px left-0 w-full text-slate-50"
+          viewBox="0 0 1440 60"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path fill="currentColor" d="M0,32 C240,64 480,0 720,16 C960,32 1200,64 1440,32 L1440,60 L0,60 Z" />
+        </svg>
       </section>
 
       <SeasonCountdown />
@@ -121,7 +129,7 @@ function Home() {
       />
 
       {/* Join Us */}
-      <section id="join" className="relative overflow-hidden border-b border-slate-200 bg-white">
+      <section id="join" className="relative overflow-hidden border-b border-slate-200 bg-slate-50">
         <BootMark className="pointer-events-none absolute -right-6 -top-6 h-48 w-48 text-[#0b2d52]/[0.06] sm:h-64 sm:w-64" />
         <div className="relative mx-auto max-w-6xl px-6 py-14">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start">
