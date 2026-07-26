@@ -137,7 +137,7 @@ function Home() {
             <div className="mx-auto w-full max-w-[300px] rounded-lg border border-slate-200 bg-white p-3 shadow-sm lg:order-first lg:mx-0">
               <img
                 src={playersWantedPoster}
-                alt="Players wanted — join Filton Athletic FC. First team competing in the County League, Reserves in the Suburban Premier, A's in Suburban Division 4. Training Tuesday and Thursday, 6:15pm at Elm Park. All positions considered, all abilities welcome."
+                alt="Players wanted — join Filton Athletic FC. First team competing in the County League, Reserves in the Suburban Premier, A's in Suburban Division Three. Training Tuesday and Thursday, 6:15pm at Elm Park. All positions considered, all abilities welcome."
                 className="w-full rounded"
               />
             </div>

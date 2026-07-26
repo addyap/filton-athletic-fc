@@ -80,7 +80,7 @@ export function headForPath(pathname: string): PageHead {
     return {
       ...base,
       title: "A's — Filton Athletic FC",
-      description: "Filton Athletic FC A's team, competing in the Bristol & Suburban Division 4.",
+      description: "Filton Athletic FC A's team, competing in the Bristol & Suburban Division Three.",
     }
   }
 

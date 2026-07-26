@@ -353,6 +353,38 @@ export const leagueTable2025_26: TableRow[] = [
 /** 2026/27 reserve league table — cleared pending the season starting. */
 export const reserveTable: TableRow[] = []
 
+/**
+ * 2026/27 A's division table — Bristol & Suburban League, Division Three.
+ * Pre-season: fixtures aren't confirmed yet, so every club shows zeros
+ * (listed alphabetically, per the league's own pre-season table).
+ */
+export const asTeamTable: TableRow[] = [
+  { pos: 1, team: 'AFC Bristol AFC Bristol', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 2, team: 'AJA Athletic 1st', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 3, team: 'Almondsbury A', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 4, team: 'Avonmouth A', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 5, team: 'Bristol Phoenix Firsts', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 6, team: 'Bristol Wanderers Reserves', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 7, team: 'Bromley Heath United A', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 8, team: 'Cosmos UK Saturday Reserves', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 9, team: 'Easton Cowboys A', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 10, team: 'Eighty One United 1st', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 11, team: 'Filton Athletic A', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 12, team: 'Hanham Abbotonians Reserves', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 13, team: 'Hartcliffe FC Reserves', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 14, team: 'Imperial A', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 15, team: 'Lockleaze Community First', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 16, team: 'Made For Ever Development', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 17, team: 'Parson Street Old Boys Reserves', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 18, team: 'Phoenix NextGen Reserves', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 19, team: 'Rockleaze Rangers C', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 20, team: 'Shaftesbury Crusade A', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 21, team: 'St Aldhelms Reserves', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 22, team: 'St Vallier First', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 23, team: 'Tytherington Rocks Reserves', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 24, team: 'Wessex Wanderers Colts', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+]
+
 /** Archived final 2024/25 reserve league table — Division Four. */
 export const reserveTable2024_25: TableRow[] = [
   { pos: 1, team: 'Avonmouth Reserves', p: 18, w: 15, d: 0, l: 3, f: 48, a: 20, gd: 28, pts: 45 },
