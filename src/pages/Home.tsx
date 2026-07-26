@@ -17,7 +17,6 @@ import PitchBackdrop from '../components/PitchBackdrop'
 import ConcordeMark from '../components/ConcordeMark'
 import MatchStrip from '../components/MatchStrip'
 import SeasonCountdown from '../components/SeasonCountdown'
-import XTimeline from '../components/XTimeline'
 import NewsFeed from '../components/NewsFeed'
 import SectionHeading from '../components/SectionHeading'
 import { BootMark, NewspaperMark, TrophyMark, JerseyMark, RosetteMark } from '../components/SectionArt'
@@ -93,31 +92,28 @@ function Home() {
         sidebar={
           <div className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <span className="w-fit rounded-full bg-[#e7f0e9] px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#2f6b45]">
-              Latest from X
+              Live match updates
             </span>
-            <p className="mt-3 text-sm text-slate-500">
-              Live match updates &mdash;{' '}
-              <a
-                className="font-medium text-[#0b2d52] underline"
-                href="https://x.com/FiltonAthletic"
-                target="_blank"
-                rel="noreferrer"
-              >
-                @FiltonAthletic
-              </a>
-              {' · '}
-              <a
-                className="font-medium text-[#0b2d52] underline"
-                href="https://www.facebook.com/FiltonAthleticFC"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Facebook
-              </a>
+            <p className="mt-3 text-sm text-slate-600">
+              Follow along during the match &mdash; goals, cards and full-time scores posted live from the
+              touchline.
             </p>
-            <div className="mt-4">
-              <XTimeline handle="FiltonAthletic" tweetLimit={3} />
-            </div>
+            <a
+              href="https://x.com/FiltonAthletic"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex w-fit items-center gap-2 rounded-full bg-[#0b2d52] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#123a68]"
+            >
+              Follow @FiltonAthletic on X &rarr;
+            </a>
+            <a
+              href="https://www.facebook.com/FiltonAthleticFC"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-2 inline-block w-fit text-sm font-medium text-[#0b2d52] underline"
+            >
+              Or follow us on Facebook &rarr;
+            </a>
           </div>
         }
       />
