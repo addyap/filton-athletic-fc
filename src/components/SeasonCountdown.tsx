@@ -59,7 +59,7 @@ function SeasonCountdown() {
             <img
               src={clockImg}
               alt="Hand-painted Filton Athletic FC wall clock — the club crest with Concorde over Filton, and “UTF”."
-              className="mx-auto w-36 rounded-full border-4 border-white/15 shadow-lg sm:w-48 lg:w-full"
+              className="mx-auto w-36 rounded-full shadow-lg sm:w-48 lg:w-full"
             />
             <div className="text-center lg:text-left">
               <span className="text-xs font-semibold uppercase tracking-wide text-[#a9e0b8]">2026/27 season</span>
