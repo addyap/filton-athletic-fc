@@ -7,6 +7,11 @@ function badgeLabel(id: TeamId) {
   return id === 'club' ? 'Club news' : teamName(id)
 }
 
+/** A's news badges use the crest's sky blue instead of the standard green, matching AsTeamSection. */
+function badgeColour(id: TeamId) {
+  return id === 'as' ? 'bg-[#e3ebf8] text-[#1c3f6e]' : 'bg-[#e7f0e9] text-[#2f6b45]'
+}
+
 type Props = {
   /** Filter to one team (its own items plus club-wide). Omit to show all teams. */
   team?: TeamId
@@ -53,7 +58,7 @@ function NewsFeed({ team, limit, emptyMessage }: Props) {
               {item.teams.map((t) => (
                 <span
                   key={t}
-                  className="rounded bg-[#e7f0e9] px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-[#2f6b45]"
+                  className={`rounded px-2 py-0.5 text-xs font-semibold uppercase tracking-wide ${badgeColour(t)}`}
                 >
                   {badgeLabel(t)}
                 </span>

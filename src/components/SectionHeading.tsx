@@ -85,11 +85,16 @@ function SectionHeading({
 }: {
   icon: string
   title: string
-  tone?: 'light' | 'dark'
+  tone?: 'light' | 'dark' | 'sky'
   className?: string
   as?: 'h1' | 'h2' | 'h3'
 }) {
-  const chip = tone === 'dark' ? 'bg-white/10 text-[#a9e0b8]' : 'bg-[#e7f0e9] text-[#2f6b45]'
+  const chip =
+    tone === 'dark'
+      ? 'bg-white/10 text-[#a9e0b8]'
+      : tone === 'sky'
+        ? 'bg-[#e3ebf8] text-[#1c3f6e]'
+        : 'bg-[#e7f0e9] text-[#2f6b45]'
   const titleColour = tone === 'dark' ? 'text-white' : 'text-[#0b2d52]'
   return (
     <div className={`flex items-center gap-3 sm:gap-4 ${className ?? ''}`}>

@@ -13,7 +13,17 @@ const leagueColumns: { key: keyof TableRow; label: string; cls?: string }[] = [
   { key: 'pts', label: 'Pts' },
 ]
 
-function LeagueTableWidget({ rows, highlight }: { rows: TableRow[]; highlight: string }) {
+function LeagueTableWidget({
+  rows,
+  highlight,
+  accent = 'green',
+}: {
+  rows: TableRow[]
+  highlight: string
+  /** Colour of the highlighted (own team) row — 'sky' ties into the crest's sky-blue background. */
+  accent?: 'green' | 'sky'
+}) {
+  const highlightCls = accent === 'sky' ? 'bg-[#e3ebf8] text-[#1c3f6e]' : 'bg-[#e7f0e9] text-[#0b2d52]'
   return (
     <div className="overflow-x-auto rounded-lg border border-slate-200">
       <table className="min-w-full text-sm">
@@ -30,7 +40,7 @@ function LeagueTableWidget({ rows, highlight }: { rows: TableRow[]; highlight: s
           {rows.map((r) => (
             <tr
               key={r.team}
-              className={`border-t border-slate-200 ${r.team === highlight ? 'bg-[#e7f0e9] font-semibold text-[#0b2d52]' : 'odd:bg-white even:bg-slate-50'}`}
+              className={`border-t border-slate-200 ${r.team === highlight ? `${highlightCls} font-semibold` : 'odd:bg-white even:bg-slate-50'}`}
             >
               {leagueColumns.map((c) => (
                 <td key={c.key} className={`px-3 py-1.5 ${c.cls ?? ''}`}>

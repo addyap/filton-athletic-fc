@@ -6,9 +6,9 @@ import { asTeamTable } from '../../data/club'
 
 function AsTeamSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
   return (
-    <section id="as-team" className="border-t border-slate-200 bg-emerald-50/60">
+    <section id="as-team" className="border-t border-slate-200 bg-[#e3ebf8]/60">
       <Reveal className="mx-auto max-w-6xl px-6 py-14">
-      <SectionHeading icon="shirt" title="A's" className="justify-center" as={headingLevel} />
+      <SectionHeading icon="shirt" title="A's" tone="sky" className="justify-center" as={headingLevel} />
       <p className="mt-1 text-center text-sm text-slate-500">Bristol &amp; Suburban Division Three 2026-27</p>
 
       <div className="mt-6 rounded-lg border border-dashed border-slate-300 bg-white p-6 text-center">
@@ -21,7 +21,7 @@ function AsTeamSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
       </div>
 
       <div className="mt-8">
-        <LeagueTableWidget rows={asTeamTable} highlight="Filton Athletic A" />
+        <LeagueTableWidget rows={asTeamTable} highlight="Filton Athletic A" accent="sky" />
       </div>
 
       <p className="mt-6 text-center text-sm text-slate-500">
