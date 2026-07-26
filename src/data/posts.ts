@@ -37,9 +37,9 @@ export const posts: Post[] = [
     date: '2026-07-24',
     category: 'Players',
     excerpt:
-      'Our Reserves compete in the Bristol & Suburban Senior Division and are keen to hear from players of all levels.',
+      'Our Reserves compete in the Bristol & Suburban Premier Division and are keen to hear from players of all levels.',
     body: [
-      'Our Reserve team play in the Bristol & Suburban Senior Division and are always open to new players looking for regular Saturday football.',
+      'Our Reserve team play in the Bristol & Suburban Premier Division and are always open to new players looking for regular Saturday football.',
       'The Reserves are a genuine route into the first team — several of our current first team squad stepped up from the Reserves. Just as importantly, it is a good group of lads who enjoy their football.',
       'Home games are played at BBS Park North, Elm Park, Filton. Get in touch if you would like to come along to a session.',
     ],

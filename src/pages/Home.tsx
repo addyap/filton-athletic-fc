@@ -190,7 +190,7 @@ function Home() {
             We are currently made up of two adult football teams who both play regularly on a Saturday
             afternoon. Our first team compete in the Marcliff Gloucestershire County Football League,
             having been promoted as Champions from the Bristol &amp; Suburban Premier Division in 2023-24.
-            Our Reserve team compete in the Bristol &amp; Suburban Senior Division. {groundInfo.note}
+            Our Reserve team compete in the Bristol &amp; Suburban Premier Division. {groundInfo.note}
           </p>
           <p className="mt-3 max-w-3xl text-slate-700">
             In 2023 we established the Filton Athletic FC Youth Team, consisting of U7, U8, U9, U10, U11,
