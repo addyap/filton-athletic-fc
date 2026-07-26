@@ -23,6 +23,8 @@ import { BootMark, NewspaperMark, TrophyMark, JerseyMark, RosetteMark } from '..
 import FixturesSection from '../components/sections/FixturesSection'
 import TableSection from '../components/sections/TableSection'
 import YouthSection from '../components/sections/YouthSection'
+import ReservesSection from '../components/sections/ReservesSection'
+import AsTeamSection from '../components/sections/AsTeamSection'
 import { posts, formatPostDate } from '../data/posts'
 import { playerPhotos2025_26 as playerPhotos } from '../data/playerPhotos'
 import {
@@ -277,6 +279,8 @@ function Home() {
 
       <FixturesSection />
       <TableSection />
+      <ReservesSection />
+      <AsTeamSection />
 
       {/* Sponsors */}
       <section id="sponsors" className="relative overflow-hidden">
