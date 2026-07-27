@@ -13,6 +13,8 @@ import ReservesArchiveHub from './pages/ReservesArchiveHub'
 import TeamSeasonArchivePage from './pages/TeamSeasonArchivePage'
 import ReservesPage from './pages/ReservesPage'
 import AsTeamPage from './pages/AsTeamPage'
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
+import SafeguardingPage from './pages/SafeguardingPage'
 
 /** Route table shared by the browser (BrowserRouter) and the prerenderer (StaticRouter). */
 function AppRoutes() {
@@ -33,6 +35,8 @@ function AppRoutes() {
       <Route path="/as-team" element={<AsTeamPage />} />
       <Route path="/youth" element={<YouthPage />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+      <Route path="/safeguarding" element={<SafeguardingPage />} />
       <Route path="*" element={<Home />} />
     </Routes>
   )

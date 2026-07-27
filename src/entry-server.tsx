@@ -28,6 +28,8 @@ export function getRoutePaths(): string[] {
     '/as-team',
     '/youth',
     '/contact',
+    '/privacy-policy',
+    '/safeguarding',
     ...programmes.map((p) => `/programme/${p.slug}`),
     ...posts.map((p) => `/join/${p.slug}`),
     '/archive/first-team',

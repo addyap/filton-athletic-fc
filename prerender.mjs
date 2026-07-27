@@ -36,6 +36,9 @@ function applyHead(html, head) {
   out = replaceAttr(out, '<meta name="twitter:title"', title)
   out = replaceAttr(out, '<meta name="twitter:description"', desc)
   out = out.replace(/(<link rel="canonical" href=)"[^"]*"/, `$1"${canonical}"`)
+  if (head.noindex) {
+    out = replaceAttr(out, '<meta name="robots"', 'noindex,follow')
+  }
   return out
 }
 

@@ -11,6 +11,8 @@ export type PageHead = {
   description: string
   canonical: string
   ogImage: string
+  /** Set on draft pages (e.g. unfinished legal pages) to keep them out of search results. */
+  noindex?: boolean
 }
 
 const DEFAULT_DESCRIPTION =
@@ -126,6 +128,24 @@ export function headForPath(pathname: string): PageHead {
       ...base,
       title: 'Contact & ground — Filton Athletic FC',
       description: 'How to find and contact Filton Athletic FC at BBS Park North, Elm Park, Filton, Bristol.',
+    }
+  }
+
+  if (path === '/privacy-policy') {
+    return {
+      ...base,
+      title: 'Privacy policy — Filton Athletic FC',
+      description: 'How Filton Athletic FC handles personal data.',
+      noindex: true,
+    }
+  }
+
+  if (path === '/safeguarding') {
+    return {
+      ...base,
+      title: 'Safeguarding — Filton Athletic FC',
+      description: "Filton Athletic FC's safeguarding policy for young players.",
+      noindex: true,
     }
   }
 

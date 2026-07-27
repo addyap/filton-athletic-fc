@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { groundInfo } from '../data/club'
 import BackToTop from './BackToTop'
 import SectionHeading from './SectionHeading'
@@ -58,6 +59,14 @@ function SiteFooter({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
               </div>
               <p className="mt-10 text-xs text-slate-500">
                 &copy; {new Date().getFullYear()} Filton Athletic FC. #FATS #UTF
+                {' · '}
+                <Link to="/privacy-policy" className="underline">
+                  Privacy policy
+                </Link>
+                {' · '}
+                <Link to="/safeguarding" className="underline">
+                  Safeguarding
+                </Link>
               </p>
             </div>
             <iframe
