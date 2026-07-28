@@ -36,6 +36,31 @@ function ProgrammesIndex() {
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {programmes.map((p) => {
             const played = Boolean(p.fixture.result)
+            const hasProgramme = Boolean(p.extras.pdfUrl)
+
+            // No programme was produced for this fixture — show a clear, muted,
+            // non-clickable card rather than linking to an empty page.
+            if (!hasProgramme) {
+              return (
+                <div
+                  key={p.slug}
+                  className="flex flex-col rounded-lg border border-dashed border-slate-200 bg-slate-50 p-5"
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="rounded bg-slate-200 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-slate-500">
+                      {p.fixture.competition}
+                    </span>
+                  </div>
+                  <h4 className="mt-3 font-semibold text-slate-500">vs {p.fixture.opponent}</h4>
+                  <p className="mt-1 text-sm text-slate-400">{p.longDate}</p>
+                  <div className="mt-3 flex items-center justify-between text-sm">
+                    {played && <span className="font-semibold text-slate-500">{p.fixture.result}</span>}
+                    <span className="ml-auto text-slate-400">No programme produced</span>
+                  </div>
+                </div>
+              )
+            }
+
             return (
               <Link
                 key={p.slug}
@@ -47,11 +72,9 @@ function ProgrammesIndex() {
                     {p.fixture.competition}
                   </span>
                   <span className="flex items-center gap-2">
-                    {p.extras.pdfUrl && (
-                      <span className="rounded bg-[#0b2d52] px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
-                        PDF
-                      </span>
-                    )}
+                    <span className="rounded bg-[#0b2d52] px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
+                      PDF
+                    </span>
                     {p.extras.number != null && (
                       <span className="text-xs font-semibold text-slate-500">No. {p.extras.number}</span>
                     )}
@@ -71,6 +94,10 @@ function ProgrammesIndex() {
             )
           })}
         </div>
+        <p className="mt-6 text-sm text-slate-500">
+          Programmes weren&rsquo;t produced for every home game &mdash; those fixtures are shown above,
+          greyed out. Every programme that was made is here in full.
+        </p>
       </main>
 
       <SiteFooter />
