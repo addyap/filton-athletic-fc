@@ -1,6 +1,7 @@
 import { getProgramme } from './data/programmes'
 import { getPost } from './data/posts'
 import { findSeason } from './data/seasons'
+import { getOpponentPreview, fixtureForPreview } from './data/opponents'
 
 /** Canonical production origin. Update here if the club moves to a custom domain. */
 export const SITE_ORIGIN = 'https://filtonathletic.co.uk'
@@ -157,6 +158,20 @@ export function headForPath(pathname: string): PageHead {
         ...base,
         title: `Filton Athletic vs ${programme.fixture.opponent} — Matchday programme`,
         description: `Matchday programme for Filton Athletic vs ${programme.fixture.opponent}, ${programme.longDate}, kick-off ${programme.fixture.time} at BBS Park North. ${programme.competitionName}.`,
+      }
+    }
+  }
+
+  const previewMatch = path.match(/^\/preview\/(.+)$/)
+  if (previewMatch) {
+    const preview = getOpponentPreview(previewMatch[1])
+    if (preview) {
+      const fixture = fixtureForPreview(preview)
+      const when = fixture ? `, ${fixture.venue === 'H' ? 'at home' : 'away'} on ${fixture.date}` : ''
+      return {
+        ...base,
+        title: `Meet the visitors: ${preview.name} — Filton Athletic FC`,
+        description: `Get to know ${preview.name} ahead of Filton Athletic vs ${preview.name}${when} — club history, key players and full squad. Full matchday programme to follow.`,
       }
     }
   }

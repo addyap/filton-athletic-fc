@@ -8,6 +8,7 @@ import {
   fixtureLongDate,
   competitionName,
 } from '../data/programmes'
+import { previewForOpponent } from '../data/opponents'
 import { groundInfo, type Fixture } from '../data/club'
 
 function venueLabel(v: Fixture['venue']) {
@@ -78,6 +79,7 @@ function MatchStrip({ sidebar }: { sidebar?: ReactNode }) {
   }
 
   const nextProgramme = next ? programmeForFixture(next) : undefined
+  const nextPreview = next ? previewForOpponent(next.opponent) : undefined
   const hasSecondColumn = Boolean(last || sidebar)
 
   return (
@@ -126,7 +128,7 @@ function MatchStrip({ sidebar }: { sidebar?: ReactNode }) {
                 {competitionName(next.competition)}
                 {next.venue === 'H' ? ` · ${groundInfo.name}` : ''}
               </p>
-              {nextProgramme && (
+              {nextProgramme ? (
                 <Link
                   to={`/programme/${nextProgramme.slug}`}
                   className="group mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#0b2d52] transition hover:bg-[#a9e0b8]"
@@ -134,6 +136,16 @@ function MatchStrip({ sidebar }: { sidebar?: ReactNode }) {
                   View matchday programme
                   <span className="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
                 </Link>
+              ) : (
+                nextPreview && (
+                  <Link
+                    to={`/preview/${nextPreview.slug}`}
+                    className="group mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#0b2d52] transition hover:bg-[#a9e0b8]"
+                  >
+                    Meet the visitors
+                    <span className="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
+                  </Link>
+                )
               )}
             </div>
           </div>

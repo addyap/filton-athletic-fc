@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import PostPage from './pages/PostPage'
 import ProgrammesIndex from './pages/ProgrammesIndex'
 import ProgrammePage from './pages/ProgrammePage'
+import OpponentPreviewPage from './pages/OpponentPreviewPage'
 import FixturesPage from './pages/FixturesPage'
 import TablePage from './pages/TablePage'
 import YouthPage from './pages/YouthPage'
@@ -29,6 +30,7 @@ function AppRoutes() {
       <Route path="/archive/reserves/:season" element={<TeamSeasonArchivePage team="reserves" />} />
       <Route path="/programmes" element={<ProgrammesIndex />} />
       <Route path="/programme/:slug" element={<ProgrammePage />} />
+      <Route path="/preview/:slug" element={<OpponentPreviewPage />} />
       <Route path="/fixtures" element={<FixturesPage />} />
       <Route path="/table" element={<TablePage />} />
       <Route path="/reserves" element={<ReservesPage />} />
