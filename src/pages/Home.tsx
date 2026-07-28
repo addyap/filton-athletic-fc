@@ -21,6 +21,7 @@ import NewsFeed from '../components/NewsFeed'
 import SectionHeading from '../components/SectionHeading'
 import Reveal from '../components/Reveal'
 import { BootMark, NewspaperMark, TrophyMark, JerseyMark, RosetteMark } from '../components/SectionArt'
+import LatestNewsBanner from '../components/LatestNewsBanner'
 import PreSeasonSection from '../components/sections/PreSeasonSection'
 import FixturesSection from '../components/sections/FixturesSection'
 import TableSection from '../components/sections/TableSection'
@@ -88,6 +89,7 @@ function Home() {
           aria-hidden="true"
           className="pointer-events-none absolute inset-y-0 left-1/2 h-full w-auto -translate-x-1/2 object-contain opacity-25"
         />
+        <LatestNewsBanner />
         <div className="relative mx-auto flex max-w-6xl flex-col items-center px-4 py-[40px] text-center sm:px-6 sm:py-[68px] lg:py-[84px]">
           <p className="text-sm uppercase tracking-wide text-white sm:text-base lg:text-lg">Marcliff Gloucestershire County Football League</p>
           <div className="mt-6 flex flex-col items-center gap-2 sm:flex-row sm:justify-center sm:gap-6">
