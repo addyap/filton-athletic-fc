@@ -21,6 +21,7 @@ import NewsFeed from '../components/NewsFeed'
 import SectionHeading from '../components/SectionHeading'
 import Reveal from '../components/Reveal'
 import { BootMark, NewspaperMark, TrophyMark, JerseyMark, RosetteMark } from '../components/SectionArt'
+import PreSeasonSection from '../components/sections/PreSeasonSection'
 import FixturesSection from '../components/sections/FixturesSection'
 import TableSection from '../components/sections/TableSection'
 import YouthSection from '../components/sections/YouthSection'
@@ -303,6 +304,7 @@ function Home() {
         </Reveal>
       </section>
 
+      <PreSeasonSection />
       <FixturesSection />
       <TableSection />
       <ReservesSection />
