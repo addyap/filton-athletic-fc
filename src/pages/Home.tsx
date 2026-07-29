@@ -15,9 +15,8 @@ import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
 import PitchBackdrop from '../components/PitchBackdrop'
 import ConcordeMark from '../components/ConcordeMark'
-import MatchStrip from '../components/MatchStrip'
-import FacebookFeed from '../components/FacebookFeed'
-import SeasonCountdown from '../components/SeasonCountdown'
+import MatchdaySection from '../components/MatchdaySection'
+import FacebookSection from '../components/FacebookSection'
 import NewsFeed from '../components/NewsFeed'
 import SectionHeading from '../components/SectionHeading'
 import Reveal from '../components/Reveal'
@@ -114,9 +113,7 @@ function Home() {
         </svg>
       </section>
 
-      <SeasonCountdown />
-
-      <MatchStrip sidebar={<FacebookFeed />} />
+      <MatchdaySection />
 
       {/* Join Us */}
       <section id="join" className="relative overflow-hidden border-b border-slate-200 bg-slate-50">
@@ -173,6 +170,8 @@ function Home() {
         <NewsFeed limit={4} />
         </Reveal>
       </section>
+
+      <FacebookSection />
 
       {/* History */}
       <section id="history" className="relative overflow-hidden border-t border-slate-200 bg-slate-50">
