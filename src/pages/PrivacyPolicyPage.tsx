@@ -42,6 +42,20 @@ function PrivacyPolicyPage() {
           , not this one.
         </p>
         <p>
+          The home page also embeds our Facebook page feed (Facebook&rsquo;s official page plugin) so you can
+          see our latest posts and live match updates. This loads content from Facebook, which may set its own
+          cookies and is subject to{' '}
+          <a
+            className="underline"
+            href="https://www.facebook.com/privacy/policy"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Facebook&rsquo;s own privacy policy
+          </a>
+          , not this one.
+        </p>
+        <p>
           Links to Facebook, X/Twitter and our club shop take you to third-party sites with their own privacy
           policies — we don&rsquo;t control what they collect.
         </p>

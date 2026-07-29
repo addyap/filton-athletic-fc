@@ -16,6 +16,7 @@ import SiteFooter from '../components/SiteFooter'
 import PitchBackdrop from '../components/PitchBackdrop'
 import ConcordeMark from '../components/ConcordeMark'
 import MatchStrip from '../components/MatchStrip'
+import FacebookFeed from '../components/FacebookFeed'
 import SeasonCountdown from '../components/SeasonCountdown'
 import NewsFeed from '../components/NewsFeed'
 import SectionHeading from '../components/SectionHeading'
@@ -115,40 +116,7 @@ function Home() {
 
       <SeasonCountdown />
 
-      <MatchStrip
-        sidebar={
-          <div className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-            <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-[#e7f0e9] px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#2f6b45]">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#2f6b45] opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#2f6b45]" />
-              </span>
-              Live match updates
-            </span>
-            <p className="mt-3 text-sm text-slate-600">
-              Follow along during the match &mdash; goals, cards and full-time scores posted live from the
-              touchline.
-            </p>
-            <a
-              href="https://x.com/FiltonAthletic"
-              target="_blank"
-              rel="noreferrer"
-              className="group mt-4 inline-flex w-fit items-center gap-2 rounded-full bg-[#0b2d52] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#123a68]"
-            >
-              Follow @FiltonAthletic on X
-              <span className="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
-            </a>
-            <a
-              href="https://www.facebook.com/FiltonAthleticFC"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-2 inline-block w-fit text-sm font-medium text-[#0b2d52] underline"
-            >
-              Or follow us on Facebook &rarr;
-            </a>
-          </div>
-        }
-      />
+      <MatchStrip sidebar={<FacebookFeed />} />
 
       {/* Join Us */}
       <section id="join" className="relative overflow-hidden border-b border-slate-200 bg-slate-50">
