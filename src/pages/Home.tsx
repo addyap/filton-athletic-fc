@@ -214,6 +214,8 @@ function Home() {
               { role: 'First Team Coaches', name: officials.firstTeamCoaches.join(', ') },
               { role: 'Reserve Team Manager', name: officials.reserveTeamManager },
               { role: 'Reserve Team Coaches', name: officials.reserveTeamCoaches.join(', ') },
+              { role: "A's Team Manager", name: officials.aTeamManager },
+              { role: "A's Team Coaches", name: officials.aTeamCoaches.join(', ') },
             ].map((o) => (
               <div
                 key={o.role}

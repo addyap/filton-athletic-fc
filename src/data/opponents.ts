@@ -119,6 +119,19 @@ export const opponentPreviews: OpponentPreview[] = [
     ],
     sourceNote: 'Club history and squad details supplied by University of Bristol AFC.',
   },
+  {
+    slug: 'tewkesbury-town',
+    name: 'Tewkesbury Town FC',
+    fixtureOpponent: 'Tewkesbury Town',
+    history: [
+      'Tewkesbury Town returned to Whaddon Road in 2018/19 for the Senior Charity Cup and this time came away victorious.',
+      'In 2021/22 the club won promotion to the Gloucestershire Northern Senior League for the first time, and in their second season lifted the GNSL Division 2 title to earn promotion to GNSL Division 1.',
+      'In 2023/24 they established a Saturday Development (3rd) team in the Cheltenham league, taking the club to four senior men’s teams plus a Veterans side.',
+      '2024/25 was one of the most successful seasons in the club’s history: the first team were crowned champions of Gloucestershire Northern Senior League 1 and won promotion to the Gloucestershire County League via a play-off, lifting the Reg Davis League Cup along the way. The reserves finished league runners-up and also went up, the Development team gained promotion, and the Sunday side won the Evesham Sunday League.',
+      'In 2025/26 their first team competed in the Gloucestershire County League for the first time in the club’s history, and with a new intake of U18s stepping up they launched a fourth Saturday team to develop them into senior football.',
+    ],
+    sourceNote: 'Club history supplied in the Filton Athletic matchday programme.',
+  },
 ]
 
 export function getOpponentPreview(slug: string | undefined): OpponentPreview | undefined {
