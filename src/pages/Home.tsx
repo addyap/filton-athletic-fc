@@ -16,7 +16,7 @@ import SiteFooter from '../components/SiteFooter'
 import PitchBackdrop from '../components/PitchBackdrop'
 import ConcordeMark from '../components/ConcordeMark'
 import MatchdaySection from '../components/MatchdaySection'
-import FacebookSection from '../components/FacebookSection'
+import SocialSection from '../components/SocialSection'
 import NewsFeed from '../components/NewsFeed'
 import SectionHeading from '../components/SectionHeading'
 import Reveal from '../components/Reveal'
@@ -115,6 +115,8 @@ function Home() {
 
       <MatchdaySection />
 
+      <SocialSection />
+
       {/* Join Us */}
       <section id="join" className="relative overflow-hidden border-b border-slate-200 bg-slate-50">
         <BootMark className="pointer-events-none absolute -right-6 -top-6 h-48 w-48 text-[#0b2d52]/[0.06] sm:h-64 sm:w-64" />
@@ -170,8 +172,6 @@ function Home() {
         <NewsFeed limit={4} />
         </Reveal>
       </section>
-
-      <FacebookSection />
 
       {/* History */}
       <section id="history" className="relative overflow-hidden border-t border-slate-200 bg-slate-50">
