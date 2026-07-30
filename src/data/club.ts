@@ -22,11 +22,29 @@ export const officials = {
 
 export type Squaddie = { name: string; position: string; blurb: string }
 
-/**
- * 2026/27 squad — cleared pending confirmation from the club for the new
- * season. Populate this once player registrations are finalised.
- */
-export const squad: Squaddie[] = []
+/** 2026/27 first team squad. */
+export const squad: Squaddie[] = [
+  { name: 'Ashley Eyles', position: 'GK', blurb: 'Rejoins the club after a few years away. An experienced keeper who is vocal, commands his box and an excellent shot stopper.' },
+  { name: 'Kieran Daniels', position: 'Def/Mid', blurb: 'Football IQ outstanding, can play LB, CB, CM or LW. Strong, quick and outstanding delivery out wide.' },
+  { name: 'Dan Matthews', position: 'Def/Mid', blurb: "Every opponent's nightmare. Will not stop running — tough, strong, technically excellent. Can play all positions and loves a 50/50." },
+  { name: 'Joe Mitchell', position: 'Def/Mid', blurb: 'Mr consistent. Technically gifted with both feet. Can defend and attack. Brilliant attitude.' },
+  { name: 'Callum Mitchell', position: 'Midfielder', blurb: 'Dynamic midfield presence. Ball winner, loves a tackle and never backs down when it gets tough. Loves popping up with important goals.' },
+  { name: 'Liam Dorman', position: 'Midfielder', blurb: 'Will not let opponents breathe. Committed, explosive and thrives in a 50/50. Technically very good and an important leader on and off the pitch.' },
+  { name: 'Charlie Peacock', position: 'Midfielder', blurb: 'Came up from the reserves and has been a breath of fresh air. Seriously talented midfielder who can play anywhere.' },
+  { name: 'Matt Tovey', position: 'Midfielder', blurb: 'Summer signing recovering from a long knee injury. When fit, a serious player in this league. Both footed and amazing in the air.' },
+  { name: 'Dylan Quick', position: 'Midfielder', blurb: 'Signing from our friends at DRG. Fits perfectly into the way we want to play this season: aggressive, quick, technically gifted, box to box.' },
+  { name: 'Fraser Venables', position: 'Midfielder', blurb: 'Left foot wand and his right foot is just as good. Creativity, vision and awareness off the charts. Can play in the 10 or either wing, and loves an assist as much as a goal.' },
+  { name: 'Yusuf Abdulrahman', position: 'Midfielder', blurb: "Box to box midfielder. Doesn't stop running from minute one. Has all the attributes to be a top player." },
+  { name: 'Freddie Frazer', position: 'Midfielder', blurb: 'Joined last season from Brislington. Bags of ability and can do anything in midfield — the Kaká of the County League.' },
+  { name: 'Kyle Thomas', position: 'Mid/Fwd (Player Manager)', blurb: 'Established attacking midfielder with bundles of ability. Strong on the ball and in the air and a deft touch at set pieces.' },
+  { name: 'Taylor Anderson', position: 'Mid/Fwd', blurb: 'Back scoring goals after a few seasons out with a bad knee injury. First touch is as good as it gets — comfortable in tight areas with back to goal or the ball at his feet. A complete footballer.' },
+  { name: 'Trey Merrett', position: 'Forward', blurb: 'Goals, goals, goals. Direct, blistering pace and can shoot off his left and right. Can play down either wing or as a striker and will score.' },
+  { name: 'Said Hassan', position: 'Forward', blurb: 'Quick, skilful, agile and loves taking on defenders. Can play down both wings and as an attacking full back.' },
+  { name: 'Kieran Cooper', position: 'Forward', blurb: 'Big number 9. Aerial presence, back to goal, work rate, loves pinning defenders. Great character to have in any team.' },
+  { name: 'Dan Payne', position: 'Forward', blurb: 'Another left footed wizard who has played leagues above in the past. Now fit and ready to go.' },
+  { name: 'Matthew Hoare', position: 'Forward', blurb: "Joined us last year but the season was hit and miss after a bad injury. A defender's worst nightmare — can go both sides, lightning-quick feet and scores plenty of goals." },
+  { name: 'Raphael Waugh', position: 'Forward', blurb: 'Summer signing. Direct, quick and strong — going to be a handful for any defence this season. Look out for the backflips after each goal.' },
+]
 
 /** Archived 2025/26 squad, kept for that season's matchday programmes. */
 export const squad2025_26: Squaddie[] = [
