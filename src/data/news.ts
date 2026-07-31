@@ -3,6 +3,7 @@ import fatsWorldCupFlag from '../assets/img/fats-world-cup-flag.png'
 import councilMeetingPhoto from '../assets/img/council-meeting-ground-improvements.jpg'
 import councilGroundPlansPhoto from '../assets/img/filton-council-ground-plans.jpg'
 import macmillanGolfPhoto from '../assets/img/macmillan-golf-challenge.jpg'
+import matchdayUniversityOfBristolPhoto from '../assets/img/matchday-university-of-bristol.jpg'
 
 export type NewsImage = { src: string; alt: string }
 
@@ -33,6 +34,21 @@ export type NewsItem = {
  * edits required.
  */
 export const news: NewsItem[] = [
+  {
+    slug: 'season-opener-university-of-bristol',
+    title: 'Season opener this Saturday — Filton Athletic vs University of Bristol',
+    date: '2026-07-31',
+    teams: ['first-team'],
+    excerpt:
+      'It’s matchday. The First Team kicks off the 2026/27 Marcliff Gloucestershire County League campaign at home to University of Bristol, Saturday 1 August, 3pm at Elm Park (BBS Park North, BS34 7PS). Come along and support the FATS — one club, one community, one family.',
+    images: [
+      {
+        src: matchdayUniversityOfBristolPhoto,
+        alt: 'Filton Athletic FC Season Opener matchday graphic — Filton Athletic vs University of Bristol, Saturday 1 August, kick-off 3pm at Elm Park, BS34 7PS.',
+      },
+    ],
+    link: { href: '/programme/university-of-bristol', label: 'Read the matchday programme' },
+  },
   {
     slug: 'as-team-pre-season-fixtures',
     title: "A's pre-season fixtures confirmed",
