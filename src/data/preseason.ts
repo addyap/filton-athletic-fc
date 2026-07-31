@@ -77,6 +77,41 @@ export const preSeason2026: PreSeasonFixture[] = [
   },
 ]
 
+/**
+ * 'A' team pre-season friendlies, building up to their 2026/27 league
+ * campaign. All kick off at 2pm at Patchway High.
+ */
+export const aTeamPreSeason2026: PreSeasonFixture[] = [
+  {
+    label: 'Sat 1 Aug',
+    iso: '2026-08-01',
+    opponent: 'Hanham A',
+    venue: 'H',
+    venueNote: 'Patchway High',
+  },
+  {
+    label: 'Sat 8 Aug',
+    iso: '2026-08-08',
+    opponent: 'Stoke Lane Old Boys',
+    venue: 'H',
+    venueNote: 'Patchway High',
+  },
+  {
+    label: 'Sat 15 Aug',
+    iso: '2026-08-15',
+    opponent: 'Almondsbury A',
+    venue: 'H',
+    venueNote: 'Patchway High',
+  },
+  {
+    label: 'Sat 22 Aug',
+    iso: '2026-08-22',
+    opponent: 'Stoke Gifford A',
+    venue: 'H',
+    venueNote: 'Patchway High',
+  },
+]
+
 /** Played/won/lost summary, excluding cancelled games. */
 export function preSeasonRecord(fixtures: PreSeasonFixture[]) {
   const played = fixtures.filter((f) => f.result && /^[WDL]/.test(f.result))
