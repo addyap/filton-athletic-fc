@@ -57,6 +57,7 @@ export type Programme = {
   longDate: string
   competitionName: string
   extras: ProgrammeExtras
+  season: '2026/27' | '2025/26'
 }
 
 /** Full competition names, keyed by the abbreviations used in the fixture list. */
@@ -106,10 +107,9 @@ function longDate(date: string): string {
 }
 
 /**
- * Hand-written extras per fixture. Keyed by slugified opponent name.
- * Add new matches here as their content is ready.
+ * Hand-written extras for 2025/26 (archived season). Keyed by slugified opponent name.
  */
-const programmeExtras: Record<string, ProgrammeExtras> = {
+const programmeExtras2025_26: Record<string, ProgrammeExtras> = {
   'ruardean-hill-rangers': {
     number: 4,
     pdfUrl:
@@ -1264,8 +1264,124 @@ const programmeExtras: Record<string, ProgrammeExtras> = {
   },
 }
 
-/** All 2025/26 home first-team fixtures, each turned into an archived programme, in date order. */
-export const programmes: Programme[] = firstTeamFixtures2025_26
+/**
+ * Hand-written extras for 2026/27 (current season). Keyed by slugified opponent name.
+ * Add new matches here as their content is ready.
+ */
+const programmeExtras2026_27: Record<string, ProgrammeExtras> = {
+  'university-of-bristol': {
+    number: 1,
+    pdfUrl:
+      'https://3p4oewzml4cd0fez.public.blob.vercel-storage.com/Filton%20Athletic%20-%20Match%20Day%20Programme%20-%2001%20-%20University%20of%20Bristol.pdf',
+    welcome: {
+      author: 'Paul Woodrow',
+      role: 'Vice-Chairman, Filton Athletic FC',
+      paragraphs: [
+        'Afternoon everyone and a warm sunny welcome back to home of football at Elm Park for our opening match of the new Gloucestershire County League season!',
+        'It is finally great to get our third season in the league underway after a proudly thrilling but ultimately disappointing summer cheering on those mighty Three Lions of England.',
+        'Our main focus this season is to continue the great work and progress we have made both on and off the pitch over the last few seasons, and to continue to try and push the First Team, Reserves and newly formed ‘A’ team forward. A huge thank you in that respect must go to our volunteers and committee who work tirelessly behind the scenes to get every team match ready.',
+        'Our opponents for today’s opening fixture are the University of Bristol Athletic Football Club (UBAFC), who are entering their debut season in the Gloucestershire County League. A very warm welcome is extended their way today, along with our congratulations on their successful promotion in the 2025/26 season.',
+        'With that in mind I’m looking forward to a highly competitive, energetic and exciting fixture this afternoon, with fair play and respect to the match officials always honoured. Good luck to both teams today, and best of luck to UBAFC for their maiden season ahead.',
+        'A final thank you goes out to all of our sponsors, new and old. Your contributions and continued support are enabling us to continue to move the club forward and strive to give our players the best chance they have for success. Thank you all.',
+      ],
+    },
+    dugout: {
+      author: 'Kyle Thomas',
+      role: 'First Team Manager',
+      matchTitle: 'Filton Athletic vs University of Bristol',
+      paragraphs: [
+        'Welcome to the players, management team and supporters of University of Bristol FC for today’s opening league fixture. Congratulations to University of Bristol on their promotion to Step 7 — it’s always exciting to welcome a new club into the league, and I’m sure they’ll be looking to make a strong start.',
+        'It feels like only yesterday the season finished, yet here we are ready to begin another campaign. With the season kicking off on 1st August, it certainly feels early, but the hard work starts now. Pre-season has been a little disrupted with holidays and the World Cup, making it difficult at times to get everyone together — but that’s now behind us, and our full focus is on the league campaign ahead.',
+        'We know we’ll be in for a tough test this afternoon against a young, energetic University of Bristol side. They’ll arrive full of confidence after winning their league last season and securing promotion through the play-offs in impressive fashion. I expect this league to be every bit as competitive as it was last year, with perhaps eight or nine teams capable of challenging near the top — that makes every point important from the very first whistle.',
+        'There’s always a special feeling about the opening day of the season. Everyone starts with optimism and ambition, and we’re no different. We’re looking forward to the challenge ahead and hope to build on the foundations we laid last season.',
+        'Finally, thank you to everyone who continues to support Filton Athletic. Your backing, both home and away, is hugely appreciated by the players and staff. Let’s get behind the lads and hopefully start the season with a positive result. Enjoy the game.',
+      ],
+    },
+    visitors: {
+      name: 'University of Bristol AFC',
+      paragraphs: [
+        'The University of Bristol Athletic Football Club (UBAFC) has competed in British Universities and College Sport (BUCS) competitions since it was formed in 2008. UBAFC runs six teams across the BUCS Aldi Men’s Western Leagues, from the sixth tier to the first, alongside a Saturday team created in 2023 which now plays in the Gloucestershire County Football League. It is one of the largest, most sociable and most successful clubs at the University of Bristol.',
+        'It has been a successful few years. The First Team won BUCS Division 1 in 2020 and 2025, and secured promotion to the Men’s Premier South Division after winning the promotion play-off against the University of Sussex in 2026. In the Saturday team’s debut season in 2023/24 they finished runners-up in Hellenic Division Two West and won the Bateman Sports Chairmans Challenge Cup, beating Letcombe, before losing the Marsh Supplementary Challenge Cup final to FC Stratford on penalties.',
+        'In 2024/25 the Saturday side finished 3rd in Hellenic Division Two and reached the quarter-finals of the Marsh Challenge Cup, losing narrowly to Hellenic Premier Division outfit Fairford Town. They also retained the Bateman Sports Chairmans Challenge Cup, beating Swindon Supermarine 5-0 in the final.',
+        'The 2025/26 season saw UBAFC win the Hellenic League Alliance West title and beat Iron Acton in the promotion play-off to reach the Gloucestershire County Football League — the highest level in the club’s history.',
+      ],
+    },
+    charity: {
+      name: 'The Ben Saunders Foundation',
+      url: 'https://www.bensaundersfoundation.org/',
+      paragraphs: [
+        'The Ben Saunders Foundation (BSF) has been started to raise funds to support children and young adults with cancer within the UK.',
+        'I (the founder) Ben Saunders was diagnosed with a rare form of cancer, a sarcoma attached to my heart, which I have been fighting since October 2019. It has spread into my lungs and I have faced many challenges along the way. These include two major open-heart surgeries and 6 rounds of very intense chemotherapy, which I am now currently back on!',
+        'These are just some of the things I have experienced along my cancer journey, and I am looking to help and offer whatever I can alongside my family and the foundation to support young people with cancer like myself.',
+        'I have been fortunate enough throughout my journey so far to have received the support I have, whether that be mentally, physically or a short holiday with friends recently to Center Parcs. I feel everyone in these circumstances deserves to be given as much support and happiness through the very difficult times they come across.',
+      ],
+    },
+    matchOfficial: 'Matt Dyer, Bobby Tutton, Mike Rogers',
+    teamSheets: {
+      home: {
+        team: 'Filton Athletic',
+        kit: 'Navy shirts, navy shorts, navy socks',
+        staff: ['Kyle Thomas (Manager)', 'Josh Phillipps'],
+        players: [
+          'Tom Bradley',
+          'Ashley Eyles',
+          'Chris Hillyer',
+          'Jack Cole',
+          'Jack Willmor',
+          'Kyle Thomas',
+          'Tom Fry',
+          'Joe Mitchell',
+          'Kieran Daniels',
+          'Callum Mitchell',
+          'Liam Dorman',
+          'Fraser Venables',
+          'Yusuf Abdulrahman',
+          'Freddie Frazer',
+          'Taylor Anderson',
+          'Matthew Hoare',
+          'Charlie Peacock',
+          'Matt Tovey',
+          'Dylan Quick',
+          'Dan Payne',
+          'Trey Merrett',
+          'Said Hassan',
+        ],
+      },
+      away: {
+        team: 'University of Bristol',
+        kit: 'Red shirts, black shorts, black socks',
+        staff: ['Alan Tyers (Manager)'],
+        players: [
+          'Jamie Goodwin',
+          'Toby Swift',
+          'James Harwood',
+          'Max Diment',
+          'Pranav Ganti',
+          'Jason Pool',
+          'Zeb Buckeridge',
+          'Ralph Rushton',
+          'Zach Twaddle',
+          'Jimi Adesanya',
+          'Miles Whilby',
+          'Lewis Johnstone',
+          'Jack Powell',
+          'Sam Guilford',
+          'Sammy Morgan',
+          'Callum Goon',
+          'Arthur Baldwin',
+          'Jonty Sinclair',
+          'Nemo Al-Qaq',
+          'Khoa Dao',
+          'Edgar Van Parys',
+          'Callum Bleasdale',
+        ],
+      },
+    },
+  },
+}
+
+/** 2026/27 home first-team fixtures, each turned into a programme, in date order. */
+export const programmes2026_27: Programme[] = firstTeamFixtures
   .filter((f) => f.venue === 'H')
   .map((fixture) => {
     const base = slugify(fixture.opponent)
@@ -1275,13 +1391,34 @@ export const programmes: Programme[] = firstTeamFixtures2025_26
       isoDate: isoDate(fixture.date),
       longDate: longDate(fixture.date),
       competitionName: competitionName(fixture.competition),
-      extras: programmeExtras[base] ?? {},
+      extras: programmeExtras2026_27[base] ?? {},
+      season: '2026/27' as const,
     }
   })
 
-// Guard against two home games against the same opponent colliding on a slug.
+/** All 2025/26 home first-team fixtures, each turned into an archived programme, in date order. */
+export const programmes2025_26: Programme[] = firstTeamFixtures2025_26
+  .filter((f) => f.venue === 'H')
+  .map((fixture) => {
+    const base = slugify(fixture.opponent)
+    return {
+      slug: base,
+      fixture,
+      isoDate: isoDate(fixture.date),
+      longDate: longDate(fixture.date),
+      competitionName: competitionName(fixture.competition),
+      extras: programmeExtras2025_26[base] ?? {},
+      season: '2025/26' as const,
+    }
+  })
+
+export const programmes: Programme[] = [...programmes2026_27, ...programmes2025_26]
+
+// Guard against two games (even across seasons) against the same opponent colliding on a
+// slug. The archived (2025/26) programme keeps its established slug — it may already be
+// linked or shared — and a same-slug 2026/27 fixture gets its date appended instead.
 const seen = new Map<string, number>()
-for (const p of programmes) {
+for (const p of [...programmes2025_26, ...programmes2026_27]) {
   const count = seen.get(p.slug) ?? 0
   if (count > 0) p.slug = `${p.slug}-${p.isoDate}`
   seen.set(p.slug, count + 1)
@@ -1291,9 +1428,9 @@ export function getProgramme(slug: string | undefined): Programme | undefined {
   return programmes.find((p) => p.slug === slug)
 }
 
-/** The next home game still to be played (no result recorded), else the last one. */
+/** The next current-season home game still to be played (no result recorded), else the last one. */
 export function nextProgramme(): Programme | undefined {
-  return programmes.find((p) => !p.fixture.result) ?? programmes[programmes.length - 1]
+  return programmes2026_27.find((p) => !p.fixture.result) ?? programmes2026_27[programmes2026_27.length - 1]
 }
 
 function normaliseTeam(name: string): string {
@@ -1304,10 +1441,10 @@ function normaliseTeam(name: string): string {
     .trim()
 }
 
-/** Find a 2025/26 league-table row for a fixture opponent, tolerating naming differences. */
-export function findTableRow(team: string): TableRow | undefined {
+/** Find a league-table row for a fixture opponent, tolerating naming differences. Defaults to the 2025/26 archive table. */
+export function findTableRow(team: string, table: TableRow[] = leagueTable2025_26): TableRow | undefined {
   const target = normaliseTeam(team)
-  return leagueTable2025_26.find((r) => {
+  return table.find((r) => {
     const t = normaliseTeam(r.team)
     return t === target || t.startsWith(target) || target.startsWith(t)
   })
@@ -1315,18 +1452,22 @@ export function findTableRow(team: string): TableRow | undefined {
 
 export const filtonTableRow = findTableRow('Filton Athletic')
 
-/** Last `count` completed 2025/26 first-team results before `beforeIso`, oldest → newest. */
-export function formBefore(beforeIso: string, count = 5): Array<'W' | 'D' | 'L'> {
-  return firstTeamFixtures2025_26
+/** Last `count` completed results before `beforeIso`, oldest → newest. Defaults to the 2025/26 archive fixtures. */
+export function formBefore(
+  beforeIso: string,
+  count = 5,
+  fixtures: Fixture[] = firstTeamFixtures2025_26,
+): Array<'W' | 'D' | 'L'> {
+  return fixtures
     .filter((f) => f.result && /^[WDL]/.test(f.result) && isoDate(f.date) < beforeIso)
     .sort((a, b) => isoDate(a.date).localeCompare(isoDate(b.date)))
     .slice(-count)
     .map((f) => f.result![0] as 'W' | 'D' | 'L')
 }
 
-/** The reverse (away) 2025/26 fixture against the same opponent, if any. */
-export function reverseFixtureFor(opponent: string): Fixture | undefined {
-  return firstTeamFixtures2025_26.find((f) => f.opponent === opponent && f.venue === 'A')
+/** The reverse (away) fixture against the same opponent, if any. Defaults to the 2025/26 archive fixtures. */
+export function reverseFixtureFor(opponent: string, fixtures: Fixture[] = firstTeamFixtures2025_26): Fixture | undefined {
+  return fixtures.find((f) => f.opponent === opponent && f.venue === 'A')
 }
 
 /** The next first-team fixture still to be played (no result recorded yet). */

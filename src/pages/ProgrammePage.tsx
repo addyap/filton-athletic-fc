@@ -6,14 +6,22 @@ import SiteFooter from '../components/SiteFooter'
 import { SectionIcon } from '../components/SectionHeading'
 import {
   getProgramme,
-  filtonTableRow,
   findTableRow,
   formBefore,
   reverseFixtureFor,
   type Programme,
   type TeamSheet,
 } from '../data/programmes'
-import { squad2025_26 as squad, sponsors, groundInfo, leagueTable2025_26 as leagueTable } from '../data/club'
+import {
+  squad as squadCurrent,
+  squad2025_26,
+  sponsors,
+  groundInfo,
+  leagueTable as leagueTableCurrent,
+  leagueTable2025_26,
+  firstTeamFixtures,
+  firstTeamFixtures2025_26,
+} from '../data/club'
 
 function FormGuide({ form }: { form: Array<'W' | 'D' | 'L'> }) {
   if (form.length === 0) return <span className="text-sm text-slate-500">No games played yet</span>
@@ -231,9 +239,15 @@ function ProgrammePage() {
   }
 
   const { fixture, extras } = programme
-  const oppRow = findTableRow(fixture.opponent)
-  const form = formBefore(programme.isoDate)
-  const reverse = reverseFixtureFor(fixture.opponent)
+  const isCurrentSeason = programme.season === '2026/27'
+  const squad = isCurrentSeason ? squadCurrent : squad2025_26
+  const leagueTable = isCurrentSeason ? leagueTableCurrent : leagueTable2025_26
+  const seasonFixtures = isCurrentSeason ? firstTeamFixtures : firstTeamFixtures2025_26
+  const seasonLabel = isCurrentSeason ? '2026-27' : '2025-26'
+  const filtonTableRow = findTableRow('Filton Athletic', leagueTable)
+  const oppRow = findTableRow(fixture.opponent, leagueTable)
+  const form = formBefore(programme.isoDate, 5, seasonFixtures)
+  const reverse = reverseFixtureFor(fixture.opponent, seasonFixtures)
 
   return (
     <div className="programme-print min-h-screen bg-white text-slate-900">
@@ -382,7 +396,13 @@ function ProgrammePage() {
 
         {/* League table */}
         <Section id="table" title="League table" icon="standings">
-          <p className="mb-3 text-sm text-slate-500">{programme.competitionName} 2025-26</p>
+          <p className="mb-3 text-sm text-slate-500">{programme.competitionName} {seasonLabel}</p>
+          {leagueTable.length === 0 ? (
+            <div className="rounded-lg border border-dashed border-slate-300 bg-slate-50 p-6 text-center">
+              <p className="font-semibold text-[#0b2d52]">Table will appear once the season is under way</p>
+              <p className="mt-1 text-sm text-slate-500">No matches played yet.</p>
+            </div>
+          ) : (
           <div className="overflow-x-auto rounded-lg border border-slate-200">
             <table className="min-w-full text-sm">
               <thead className="bg-[#0b2d52] text-white">
@@ -434,6 +454,7 @@ function ProgrammePage() {
               </tbody>
             </table>
           </div>
+          )}
         </Section>
 
         {/* Charity */}
