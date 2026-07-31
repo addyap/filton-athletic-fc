@@ -34,6 +34,15 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'as-team-pre-season-fixtures',
+    title: "A's pre-season fixtures confirmed",
+    date: '2026-07-31',
+    teams: ['as'],
+    excerpt:
+      'Four warm-up friendlies for the A’s ahead of their 2026/27 league campaign, all kicking off 2pm at Patchway High: Hanham A (1 Aug), Stoke Lane Old Boys (8 Aug), Almondsbury A (15 Aug) and Stoke Gifford A (22 Aug). League fixtures and squad to follow.',
+    link: { href: '/as-team', label: "See the A's" },
+  },
+  {
     slug: 'pre-season-2026-wrap',
     title: 'Pre-season done — First Team ready for the opener',
     date: '2026-07-29',
