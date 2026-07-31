@@ -49,6 +49,7 @@ export const news: NewsItem[] = [
     teams: ['first-team'],
     excerpt:
       'That’s pre-season wrapped up. Six friendlies gave the squad valuable minutes ahead of the 2026/27 campaign: a 3-2 win over Boco at St Bede’s School to get going, then tough tests against Shire (1-3 at Mangotsfield), Oldland (0-2 away) and Old Sodbury (2-3 at Elm Park), with the Avonmouth game called off. The lads signed off in style with an emphatic 7-2 win away at Southmead. Two wins, plenty of lessons and everyone raring to go — the competitive season kicks off on Saturday 1 August at home to University of Bristol. #FATS #UTF',
+    link: { href: '/#pre-season', label: 'See the pre-season results' },
   },
   {
     slug: 'fats-at-the-world-cup',
