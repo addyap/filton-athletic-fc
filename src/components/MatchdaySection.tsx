@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import crestTrimmed from '../assets/img/filton-athletic-crest-trimmed.webp'
+import elmParkPitch from '../assets/img/elm-park-pitch.jpg'
 import {
   nextFirstTeamFixture,
   lastFirstTeamResult,
@@ -125,6 +126,14 @@ function MatchdaySection() {
                 {competitionName(next.competition)}
                 {next.venue === 'H' ? ` · ${groundInfo.name}` : ''}
               </p>
+
+              {next.venue === 'H' && (
+                <img
+                  src={elmParkPitch}
+                  alt={`The pitch at ${groundInfo.name}`}
+                  className="mt-4 h-24 w-40 rounded-lg object-cover ring-1 ring-white/20 sm:h-28 sm:w-48"
+                />
+              )}
 
               {showCountdown && (
                 <div className="mt-6">

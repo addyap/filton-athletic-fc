@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import crest from '../assets/img/filton-athletic-crest-transparent.webp'
+import elmParkPitch from '../assets/img/elm-park-pitch.jpg'
 import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
 import { SectionIcon } from '../components/SectionHeading'
@@ -495,6 +496,11 @@ function ProgrammePage() {
 
         {/* Ground */}
         <Section id="ground" title="Matchday & ground" icon="pin">
+          <img
+            src={elmParkPitch}
+            alt="The pitch at BBS Park North, Elm Park, Filton"
+            className="mb-4 aspect-video w-full rounded-lg object-cover"
+          />
           <p className="font-semibold text-[#0b2d52]">{groundInfo.name}</p>
           <p className="text-slate-700">{groundInfo.address}</p>
           <a

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { groundInfo } from '../data/club'
+import elmParkPitch from '../assets/img/elm-park-pitch.jpg'
 import BackToTop from './BackToTop'
 import SectionHeading from './SectionHeading'
 
@@ -19,6 +20,12 @@ function SiteFooter({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
           <SectionHeading icon="pin" title="Contact & ground" className="justify-center" as={headingLevel} />
           <div className="mt-6 grid gap-8 lg:grid-cols-5 lg:items-start">
             <div className="lg:col-span-2">
+              <img
+                src={elmParkPitch}
+                alt="The pitch at BBS Park North, Elm Park, Filton"
+                className="mb-4 aspect-video w-full rounded-lg object-cover"
+                loading="lazy"
+              />
               <p className="font-semibold">Home of the first team, reserves and youth</p>
               <p className="text-slate-700">{groundInfo.name}</p>
               <p className="text-slate-700">{groundInfo.address}</p>
