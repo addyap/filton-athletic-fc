@@ -25,6 +25,7 @@ import LatestNewsBanner from '../components/LatestNewsBanner'
 import PreSeasonSection from '../components/sections/PreSeasonSection'
 import FixturesSection from '../components/sections/FixturesSection'
 import TableSection from '../components/sections/TableSection'
+import LeagueResultsSection from '../components/sections/LeagueResultsSection'
 import YouthSection from '../components/sections/YouthSection'
 import ReservesSection from '../components/sections/ReservesSection'
 import AsTeamSection from '../components/sections/AsTeamSection'
@@ -278,6 +279,7 @@ function Home() {
       <PreSeasonSection />
       <FixturesSection />
       <TableSection />
+      <LeagueResultsSection />
       <ReservesSection />
       <AsTeamSection />
       <YouthSection />

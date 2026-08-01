@@ -316,8 +316,28 @@ export const reserveFixtures2025_26: ReserveFixture[] = [
 
 export type TableRow = { pos: number; team: string; p: number; w: number; d: number; l: number; f: number; a: number; gd: number; pts: number }
 
-/** 2026/27 league table — cleared pending the season starting. */
-export const leagueTable: TableRow[] = []
+/**
+ * 2026/27 league table — Marcliff Gloucestershire County Football League,
+ * Division 1. Updated from FA Full-Time; the live/full version (with all results
+ * and scorers) is linked from the table section. Snapshot after matchday 1.
+ */
+export const leagueTable: TableRow[] = [
+  { pos: 1, team: 'Bishops Cleeve Development', p: 1, w: 1, d: 0, l: 0, f: 2, a: 0, gd: 2, pts: 3 },
+  { pos: 2, team: 'University of Bristol', p: 1, w: 1, d: 0, l: 0, f: 2, a: 1, gd: 1, pts: 3 },
+  { pos: 3, team: 'Henbury & Rockleaze', p: 1, w: 1, d: 0, l: 0, f: 1, a: 0, gd: 1, pts: 3 },
+  { pos: 4, team: 'Longlevens Reserves', p: 1, w: 0, d: 1, l: 0, f: 2, a: 2, gd: 0, pts: 1 },
+  { pos: 5, team: 'Quedgeley Wanderers', p: 1, w: 0, d: 1, l: 0, f: 2, a: 2, gd: 0, pts: 1 },
+  { pos: 6, team: 'Frampton United', p: 1, w: 0, d: 1, l: 0, f: 1, a: 1, gd: 0, pts: 1 },
+  { pos: 7, team: 'Wick', p: 1, w: 0, d: 1, l: 0, f: 1, a: 1, gd: 0, pts: 1 },
+  { pos: 8, team: 'Chalford', p: 1, w: 0, d: 1, l: 0, f: 0, a: 0, gd: 0, pts: 1 },
+  { pos: 9, team: 'Stoke Gifford SGS United', p: 1, w: 0, d: 1, l: 0, f: 0, a: 0, gd: 0, pts: 1 },
+  { pos: 10, team: 'Broadwell Amateurs', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 11, team: 'Ruardean Hill Rangers', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 12, team: 'Tewkesbury Town', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 13, team: 'Filton Athletic', p: 1, w: 0, d: 0, l: 1, f: 1, a: 2, gd: -1, pts: 0 },
+  { pos: 14, team: 'Totterdown United', p: 1, w: 0, d: 0, l: 1, f: 0, a: 1, gd: -1, pts: 0 },
+  { pos: 15, team: 'AFC Mangotsfield Rocks', p: 1, w: 0, d: 0, l: 1, f: 0, a: 2, gd: -2, pts: 0 },
+]
 
 /** Archived final 2023/24 league table — Bristol & Suburban Premier Division. Filton finished 1st, Champions. */
 export const leagueTable2023_24: TableRow[] = [
