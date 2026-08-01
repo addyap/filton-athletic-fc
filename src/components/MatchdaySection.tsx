@@ -116,8 +116,18 @@ function MatchdaySection() {
                 </span>
               </div>
 
+              {/* Home team first: when Filton are away, the opponent leads and
+                  Filton sit on the right. */}
               <h3 className="mt-4 text-2xl font-bold leading-tight sm:text-3xl lg:text-4xl">
-                Filton Athletic <span className="text-[#a9e0b8]">vs</span> {next.opponent}
+                {next.venue === 'A' ? (
+                  <>
+                    {next.opponent} <span className="text-[#a9e0b8]">vs</span> Filton Athletic
+                  </>
+                ) : (
+                  <>
+                    Filton Athletic <span className="text-[#a9e0b8]">vs</span> {next.opponent}
+                  </>
+                )}
               </h3>
               <p className="mt-3 text-base text-slate-100 sm:text-lg">
                 {fixtureLongDate(next.date)} &middot; Kick-off {next.time}
@@ -182,7 +192,15 @@ function MatchdaySection() {
               Last result
             </span>
             <h3 className="mt-4 text-xl font-bold text-[#0b2d52] sm:text-2xl">
-              Filton Athletic <span className="text-slate-400">vs</span> {last.opponent}
+              {last.venue === 'A' ? (
+                <>
+                  {last.opponent} <span className="text-slate-400">vs</span> Filton Athletic
+                </>
+              ) : (
+                <>
+                  Filton Athletic <span className="text-slate-400">vs</span> {last.opponent}
+                </>
+              )}
             </h3>
             <p className="mt-2 text-sm text-slate-500">
               {fixtureLongDate(last.date)} &middot; {venueLabel(last.venue)}
