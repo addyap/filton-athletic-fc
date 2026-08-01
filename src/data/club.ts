@@ -95,7 +95,7 @@ export type Fixture = {
  * schedule. Populate once fixtures are confirmed.
  */
 export const firstTeamFixtures: Fixture[] = [
-  { date: '01/08/26', time: '15:00', competition: 'GCL', opponent: 'University of Bristol', venue: 'H' },
+  { date: '01/08/26', time: '15:00', competition: 'GCL', opponent: 'University of Bristol', venue: 'H', result: 'L 1-2', scorers: 'C Hillyer' },
   { date: '08/08/26', time: '15:00', competition: 'GCL', opponent: 'AFC Mangotsfield Rocks', venue: 'A' },
   { date: '12/08/26', time: '18:30', competition: 'GCL', opponent: 'Stoke Gifford SGS United', venue: 'H' },
   { date: '15/08/26', time: '15:00', competition: 'GCL', opponent: 'Bishops Cleeve Development', venue: 'A' },

@@ -88,6 +88,7 @@ export const aTeamPreSeason2026: PreSeasonFixture[] = [
     opponent: 'Hanham A',
     venue: 'H',
     venueNote: 'Patchway High',
+    result: 'L 2-6',
   },
   {
     label: 'Sat 8 Aug',

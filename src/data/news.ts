@@ -35,6 +35,24 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'first-team-result-university-of-bristol',
+    title: 'Opening day ends in disappointment for the Firsts',
+    date: '2026-08-01',
+    teams: ['first-team'],
+    excerpt:
+      'Narrowly beaten 2-1 by newcomers University of Bristol on the opening day of the 2026/27 Marcliff Gloucestershire County League season. Filton’s goal came from Chris Hillyer. #FATS #UTF',
+    link: { href: '/programme/university-of-bristol', label: 'Read the matchday programme' },
+  },
+  {
+    slug: 'as-team-result-hanham',
+    title: 'Good first run out for Filton A side against a very good Hanham Athletic A team',
+    date: '2026-08-01',
+    teams: ['as'],
+    excerpt:
+      'The A’s went down 6-2 in their opening pre-season friendly against a strong Hanham Athletic A side at Patchway High — some vital minutes in the legs for the lads going forward, and thanks to Hanham for the fixture and all the best for their season.',
+    link: { href: '/as-team', label: "See the A's" },
+  },
+  {
     slug: 'season-opener-university-of-bristol',
     title: 'Season opener this Saturday — Filton Athletic vs University of Bristol',
     date: '2026-07-31',

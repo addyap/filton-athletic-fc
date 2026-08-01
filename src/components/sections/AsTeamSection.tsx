@@ -5,6 +5,14 @@ import Reveal from '../Reveal'
 import { asTeamTable } from '../../data/club'
 import { aTeamPreSeason2026 } from '../../data/preseason'
 
+function resultBadge(result?: string) {
+  if (!result) return 'bg-slate-100 text-slate-500'
+  if (result.startsWith('W')) return 'bg-emerald-100 text-emerald-800'
+  if (result.startsWith('L')) return 'bg-red-100 text-red-800'
+  if (result.startsWith('D')) return 'bg-amber-100 text-amber-800'
+  return 'bg-slate-100 text-slate-500'
+}
+
 function AsTeamSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
   return (
     <section id="as-team" className="border-t border-slate-200 bg-[#e3ebf8]/60">
@@ -23,6 +31,7 @@ function AsTeamSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
               <th className="px-3 py-2 text-left font-semibold">Date</th>
               <th className="px-3 py-2 text-left font-semibold">Opponent</th>
               <th className="px-3 py-2 text-left font-semibold">Venue</th>
+              <th className="px-3 py-2 text-left font-semibold">Result</th>
             </tr>
           </thead>
           <tbody>
@@ -33,6 +42,11 @@ function AsTeamSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
                 <td className="whitespace-nowrap px-3 py-1.5">
                   {f.venue}
                   {f.venueNote && <span className="text-slate-500"> &middot; {f.venueNote}</span>}
+                </td>
+                <td className="px-3 py-1.5">
+                  <span className={`rounded px-2 py-0.5 text-xs font-semibold ${resultBadge(f.result)}`}>
+                    {f.result ?? 'Upcoming'}
+                  </span>
                 </td>
               </tr>
             ))}
