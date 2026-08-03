@@ -22,7 +22,7 @@ export const officials = {
   firstTeamManager: 'Kyle Thomas',
   firstTeamCoaches: ['Josh Phillipps', 'Mike Slade'],
   reserveTeamManager: 'Jim Phillipps',
-  reserveTeamCoaches: ['Todd Brunt'],
+  reserveTeamCoaches: ['Todd Brunt', 'Luke Selman'],
   aTeamManager: 'Tommy Johnston',
   aTeamCoaches: ['Ryan Jones'],
 }
