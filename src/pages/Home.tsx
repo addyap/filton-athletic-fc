@@ -99,7 +99,7 @@ function Home() {
             <ConcordeMark className="h-8 w-auto shrink-0 text-white sm:h-10 lg:h-12" />
           </div>
           <p className="mx-auto mt-5 max-w-2xl text-base text-slate-100 sm:text-lg lg:text-xl">
-            First team, reserves and youth football in the north of Bristol since the 1960s.
+            First team, reserves, A&rsquo;s and youth football in the north of Bristol since the 1960s.
             <br />
             Come down to BBS Park North and back the lads.
           </p>
