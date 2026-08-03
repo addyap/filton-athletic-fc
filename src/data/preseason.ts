@@ -113,6 +113,55 @@ export const aTeamPreSeason2026: PreSeasonFixture[] = [
   },
 ]
 
+/**
+ * Reserve team pre-season friendlies, building up to their 2026/27 league
+ * campaign. Grounds and cancellation from Jim Phillipps.
+ */
+export const reserveTeamPreSeason2026: PreSeasonFixture[] = [
+  {
+    label: 'Wed 5 Aug',
+    iso: '2026-08-05',
+    opponent: 'Avonmouth Res',
+    venue: 'A',
+    venueNote: 'Avonmouth Football Club',
+  },
+  {
+    label: 'Sat 8 Aug',
+    iso: '2026-08-08',
+    opponent: 'Redfield Rovers',
+    venue: 'A',
+    cancelled: true,
+  },
+  {
+    label: 'Wed 12 Aug',
+    iso: '2026-08-12',
+    opponent: 'Southmead',
+    venue: 'N',
+    venueNote: 'Elm Park / Jarratts Road – TBC',
+  },
+  {
+    label: 'Sat 15 Aug',
+    iso: '2026-08-15',
+    opponent: 'Lawrence Weston',
+    venue: 'A',
+    venueNote: 'Kingsweston Lane',
+  },
+  {
+    label: 'Sat 22 Aug',
+    iso: '2026-08-22',
+    opponent: 'Boco Res',
+    venue: 'A',
+    venueNote: 'AEK Boco, Greenbank Road',
+  },
+  {
+    label: 'Wed 26 Aug',
+    iso: '2026-08-26',
+    opponent: 'Longwell Green Res',
+    venue: 'A',
+    venueNote: 'Longwell Green FC',
+  },
+]
+
 /** Played/won/lost summary, excluding cancelled games. */
 export function preSeasonRecord(fixtures: PreSeasonFixture[]) {
   const played = fixtures.filter((f) => f.result && /^[WDL]/.test(f.result))
