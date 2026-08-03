@@ -199,10 +199,11 @@ function Home() {
           </div>
 
           <p className="mt-8 max-w-3xl text-slate-700">
-            Today we&rsquo;re made up of two adult teams playing every Saturday &mdash; the first team in the
-            Marcliff Gloucestershire County Football League, and the Reserves in the Bristol &amp; Suburban
-            Premier Division &mdash; run by an enthusiastic and committed committee, and fortunate to be
-            supported by some of the best fans in the world: the self-proclaimed Filton Ultras!
+            Today we&rsquo;re made up of three adult teams playing every Saturday &mdash; the first team in the
+            Marcliff Gloucestershire County Football League, the Reserves in the Bristol &amp; Suburban
+            Premier Division, and the A&rsquo;s in Division Three &mdash; run by an enthusiastic and committed
+            committee, and fortunate to be supported by some of the best fans in the world: the self-proclaimed
+            Filton Ultras!
           </p>
 
           <h4 className="mt-10 text-lg font-semibold text-[#0b2d52]">Club officials</h4>
