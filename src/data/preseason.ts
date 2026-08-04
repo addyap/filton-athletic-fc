@@ -115,7 +115,7 @@ export const aTeamPreSeason2026: PreSeasonFixture[] = [
 
 /**
  * Reserve team pre-season friendlies, building up to their 2026/27 league
- * campaign. Grounds and cancellation from Jim Phillipps.
+ * campaign.
  */
 export const reserveTeamPreSeason2026: PreSeasonFixture[] = [
   {
