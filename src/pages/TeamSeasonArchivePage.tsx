@@ -132,6 +132,22 @@ function TeamSeasonArchivePage({ team }: { team: Team }) {
           </div>
         </div>
 
+        {!isReserves && data.teamPhotos && data.teamPhotos.length > 0 && (
+          <div className="mt-14">
+            <SectionHeading icon="shirt" title={`${data.label} team photos`} className="justify-center" />
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              {data.teamPhotos.map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt={`Filton Athletic FC first team, ${data.label} season`}
+                  className="w-full rounded-lg border border-slate-200 object-cover"
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
         {!isReserves && data.squad && data.squad.length > 0 && (
           <div className="mt-14">
             <SectionHeading icon="shirt" title={`${data.label} squad`} className="justify-center" />

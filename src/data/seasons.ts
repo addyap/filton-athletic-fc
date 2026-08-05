@@ -13,6 +13,8 @@ import {
   squad2025_26,
 } from './club'
 import { playerPhotos2025_26 } from './playerPhotos'
+import firstTeam2025_26_1 from '../assets/img/first-team-2025-26-1.webp'
+import firstTeam2025_26_2 from '../assets/img/first-team-2025-26-2.webp'
 
 export type SeasonArchive = {
   slug: string
@@ -22,6 +24,7 @@ export type SeasonArchive = {
   fixtures: Fixture[]
   squad?: Squaddie[]
   playerPhotos?: Record<string, string>
+  teamPhotos?: string[]
   reserveStanding?: string
   reserveTable?: TableRow[]
   reserveFixtures?: ReserveFixture[]
@@ -37,6 +40,7 @@ export const seasons: SeasonArchive[] = [
     fixtures: firstTeamFixtures2025_26,
     squad: squad2025_26,
     playerPhotos: playerPhotos2025_26,
+    teamPhotos: [firstTeam2025_26_1, firstTeam2025_26_2],
     reserveStanding: 'Reserves finished 3rd in the Bristol & Suburban League, Senior division.',
     reserveTable: reserveTable2025_26,
     reserveFixtures: reserveFixtures2025_26,
