@@ -396,8 +396,23 @@ export const leagueTable2025_26: TableRow[] = [
   { pos: 17, team: 'Hanham Athletic', p: 32, w: 5, d: 5, l: 22, f: 43, a: 74, gd: -31, pts: 20 },
 ]
 
-/** 2026/27 reserve league table — cleared pending the season starting. */
-export const reserveTable: TableRow[] = []
+/** 2026/27 reserve league table — Bristol & Suburban Premier Division, from FA Full-Time. */
+export const reserveTable: TableRow[] = [
+  { pos: 1, team: 'AFC Bohemia First', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 2, team: 'Almondsbury Reserves', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 3, team: 'Avonmouth Reserves', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 4, team: 'Filton Athletic Reserves', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 5, team: 'Henbury & Rockleaze Reserves', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 6, team: 'Jamaica Bell, The First', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 7, team: 'Mendip Broadwalk Res', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 8, team: 'Old Cothamians First', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 9, team: 'Phoenix NextGen First', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 10, team: 'Shaftesbury Crusade First', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 11, team: 'Southmead First', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 12, team: 'St Aldhelms First', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 13, team: 'Warmley Rangers Youth First', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 14, team: 'Wessex Wanderers First', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+]
 
 /**
  * 2026/27 A's division table — Bristol & Suburban League, Division Three.
