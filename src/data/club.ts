@@ -430,15 +430,21 @@ export const reserveTable: TableRow[] = [
   { pos: 14, team: 'Wessex Wanderers First', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
 ]
 
-/**
- * 2026/27 A's division table — Bristol & Suburban League, Division Four.
- * Cleared: the previous table here was sourced from the wrong division
- * (Division Three) — several of the A's actual Division Four opponents from
- * FA Full-Time's fixture list (e.g. Severn Beach Wanderers Reserves, Cutters
- * Friday FC Reserve, Stoke Gifford SGS United A) aren't even in it. Repopulate
- * from the correct Division Four table once we have that FA Full-Time link.
- */
-export const asTeamTable: TableRow[] = []
+/** 2026/27 A's division table — Bristol & Suburban League, Division Four, from FA Full-Time. */
+export const asTeamTable: TableRow[] = [
+  { pos: 1, team: 'Avonmouth A', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 2, team: 'Cutters Friday FC Reserve', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 3, team: 'Eighty One United 1st', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 4, team: 'Filton Athletic A', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 5, team: 'Hanham Abbotonians Reserves', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 6, team: 'Imperial A', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 7, team: 'Made For Ever Development', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 8, team: 'Parson Street Old Boys Reserves', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 9, team: 'Severn Beach Wanderers Reserves', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 10, team: 'Shaftesbury Crusade A', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 11, team: 'St Vallier First', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 12, team: 'Stoke Gifford SGS United A', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+]
 
 /** Archived final 2024/25 reserve league table — Division Four. */
 export const reserveTable2024_25: TableRow[] = [
