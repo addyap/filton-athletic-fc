@@ -4,6 +4,7 @@ import councilMeetingPhoto from '../assets/img/council-meeting-ground-improvemen
 import councilGroundPlansPhoto from '../assets/img/filton-council-ground-plans.jpg'
 import macmillanGolfPhoto from '../assets/img/macmillan-golf-challenge.jpg'
 import matchdayUniversityOfBristolPhoto from '../assets/img/matchday-university-of-bristol.jpg'
+import thankYouSouthmeadPhoto from '../assets/img/thank-you-southmead-ben.jpg'
 
 export type NewsImage = { src: string; alt: string }
 
@@ -41,6 +42,12 @@ export const news: NewsItem[] = [
     teams: ['club'],
     excerpt:
       'Following our pre-season friendly against Southmead FC, Filton organised a collection for Ben and his family — raising an incredible £1,170 through cash and card donations on the day. Every penny was handed to Southmead FC in cash, safely banked, and added to Ben’s GoFundMe page. Southmead have sent us a heartfelt thank you in return, quoting a line that says it all: “Football has no colours.” Thank you to every player, volunteer and supporter who gave so generously — a real credit to this club. #FATS #UTF',
+    images: [
+      {
+        src: thankYouSouthmeadPhoto,
+        alt: 'Thank you to Filton Athletic FC from Southmead Football Club — £1,170 raised on behalf of Ben and his family. "Football has no colours."',
+      },
+    ],
     link: { href: '/#pre-season', label: 'See the Southmead friendly' },
   },
   {
