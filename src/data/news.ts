@@ -35,6 +35,15 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'reserves-result-avonmouth',
+    title: 'Reserves open pre-season with a 2-2 draw at Avonmouth',
+    date: '2026-08-06',
+    teams: ['reserves'],
+    excerpt:
+      'A really good first run out for the Reserves last night, and a chance to blow off the cobwebs. A very competitive game against a tough side — thanks for the fixture and for hosting us, Avonmouth Football Club. Goals for Filton from Harry Garrett and a debut goal for Reece Evans.',
+    link: { href: '/reserves', label: 'See the Reserves' },
+  },
+  {
     slug: 'first-team-result-university-of-bristol',
     title: 'Opening day ends in disappointment for the Firsts',
     date: '2026-08-01',

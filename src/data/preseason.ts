@@ -124,6 +124,8 @@ export const reserveTeamPreSeason2026: PreSeasonFixture[] = [
     opponent: 'Avonmouth Res',
     venue: 'A',
     venueNote: 'Avonmouth Football Club',
+    result: 'D 2-2',
+    scorers: 'H Garrett, R Evans',
   },
   {
     label: 'Sat 8 Aug',
