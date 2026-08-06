@@ -134,8 +134,22 @@ function MatchdaySection() {
               </p>
               <p className="mt-1 text-sm text-slate-300">
                 {competitionName(next.competition)}
-                {next.venue === 'H' ? ` · ${groundInfo.name}` : ''}
+                {next.venue === 'H' ? ` · ${groundInfo.name}` : next.ground ? ` · ${next.ground}` : ''}
               </p>
+
+              {(next.gates || next.admission || next.matchdayNotes) && (
+                <div className="mt-3 flex flex-wrap gap-2 text-xs font-medium text-slate-100">
+                  {next.gates && (
+                    <span className="rounded-full bg-white/10 px-3 py-1">Gates {next.gates}</span>
+                  )}
+                  {next.admission && (
+                    <span className="rounded-full bg-white/10 px-3 py-1">{next.admission}</span>
+                  )}
+                  {next.matchdayNotes && (
+                    <span className="rounded-full bg-white/10 px-3 py-1">{next.matchdayNotes}</span>
+                  )}
+                </div>
+              )}
 
               {next.venue === 'H' && (
                 <img

@@ -35,6 +35,15 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'matchday-afc-mangotsfield-rocks',
+    title: "Away day details — First Team travel to AFC Mangotsfield Rocks",
+    date: '2026-08-06',
+    teams: ['first-team'],
+    excerpt:
+      'The First Team are on the road this Saturday 8 August for the second game of the Marcliff Gloucestershire County League season. Gates 1pm, kick-off 3pm at Cossham Street, Mangotsfield. Food & drink available. Admission: Adults £3. Come and support the lads.',
+    link: { href: '/#matchday', label: 'See matchday details' },
+  },
+  {
     slug: 'reserves-result-avonmouth',
     title: 'Reserves open pre-season with a 2-2 draw at Avonmouth',
     date: '2026-08-06',

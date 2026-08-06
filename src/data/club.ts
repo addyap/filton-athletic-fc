@@ -88,6 +88,14 @@ export type Fixture = {
   scorers?: string
   /** Bookings, formatted e.g. "Y Abdulrahman (Y), D Matthews (R)". */
   cards?: string
+  /** Ground name/address, mainly for away games where groundInfo doesn't apply. */
+  ground?: string
+  /** Gates/turnstiles open time, e.g. "1pm". */
+  gates?: string
+  /** Admission price, e.g. "Adults £3". */
+  admission?: string
+  /** Extra matchday info, e.g. "Food & drink available". */
+  matchdayNotes?: string
 }
 
 /**
@@ -96,7 +104,7 @@ export type Fixture = {
  */
 export const firstTeamFixtures: Fixture[] = [
   { date: '01/08/26', time: '15:00', competition: 'GCL', opponent: 'University of Bristol', venue: 'H', result: 'L 1-2', scorers: 'C Hillyer' },
-  { date: '08/08/26', time: '15:00', competition: 'GCL', opponent: 'AFC Mangotsfield Rocks', venue: 'A' },
+  { date: '08/08/26', time: '15:00', competition: 'GCL', opponent: 'AFC Mangotsfield Rocks', venue: 'A', ground: 'Cossham Street, Mangotsfield', gates: '1pm', admission: 'Adults £3', matchdayNotes: 'Food & drink available' },
   { date: '12/08/26', time: '18:30', competition: 'GCL', opponent: 'Stoke Gifford SGS United', venue: 'H' },
   { date: '15/08/26', time: '15:00', competition: 'GCL', opponent: 'Bishops Cleeve Development', venue: 'A' },
   { date: '22/08/26', time: '15:00', competition: 'GCL', opponent: 'Tewkesbury Town', venue: 'H' },
