@@ -35,6 +35,15 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'thank-you-southmead-ben-fundraiser',
+    title: 'A heartfelt thank you from Southmead FC — £1,170 raised for Ben and his family',
+    date: '2026-08-06',
+    teams: ['club'],
+    excerpt:
+      'Following our pre-season friendly against Southmead FC, Filton organised a collection for Ben and his family — raising an incredible £1,170 through cash and card donations on the day. Every penny was handed to Southmead FC in cash, safely banked, and added to Ben’s GoFundMe page. Southmead have sent us a heartfelt thank you in return, quoting a line that says it all: “Football has no colours.” Thank you to every player, volunteer and supporter who gave so generously — a real credit to this club. #FATS #UTF',
+    link: { href: '/#pre-season', label: 'See the Southmead friendly' },
+  },
+  {
     slug: 'matchday-afc-mangotsfield-rocks',
     title: "Away day details — First Team travel to AFC Mangotsfield Rocks",
     date: '2026-08-06',
