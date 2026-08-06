@@ -133,7 +133,7 @@ function Home() {
             <div className="mx-auto w-full max-w-[300px] rounded-lg border border-slate-200 bg-white p-3 shadow-sm lg:order-first lg:mx-0">
               <img
                 src={playersWantedPoster}
-                alt="Players wanted — join Filton Athletic FC. First team competing in the County League, Reserves in the Suburban Premier, A's in Suburban Division Three. Training Tuesday and Thursday, 6:15pm at Elm Park. All positions considered, all abilities welcome."
+                alt="Players wanted — join Filton Athletic FC. First team competing in the County League, Reserves in the Suburban Premier, A's in Suburban Division Four. Training Tuesday and Thursday, 6:15pm at Elm Park. All positions considered, all abilities welcome."
                 className="w-full rounded"
               />
             </div>
@@ -201,7 +201,7 @@ function Home() {
           <p className="mt-8 max-w-3xl text-slate-700">
             Today we&rsquo;re made up of three adult teams playing every Saturday &mdash; the first team in the
             Marcliff Gloucestershire County Football League, the Reserves in the Bristol &amp; Suburban
-            Premier Division, and the A&rsquo;s in Division Three &mdash; run by an enthusiastic and committed
+            Premier Division, and the A&rsquo;s in Division Four &mdash; run by an enthusiastic and committed
             committee, and fortunate to be supported by some of the best fans in the world: the self-proclaimed
             Filton Ultras!
           </p>
