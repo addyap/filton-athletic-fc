@@ -1,8 +1,14 @@
+import { useEffect, useRef, useState } from 'react'
 import SectionHeading from './SectionHeading'
 import Reveal from './Reveal'
 
 const FB_PAGE = 'https://www.facebook.com/FiltonAthleticFC'
 const X_URL = 'https://x.com/FiltonAthletic'
+
+// Facebook's page plugin only supports widths from 180 to 500px.
+const FB_MIN_WIDTH = 180
+const FB_MAX_WIDTH = 500
+const FB_HEIGHT = 560
 
 /**
  * "Follow the club" — the live Facebook feed alongside a matching X panel.
@@ -12,11 +18,37 @@ const X_URL = 'https://x.com/FiltonAthletic'
  * embedded live (its timeline embed returns nothing when logged out, and x.com
  * refuses to be framed), so the X side is a compact branded panel that opens
  * the club's X page.
+ *
+ * The plugin renders its content at the `width` baked into the URL — a raw
+ * iframe ignores `adapt_container_width` (that only works via Facebook's JS
+ * SDK). Left at a fixed 500px the feed is clipped on narrow phones, so we
+ * measure the available width and rebuild the iframe to match, clamped to the
+ * plugin's 180–500px range and re-measured on resize.
  */
 function SocialSection() {
+  const frameHostRef = useRef<HTMLDivElement>(null)
+  const [fbWidth, setFbWidth] = useState(FB_MAX_WIDTH)
+
+  useEffect(() => {
+    const host = frameHostRef.current
+    if (!host) return
+
+    const measure = () => {
+      const available = host.clientWidth
+      if (!available) return
+      const clamped = Math.min(FB_MAX_WIDTH, Math.max(FB_MIN_WIDTH, Math.floor(available)))
+      setFbWidth(clamped)
+    }
+
+    measure()
+    const observer = new ResizeObserver(measure)
+    observer.observe(host)
+    return () => observer.disconnect()
+  }, [])
+
   const fbSrc =
     `https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(FB_PAGE)}` +
-    '&tabs=timeline&width=500&height=560&small_header=false' +
+    `&tabs=timeline&width=${fbWidth}&height=${FB_HEIGHT}&small_header=false` +
     '&adapt_container_width=true&hide_cover=false&show_facepile=true'
 
   return (
@@ -40,12 +72,12 @@ function SocialSection() {
               </span>
               Live on Facebook
             </span>
-            <div className="overflow-hidden rounded-lg bg-slate-50">
+            <div ref={frameHostRef} className="overflow-hidden rounded-lg bg-slate-50">
               <iframe
                 title="Filton Athletic FC on Facebook"
                 src={fbSrc}
-                className="block h-[560px] w-full"
-                style={{ border: 'none', overflow: 'hidden' }}
+                className="mx-auto block"
+                style={{ border: 'none', overflow: 'hidden', width: fbWidth, height: FB_HEIGHT }}
                 scrolling="no"
                 frameBorder="0"
                 allowFullScreen
