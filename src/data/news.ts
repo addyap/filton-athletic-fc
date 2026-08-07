@@ -5,6 +5,7 @@ import councilGroundPlansPhoto from '../assets/img/filton-council-ground-plans.j
 import macmillanGolfPhoto from '../assets/img/macmillan-golf-challenge.jpg'
 import matchdayUniversityOfBristolPhoto from '../assets/img/matchday-university-of-bristol.jpg'
 import thankYouSouthmeadPhoto from '../assets/img/thank-you-southmead-ben.jpg'
+import matchdayAfcMangotsfieldRocksPhoto from '../assets/img/matchday-afc-mangotsfield-rocks.jpg'
 
 export type NewsImage = { src: string; alt: string }
 
@@ -56,7 +57,13 @@ export const news: NewsItem[] = [
     date: '2026-08-06',
     teams: ['first-team'],
     excerpt:
-      'The First Team are on the road this Saturday 8 August for the second game of the Marcliff Gloucestershire County League season. Gates 1pm, kick-off 3pm at Cossham Street, Mangotsfield. Food & drink available. Admission: Adults £3. Come and support the lads.',
+      'The First Team are on the road this Saturday 8 August for the second game of the Marcliff Gloucestershire County League season. Gates 1pm, kick-off 3pm at Cossham Street, Mangotsfield, BS16 9EN. Food & drink available. Admission: Adults £3. Come and support the lads.',
+    images: [
+      {
+        src: matchdayAfcMangotsfieldRocksPhoto,
+        alt: 'Filton Athletic FC Matchday graphic — AFC Mangotsfield Rocks vs Filton Athletic, this Saturday, Cossham Street, Mangotsfield, BS16 9EN, kick-off 3pm.',
+      },
+    ],
     link: { href: '/#matchday', label: 'See matchday details' },
   },
   {

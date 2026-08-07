@@ -104,7 +104,7 @@ export type Fixture = {
  */
 export const firstTeamFixtures: Fixture[] = [
   { date: '01/08/26', time: '15:00', competition: 'GCL', opponent: 'University of Bristol', venue: 'H', result: 'L 1-2', scorers: 'C Hillyer' },
-  { date: '08/08/26', time: '15:00', competition: 'GCL', opponent: 'AFC Mangotsfield Rocks', venue: 'A', ground: 'Cossham Street, Mangotsfield', gates: '1pm', admission: 'Adults £3', matchdayNotes: 'Food & drink available' },
+  { date: '08/08/26', time: '15:00', competition: 'GCL', opponent: 'AFC Mangotsfield Rocks', venue: 'A', ground: 'Cossham Street, Mangotsfield, BS16 9EN', gates: '1pm', admission: 'Adults £3', matchdayNotes: 'Food & drink available' },
   { date: '12/08/26', time: '18:30', competition: 'GCL', opponent: 'Stoke Gifford SGS United', venue: 'H' },
   { date: '15/08/26', time: '15:00', competition: 'GCL', opponent: 'Bishops Cleeve Development', venue: 'A' },
   { date: '22/08/26', time: '15:00', competition: 'GCL', opponent: 'Tewkesbury Town', venue: 'H' },
