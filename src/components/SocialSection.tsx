@@ -63,8 +63,9 @@ function SocialSection() {
         {/* Facebook takes its full width (its plugin caps at 500px); X sits beside
             it at a natural height, vertically centred so it doesn't stretch. */}
         <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,520px)_minmax(0,1fr)] lg:items-center">
-          {/* Facebook — live feed */}
-          <div className="flex flex-col rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
+          {/* Facebook — live feed. min-w-0 lets this grid item shrink below the
+              iframe's intrinsic width so the feed can be sized to fit mobile. */}
+          <div className="flex min-w-0 flex-col rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
             <span className="mb-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-[#e7f0e9] px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#2f6b45]">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#2f6b45] opacity-75" />
