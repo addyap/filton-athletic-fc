@@ -99,7 +99,15 @@ function MatchdaySection() {
               aria-hidden="true"
               className="pointer-events-none absolute -right-10 -top-10 h-64 w-64 object-contain opacity-10 sm:h-80 sm:w-80"
             />
-            <div className="relative flex flex-col p-6 sm:p-8">
+            <div className="relative flex flex-col sm:flex-row">
+              {next.matchdayImage && (
+                <img
+                  src={next.matchdayImage}
+                  alt={`Matchday graphic — ${next.opponent} vs Filton Athletic`}
+                  className="aspect-square w-full object-contain p-4 sm:w-72 sm:shrink-0 sm:p-6 lg:w-80"
+                />
+              )}
+              <div className="flex flex-1 flex-col p-6 sm:p-8 sm:pl-0">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-[#a9e0b8] px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#0b2d52]">
                   <span className="relative flex h-1.5 w-1.5">
@@ -151,20 +159,12 @@ function MatchdaySection() {
                 </div>
               )}
 
-              {next.matchdayImage ? (
+              {!next.matchdayImage && next.venue === 'H' && (
                 <img
-                  src={next.matchdayImage}
-                  alt={`Matchday graphic — ${next.opponent} vs Filton Athletic`}
-                  className="mt-4 h-32 w-32 rounded-lg object-cover ring-1 ring-white/20 sm:h-36 sm:w-36"
+                  src={elmParkPitch}
+                  alt={`The pitch at ${groundInfo.name}`}
+                  className="mt-4 h-24 w-40 rounded-lg object-cover ring-1 ring-white/20 sm:h-28 sm:w-48"
                 />
-              ) : (
-                next.venue === 'H' && (
-                  <img
-                    src={elmParkPitch}
-                    alt={`The pitch at ${groundInfo.name}`}
-                    className="mt-4 h-24 w-40 rounded-lg object-cover ring-1 ring-white/20 sm:h-28 sm:w-48"
-                  />
-                )
               )}
 
               {showCountdown && (
@@ -204,6 +204,7 @@ function MatchdaySection() {
                   </Link>
                 )
               )}
+              </div>
             </div>
           </div>
         )}
