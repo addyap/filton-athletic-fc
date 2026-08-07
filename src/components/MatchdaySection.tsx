@@ -151,12 +151,20 @@ function MatchdaySection() {
                 </div>
               )}
 
-              {next.venue === 'H' && (
+              {next.matchdayImage ? (
                 <img
-                  src={elmParkPitch}
-                  alt={`The pitch at ${groundInfo.name}`}
-                  className="mt-4 h-24 w-40 rounded-lg object-cover ring-1 ring-white/20 sm:h-28 sm:w-48"
+                  src={next.matchdayImage}
+                  alt={`Matchday graphic — ${next.opponent} vs Filton Athletic`}
+                  className="mt-4 h-32 w-32 rounded-lg object-cover ring-1 ring-white/20 sm:h-36 sm:w-36"
                 />
+              ) : (
+                next.venue === 'H' && (
+                  <img
+                    src={elmParkPitch}
+                    alt={`The pitch at ${groundInfo.name}`}
+                    className="mt-4 h-24 w-40 rounded-lg object-cover ring-1 ring-white/20 sm:h-28 sm:w-48"
+                  />
+                )
               )}
 
               {showCountdown && (
