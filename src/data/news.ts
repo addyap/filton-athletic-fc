@@ -37,6 +37,15 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'as-team-matchday-stoke-lane',
+    title: "Matchday — Filton A face Stoke Lane in their second pre-season friendly",
+    date: '2026-08-07',
+    teams: ['as'],
+    excerpt:
+      'The A’s are back in action for their second pre-season friendly, at home to Stoke Lane Old Boys. Saturday 8 August, 2pm kick-off at Patchway High School, BS32 4AJ. Come down and support the lads. 🔵⚪️ #FATS #UTF',
+    link: { href: '/as-team', label: "See the A's fixtures" },
+  },
+  {
     slug: 'thank-you-southmead-ben-fundraiser',
     title: 'A heartfelt thank you from Southmead FC — £1,170 raised for Ben and his family',
     date: '2026-08-06',

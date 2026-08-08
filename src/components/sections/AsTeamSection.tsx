@@ -22,7 +22,7 @@ function AsTeamSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
 
       <p className="mt-8 text-center text-lg font-semibold text-[#0b2d52]">Pre-season fixtures</p>
       <p className="mt-1 text-center text-sm text-slate-500">
-        All kick off 2pm at Patchway High.
+        All kick off 2pm at Patchway High School, BS32 4AJ.
       </p>
       <div className="mt-4 overflow-x-auto rounded-lg border border-slate-200 bg-white">
         <table className="min-w-full text-sm">
