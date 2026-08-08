@@ -37,6 +37,15 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'first-team-result-afc-mangotsfield-rocks',
+    title: 'First point on the board — 2-2 away at AFC Mangotsfield Rocks',
+    date: '2026-08-08',
+    teams: ['first-team'],
+    excerpt:
+      'A hard-fought 2-2 draw at Cossham Street gives the Firsts their first point of the 2026/27 Marcliff Gloucestershire County League season. Goals for Filton from Taylor Anderson and Yusuf Abdulrahman. Next up: Stoke Gifford SGS United at home on Wednesday 12 August, 6.30pm. #FATS #UTF',
+    link: { href: '/table', label: 'See the league table' },
+  },
+  {
     slug: 'as-team-matchday-stoke-lane',
     title: "Matchday — Filton A face Stoke Lane in their second pre-season friendly",
     date: '2026-08-07',
