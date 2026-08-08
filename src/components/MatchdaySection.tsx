@@ -107,7 +107,8 @@ function MatchdaySection() {
                   className="aspect-square w-full object-contain p-4 sm:w-72 sm:shrink-0 sm:p-6 lg:w-80"
                 />
               )}
-              <div className="flex flex-1 flex-col p-6 sm:p-8 sm:pl-0">
+              {/* Only drop the left padding when the graphic sits beside the text. */}
+              <div className={`flex flex-1 flex-col p-6 sm:p-8 ${next.matchdayImage ? 'sm:pl-0' : ''}`}>
               <div className="flex flex-wrap items-center gap-2">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-[#a9e0b8] px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#0b2d52]">
                   <span className="relative flex h-1.5 w-1.5">
