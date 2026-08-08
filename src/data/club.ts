@@ -100,6 +100,19 @@ export type Fixture = {
   matchdayNotes?: string
   /** The official matchday graphic for this fixture, if one's been produced. */
   matchdayImage?: string
+  /**
+   * For away games: the HOST club's own matchday programme PDF, where they've
+   * published one. Our own programmes are home-only and live in programmes.ts.
+   */
+  awayProgrammeUrl?: string
+  /** Official attendance, as published on FA Full-Time. */
+  attendance?: number
+  /**
+   * Match officials, as published on FA Full-Time. Full-Time lists them as a
+   * flat list and only sometimes labels the roles, so this is a single string —
+   * only add "(referee)" / "(assistant)" where Full-Time actually says so.
+   */
+  officials?: string
 }
 
 /**
@@ -107,8 +120,8 @@ export type Fixture = {
  * schedule. Populate once fixtures are confirmed.
  */
 export const firstTeamFixtures: Fixture[] = [
-  { date: '01/08/26', time: '15:00', competition: 'GCL', opponent: 'University of Bristol', venue: 'H', result: 'L 1-2', scorers: 'C Hillyer' },
-  { date: '08/08/26', time: '15:00', competition: 'GCL', opponent: 'AFC Mangotsfield Rocks', venue: 'A', ground: 'Cossham Street, Mangotsfield, BS16 9EN', gates: '1pm', admission: 'Adults £3', matchdayNotes: 'Food & drink available', matchdayImage: matchdayAfcMangotsfieldRocksPhoto, result: 'D 2-2', scorers: 'T Anderson, Y Abdulrahman' },
+  { date: '01/08/26', time: '15:00', competition: 'GCL', opponent: 'University of Bristol', venue: 'H', result: 'L 1-2', scorers: 'C Hillyer', attendance: 45, officials: 'Matthew Dyer, Michael Rogers, Bobby Tutton' },
+  { date: '08/08/26', time: '15:00', competition: 'GCL', opponent: 'AFC Mangotsfield Rocks', venue: 'A', ground: 'Cossham Street, Mangotsfield, BS16 9EN', gates: '1pm', admission: 'Adults £3', matchdayNotes: 'Food & drink available', matchdayImage: matchdayAfcMangotsfieldRocksPhoto, result: 'D 2-2', scorers: 'T Anderson, Y Abdulrahman', attendance: 84, officials: 'Bobby Tutton (referee), Steven Irwin-Porter (U18 assistant)', awayProgrammeUrl: 'https://3p4oewzml4cd0fez.public.blob.vercel-storage.com/AFC%20Mangotsfield%20Rocks.pdf' },
   { date: '12/08/26', time: '18:30', competition: 'GCL', opponent: 'Stoke Gifford SGS United', venue: 'H' },
   { date: '15/08/26', time: '15:00', competition: 'GCL', opponent: 'Bishops Cleeve Development', venue: 'A' },
   { date: '22/08/26', time: '15:00', competition: 'GCL', opponent: 'Tewkesbury Town', venue: 'H' },

@@ -185,7 +185,17 @@ function MatchdaySection() {
                 </div>
               )}
 
-              {nextProgramme ? (
+              {next.awayProgrammeUrl ? (
+                <a
+                  href={next.awayProgrammeUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#0b2d52] transition hover:bg-[#a9e0b8]"
+                >
+                  View the {next.opponent} matchday programme (PDF)
+                  <span className="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
+                </a>
+              ) : nextProgramme ? (
                 <Link
                   to={`/programme/${nextProgramme.slug}`}
                   className="group mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#0b2d52] transition hover:bg-[#a9e0b8]"
@@ -234,6 +244,33 @@ function MatchdaySection() {
               </span>
             </div>
             {last.scorers && <p className="mt-2 text-sm text-slate-600">{last.scorers}</p>}
+            {(last.attendance != null || last.officials) && (
+              <dl className="mt-4 space-y-1 border-t border-slate-100 pt-3 text-sm text-slate-500">
+                {last.attendance != null && (
+                  <div className="flex gap-2">
+                    <dt className="font-semibold text-slate-600">Attendance</dt>
+                    <dd>{last.attendance}</dd>
+                  </div>
+                )}
+                {last.officials && (
+                  <div className="flex gap-2">
+                    <dt className="font-semibold text-slate-600">Officials</dt>
+                    <dd>{last.officials}</dd>
+                  </div>
+                )}
+              </dl>
+            )}
+            {last.awayProgrammeUrl && (
+              <a
+                className="group mt-4 inline-flex w-fit items-center gap-2 text-sm font-semibold text-[#0b2d52] underline"
+                href={last.awayProgrammeUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Read the {last.opponent} matchday programme (PDF)
+                <span className="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
+              </a>
+            )}
           </div>
         )}
       </div>
