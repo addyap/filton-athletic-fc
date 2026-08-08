@@ -46,19 +46,6 @@ export const news: NewsItem[] = [
     link: { href: '/table', label: 'See the league table' },
   },
   {
-    slug: 'mangotsfield-rocks-matchday-programme',
-    title: 'Thank you to AFC Mangotsfield Rocks for a cracking matchday programme',
-    date: '2026-08-08',
-    teams: ['first-team'],
-    excerpt:
-      'A big thank you to AFC Mangotsfield Rocks for the warm welcome at Cossham Street — and for a superb 28-page matchday programme for Saturday’s Division One fixture. It’s a real credit to the club and to everyone who put it together. You can read the whole thing below, and you’ll also find it in our programmes section alongside our own. #FATS #UTF',
-    link: {
-      href: 'https://3p4oewzml4cd0fez.public.blob.vercel-storage.com/AFC%20Mangotsfield%20Rocks.pdf',
-      label: 'Read the programme (PDF)',
-      external: true,
-    },
-  },
-  {
     slug: 'as-team-matchday-stoke-lane',
     title: "Matchday — Filton A face Stoke Lane in their second pre-season friendly",
     date: '2026-08-07',
