@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  This file is NOT the sitemap that ships. prerender.mjs generates dist/sitemap.xml
+  from the real route list at build time, so new pages can never be left out.
+  What it keeps is the curated <lastmod> for each page: prerender reads the dates
+  from here and falls back to the build date for anything new. Edit a <lastmod>
+  here when a page's content genuinely changes; adding URLs by hand isn't needed.
+-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://filtonathletic.co.uk/</loc>

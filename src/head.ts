@@ -156,7 +156,9 @@ export function headForPath(pathname: string): PageHead {
     if (programme) {
       return {
         ...base,
-        title: `Filton Athletic vs ${programme.fixture.opponent} — Matchday programme`,
+        // The date keeps the title unique: the same opponent is played at home
+        // in more than one season, and identical titles confuse search results.
+        title: `Filton Athletic vs ${programme.fixture.opponent}, ${programme.longDate} — Matchday programme`,
         description: `Matchday programme for Filton Athletic vs ${programme.fixture.opponent}, ${programme.longDate}, kick-off ${programme.fixture.time} at BBS Park North. ${programme.competitionName}.`,
       }
     }

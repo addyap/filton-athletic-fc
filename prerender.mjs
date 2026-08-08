@@ -42,7 +42,34 @@ function applyHead(html, head) {
   return out
 }
 
+const SITE = 'https://filtonathletic.co.uk'
+
+/**
+ * Existing <lastmod> dates, keyed by path, read from the checked-in
+ * public/sitemap.xml. Pages we already knew about keep their curated date;
+ * anything new gets today's. The generated sitemap is the one that ships, so
+ * new routes can never go missing from it again.
+ */
+function existingLastmods() {
+  const map = new Map()
+  try {
+    const xml = readFileSync(join('public', 'sitemap.xml'), 'utf-8')
+    const re = /<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>/g
+    let m
+    while ((m = re.exec(xml))) {
+      const path = m[1].replace(SITE, '') || '/'
+      map.set(path.replace(/\/$/, '') || '/', m[2].trim())
+    }
+  } catch {
+    // No curated sitemap — every page just gets today's date.
+  }
+  return map
+}
+
 const paths = getRoutePaths()
+const lastmods = existingLastmods()
+const today = new Date().toISOString().slice(0, 10)
+const sitemapPaths = []
 let count = 0
 for (const path of paths) {
   const { appHtml, head } = render(path)
@@ -54,6 +81,23 @@ for (const path of paths) {
   mkdirSync(dirname(outPath), { recursive: true })
   writeFileSync(outPath, html)
   count++
+
+  // Pages we deliberately keep out of the index don't belong in the sitemap.
+  if (!head.noindex) sitemapPaths.push(path)
 }
 
+const urls = sitemapPaths
+  .map((path) => {
+    const key = path.replace(/\/$/, '') || '/'
+    const loc = path === '/' ? `${SITE}/` : `${SITE}${path}`
+    return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmods.get(key) ?? today}</lastmod>\n  </url>`
+  })
+  .join('\n')
+
+writeFileSync(
+  join(DIST, 'sitemap.xml'),
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`,
+)
+
 console.log(`Prerendered ${count} routes to static HTML.`)
+console.log(`Wrote sitemap.xml with ${sitemapPaths.length} URLs.`)
