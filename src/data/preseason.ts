@@ -96,6 +96,8 @@ export const aTeamPreSeason2026: PreSeasonFixture[] = [
     opponent: 'Stoke Lane Old Boys',
     venue: 'H',
     venueNote: 'Patchway High, BS32 4AJ',
+    result: 'D 2-2',
+    scorers: 'O Keeble, T Johnston',
   },
   {
     label: 'Sat 15 Aug',

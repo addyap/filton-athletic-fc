@@ -37,6 +37,15 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'as-team-result-stoke-lane',
+    title: "A's draw 2-2 with Stoke Lane Old Boys in second pre-season friendly",
+    date: '2026-08-08',
+    teams: ['as'],
+    excerpt:
+      'An entertaining 2-2 draw at Patchway High as the A’s wrapped up their second pre-season friendly against Stoke Lane Old Boys. Goals from Ollie Keeble and Tommy Johnston. Two more warm-up games to come before the league campaign kicks off: Almondsbury A (15 Aug) and Stoke Gifford A (22 Aug), both 2pm at Patchway High.',
+    link: { href: '/as-team', label: "See the A's fixtures" },
+  },
+  {
     slug: 'first-team-result-afc-mangotsfield-rocks',
     title: 'First point on the board — 2-2 away at AFC Mangotsfield Rocks',
     date: '2026-08-08',
