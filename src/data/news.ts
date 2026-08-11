@@ -6,6 +6,7 @@ import macmillanGolfPhoto from '../assets/img/macmillan-golf-challenge.jpg'
 import matchdayUniversityOfBristolPhoto from '../assets/img/matchday-university-of-bristol.jpg'
 import thankYouSouthmeadPhoto from '../assets/img/thank-you-southmead-ben.jpg'
 import matchdayAfcMangotsfieldRocksPhoto from '../assets/img/matchday-afc-mangotsfield-rocks.jpg'
+import matchdayStokeGiffordSgsPhoto from '../assets/img/matchday-stoke-gifford-sgs-united.webp'
 
 export type NewsImage = { src: string; alt: string }
 
@@ -36,6 +37,21 @@ export type NewsItem = {
  * edits required.
  */
 export const news: NewsItem[] = [
+  {
+    slug: 'matchday-stoke-gifford-sgs-united',
+    title: 'Derby Day — Filton Athletic vs Stoke Gifford SGS United',
+    date: '2026-08-12',
+    teams: ['first-team'],
+    excerpt:
+      'It\'s Derby Day at Elm Park! The First Team host local rivals Stoke Gifford SGS United in the Marcliff Gloucestershire County League this Wednesday 12 August, 6.30pm kick-off. Elm Park, BS34 7PS. One club. One community. One family. Come along and support the FATS. #FATS #UTF',
+    images: [
+      {
+        src: matchdayStokeGiffordSgsPhoto,
+        alt: 'Filton Athletic FC Matchday graphic — Derby Day, Filton Athletic vs Stoke Gifford SGS United, Wednesday 12 August 2026, Elm Park, BS34 7PS, kick-off 6.30pm.',
+      },
+    ],
+    link: { href: '/programme/stoke-gifford-sgs-united-2026-08-12', label: 'Read the matchday programme' },
+  },
   {
     slug: 'as-team-result-stoke-lane',
     title: "A's draw 2-2 with Stoke Lane Old Boys in second pre-season friendly",

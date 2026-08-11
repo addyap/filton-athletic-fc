@@ -49,7 +49,7 @@ function NewsFeed({ team, limit, emptyMessage }: Props) {
           {item.images && item.images.length > 0 && (
             <div className={item.images.length > 1 ? 'grid grid-cols-2' : ''}>
               {item.images.map((img) => (
-                <img key={img.src} src={img.src} alt={img.alt} className="h-full w-full object-cover" />
+                <img key={img.src} src={img.src} alt={img.alt} className="max-h-96 w-full object-cover" />
               ))}
             </div>
           )}
