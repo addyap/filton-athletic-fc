@@ -48,7 +48,7 @@ export const news: NewsItem[] = [
     date: '2026-08-12',
     teams: ['first-team'],
     excerpt:
-      'A hard-fought 1-1 draw under the lights at Elm Park in front of 115 fans. Matt Tovey opened the scoring for Filton before an own goal levelled it for the visitors. Two draws and a defeat from the opening three games — the Firsts travel to Bishops Cleeve Development on Saturday 15 August, 3pm kick-off. #FATS #UTF',
+      'A hard-fought 1-1 draw under the solar eclipse at Elm Park in front of 115 fans. Matt Tovey opened the scoring for Filton before an own goal levelled it for the visitors. Two draws and a defeat from the opening three games — the Firsts travel to Bishops Cleeve Development on Saturday 15 August, 3pm kick-off. #FATS #UTF',
     images: [
       { src: matchStokeGifford1, alt: 'Sunset over Elm Park during Filton Athletic vs Stoke Gifford SGS United, 12 August 2026.' },
       { src: matchStokeGifford2, alt: 'Filton Athletic goalkeeper watches play with a packed crowd behind the barrier at Elm Park.' },
