@@ -41,10 +41,12 @@ function NewsFeed({ team, limit, emptyMessage }: Props) {
 
   return (
     <div className="mt-6 grid gap-6 sm:grid-cols-2">
-      {items.map((item) => (
+      {items.map((item) => {
+        const isGallery = item.images && item.images.length > 2
+        return (
         <article
           key={item.slug}
-          className="flex flex-col overflow-hidden rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
+          className={`flex flex-col overflow-hidden rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-md${isGallery ? ' sm:col-span-2' : ''}`}
         >
           {item.images && item.images.length > 0 && (
             <div
@@ -53,7 +55,7 @@ function NewsFeed({ team, limit, emptyMessage }: Props) {
                   ? ''
                   : item.images.length === 2
                     ? 'grid grid-cols-2'
-                    : 'grid grid-cols-2 gap-0.5'
+                    : 'grid grid-cols-4 gap-0.5'
               }
             >
               {item.images.length <= 2
@@ -65,7 +67,7 @@ function NewsFeed({ team, limit, emptyMessage }: Props) {
                       key={img.src}
                       src={img.src}
                       alt={img.alt}
-                      className={`w-full object-cover ${i === 0 ? 'col-span-2 max-h-64' : 'max-h-40'}`}
+                      className={`w-full object-cover ${i === 0 ? 'col-span-4 max-h-72' : 'max-h-44'}`}
                     />
                   ))}
             </div>
@@ -104,7 +106,8 @@ function NewsFeed({ team, limit, emptyMessage }: Props) {
               ))}
           </div>
         </article>
-      ))}
+        )
+      })}
     </div>
   )
 }
