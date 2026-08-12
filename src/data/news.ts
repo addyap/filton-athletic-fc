@@ -38,6 +38,15 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'first-team-result-stoke-gifford-sgs-united',
+    title: 'Derby Day draw — Filton Athletic 1-1 Stoke Gifford SGS United',
+    date: '2026-08-12',
+    teams: ['first-team'],
+    excerpt:
+      'A hard-fought 1-1 draw under the lights at Elm Park in front of 115 fans. Matt Tovey opened the scoring for Filton before an own goal levelled it for the visitors. Two draws and a defeat from the opening three games — the Firsts travel to Bishops Cleeve Development on Saturday 15 August, 3pm kick-off. #FATS #UTF',
+    link: { href: '/programme/stoke-gifford-sgs-united-2026-08-12', label: 'Read the matchday programme' },
+  },
+  {
     slug: 'matchday-stoke-gifford-sgs-united',
     title: 'Derby Day — Filton Athletic vs Stoke Gifford SGS United',
     date: '2026-08-12',

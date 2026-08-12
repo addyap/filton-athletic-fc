@@ -122,7 +122,7 @@ export type Fixture = {
 export const firstTeamFixtures: Fixture[] = [
   { date: '01/08/26', time: '15:00', competition: 'GCL', opponent: 'University of Bristol', venue: 'H', result: 'L 1-2', scorers: 'C Hillyer', attendance: 45, officials: 'Matthew Dyer, Michael Rogers, Bobby Tutton' },
   { date: '08/08/26', time: '15:00', competition: 'GCL', opponent: 'AFC Mangotsfield Rocks', venue: 'A', ground: 'Cossham Street, Mangotsfield, BS16 9EN', gates: '1pm', admission: 'Adults £3', matchdayNotes: 'Food & drink available', matchdayImage: matchdayAfcMangotsfieldRocksPhoto, result: 'D 2-2', scorers: 'T Anderson, Y Abdulrahman', attendance: 84, officials: 'Bobby Tutton (referee), Steven Irwin-Porter (U18 assistant)', awayProgrammeUrl: 'https://3p4oewzml4cd0fez.public.blob.vercel-storage.com/AFC%20Mangotsfield%20Rocks.pdf' },
-  { date: '12/08/26', time: '18:30', competition: 'GCL', opponent: 'Stoke Gifford SGS United', venue: 'H' },
+  { date: '12/08/26', time: '18:30', competition: 'GCL', opponent: 'Stoke Gifford SGS United', venue: 'H', result: 'D 1-1', scorers: 'M Tovey', attendance: 115, officials: 'Mark Loughlin (referee), Nick Dawson, Greg Wentland' },
   { date: '15/08/26', time: '15:00', competition: 'GCL', opponent: 'Bishops Cleeve Development', venue: 'A' },
   { date: '22/08/26', time: '15:00', competition: 'GCL', opponent: 'Tewkesbury Town', venue: 'H' },
   { date: '05/09/26', time: '15:00', competition: 'Cup', opponent: 'University of Bristol', venue: 'A' },
@@ -360,12 +360,12 @@ export type TableRow = { pos: number; team: string; p: number; w: number; d: num
 /**
  * 2026/27 league table — Marcliff Gloucestershire County Football League,
  * Division 1. Updated from FA Full-Time; the live/full version (with all results
- * and scorers) is linked from the table section. Snapshot after matchday 2.
+ * and scorers) is linked from the table section. Snapshot after matchday 3.
  */
 export const leagueTable: TableRow[] = [
-  { pos: 1, team: 'Quedgeley Wanderers', p: 2, w: 1, d: 1, l: 0, f: 9, a: 2, gd: 7, pts: 4 },
-  { pos: 2, team: 'Frampton United', p: 2, w: 1, d: 1, l: 0, f: 3, a: 2, gd: 1, pts: 4 },
-  { pos: 3, team: 'Stoke Gifford SGS United', p: 2, w: 1, d: 1, l: 0, f: 3, a: 2, gd: 1, pts: 4 },
+  { pos: 1, team: 'Stoke Gifford SGS United', p: 3, w: 1, d: 2, l: 0, f: 4, a: 3, gd: 1, pts: 5 },
+  { pos: 2, team: 'Quedgeley Wanderers', p: 2, w: 1, d: 1, l: 0, f: 9, a: 2, gd: 7, pts: 4 },
+  { pos: 3, team: 'Frampton United', p: 2, w: 1, d: 1, l: 0, f: 3, a: 2, gd: 1, pts: 4 },
   { pos: 4, team: 'Broadwell Amateurs', p: 1, w: 1, d: 0, l: 0, f: 2, a: 0, gd: 2, pts: 3 },
   { pos: 5, team: 'Bishops Cleeve Development', p: 2, w: 1, d: 0, l: 1, f: 2, a: 1, gd: 1, pts: 3 },
   { pos: 6, team: 'Henbury & Rockleaze', p: 1, w: 1, d: 0, l: 0, f: 1, a: 0, gd: 1, pts: 3 },
@@ -373,7 +373,7 @@ export const leagueTable: TableRow[] = [
   { pos: 8, team: 'University of Bristol', p: 2, w: 1, d: 0, l: 1, f: 4, a: 4, gd: 0, pts: 3 },
   { pos: 9, team: 'Wick', p: 2, w: 0, d: 2, l: 0, f: 1, a: 1, gd: 0, pts: 2 },
   { pos: 10, team: 'Chalford', p: 2, w: 0, d: 2, l: 0, f: 0, a: 0, gd: 0, pts: 2 },
-  { pos: 11, team: 'Filton Athletic', p: 2, w: 0, d: 1, l: 1, f: 3, a: 4, gd: -1, pts: 1 },
+  { pos: 11, team: 'Filton Athletic', p: 3, w: 0, d: 2, l: 1, f: 4, a: 5, gd: -1, pts: 2 },
   { pos: 12, team: 'AFC Mangotsfield Rocks', p: 2, w: 0, d: 1, l: 1, f: 2, a: 4, gd: -2, pts: 1 },
   { pos: 13, team: 'Longlevens Reserves', p: 2, w: 0, d: 1, l: 1, f: 2, a: 4, gd: -2, pts: 1 },
   { pos: 14, team: 'Totterdown United', p: 2, w: 0, d: 0, l: 2, f: 1, a: 3, gd: -2, pts: 0 },
