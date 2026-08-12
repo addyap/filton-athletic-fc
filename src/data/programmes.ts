@@ -1378,6 +1378,11 @@ const programmeExtras2026_27: Record<string, ProgrammeExtras> = {
       },
     },
   },
+  'stoke-gifford-sgs-united': {
+    number: 2,
+    pdfUrl:
+      'https://3p4oewzml4cd0fez.public.blob.vercel-storage.com/Filton%20Athletic%20-%20Match%20Day%20Programme%20-%2002%20-%20Stoke%20Gifford%20SGS%20United.pdf',
+  },
 }
 
 /** 2026/27 home first-team fixtures, each turned into a programme, in date order. */
