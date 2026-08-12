@@ -7,6 +7,11 @@ import matchdayUniversityOfBristolPhoto from '../assets/img/matchday-university-
 import thankYouSouthmeadPhoto from '../assets/img/thank-you-southmead-ben.jpg'
 import matchdayAfcMangotsfieldRocksPhoto from '../assets/img/matchday-afc-mangotsfield-rocks.jpg'
 import matchdayStokeGiffordSgsPhoto from '../assets/img/matchday-stoke-gifford-sgs-united.webp'
+import matchStokeGifford1 from '../assets/img/match-stoke-gifford-1.webp'
+import matchStokeGifford2 from '../assets/img/match-stoke-gifford-2.webp'
+import matchStokeGifford3 from '../assets/img/match-stoke-gifford-3.webp'
+import matchStokeGifford4 from '../assets/img/match-stoke-gifford-4.webp'
+import matchStokeGifford5 from '../assets/img/match-stoke-gifford-5.webp'
 
 export type NewsImage = { src: string; alt: string }
 
@@ -44,6 +49,13 @@ export const news: NewsItem[] = [
     teams: ['first-team'],
     excerpt:
       'A hard-fought 1-1 draw under the lights at Elm Park in front of 115 fans. Matt Tovey opened the scoring for Filton before an own goal levelled it for the visitors. Two draws and a defeat from the opening three games — the Firsts travel to Bishops Cleeve Development on Saturday 15 August, 3pm kick-off. #FATS #UTF',
+    images: [
+      { src: matchStokeGifford1, alt: 'Sunset over Elm Park during Filton Athletic vs Stoke Gifford SGS United, 12 August 2026.' },
+      { src: matchStokeGifford2, alt: 'Filton Athletic goalkeeper watches play with a packed crowd behind the barrier at Elm Park.' },
+      { src: matchStokeGifford3, alt: 'Derby day action near the dugouts — Stoke Gifford SGS United and Filton Athletic players in the thick of it.' },
+      { src: matchStokeGifford4, alt: 'Match action in front of the clubhouse and goal at Elm Park, Filton Athletic vs Stoke Gifford SGS United.' },
+      { src: matchStokeGifford5, alt: 'Filton Athletic players line up with the "Home of Filton" banner and crowd behind them at Elm Park.' },
+    ],
     link: { href: '/programme/stoke-gifford-sgs-united-2026-08-12', label: 'Read the matchday programme' },
   },
   {

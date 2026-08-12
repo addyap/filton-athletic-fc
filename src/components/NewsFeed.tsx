@@ -47,10 +47,27 @@ function NewsFeed({ team, limit, emptyMessage }: Props) {
           className="flex flex-col overflow-hidden rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
         >
           {item.images && item.images.length > 0 && (
-            <div className={item.images.length > 1 ? 'grid grid-cols-2' : ''}>
-              {item.images.map((img) => (
-                <img key={img.src} src={img.src} alt={img.alt} className="max-h-96 w-full object-cover" />
-              ))}
+            <div
+              className={
+                item.images.length === 1
+                  ? ''
+                  : item.images.length === 2
+                    ? 'grid grid-cols-2'
+                    : 'grid grid-cols-2 gap-0.5'
+              }
+            >
+              {item.images.length <= 2
+                ? item.images.map((img) => (
+                    <img key={img.src} src={img.src} alt={img.alt} className="max-h-96 w-full object-cover" />
+                  ))
+                : item.images.map((img, i) => (
+                    <img
+                      key={img.src}
+                      src={img.src}
+                      alt={img.alt}
+                      className={`w-full object-cover ${i === 0 ? 'col-span-2 max-h-64' : 'max-h-40'}`}
+                    />
+                  ))}
             </div>
           )}
           <div className="flex flex-1 flex-col p-5">
