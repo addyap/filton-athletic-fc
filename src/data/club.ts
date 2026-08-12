@@ -1,4 +1,9 @@
 import matchdayAfcMangotsfieldRocksPhoto from '../assets/img/matchday-afc-mangotsfield-rocks.jpg'
+import matchStokeGifford1 from '../assets/img/match-stoke-gifford-1.webp'
+import matchStokeGifford2 from '../assets/img/match-stoke-gifford-2.webp'
+import matchStokeGifford3 from '../assets/img/match-stoke-gifford-3.webp'
+import matchStokeGifford4 from '../assets/img/match-stoke-gifford-4.webp'
+import matchStokeGifford5 from '../assets/img/match-stoke-gifford-5.webp'
 
 export const officials = {
   chairman: 'Oliver Keeble',
@@ -113,6 +118,7 @@ export type Fixture = {
    * only add "(referee)" / "(assistant)" where Full-Time actually says so.
    */
   officials?: string
+  matchPhotos?: { src: string; alt: string }[]
 }
 
 /**
@@ -122,7 +128,13 @@ export type Fixture = {
 export const firstTeamFixtures: Fixture[] = [
   { date: '01/08/26', time: '15:00', competition: 'GCL', opponent: 'University of Bristol', venue: 'H', result: 'L 1-2', scorers: 'C Hillyer', attendance: 45, officials: 'Matthew Dyer, Michael Rogers, Bobby Tutton' },
   { date: '08/08/26', time: '15:00', competition: 'GCL', opponent: 'AFC Mangotsfield Rocks', venue: 'A', ground: 'Cossham Street, Mangotsfield, BS16 9EN', gates: '1pm', admission: 'Adults £3', matchdayNotes: 'Food & drink available', matchdayImage: matchdayAfcMangotsfieldRocksPhoto, result: 'D 2-2', scorers: 'T Anderson, Y Abdulrahman', attendance: 84, officials: 'Bobby Tutton (referee), Steven Irwin-Porter (U18 assistant)', awayProgrammeUrl: 'https://3p4oewzml4cd0fez.public.blob.vercel-storage.com/AFC%20Mangotsfield%20Rocks.pdf' },
-  { date: '12/08/26', time: '18:30', competition: 'GCL', opponent: 'Stoke Gifford SGS United', venue: 'H', result: 'D 1-1', scorers: 'M Tovey', attendance: 115, officials: 'Mark Loughlin (referee), Nick Dawson, Greg Wentland' },
+  { date: '12/08/26', time: '18:30', competition: 'GCL', opponent: 'Stoke Gifford SGS United', venue: 'H', result: 'D 1-1', scorers: 'M Tovey', attendance: 115, officials: 'Mark Loughlin (referee), Nick Dawson, Greg Wentland', matchPhotos: [
+    { src: matchStokeGifford1, alt: 'Sunset over Elm Park during Filton Athletic vs Stoke Gifford SGS United, 12 August 2026.' },
+    { src: matchStokeGifford2, alt: 'Filton Athletic goalkeeper watches play with a packed crowd behind the barrier at Elm Park.' },
+    { src: matchStokeGifford3, alt: 'Derby day action near the dugouts — Stoke Gifford SGS United and Filton Athletic players in the thick of it.' },
+    { src: matchStokeGifford4, alt: 'Match action in front of the clubhouse and goal at Elm Park, Filton Athletic vs Stoke Gifford SGS United.' },
+    { src: matchStokeGifford5, alt: 'Filton Athletic players line up with the "Home of Filton" banner and crowd behind them at Elm Park.' },
+  ] },
   { date: '15/08/26', time: '15:00', competition: 'GCL', opponent: 'Bishops Cleeve Development', venue: 'A' },
   { date: '22/08/26', time: '15:00', competition: 'GCL', opponent: 'Tewkesbury Town', venue: 'H' },
   { date: '05/09/26', time: '15:00', competition: 'Cup', opponent: 'University of Bristol', venue: 'A' },
@@ -279,6 +291,7 @@ export type ReserveFixture = {
   result?: string
   scorers?: string
   cards?: string
+  matchPhotos?: { src: string; alt: string }[]
 }
 
 /** 2026/27 reserve fixtures — cleared pending the new league schedule. */
@@ -516,4 +529,11 @@ export const groundInfo = {
   name: 'BBS Park North',
   address: 'Filton Leisure Centre, Elm Park, Filton, Bristol, BS34 7PS',
   note: 'Following upgrades in summer 2025, the first team, reserves and youth all play at BBS Park North.',
+}
+
+export function matchGalleryItems(fixtures: (Fixture | ReserveFixture)[]) {
+  return fixtures
+    .filter((f) => f.matchPhotos && f.matchPhotos.length > 0)
+    .map((f) => ({ opponent: f.opponent, date: f.date, result: f.result, photos: f.matchPhotos! }))
+    .reverse()
 }

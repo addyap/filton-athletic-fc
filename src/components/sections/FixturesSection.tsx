@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
 import SectionHeading from '../SectionHeading'
 import Reveal from '../Reveal'
+import MatchGallery from '../MatchGallery'
 import { CalendarMark } from '../SectionArt'
-import { firstTeamFixtures } from '../../data/club'
+import { firstTeamFixtures, matchGalleryItems } from '../../data/club'
 
 function resultBadge(result?: string) {
   if (!result) return 'bg-slate-100 text-slate-500'
@@ -13,7 +14,9 @@ function resultBadge(result?: string) {
 }
 
 function FixturesSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
+  const gallery = matchGalleryItems(firstTeamFixtures)
   return (
+    <>
     <section id="fixtures" className="relative overflow-hidden border-t border-slate-200 bg-slate-50">
       <CalendarMark className="pointer-events-none absolute -right-6 -top-6 h-48 w-48 text-[#0b2d52]/[0.06] sm:h-64 sm:w-64" />
       <Reveal className="relative mx-auto max-w-6xl px-6 py-14">
@@ -70,6 +73,8 @@ function FixturesSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) 
         </p>
       </Reveal>
     </section>
+    <MatchGallery matches={gallery} headingLevel={headingLevel} />
+    </>
   )
 }
 

@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom'
 import SectionHeading from '../SectionHeading'
 import LeagueTableWidget from '../LeagueTableWidget'
 import Reveal from '../Reveal'
-import { asTeamTable, aTeamFixtures } from '../../data/club'
+import MatchGallery from '../MatchGallery'
+import { asTeamTable, aTeamFixtures, matchGalleryItems } from '../../data/club'
 import { aTeamPreSeason2026 } from '../../data/preseason'
 
 function resultBadge(result?: string) {
@@ -14,7 +15,9 @@ function resultBadge(result?: string) {
 }
 
 function AsTeamSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
+  const gallery = matchGalleryItems(aTeamFixtures)
   return (
+    <>
     <section id="as-team" className="border-t border-slate-200 bg-[#e3ebf8]/60">
       <Reveal className="mx-auto max-w-6xl px-6 py-14">
       <SectionHeading icon="shirt" title="A's" tone="sky" className="justify-center" as={headingLevel} />
@@ -110,6 +113,8 @@ function AsTeamSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
       </p>
       </Reveal>
     </section>
+    <MatchGallery matches={gallery} headingLevel={headingLevel} />
+    </>
   )
 }
 

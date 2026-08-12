@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom'
 import SectionHeading from '../SectionHeading'
 import LeagueTableWidget from '../LeagueTableWidget'
 import Reveal from '../Reveal'
-import { reserveTable, reserveFixtures } from '../../data/club'
+import MatchGallery from '../MatchGallery'
+import { reserveTable, reserveFixtures, matchGalleryItems } from '../../data/club'
 import { reserveTeamPreSeason2026 } from '../../data/preseason'
 
 function resultBadge(result?: string, cancelled?: boolean) {
@@ -15,7 +16,9 @@ function resultBadge(result?: string, cancelled?: boolean) {
 }
 
 function ReservesSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
+  const gallery = matchGalleryItems(reserveFixtures)
   return (
+    <>
     <section id="reserves" className="border-t border-slate-200 bg-emerald-50/60">
       <Reveal className="mx-auto max-w-6xl px-6 py-14">
       <SectionHeading icon="shirt" title="Reserves" className="justify-center" as={headingLevel} />
@@ -110,6 +113,8 @@ function ReservesSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) 
       </p>
       </Reveal>
     </section>
+    <MatchGallery matches={gallery} headingLevel={headingLevel} />
+    </>
   )
 }
 
