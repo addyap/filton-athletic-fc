@@ -295,8 +295,73 @@ export type ReserveFixture = {
   matchPhotos?: { src: string; alt: string }[]
 }
 
-/** 2026/27 reserve fixtures — cleared pending the new league schedule. */
-export const reserveFixtures: ReserveFixture[] = []
+/** 2026/27 reserve fixtures — Bristol & Suburban Premier Division, from FA Full-Time. */
+export const reserveFixtures: ReserveFixture[] = [
+  { date: '05/09/26', time: '14:00', competition: 'PREM', opponent: 'Cosmos UK Saturday First', venue: 'H', ground: 'Elm Park, BS34 7PS' },
+  { date: '12/09/26', time: '14:00', competition: 'PREM', opponent: 'Almondsbury Reserves', venue: 'A', ground: 'Stoke Gifford Stadium', result: 'P-P' },
+  { date: '19/09/26', time: '14:00', competition: 'CC', opponent: 'Lion First', venue: 'H', ground: 'Elm Park, BS34 7PS' },
+  { date: '26/09/26', time: '14:00', competition: 'PREM', opponent: 'Henbury & Rockleaze Reserves', venue: 'A', ground: 'Arnall Drive Playing Fields' },
+  { date: '03/10/26', time: '14:00', competition: 'PREM', opponent: 'AFC Bohemia First', venue: 'H', ground: 'Elm Park, BS34 7PS' },
+  { date: '31/10/26', time: '14:00', competition: 'PREM', opponent: 'Avonmouth Reserves', venue: 'A', ground: 'King George V Recreation Ground' },
+  { date: '07/11/26', time: '14:00', competition: 'PREM', opponent: 'Warmley Rangers First', venue: 'A', ground: 'Warmley Rangers FC' },
+  { date: '14/11/26', time: '14:00', competition: 'PREM', opponent: 'Shaftesbury Crusade First', venue: 'H', ground: 'Elm Park, BS34 7PS' },
+  { date: '21/11/26', time: '14:00', competition: 'PREM', opponent: 'Jamaica Bell', venue: 'H', ground: 'Elm Park, BS34 7PS' },
+  { date: '28/11/26', time: '14:00', competition: 'PREM', opponent: 'Mendip Broadwalk Res', venue: 'A', ground: 'Filwood Park Playing Fields' },
+  { date: '05/12/26', time: '14:00', competition: 'PREM', opponent: 'Old Cothamians First', venue: 'H', ground: 'Elm Park, BS34 7PS' },
+  { date: '12/12/26', time: '14:00', competition: 'PREM', opponent: 'Wessex Wanderers First', venue: 'H', ground: 'Elm Park, BS34 7PS' },
+  { date: '02/01/27', time: '14:00', competition: 'PREM', opponent: 'Warmley Rangers First', venue: 'H', ground: 'Elm Park, BS34 7PS' },
+  { date: '09/01/27', time: '14:00', competition: 'PREM', opponent: 'Cosmos UK Saturday First', venue: 'A', ground: 'Oaklands Park' },
+  { date: '16/01/27', time: '14:00', competition: 'PREM', opponent: 'Almondsbury Reserves', venue: 'A', ground: 'Stoke Gifford Stadium' },
+  { date: '23/01/27', time: '14:00', competition: 'PREM', opponent: 'Henbury & Rockleaze Reserves', venue: 'H', ground: 'Elm Park, BS34 7PS' },
+  { date: '30/01/27', time: '14:00', competition: 'PREM', opponent: 'AFC Bohemia First', venue: 'A', ground: 'BAWA Leisure' },
+  { date: '06/02/27', time: '14:00', competition: 'PREM', opponent: 'Southmead First', venue: 'A', ground: 'Pen Park Sports Ground' },
+  { date: '13/02/27', time: '14:00', competition: 'PREM', opponent: 'Avonmouth Reserves', venue: 'H', ground: 'Elm Park, BS34 7PS' },
+  { date: '27/02/27', time: '12:00', competition: 'PREM', opponent: 'Wessex Wanderers First', venue: 'A', ground: 'Lockleaze Sports Club' },
+  { date: '06/03/27', time: '14:00', competition: 'PREM', opponent: 'Jamaica Bell', venue: 'A', ground: 'BAWA Leisure' },
+  { date: '13/03/27', time: '14:00', competition: 'PREM', opponent: 'Mendip Broadwalk Res', venue: 'H', ground: 'Elm Park, BS34 7PS' },
+  { date: '20/03/27', time: '14:00', competition: 'PREM', opponent: 'Shaftesbury Crusade First', venue: 'A', ground: 'Lockleaze Sports Club' },
+  { date: '27/03/27', time: '14:00', competition: 'PREM', opponent: 'Old Cothamians First', venue: 'A', ground: 'Coombs Dingle' },
+  { date: '03/04/27', time: '14:00', competition: 'PREM', opponent: 'Phoenix NextGen First', venue: 'A', ground: 'Netham Park' },
+  { date: '10/04/27', time: '14:00', competition: 'PREM', opponent: 'Phoenix NextGen First', venue: 'H', ground: 'Elm Park, BS34 7PS' },
+]
+
+export type YouthFixture = {
+  date: string
+  time: string
+  competition: string
+  opponent: string
+  venue: 'H' | 'A'
+  ground?: string
+  result?: string
+}
+
+/** 2026/27 U11 fixtures — Hanham Minor League, from FA Full-Time. */
+export const youthU11Fixtures: YouthFixture[] = [
+  { date: '06/09/26', time: '14:00', competition: 'L', opponent: 'Stoke Lane Athletic', venue: 'A', ground: 'Little Stoke PF, BS34 6HR' },
+  { date: '13/09/26', time: '10:30', competition: 'Cup', opponent: 'St Vallier', venue: 'A', ground: 'Lockleaze Sports Centre, BS7 9XF' },
+  { date: '20/09/26', time: '10:30', competition: 'Cup', opponent: 'Thornbury Town Falcons', venue: 'H' },
+  { date: '27/09/26', time: '14:00', competition: 'Cup', opponent: 'Bitton', venue: 'A', ground: 'Bitton AFC, BS30 6HX' },
+  { date: '11/10/26', time: '10:30', competition: 'L', opponent: 'St Vallier', venue: 'H' },
+  { date: '18/10/26', time: '14:00', competition: 'L', opponent: 'Longwell Green Sports Colts', venue: 'A', ground: 'Longwell Green Community Centre, BS30 9DU' },
+  { date: '01/11/26', time: '10:30', competition: 'L', opponent: 'Cutters Friday Juniors', venue: 'H' },
+  { date: '08/11/26', time: '10:30', competition: 'L', opponent: 'Thornbury Town Falcons', venue: 'H' },
+  { date: '15/11/26', time: '14:00', competition: 'L', opponent: 'Yate United Whites', venue: 'A', ground: 'Yate Outdoor Sports Complex, BS37 7LA' },
+  { date: '22/11/26', time: '10:30', competition: 'L', opponent: 'Ashton FC Colts', venue: 'H' },
+  { date: '29/11/26', time: '10:30', competition: 'L', opponent: 'Hanham Abbotonians', venue: 'A', ground: 'Lees Hill PF, BS15 4TW' },
+  { date: '06/12/26', time: '10:30', competition: 'L', opponent: 'Downend Saints', venue: 'H' },
+  { date: '13/12/26', time: '10:30', competition: 'L', opponent: 'Stoke Lane Athletic', venue: 'H' },
+  { date: '20/12/26', time: '10:30', competition: 'L', opponent: 'St Vallier', venue: 'A', ground: 'Lockleaze Sports Centre, BS7 9XF' },
+  { date: '03/01/27', time: '10:30', competition: 'L', opponent: 'Longwell Green Sports Colts', venue: 'H' },
+  { date: '10/01/27', time: '10:30', competition: 'L', opponent: 'Cutters Friday Juniors', venue: 'A', ground: 'Cutters FC, Stockwood Lane, BS14 8SL' },
+  { date: '17/01/27', time: '10:30', competition: 'L', opponent: 'Thornbury Town Falcons', venue: 'A', ground: 'Manorbrook School, BS35 1JW' },
+  { date: '24/01/27', time: '10:30', competition: 'L', opponent: 'Yate United Whites', venue: 'H' },
+  { date: '31/01/27', time: '10:30', competition: 'L', opponent: 'Ashton FC Colts', venue: 'A', ground: 'Greville Smyth Park, BS3 2EQ' },
+  { date: '07/02/27', time: '10:30', competition: 'L', opponent: 'Hanham Abbotonians', venue: 'H' },
+  { date: '21/02/27', time: '10:30', competition: 'Cup', opponent: 'AEK Boco', venue: 'H' },
+  { date: '28/02/27', time: '10:30', competition: 'Cup', opponent: 'Bristol Central', venue: 'A', ground: 'Rose Green Leisure Centre, BS5 7DR' },
+  { date: '07/03/27', time: '10:30', competition: 'Cup', opponent: 'Wotton Rovers Lions', venue: 'H' },
+  { date: '21/03/27', time: '10:30', competition: 'L', opponent: 'Downend Saints', venue: 'A', ground: 'Badminton Road Playing Fields, BS16 6QW' },
+]
 
 /** 2026/27 A's league fixtures — Bristol & Suburban League, Division Four, from FA Full-Time. */
 export const aTeamFixtures: ReserveFixture[] = [
