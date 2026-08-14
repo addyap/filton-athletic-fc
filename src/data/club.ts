@@ -1,4 +1,5 @@
 import matchdayAfcMangotsfieldRocksPhoto from '../assets/img/matchday-afc-mangotsfield-rocks.jpg'
+import matchdayBishopsCleeveDevelopmentPhoto from '../assets/img/matchday-bishops-cleeve-development.webp'
 import matchStokeGifford1 from '../assets/img/match-stoke-gifford-1.webp'
 import matchStokeGifford2 from '../assets/img/match-stoke-gifford-2.webp'
 import matchStokeGifford3 from '../assets/img/match-stoke-gifford-3.webp'
@@ -135,7 +136,7 @@ export const firstTeamFixtures: Fixture[] = [
     { src: matchStokeGifford4, alt: 'Match action in front of the clubhouse and goal at Elm Park, Filton Athletic vs Stoke Gifford SGS United.' },
     { src: matchStokeGifford5, alt: 'Filton Athletic players line up with the "Home of Filton" banner and crowd behind them at Elm Park.' },
   ] },
-  { date: '15/08/26', time: '15:00', competition: 'GCL', opponent: 'Bishops Cleeve Development', venue: 'A' },
+  { date: '15/08/26', time: '15:00', competition: 'GCL', opponent: 'Bishops Cleeve Development', venue: 'A', ground: 'Kayte Lane, Southam, GL52 3PD', matchdayImage: matchdayBishopsCleeveDevelopmentPhoto },
   { date: '22/08/26', time: '15:00', competition: 'GCL', opponent: 'Tewkesbury Town', venue: 'H' },
   { date: '05/09/26', time: '15:00', competition: 'Cup', opponent: 'University of Bristol', venue: 'A' },
   { date: '15/09/26', time: '19:45', competition: 'GCL', opponent: 'Longlevens Reserves', venue: 'A' },

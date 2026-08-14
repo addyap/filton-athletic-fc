@@ -7,6 +7,7 @@ import matchdayUniversityOfBristolPhoto from '../assets/img/matchday-university-
 import thankYouSouthmeadPhoto from '../assets/img/thank-you-southmead-ben.jpg'
 import matchdayAfcMangotsfieldRocksPhoto from '../assets/img/matchday-afc-mangotsfield-rocks.jpg'
 import matchdayStokeGiffordSgsPhoto from '../assets/img/matchday-stoke-gifford-sgs-united.webp'
+import matchdayBishopsCleeveDevelopmentPhoto from '../assets/img/matchday-bishops-cleeve-development.webp'
 import matchStokeGifford1 from '../assets/img/match-stoke-gifford-1.webp'
 import matchStokeGifford2 from '../assets/img/match-stoke-gifford-2.webp'
 import matchStokeGifford3 from '../assets/img/match-stoke-gifford-3.webp'
@@ -42,6 +43,20 @@ export type NewsItem = {
  * edits required.
  */
 export const news: NewsItem[] = [
+  {
+    slug: 'matchday-bishops-cleeve-development',
+    title: 'Away day — Filton Athletic travel to Bishops Cleeve Devs',
+    date: '2026-08-14',
+    teams: ['first-team'],
+    excerpt:
+      'The First Team are on the road this Saturday 15 August for matchday four of the Marcliff Gloucestershire County League season. Kick-off 3pm at Kayte Lane, Southam, GL52 3PD. Come along and support the FATS. #FATS #UTF',
+    images: [
+      {
+        src: matchdayBishopsCleeveDevelopmentPhoto,
+        alt: 'Filton Athletic FC Matchday graphic — Bishops Cleeve Devs vs Filton Athletic, Saturday 15 August 2026, Kayte Lane, Southam GL52 3PD, kick-off 3pm.',
+      },
+    ],
+  },
   {
     slug: 'first-team-result-stoke-gifford-sgs-united',
     title: 'Derby Day draw — Filton Athletic 1-1 Stoke Gifford SGS United',
