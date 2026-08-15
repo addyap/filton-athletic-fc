@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /match-centre/update
 
 Sitemap: https://filtonathletic.co.uk/sitemap.xml

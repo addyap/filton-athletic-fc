@@ -1,11 +1,12 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import SiteFooter from '../components/SiteFooter'
 import SiteHeader from '../components/SiteHeader'
-import { liveMatches, hasLiveActivity, type LiveMatch, type LiveMatchStatus } from '../data/liveMatches'
+import { fetchLiveMatches, hasLiveActivity, type LiveMatch, type LiveMatchStatus } from '../data/liveMatches'
 import { teamName } from '../data/teams'
 
-const AUTO_REFRESH_MS = 60_000
+/** How often the page re-checks for score updates while something is live. */
+const POLL_MS = 20_000
 
 const statusMeta: Record<LiveMatchStatus, { label: string; tone: string }> = {
   scheduled: { label: 'Kick-off', tone: 'bg-slate-100 text-slate-600' },
@@ -63,7 +64,8 @@ function MatchCard({ match }: { match: LiveMatch }) {
 }
 
 function MatchCentrePage() {
-  const live = hasLiveActivity()
+  const [matches, setMatches] = useState<LiveMatch[] | null>(null)
+  const live = matches ? hasLiveActivity(matches) : false
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -73,13 +75,19 @@ function MatchCentrePage() {
     }
   }, [])
 
-  // Keep the page current for anyone watching mid-match without them having
-  // to reload by hand. No-op once nothing is live/at half-time.
   useEffect(() => {
-    if (!live) return
-    const id = window.setInterval(() => window.location.reload(), AUTO_REFRESH_MS)
-    return () => window.clearInterval(id)
-  }, [live])
+    let cancelled = false
+    const load = async () => {
+      const data = await fetchLiveMatches()
+      if (!cancelled) setMatches(data)
+    }
+    load()
+    const id = window.setInterval(load, POLL_MS)
+    return () => {
+      cancelled = true
+      window.clearInterval(id)
+    }
+  }, [])
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
@@ -93,13 +101,15 @@ function MatchCentrePage() {
           </p>
           <h1 className="mt-2 text-2xl font-bold sm:text-3xl lg:text-4xl">Match Centre</h1>
           <p className="mt-3 max-w-2xl text-sm text-slate-100 sm:text-base">
-            Live scores from across the club as they happen, updated by hand on matchday.
+            Live scores from across the club as they happen.
           </p>
         </div>
       </section>
 
       <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
-        {liveMatches.length === 0 ? (
+        {matches === null ? (
+          <p className="text-center text-sm text-slate-400">Loading&hellip;</p>
+        ) : matches.length === 0 ? (
           <section className="mx-auto max-w-2xl rounded-2xl border border-slate-200 bg-slate-50 p-6 text-center sm:p-8">
             <h2 className="text-xl font-bold text-[#0b2d52] sm:text-2xl">No live match right now</h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
@@ -116,7 +126,7 @@ function MatchCentrePage() {
           </section>
         ) : (
           <div className="grid gap-6 sm:grid-cols-2">
-            {liveMatches.map((match) => (
+            {matches.map((match) => (
               <MatchCard key={`${match.team}-${match.opponent}`} match={match} />
             ))}
           </div>

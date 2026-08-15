@@ -167,6 +167,15 @@ export function headForPath(pathname: string): PageHead {
     }
   }
 
+  if (path === '/match-centre/update') {
+    return {
+      ...base,
+      title: 'Match Centre — Update',
+      description: 'PIN-protected page for updating Filton Athletic FC live scores.',
+      noindex: true,
+    }
+  }
+
   const programmeMatch = path.match(/^\/programme\/(.+)$/)
   if (programmeMatch) {
     const programme = getProgramme(programmeMatch[1])

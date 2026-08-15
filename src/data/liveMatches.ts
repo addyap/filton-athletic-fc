@@ -1,18 +1,13 @@
 import type { TeamId } from './teams'
 
 /**
- * Match Centre — today's live scoreline(s), updated by hand on matchday.
+ * Match Centre — today's live scoreline(s).
  *
- * There's no live data feed: on a matchday morning add an entry here for each
- * fixture, flip `status` to 'live' at kick-off, keep the score current as it
- * happens, then 'ft' at the final whistle. Commit + push each update — the
- * site redeploys in about a minute, and the Match Centre page auto-refreshes
- * itself while a match is live/at half-time so supporters watching don't have
- * to reload by hand.
- *
- * Once all of the day's games are full-time and written up as news, clear
- * this back to an empty array. It only ever holds *today's* matches — there's
- * no history here, that's what the fixtures/results pages are for.
+ * There's no static data here any more: scores are entered at /match-centre/update
+ * (PIN-gated, meant to be usable by anyone at the ground) and stored via
+ * api/live-matches.ts in Vercel Blob, so an update from pitchside shows up on
+ * the public page within seconds — no commit, no redeploy. This file just
+ * holds the shared shape both pages agree on, and the fetch helper.
  */
 
 export type LiveMatchStatus = 'scheduled' | 'live' | 'ht' | 'ft' | 'postponed'
@@ -34,8 +29,19 @@ export type LiveMatch = {
   lastUpdated: string
 }
 
-export const liveMatches: LiveMatch[] = []
-
-export function hasLiveActivity(matches: LiveMatch[] = liveMatches): boolean {
+export function hasLiveActivity(matches: LiveMatch[]): boolean {
   return matches.some((m) => m.status === 'live' || m.status === 'ht')
+}
+
+/** GET the current live matches from the API. Never throws — a network hiccup
+ *  or an empty store both just mean "nothing to show". */
+export async function fetchLiveMatches(): Promise<LiveMatch[]> {
+  try {
+    const res = await fetch('/api/live-matches', { cache: 'no-store' })
+    if (!res.ok) return []
+    const data = await res.json()
+    return Array.isArray(data) ? data : []
+  } catch {
+    return []
+  }
 }
