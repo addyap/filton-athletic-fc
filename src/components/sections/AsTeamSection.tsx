@@ -6,7 +6,8 @@ import MatchGallery from '../MatchGallery'
 import { asTeamTable, aTeamFixtures, matchGalleryItems, officials } from '../../data/club'
 import { aTeamPreSeason2026 } from '../../data/preseason'
 
-function resultBadge(result?: string) {
+function resultBadge(result?: string, cancelled?: boolean) {
+  if (cancelled) return 'bg-slate-100 text-slate-400'
   if (!result) return 'bg-slate-100 text-slate-500'
   if (result.startsWith('W')) return 'bg-emerald-100 text-emerald-800'
   if (result.startsWith('L')) return 'bg-red-100 text-red-800'
@@ -57,8 +58,8 @@ function AsTeamSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
                   {f.venueNote && <span className="text-slate-500"> &middot; {f.venueNote}</span>}
                 </td>
                 <td className="px-3 py-1.5">
-                  <span className={`rounded px-2 py-0.5 text-xs font-semibold ${resultBadge(f.result)}`}>
-                    {f.result ?? 'Upcoming'}
+                  <span className={`rounded px-2 py-0.5 text-xs font-semibold ${resultBadge(f.result, f.cancelled)}`}>
+                    {f.cancelled ? 'Cancelled' : (f.result ?? 'Upcoming')}
                   </span>
                 </td>
               </tr>

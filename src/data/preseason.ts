@@ -105,6 +105,7 @@ export const aTeamPreSeason2026: PreSeasonFixture[] = [
     opponent: 'Almondsbury A',
     venue: 'H',
     venueNote: 'Patchway High, BS32 4AJ',
+    cancelled: true,
   },
   {
     label: 'Sat 22 Aug',

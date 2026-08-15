@@ -44,6 +44,15 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'as-team-almondsbury-cancelled',
+    title: "Today's A's friendly vs Almondsbury A cancelled",
+    date: '2026-08-15',
+    teams: ['as'],
+    excerpt:
+      'Today’s pre-season friendly against Almondsbury A has been cancelled. The A’s final warm-up game before the league season is now Stoke Gifford A, Saturday 22 August, 2pm at Patchway High School.',
+    link: { href: '/as-team', label: "See the A's fixtures" },
+  },
+  {
     slug: 'matchday-bishops-cleeve-development',
     title: 'Away day — Filton Athletic travel to Bishops Cleeve Devs',
     date: '2026-08-14',
