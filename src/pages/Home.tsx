@@ -22,7 +22,7 @@ import SectionHeading from '../components/SectionHeading'
 import Reveal from '../components/Reveal'
 import { BootMark, NewspaperMark, TrophyMark, RosetteMark } from '../components/SectionArt'
 import LatestNewsBanner from '../components/LatestNewsBanner'
-import LeagueResultsSection from '../components/sections/LeagueResultsSection'
+import LatestResultsSection from '../components/LatestResultsSection'
 import ClubFixturesCalendar from '../components/ClubFixturesCalendar'
 import { posts, formatPostDate } from '../data/posts'
 import { officials, sponsors } from '../data/club'
@@ -119,8 +119,8 @@ function Home() {
       </section>
 
       <MatchdaySection />
-
-      <SocialSection />
+      <ClubFixturesCalendar />
+      <LatestResultsSection />
 
       {/* Join Us */}
       <section id="join" className="relative overflow-hidden border-b border-slate-200 bg-slate-50">
@@ -174,67 +174,57 @@ function Home() {
         <Reveal className="relative mx-auto max-w-6xl px-6 py-14">
         <SectionHeading icon="chat" title="Club news" className="justify-center" />
         <p className="mt-1 text-center text-sm text-slate-500">The latest from across the club and every team.</p>
-        <NewsFeed limit={4} />
+        <NewsFeed limit={3} />
         </Reveal>
       </section>
 
-      {/* History */}
+      {/* Club at a glance */}
       <section id="history" className="relative overflow-hidden border-t border-slate-200 bg-slate-50">
         <TrophyMark className="pointer-events-none absolute -right-4 -top-6 h-52 w-44 text-[#0b2d52]/[0.06] sm:h-72 sm:w-60" />
-        <Reveal className="relative mx-auto max-w-6xl px-6 py-14">
-          <SectionHeading icon="clock" title="Our history" className="justify-center" />
-          <p className="mt-4 max-w-3xl text-slate-700">
-            Filton Athletic FC are a long-standing amateur football club based in the north of Bristol.
+        <Reveal className="relative mx-auto max-w-6xl px-6 py-12">
+          <SectionHeading icon="clock" title="Club at a glance" className="justify-center" as="h2" />
+          <p className="mx-auto mt-2 max-w-3xl text-center text-slate-600">
+            From our roots in the 1960s to three adult teams and a growing youth section today, Filton Athletic is built by its players, volunteers and supporters.
           </p>
 
-          <div className="relative mt-8 max-w-2xl">
-            <div className="absolute bottom-1 left-[7px] top-1 w-0.5 bg-slate-200" aria-hidden="true" />
-            <div className="space-y-7">
-              {historyTimeline.map((item) => (
-                <div key={item.year} className="relative flex gap-4 pl-7">
-                  <span className="absolute left-0 top-1.5 h-3.5 w-3.5 shrink-0 rounded-full border-2 border-slate-50 bg-[#0b2d52] ring-2 ring-[#0b2d52]/20" />
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-wide text-[#2f6b45]">{item.year}</p>
-                    <p className="mt-0.5 text-slate-700">{item.text}</p>
-                  </div>
+          <div className="mt-7 grid gap-4 sm:grid-cols-3">
+            {historyTimeline.slice(-3).map((item) => (
+              <article key={item.year} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#2f6b45]">{item.year}</p>
+                <p className="mt-2 font-semibold leading-relaxed text-[#0b2d52]">{item.text}</p>
+              </article>
+            ))}
+          </div>
+
+          <details className="mx-auto mt-6 max-w-4xl rounded-xl border border-slate-200 bg-white p-5">
+            <summary className="cursor-pointer font-bold text-[#0b2d52]">Club leadership and committee</summary>
+            <div className="mt-5 grid gap-4 sm:grid-cols-3">
+              {[
+                { role: 'Chairman', name: officials.chairman },
+                { role: 'Vice-Chairman', name: officials.viceChairman },
+                { role: 'Club Secretary', name: officials.secretary },
+              ].map((officer) => (
+                <div key={officer.role} className="rounded-lg bg-slate-50 p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-[#2f6b45]">{officer.role}</p>
+                  <p className="mt-1 font-semibold text-[#0b2d52]">{officer.name}</p>
                 </div>
               ))}
             </div>
-          </div>
+            <div className="mt-4 rounded-lg bg-slate-50 p-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-[#2f6b45]">General Committee</p>
+              <p className="mt-1 text-sm font-semibold text-[#0b2d52]">{officials.committee.join(', ')}</p>
+            </div>
+          </details>
 
-          <p className="mt-8 max-w-3xl text-slate-700">
-            Today we&rsquo;re made up of three adult teams playing every Saturday &mdash; the first team in the
-            Marcliff Gloucestershire County Football League, the Reserves in the Bristol &amp; Suburban
-            Premier Division, and the A&rsquo;s in Division Four &mdash; run by an enthusiastic and committed
-            committee, and fortunate to be supported by some of the best fans in the world: the self-proclaimed
-            Filton Ultras!
+          <p className="mt-6 text-center text-sm text-slate-600">
+            <Link to="/archive" className="font-semibold text-[#0b2d52] underline">
+              Explore the season archive &rarr;
+            </Link>
           </p>
-
-          <h4 className="mt-10 text-lg font-semibold text-[#0b2d52]">Club leadership</h4>
-          <div className="mt-4 grid gap-4 sm:grid-cols-3">
-            {[
-              { role: 'Chairman', name: officials.chairman },
-              { role: 'Vice-Chairman', name: officials.viceChairman },
-              { role: 'Club Secretary', name: officials.secretary },
-            ].map((officer) => (
-              <div
-                key={officer.role}
-                className="rounded-lg border border-slate-200 bg-white p-4 transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
-              >
-                <p className="text-xs font-semibold uppercase tracking-wide text-[#2f6b45]">{officer.role}</p>
-                <p className="mt-1 font-semibold text-[#0b2d52]">{officer.name}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-4 rounded-lg border border-slate-200 bg-white p-4">
-            <p className="text-xs font-semibold uppercase tracking-wide text-[#2f6b45]">General Committee</p>
-            <p className="mt-1 font-semibold text-[#0b2d52]">{officials.committee.join(', ')}</p>
-          </div>
         </Reveal>
       </section>
 
-      <ClubFixturesCalendar />
-      <LeagueResultsSection />
+      <SocialSection />
 
       {/* Sponsors */}
       <section id="sponsors" className="relative overflow-hidden">
@@ -242,17 +232,17 @@ function Home() {
         <Reveal className="relative mx-auto max-w-6xl px-6 py-14">
         <SectionHeading icon="heart" title="Club sponsors" className="justify-center" />
         <p className="mt-1 text-center text-sm text-slate-500">Thank you to our sponsors&hellip;</p>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
           {sponsors.map((s) => (
-            <div key={s.name} className="rounded-lg border border-slate-200 p-4 transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
+            <div key={s.name} className="rounded-xl border border-slate-200 bg-white p-3 transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
               {sponsorLogos[s.name] && (
                 <img
                   src={sponsorLogos[s.name]}
                   alt={`${s.name} logo`}
-                  className="mb-3 h-16 w-full object-contain object-left"
+                  className="mb-2 h-12 w-full object-contain object-left"
                 />
               )}
-              <p className="font-semibold text-[#0b2d52]">
+              <p className="text-sm font-semibold text-[#0b2d52]">
                 {s.website ? (
                   <a href={s.website} target="_blank" rel="noreferrer" className="hover:underline">
                     {s.name} &rarr;
@@ -261,7 +251,7 @@ function Home() {
                   s.name
                 )}
               </p>
-              <p className="mt-1 text-sm text-slate-600">{s.blurb}</p>
+              <p className="mt-1 text-xs leading-relaxed text-slate-600">{s.blurb}</p>
             </div>
           ))}
         </div>
