@@ -13,7 +13,7 @@ function resultBadge(result?: string) {
   return 'bg-slate-100 text-slate-500'
 }
 
-function FixturesSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
+function FixturesSection({ headingLevel }: { headingLevel?: 'h1' | 'h2' | 'h3' } = {}) {
   const gallery = matchGalleryItems(firstTeamFixtures)
   return (
     <>

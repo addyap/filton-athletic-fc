@@ -10,14 +10,12 @@ const fullTimeUrl = 'https://fulltime.thefa.com/index.html?league=5545575'
 // groupEnd marks the last link in a logical cluster — a divider is rendered after it.
 const navLinks: NavLink[] = [
   { href: '/#join', label: 'Join Us', groupEnd: true },
-  { href: '/#squad', label: 'First Team' },
+  { href: '/first-team', label: 'First Team' },
   { href: '/reserves', label: 'Reserves' },
   { href: '/as-team', label: "A's" },
-  { href: '/#youth', label: 'Youth', groupEnd: true },
-  { href: '/#pre-season', label: 'Pre-season' },
+  { href: '/youth', label: 'Youth', groupEnd: true },
   { href: '/#club-calendar', label: 'Calendar' },
-  { href: '/#fixtures', label: 'Fixtures' },
-  { href: '/#table', label: 'Table', groupEnd: true },
+  { href: '/#league-results', label: 'Results', groupEnd: true },
   { href: '/#news', label: 'News' },
   { href: '/#history', label: 'History', groupEnd: true },
   { href: '/#sponsors', label: 'Sponsors', groupEnd: true },

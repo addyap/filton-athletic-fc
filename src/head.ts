@@ -81,6 +81,15 @@ export function headForPath(pathname: string): PageHead {
     }
   }
 
+  if (path === '/first-team') {
+    return {
+      ...base,
+      title: 'First Team — Filton Athletic FC',
+      description:
+        'Filton Athletic FC First Team — squad, fixtures, results, league table, match gallery and latest news for the 2026-27 season.',
+    }
+  }
+
   if (path === '/fixtures') {
     return {
       ...base,

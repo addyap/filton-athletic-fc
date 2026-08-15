@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import crestTrimmed from '../assets/img/filton-athletic-crest-trimmed.webp'
 import playersWantedPoster from '../assets/img/players-wanted.jpg'
 import bbsPlumbingLogo from '../assets/img/sponsors/bbs-plumbing.webp'
@@ -20,23 +20,12 @@ import SocialSection from '../components/SocialSection'
 import NewsFeed from '../components/NewsFeed'
 import SectionHeading from '../components/SectionHeading'
 import Reveal from '../components/Reveal'
-import { BootMark, NewspaperMark, TrophyMark, JerseyMark, RosetteMark } from '../components/SectionArt'
+import { BootMark, NewspaperMark, TrophyMark, RosetteMark } from '../components/SectionArt'
 import LatestNewsBanner from '../components/LatestNewsBanner'
-import PreSeasonSection from '../components/sections/PreSeasonSection'
-import FixturesSection from '../components/sections/FixturesSection'
-import TableSection from '../components/sections/TableSection'
 import LeagueResultsSection from '../components/sections/LeagueResultsSection'
-import YouthSection from '../components/sections/YouthSection'
-import ReservesSection from '../components/sections/ReservesSection'
-import AsTeamSection from '../components/sections/AsTeamSection'
 import ClubFixturesCalendar from '../components/ClubFixturesCalendar'
 import { posts, formatPostDate } from '../data/posts'
-import { playerPhotos2025_26 as playerPhotos } from '../data/playerPhotos'
-import {
-  officials,
-  squad,
-  sponsors,
-} from '../data/club'
+import { officials, sponsors } from '../data/club'
 
 const historyTimeline = [
   { year: '1960s', text: 'Founded as St. Andrews Meth.' },
@@ -52,6 +41,14 @@ const historyTimeline = [
   },
 ]
 
+const legacyTeamAnchors: Record<string, string> = {
+  '#squad': '/first-team',
+  '#pre-season': '/first-team#pre-season',
+  '#fixtures': '/first-team#fixtures',
+  '#table': '/first-team#table',
+  '#youth': '/youth',
+}
+
 const sponsorLogos: Record<string, string> = {
   'BBS Plumbing & Heating Supplies': bbsPlumbingLogo,
   'The Filton Feast': filtonFeastLogo,
@@ -66,17 +63,23 @@ const sponsorLogos: Record<string, string> = {
 
 function Home() {
   const location = useLocation()
+  const navigate = useNavigate()
 
-  // Scroll to the section named in the URL hash (e.g. /#squad), including when
+  // Scroll to a named home-page section (e.g. /#club-calendar), including when
   // arriving from another page via the nav.
   useEffect(() => {
+    const legacyPath = legacyTeamAnchors[location.hash]
+    if (legacyPath) {
+      navigate(legacyPath, { replace: true })
+      return
+    }
     if (!location.hash) {
       window.scrollTo(0, 0)
       return
     }
     const el = document.getElementById(location.hash.slice(1))
     if (el) el.scrollIntoView({ behavior: 'smooth' })
-  }, [location.hash, location.key])
+  }, [location.hash, location.key, navigate])
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
@@ -207,85 +210,31 @@ function Home() {
             Filton Ultras!
           </p>
 
-          <h4 className="mt-10 text-lg font-semibold text-[#0b2d52]">Club officials</h4>
-          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <h4 className="mt-10 text-lg font-semibold text-[#0b2d52]">Club leadership</h4>
+          <div className="mt-4 grid gap-4 sm:grid-cols-3">
             {[
               { role: 'Chairman', name: officials.chairman },
               { role: 'Vice-Chairman', name: officials.viceChairman },
               { role: 'Club Secretary', name: officials.secretary },
-              { role: 'First Team Manager', name: officials.firstTeamManager },
-              { role: 'First Team Coaches', name: officials.firstTeamCoaches.join(', ') },
-              { role: 'Reserve Team Manager', name: officials.reserveTeamManager },
-              { role: 'Reserve Team Coaches', name: officials.reserveTeamCoaches.join(', ') },
-              { role: "A's Team Manager", name: officials.aTeamManager },
-              { role: "A's Team Coaches", name: officials.aTeamCoaches.join(', ') },
-            ].map((o) => (
+            ].map((officer) => (
               <div
-                key={o.role}
+                key={officer.role}
                 className="rounded-lg border border-slate-200 bg-white p-4 transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
               >
-                <p className="text-xs font-semibold uppercase tracking-wide text-[#2f6b45]">{o.role}</p>
-                <p className="mt-1 font-semibold text-[#0b2d52]">{o.name}</p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-[#2f6b45]">{officer.role}</p>
+                <p className="mt-1 font-semibold text-[#0b2d52]">{officer.name}</p>
               </div>
             ))}
-            <div className="rounded-lg border border-slate-200 bg-white p-4 transition-all duration-200 hover:-translate-y-1 hover:shadow-md sm:col-span-2 lg:col-span-3">
-              <p className="text-xs font-semibold uppercase tracking-wide text-[#2f6b45]">General Committee</p>
-              <p className="mt-1 font-semibold text-[#0b2d52]">{officials.committee.join(', ')}</p>
-            </div>
+          </div>
+          <div className="mt-4 rounded-lg border border-slate-200 bg-white p-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-[#2f6b45]">General Committee</p>
+            <p className="mt-1 font-semibold text-[#0b2d52]">{officials.committee.join(', ')}</p>
           </div>
         </Reveal>
       </section>
 
-      {/* Squad */}
-      <section id="squad" className="relative overflow-hidden">
-        <JerseyMark className="pointer-events-none absolute -right-6 -top-6 h-48 w-48 text-[#0b2d52]/[0.06] sm:h-64 sm:w-64" />
-        <Reveal className="relative mx-auto max-w-6xl px-6 py-14">
-        <SectionHeading icon="shirt" title="First team squad" className="justify-center" />
-        {squad.length === 0 ? (
-          <div className="mt-6 rounded-lg border border-dashed border-slate-300 bg-slate-50 p-8 text-center">
-            <p className="font-semibold text-[#0b2d52]">2026/27 squad announcement coming soon</p>
-            <p className="mt-1 text-sm text-slate-500">
-              We&rsquo;re confirming registrations for the new season &mdash; the squad list will be
-              updated here shortly.
-            </p>
-          </div>
-        ) : (
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {squad.map((p) => (
-              <div key={p.name} className="overflow-hidden rounded-lg border border-slate-200 transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
-                {playerPhotos[p.name] && (
-                  <img
-                    src={playerPhotos[p.name]}
-                    alt={`${p.name} — Filton Athletic FC`}
-                    className="aspect-square w-full object-cover object-top"
-                  />
-                )}
-                <div className="p-4">
-                  <p className="font-semibold text-[#0b2d52]">{p.name}</p>
-                  <p className="text-xs font-medium uppercase tracking-wide text-[#3f8a5b]">{p.position}</p>
-                  <p className="mt-2 text-sm text-slate-600">{p.blurb}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-        <p className="mt-4 text-center text-sm text-slate-500">
-          Looking for last season&rsquo;s squad?{' '}
-          <Link to="/archive/first-team" className="font-medium text-[#0b2d52] underline">
-            View the first team archive &rarr;
-          </Link>
-        </p>
-        </Reveal>
-      </section>
-
-      <PreSeasonSection />
       <ClubFixturesCalendar />
-      <FixturesSection />
-      <TableSection />
       <LeagueResultsSection />
-      <ReservesSection />
-      <AsTeamSection />
-      <YouthSection />
 
       {/* Sponsors */}
       <section id="sponsors" className="relative overflow-hidden">

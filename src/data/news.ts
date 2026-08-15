@@ -104,7 +104,7 @@ export const news: NewsItem[] = [
     teams: ['first-team'],
     excerpt:
       'A hard-fought 2-2 draw at Cossham Street gives the Firsts their first point of the 2026/27 Marcliff Gloucestershire County League season. Goals for Filton from Taylor Anderson and Yusuf Abdulrahman. Next up: Stoke Gifford SGS United at home on Wednesday 12 August, 6.30pm. #FATS #UTF',
-    link: { href: '/table', label: 'See the league table' },
+    link: { href: '/first-team#table', label: 'See the league table' },
   },
   {
     slug: 'as-team-matchday-stoke-lane',
@@ -128,7 +128,7 @@ export const news: NewsItem[] = [
         alt: 'Thank you to Filton Athletic FC from Southmead Football Club — £1,170 raised on behalf of Ben and his family. "Football has no colours."',
       },
     ],
-    link: { href: '/#pre-season', label: 'See the Southmead friendly' },
+    link: { href: '/first-team#pre-season', label: 'See the Southmead friendly' },
   },
   {
     slug: 'matchday-afc-mangotsfield-rocks',
@@ -203,7 +203,7 @@ export const news: NewsItem[] = [
     teams: ['first-team'],
     excerpt:
       'That’s pre-season wrapped up. Six friendlies gave the squad valuable minutes ahead of the 2026/27 campaign: a 3-2 win over Boco at St Bede’s School to get going, then tough tests against Shire (1-3 at Mangotsfield), Oldland (0-2 away) and Old Sodbury (2-3 at Elm Park), with the Avonmouth game called off. The lads signed off in style with an emphatic 7-2 win away at Southmead. Two wins, plenty of lessons and everyone raring to go — the competitive season kicks off on Saturday 1 August at home to University of Bristol. #FATS #UTF',
-    link: { href: '/#pre-season', label: 'See the pre-season results' },
+    link: { href: '/first-team#pre-season', label: 'See the pre-season results' },
   },
   {
     slug: 'fats-at-the-world-cup',

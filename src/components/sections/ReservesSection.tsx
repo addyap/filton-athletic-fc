@@ -3,7 +3,7 @@ import SectionHeading from '../SectionHeading'
 import LeagueTableWidget from '../LeagueTableWidget'
 import Reveal from '../Reveal'
 import MatchGallery from '../MatchGallery'
-import { reserveTable, reserveFixtures, matchGalleryItems } from '../../data/club'
+import { reserveTable, reserveFixtures, matchGalleryItems, officials } from '../../data/club'
 import { reserveTeamPreSeason2026 } from '../../data/preseason'
 
 function resultBadge(result?: string, cancelled?: boolean) {
@@ -23,6 +23,16 @@ function ReservesSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) 
       <Reveal className="mx-auto max-w-6xl px-6 py-14">
       <SectionHeading icon="shirt" title="Reserves" className="justify-center" as={headingLevel} />
       <p className="mt-1 text-center text-sm text-slate-500">Bristol &amp; Suburban Premier Division 2026-27</p>
+      <div className="mx-auto mt-6 grid max-w-2xl gap-4 sm:grid-cols-2">
+        <div className="rounded-xl border border-slate-200 bg-white p-5 text-center shadow-sm">
+          <p className="text-xs font-bold uppercase tracking-wide text-[#2f6b45]">Manager</p>
+          <p className="mt-1 font-bold text-[#0b2d52]">{officials.reserveTeamManager}</p>
+        </div>
+        <div className="rounded-xl border border-slate-200 bg-white p-5 text-center shadow-sm">
+          <p className="text-xs font-bold uppercase tracking-wide text-[#2f6b45]">Coaches</p>
+          <p className="mt-1 font-bold text-[#0b2d52]">{officials.reserveTeamCoaches.join(', ')}</p>
+        </div>
+      </div>
 
       {reserveTeamPreSeason2026.length > 0 && (
         <>

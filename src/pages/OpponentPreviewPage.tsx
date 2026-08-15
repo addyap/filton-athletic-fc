@@ -100,7 +100,7 @@ function OpponentPreviewInner({ preview }: { preview: OpponentPreview }) {
 
   return (
     <article className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
-      <Link to="/#fixtures" className="text-sm text-[#0b2d52] underline">
+      <Link to="/first-team#fixtures" className="text-sm text-[#0b2d52] underline">
         &larr; Fixtures
       </Link>
 
@@ -251,7 +251,7 @@ function OpponentPreviewPage() {
         <main className="mx-auto max-w-3xl px-6 py-20 text-center">
           <h1 className="text-2xl font-bold text-[#0b2d52]">Preview not found</h1>
           <p className="mt-3 text-slate-600">There&rsquo;s no opponent preview at this address.</p>
-          <Link to="/#fixtures" className="mt-6 inline-block text-[#0b2d52] underline">
+          <Link to="/first-team#fixtures" className="mt-6 inline-block text-[#0b2d52] underline">
             Back to fixtures
           </Link>
         </main>

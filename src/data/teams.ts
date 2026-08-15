@@ -18,7 +18,7 @@ export type Team = {
 
 /** Teams with their own pages, in display order. */
 export const teams: Team[] = [
-  { id: 'first-team', name: 'First Team', href: '/#squad' },
+  { id: 'first-team', name: 'First Team', href: '/first-team' },
   { id: 'reserves', name: 'Reserves', href: '/reserves' },
   { id: 'as', name: "A's", href: '/as-team' },
   { id: 'youth', name: 'Youth', href: '/youth' },

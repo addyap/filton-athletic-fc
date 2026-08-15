@@ -23,6 +23,7 @@ export function getRoutePaths(): string[] {
     '/',
     '/archive',
     '/programmes',
+    '/first-team',
     '/fixtures',
     '/table',
     '/reserves',

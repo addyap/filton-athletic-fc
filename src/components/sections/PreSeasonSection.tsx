@@ -12,7 +12,7 @@ function resultBadge(result?: string, cancelled?: boolean) {
   return 'bg-slate-100 text-slate-500'
 }
 
-function PreSeasonSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
+function PreSeasonSection({ headingLevel }: { headingLevel?: 'h1' | 'h2' | 'h3' } = {}) {
   const record = preSeasonRecord(preSeason2026)
 
   return (

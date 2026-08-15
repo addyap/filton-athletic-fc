@@ -5,7 +5,7 @@ import Reveal from '../Reveal'
 import { PodiumMark } from '../SectionArt'
 import { leagueTable } from '../../data/club'
 
-function TableSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
+function TableSection({ headingLevel }: { headingLevel?: 'h1' | 'h2' | 'h3' } = {}) {
   return (
     <section id="table" className="relative overflow-hidden">
       <PodiumMark className="pointer-events-none absolute -right-6 -top-2 h-40 w-48 text-[#0b2d52]/[0.06] sm:h-52 sm:w-64" />

@@ -36,7 +36,7 @@ function MatchRow({ m }: { m: LeagueMatch }) {
   )
 }
 
-function LeagueResultsSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
+function LeagueResultsSection({ headingLevel }: { headingLevel?: 'h1' | 'h2' | 'h3' } = {}) {
   if (leagueResults2026_27.length === 0) return null
 
   return (

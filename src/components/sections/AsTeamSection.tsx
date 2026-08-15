@@ -3,7 +3,7 @@ import SectionHeading from '../SectionHeading'
 import LeagueTableWidget from '../LeagueTableWidget'
 import Reveal from '../Reveal'
 import MatchGallery from '../MatchGallery'
-import { asTeamTable, aTeamFixtures, matchGalleryItems } from '../../data/club'
+import { asTeamTable, aTeamFixtures, matchGalleryItems, officials } from '../../data/club'
 import { aTeamPreSeason2026 } from '../../data/preseason'
 
 function resultBadge(result?: string) {
@@ -22,6 +22,16 @@ function AsTeamSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
       <Reveal className="mx-auto max-w-6xl px-6 py-14">
       <SectionHeading icon="shirt" title="A's" tone="sky" className="justify-center" as={headingLevel} />
       <p className="mt-1 text-center text-sm text-slate-500">Bristol &amp; Suburban Division Four 2026-27</p>
+      <div className="mx-auto mt-6 grid max-w-2xl gap-4 sm:grid-cols-2">
+        <div className="rounded-xl border border-slate-200 bg-white p-5 text-center shadow-sm">
+          <p className="text-xs font-bold uppercase tracking-wide text-[#2f6b45]">Manager</p>
+          <p className="mt-1 font-bold text-[#0b2d52]">{officials.aTeamManager}</p>
+        </div>
+        <div className="rounded-xl border border-slate-200 bg-white p-5 text-center shadow-sm">
+          <p className="text-xs font-bold uppercase tracking-wide text-[#2f6b45]">Coaches</p>
+          <p className="mt-1 font-bold text-[#0b2d52]">{officials.aTeamCoaches.join(', ')}</p>
+        </div>
+      </div>
 
       <p className="mt-8 text-center text-lg font-semibold text-[#0b2d52]">Pre-season fixtures</p>
       <p className="mt-1 text-center text-sm text-slate-500">

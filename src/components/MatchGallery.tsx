@@ -10,7 +10,7 @@ type MatchGalleryItem = {
 
 type Props = {
   matches: MatchGalleryItem[]
-  headingLevel?: 'h1' | 'h3'
+  headingLevel?: 'h1' | 'h2' | 'h3'
 }
 
 function MatchGallery({ matches, headingLevel }: Props) {
