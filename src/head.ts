@@ -159,6 +159,15 @@ export function headForPath(pathname: string): PageHead {
     }
   }
 
+  if (path === '/match-centre') {
+    return {
+      ...base,
+      title: 'Match Centre — Coming soon | Filton Athletic FC',
+      description: 'Filton Athletic FC Match Centre is coming soon with live scores, match timelines and supporter updates.',
+      noindex: true,
+    }
+  }
+
   const programmeMatch = path.match(/^\/programme\/(.+)$/)
   if (programmeMatch) {
     const programme = getProgramme(programmeMatch[1])

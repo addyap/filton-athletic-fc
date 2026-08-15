@@ -17,6 +17,7 @@ import ReservesPage from './pages/ReservesPage'
 import AsTeamPage from './pages/AsTeamPage'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 import SafeguardingPage from './pages/SafeguardingPage'
+import MatchCentreComingSoonPage from './pages/MatchCentreComingSoonPage'
 
 /** Route table shared by the browser (BrowserRouter) and the prerenderer (StaticRouter). */
 function AppRoutes() {
@@ -41,6 +42,7 @@ function AppRoutes() {
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
       <Route path="/safeguarding" element={<SafeguardingPage />} />
+      <Route path="/match-centre" element={<MatchCentreComingSoonPage />} />
       <Route path="*" element={<Home />} />
     </Routes>
   )
