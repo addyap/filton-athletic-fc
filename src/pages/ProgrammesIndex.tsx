@@ -104,10 +104,9 @@ function ProgrammesIndex() {
           <h1 className="mt-2 text-2xl font-bold sm:text-3xl lg:text-4xl">Every programme, in one place</h1>
           <p className="mt-3 max-w-2xl text-sm text-slate-100 sm:text-base">
             Digital programmes from every home game, past and future, plus the programmes our hosts
-            produce on the road. Looking for full-season fixtures,
-            results, the table or the squad instead?{' '}
-            <Link to="/archive" className="underline hover:text-white">
-              Visit the season archive &rarr;
+            produce on the road. Looking for full-season fixtures, results, the table or the squad instead?{' '}
+            <Link to="/first-team" className="underline hover:text-white">
+              Visit the First Team page &rarr;
             </Link>
           </p>
         </div>

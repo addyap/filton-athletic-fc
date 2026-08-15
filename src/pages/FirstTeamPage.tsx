@@ -8,6 +8,7 @@ import NewsFeed from '../components/NewsFeed'
 import { JerseyMark } from '../components/SectionArt'
 import PreSeasonSection from '../components/sections/PreSeasonSection'
 import FixturesSection from '../components/sections/FixturesSection'
+import FirstTeamProgrammesSection from '../components/FirstTeamProgrammesSection'
 import TableSection from '../components/sections/TableSection'
 import LeagueResultsSection from '../components/sections/LeagueResultsSection'
 import { officials, squad } from '../data/club'
@@ -97,6 +98,7 @@ function FirstTeamPage() {
 
       <PreSeasonSection headingLevel="h2" />
       <FixturesSection headingLevel="h2" />
+      <FirstTeamProgrammesSection />
       <TableSection headingLevel="h2" />
       <LeagueResultsSection headingLevel="h2" />
 

@@ -25,6 +25,7 @@ const actionLinks: NavLink[] = [
 ]
 
 const clubLinks: NavLink[] = [
+  { href: '/programmes', label: 'Matchday Programmes' },
   { href: '/#news', label: 'News' },
   { href: '/#history', label: 'History' },
   { href: '/#sponsors', label: 'Sponsors' },
