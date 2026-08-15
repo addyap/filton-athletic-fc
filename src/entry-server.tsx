@@ -32,8 +32,6 @@ export function getRoutePaths(): string[] {
     '/contact',
     '/privacy-policy',
     '/safeguarding',
-    '/match-centre',
-    '/match-centre/update',
     ...programmes.map((p) => `/programme/${p.slug}`),
     ...opponentPreviews.map((p) => `/preview/${p.slug}`),
     ...posts.map((p) => `/join/${p.slug}`),

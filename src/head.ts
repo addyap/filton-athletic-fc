@@ -159,23 +159,6 @@ export function headForPath(pathname: string): PageHead {
     }
   }
 
-  if (path === '/match-centre') {
-    return {
-      ...base,
-      title: 'Match Centre — Filton Athletic FC',
-      description: 'Live scores from across Filton Athletic FC as they happen — First Team, Reserves, A’s and Youth.',
-    }
-  }
-
-  if (path === '/match-centre/update') {
-    return {
-      ...base,
-      title: 'Match Centre — Update',
-      description: 'PIN-protected page for updating Filton Athletic FC live scores.',
-      noindex: true,
-    }
-  }
-
   const programmeMatch = path.match(/^\/programme\/(.+)$/)
   if (programmeMatch) {
     const programme = getProgramme(programmeMatch[1])

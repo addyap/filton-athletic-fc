@@ -62,12 +62,6 @@ function SiteFooter({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
                     Buy official kit &amp; merchandise
                   </a>
                 </p>
-                <p className="mt-1 flex flex-wrap items-center gap-1.5">
-                  <span>Match Centre:</span>
-                  <Link to="/match-centre" className="font-semibold text-[#0b2d52] underline">
-                    Live match updates
-                  </Link>
-                </p>
               </div>
               <p className="mt-10 text-xs text-slate-500">
                 &copy; {new Date().getFullYear()} Filton Athletic FC. #FATS #UTF
