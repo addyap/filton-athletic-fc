@@ -143,6 +143,7 @@ export const reserveTeamPreSeason2026: PreSeasonFixture[] = [
     opponent: 'Southmead',
     venue: 'N',
     venueNote: 'Elm Park / Jarratts Road – TBC',
+    cancelled: true,
   },
   {
     label: 'Sat 15 Aug',

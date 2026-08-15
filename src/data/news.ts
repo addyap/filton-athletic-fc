@@ -45,6 +45,15 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'reserves-southmead-cancelled',
+    title: "Reserves' friendly vs Southmead cancelled",
+    date: '2026-08-12',
+    teams: ['reserves'],
+    excerpt:
+      'Wednesday’s pre-season friendly against Southmead was cancelled. The Reserves are back in action this Saturday 15 August, away at Lawrence Weston.',
+    link: { href: '/reserves', label: 'See the Reserves fixtures' },
+  },
+  {
     slug: 'youth-u8s-players-wanted',
     title: 'Players wanted — join Filton Athletic U8s for 2026/27',
     date: '2026-08-15',
