@@ -162,9 +162,8 @@ export function headForPath(pathname: string): PageHead {
   if (path === '/match-centre') {
     return {
       ...base,
-      title: 'Match Centre — Coming soon | Filton Athletic FC',
-      description: 'Filton Athletic FC Match Centre is coming soon with live scores, match timelines and supporter updates.',
-      noindex: true,
+      title: 'Match Centre — Filton Athletic FC',
+      description: 'Live scores from across Filton Athletic FC as they happen — First Team, Reserves, A’s and Youth.',
     }
   }
 
