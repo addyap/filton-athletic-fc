@@ -15,6 +15,7 @@ const navLinks: NavLink[] = [
   { href: '/as-team', label: "A's" },
   { href: '/#youth', label: 'Youth', groupEnd: true },
   { href: '/#pre-season', label: 'Pre-season' },
+  { href: '/#club-calendar', label: 'Calendar' },
   { href: '/#fixtures', label: 'Fixtures' },
   { href: '/#table', label: 'Table', groupEnd: true },
   { href: '/#news', label: 'News' },

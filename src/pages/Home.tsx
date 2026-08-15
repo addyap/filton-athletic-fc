@@ -29,6 +29,7 @@ import LeagueResultsSection from '../components/sections/LeagueResultsSection'
 import YouthSection from '../components/sections/YouthSection'
 import ReservesSection from '../components/sections/ReservesSection'
 import AsTeamSection from '../components/sections/AsTeamSection'
+import ClubFixturesCalendar from '../components/ClubFixturesCalendar'
 import { posts, formatPostDate } from '../data/posts'
 import { playerPhotos2025_26 as playerPhotos } from '../data/playerPhotos'
 import {
@@ -278,6 +279,7 @@ function Home() {
       </section>
 
       <PreSeasonSection />
+      <ClubFixturesCalendar />
       <FixturesSection />
       <TableSection />
       <LeagueResultsSection />
