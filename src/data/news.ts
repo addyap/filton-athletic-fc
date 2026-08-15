@@ -8,6 +8,7 @@ import thankYouSouthmeadPhoto from '../assets/img/thank-you-southmead-ben.jpg'
 import matchdayAfcMangotsfieldRocksPhoto from '../assets/img/matchday-afc-mangotsfield-rocks.jpg'
 import matchdayStokeGiffordSgsPhoto from '../assets/img/matchday-stoke-gifford-sgs-united.webp'
 import matchdayBishopsCleeveDevelopmentPhoto from '../assets/img/matchday-bishops-cleeve-development.webp'
+import u8sPlayersWantedFlyer from '../assets/img/u8s-players-wanted.jpg'
 import matchStokeGifford1 from '../assets/img/match-stoke-gifford-1.webp'
 import matchStokeGifford2 from '../assets/img/match-stoke-gifford-2.webp'
 import matchStokeGifford3 from '../assets/img/match-stoke-gifford-3.webp'
@@ -43,6 +44,21 @@ export type NewsItem = {
  * edits required.
  */
 export const news: NewsItem[] = [
+  {
+    slug: 'youth-u8s-players-wanted',
+    title: 'Players wanted — join Filton Athletic U8s for 2026/27',
+    date: '2026-08-15',
+    teams: ['youth'],
+    excerpt:
+      'Filton Athletic Youth are looking for boys and girls to join our U8s for the 2026/27 season — players must be 7 on or before 31 August 2026 (born 1 September 2018 to 31 August 2019). Come and play football, make new friends and develop your skills in a positive, supportive environment.',
+    images: [
+      {
+        src: u8sPlayersWantedFlyer,
+        alt: 'Players wanted — join Filton Athletic U8s for the 2026/27 season, boys and girls welcome. Date of birth range: 1 September 2018 to 31 August 2019 (players must be 7 on or before 31 August 2026). Interested? Contact Coach Tristen on 07858 225172 or email filtonathleticfc@outlook.com.',
+      },
+    ],
+    link: { href: '/youth', label: 'See Youth football' },
+  },
   {
     slug: 'as-team-almondsbury-cancelled',
     title: "Today's A's friendly vs Almondsbury A cancelled",

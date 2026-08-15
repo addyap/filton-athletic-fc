@@ -2,6 +2,7 @@ import SectionHeading from '../SectionHeading'
 import Reveal from '../Reveal'
 import { RisingStarsMark } from '../SectionArt'
 import u13sGirlsTeamFlyer from '../../assets/img/u13s-girls-team.jpg'
+import u8sPlayersWantedFlyer from '../../assets/img/u8s-players-wanted.jpg'
 import { youthU11Fixtures, type YouthFixture } from '../../data/club'
 
 function resultBadge(result?: string) {
@@ -39,16 +40,28 @@ function YouthSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
               <p>Ollie: 07429 595476</p>
             </div>
           </div>
-          <div className="lg:w-[280px] lg:flex-none">
-            <img
-              src={u13sGirlsTeamFlyer}
-              alt="Filton Athletic Youth are looking to create a U13s girls team. Date of birth range for the 26/27 season (school year 8): 1 September 2013 to 31 August 2014, with players up to a year older or younger welcome. Training and friendlies in 26/27, looking to join a league for 27/28. FA qualified and UEFA licensed coaches. Interested? Call 07429 595476 or email filtonathleticfc@outlook.com."
-              className="mx-auto w-full max-w-[280px] rounded-lg border border-white/20 shadow-sm lg:mx-0"
-            />
-            <p className="mt-3 text-center text-sm text-slate-200 lg:text-left">
-              New for 2026/27: we&rsquo;re looking to form a U13s girls team &mdash; get in touch if
-              you&rsquo;re interested.
-            </p>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:w-[580px] lg:flex-none">
+            <div>
+              <img
+                src={u8sPlayersWantedFlyer}
+                alt="Players wanted — join Filton Athletic U8s for the 2026/27 season, boys and girls welcome. Date of birth range: 1 September 2018 to 31 August 2019 (players must be 7 on or before 31 August 2026). Interested? Contact Coach Tristen on 07858 225172 or email filtonathleticfc@outlook.com."
+                className="mx-auto w-full max-w-[280px] rounded-lg border border-white/20 shadow-sm lg:mx-0"
+              />
+              <p className="mt-3 text-center text-sm text-slate-200 lg:text-left">
+                Players wanted: U8s for 2026/27 &mdash; born 1 Sep 2018 to 31 Aug 2019.
+              </p>
+            </div>
+            <div>
+              <img
+                src={u13sGirlsTeamFlyer}
+                alt="Filton Athletic Youth are looking to create a U13s girls team. Date of birth range for the 26/27 season (school year 8): 1 September 2013 to 31 August 2014, with players up to a year older or younger welcome. Training and friendlies in 26/27, looking to join a league for 27/28. FA qualified and UEFA licensed coaches. Interested? Call 07429 595476 or email filtonathleticfc@outlook.com."
+                className="mx-auto w-full max-w-[280px] rounded-lg border border-white/20 shadow-sm lg:mx-0"
+              />
+              <p className="mt-3 text-center text-sm text-slate-200 lg:text-left">
+                New for 2026/27: we&rsquo;re looking to form a U13s girls team &mdash; get in touch if
+                you&rsquo;re interested.
+              </p>
+            </div>
           </div>
         </div>
       </Reveal>
