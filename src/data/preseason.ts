@@ -151,6 +151,8 @@ export const reserveTeamPreSeason2026: PreSeasonFixture[] = [
     opponent: 'Lawrence Weston',
     venue: 'A',
     venueNote: 'Kingsweston Lane',
+    result: 'W 2-0',
+    scorers: 'A Mills, B Reed',
   },
   {
     label: 'Sat 22 Aug',
