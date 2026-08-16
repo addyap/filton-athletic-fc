@@ -162,11 +162,11 @@ export const reserveTeamPreSeason2026: PreSeasonFixture[] = [
     venueNote: 'AEK Boco, Greenbank Road',
   },
   {
-    label: 'Wed 26 Aug',
-    iso: '2026-08-26',
-    opponent: 'Longwell Green Res',
-    venue: 'A',
-    venueNote: 'Longwell Green FC',
+    label: 'Sat 29 Aug',
+    iso: '2026-08-29',
+    opponent: 'Odd Down Development',
+    venue: 'H',
+    venueNote: 'Elm Park, BS34 7PS',
   },
 ]
 
