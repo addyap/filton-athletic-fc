@@ -45,6 +45,15 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'reserves-result-lawrence-weston',
+    title: 'Reserves win 2-0 away at Lawrence Weston',
+    date: '2026-08-15',
+    teams: ['reserves'],
+    excerpt:
+      'The Reserves picked up a solid pre-season win on Saturday, beating Lawrence Weston 2-0 at Kingsweston Lane. Goals from Aaron Mills and Billy Reed. Next up for the Reserves is Boco Res away on Saturday 22 August.',
+    link: { href: '/reserves', label: 'See the Reserves fixtures' },
+  },
+  {
     slug: 'reserves-southmead-cancelled',
     title: "Reserves' friendly vs Southmead cancelled",
     date: '2026-08-12',
