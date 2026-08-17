@@ -2,6 +2,7 @@ import { getProgramme } from './data/programmes'
 import { getPost } from './data/posts'
 import { findSeason } from './data/seasons'
 import { getOpponentPreview, fixtureForPreview } from './data/opponents'
+import { getHistoricTeamPhoto } from './data/historicTeamPhotos'
 
 /** Canonical production origin. Update here if the club moves to a custom domain. */
 export const SITE_ORIGIN = 'https://filtonathletic.co.uk'
@@ -38,6 +39,27 @@ export function headForPath(pathname: string): PageHead {
       title: 'From the archive: Filton Athletic in 2009 — Filton Athletic FC',
       description:
         'A preserved 2009 Evening Post feature and original club-archive summary of Filton Athletic FC’s route back to success.',
+    }
+  }
+
+  if (path === '/archive/team-photographs') {
+    return {
+      ...base,
+      title: 'Historic team photographs — Filton Athletic FC',
+      description: 'A visual club archive of supplied Filton Athletic First Team and Reserves photographs, preserved with their original display context.',
+    }
+  }
+
+  const historicTeamPhotoMatch = path.match(/^\/archive\/team-photographs\/([^/]+)$/)
+  if (historicTeamPhotoMatch) {
+    const photo = getHistoricTeamPhoto(historicTeamPhotoMatch[1])
+    if (photo) {
+      return {
+        ...base,
+        title: `${photo.title} — Filton Athletic FC`,
+        description: `${photo.collectionLabel} for Filton Athletic ${photo.team}, preserved as an individual club archive record.`,
+        ogImage: photo.imageUrl,
+      }
     }
   }
 

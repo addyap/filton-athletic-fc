@@ -6,6 +6,7 @@ import { programmes } from './data/programmes'
 import { posts } from './data/posts'
 import { seasons } from './data/seasons'
 import { opponentPreviews } from './data/opponents'
+import { historicTeamPhotos } from './data/historicTeamPhotos'
 
 /** Render a single route to static HTML plus its resolved <head> metadata. */
 export function render(url: string): { appHtml: string; head: PageHead } {
@@ -23,6 +24,8 @@ export function getRoutePaths(): string[] {
     '/',
     '/archive',
     '/archive/filton-athletic-evening-post-2009',
+    '/archive/team-photographs',
+    ...historicTeamPhotos.map((photo) => `/archive/team-photographs/${photo.slug}`),
     '/programmes',
     '/first-team',
     '/fixtures',

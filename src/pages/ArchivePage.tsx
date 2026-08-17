@@ -66,6 +66,18 @@ function ArchivePage() {
             </p>
             <span className="mt-3 inline-block text-sm font-medium text-[#0b2d52]">Read the archive feature &rarr;</span>
           </Link>
+          <Link
+            to="/archive/team-photographs"
+            className="block rounded-lg border border-[#b9d6c0] bg-[#f4f8f4] p-6 transition hover:border-[#2f6b45] hover:shadow-sm sm:col-span-2"
+          >
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2f6b45]">Club photograph archive</p>
+            <h3 className="mt-2 text-lg font-bold text-[#0b2d52]">Historic team photographs</h3>
+            <p className="mt-2 max-w-3xl text-sm text-slate-600">
+              Browse individually preserved First Team and Reserves photographs from the clubhouse archive, retaining their
+              original frames, display context and printed captions.
+            </p>
+            <span className="mt-3 inline-block text-sm font-medium text-[#0b2d52]">Browse the photograph archive &rarr;</span>
+          </Link>
         </div>
       </main>
 

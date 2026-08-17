@@ -18,6 +18,8 @@ import AsTeamPage from './pages/AsTeamPage'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 import SafeguardingPage from './pages/SafeguardingPage'
 import EveningPost2009ArchivePage from './pages/EveningPost2009ArchivePage'
+import TeamPhotographArchivePage from './pages/TeamPhotographArchivePage'
+import HistoricTeamPhotoPage from './pages/HistoricTeamPhotoPage'
 
 /** Route table shared by the browser (BrowserRouter) and the prerenderer (StaticRouter). */
 function AppRoutes() {
@@ -27,6 +29,8 @@ function AppRoutes() {
       <Route path="/join/:slug" element={<PostPage />} />
       <Route path="/archive" element={<ArchivePage />} />
       <Route path="/archive/filton-athletic-evening-post-2009" element={<EveningPost2009ArchivePage />} />
+      <Route path="/archive/team-photographs" element={<TeamPhotographArchivePage />} />
+      <Route path="/archive/team-photographs/:slug" element={<HistoricTeamPhotoPage />} />
       <Route path="/archive/first-team" element={<FirstTeamArchiveHub />} />
       <Route path="/archive/reserves" element={<ReservesArchiveHub />} />
       <Route path="/archive/first-team/:season" element={<TeamSeasonArchivePage team="first-team" />} />
