@@ -15,3 +15,11 @@
 - [x] Build a dedicated historical archive page for every supplied team photograph, with individual titles, context, captions, source credit, metadata, and accessible navigation.
 - [x] Extend the club archive with a clear photograph collection entry and links to every new historical page.
 - [x] Verify the new photograph archive collection at desktop and mobile viewports and run the production build before seeking approval to push.
+- [x] Transcribe and verify every legible row-by-row player and staff caption from the supplied historic team photographs, preserving any unresolved names as unconfirmed.
+- [x] Extend each historic photograph archive record with its source-backed squad list and player-identification tag data.
+- [x] Present accessible player identification tags and squad lists on every individual historic photograph page, with an explicit unconfirmed state where the source provides no readable roster.
+- [x] Verify the enhanced historical photograph pages and production build before seeking approval to push.
+- [x] Define caption-preserving professional crops for every supplied historic team photograph.
+- [x] Create and validate cleaned presentation crops while retaining every original uploaded photograph as the archival source.
+- [x] Update each historic photograph archive record to display its professional crop while keeping the full original image accessible.
+- [x] Verify the refreshed photographic archive across desktop and mobile views, then run the production build before seeking approval to push.

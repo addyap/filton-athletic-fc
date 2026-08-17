@@ -54,8 +54,7 @@ function HistoricTeamPhotoPage() {
             <div className="mt-5 space-y-5 text-[15px] leading-7 text-slate-700 sm:text-base sm:leading-8">
               <p>{photo.summary}</p>
               <p>
-                Rather than recreating or retouching the original, this archive record keeps the supplied photograph in context:
-                its frame, display board and printed caption are part of the club story too.
+                The archive uses a carefully framed presentation crop for clarity, while retaining the supplied original with its wider clubhouse context as the archival source.
               </p>
             </div>
 
@@ -81,6 +80,35 @@ function HistoricTeamPhotoPage() {
               <p className="font-semibold">Archive note</p>
               <p className="mt-1">{photo.archiveNote}</p>
             </aside>
+
+            <section className="mt-10" aria-labelledby="player-identification-heading">
+              <SectionHeading icon="shirt" title="Player identification & squad list" as="h2" />
+              {photo.playerIdentification ? (
+                <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+                  <p id="player-identification-heading" className="text-sm leading-6 text-slate-600">
+                    {photo.playerIdentification.sourceNote}
+                  </p>
+                  <div className="mt-6 space-y-6">
+                    {photo.playerIdentification.groups.map((group) => (
+                      <div key={group.label}>
+                        <h3 className="text-sm font-bold uppercase tracking-[0.14em] text-[#2f6b45]">{group.label}</h3>
+                        <ul className="mt-3 flex flex-wrap gap-2" aria-label={group.label}>
+                          {group.people.map((person) => (
+                            <li key={person} className="rounded-full border border-[#b9d6c0] bg-[#edf6ef] px-3 py-1.5 text-sm font-medium text-[#173f2d]">
+                              {person}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div className="mt-5 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-5 text-sm leading-6 text-slate-600 sm:p-6">
+                  The supplied photograph does not contain a readable squad caption, so no player identities have been inferred for this archive record.
+                </div>
+              )}
+            </section>
 
             {relatedPhotos.length > 0 && (
               <section className="mt-10">
@@ -109,14 +137,14 @@ function HistoricTeamPhotoPage() {
 
           <aside className="order-1 lg:order-2 lg:sticky lg:top-6">
             <figure className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-              <a href={photo.imageUrl} target="_blank" rel="noreferrer" className="block bg-slate-100 p-2">
+              <a href={photo.originalImageUrl} target="_blank" rel="noreferrer" className="block bg-slate-100 p-2">
                 <img src={photo.imageUrl} alt={photo.alt} className="h-auto w-full rounded-xl" />
               </a>
               <figcaption className="p-4">
-                <p className="text-sm font-semibold text-[#0b2d52]">Original supplied photograph</p>
-                <p className="mt-1 text-sm leading-6 text-slate-600">{photo.collectionLabel}. Preserved from the club archive.</p>
-                <a href={photo.imageUrl} target="_blank" rel="noreferrer" className="mt-3 inline-block text-sm font-semibold text-[#0b2d52] underline hover:text-[#2f6b45]">
-                  Open the full image &rarr;
+                <p className="text-sm font-semibold text-[#0b2d52]">Presentation crop</p>
+                <p className="mt-1 text-sm leading-6 text-slate-600">{photo.collectionLabel}. Framed for the archive while retaining the full original below.</p>
+                <a href={photo.originalImageUrl} target="_blank" rel="noreferrer" className="mt-3 inline-block text-sm font-semibold text-[#0b2d52] underline hover:text-[#2f6b45]">
+                  Open the original supplied image &rarr;
                 </a>
               </figcaption>
             </figure>
