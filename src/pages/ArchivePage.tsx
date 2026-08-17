@@ -54,6 +54,18 @@ function ArchivePage() {
             </p>
             <span className="mt-3 inline-block text-sm font-medium text-[#0b2d52]">View archive &rarr;</span>
           </Link>
+          <Link
+            to="/archive/filton-athletic-evening-post-2009"
+            className="block rounded-lg border border-[#b9d6c0] bg-[#edf6ef] p-6 transition hover:border-[#2f6b45] hover:shadow-sm sm:col-span-2"
+          >
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2f6b45]">Club press archive · 2009</p>
+            <h3 className="mt-2 text-lg font-bold text-[#0b2d52]">Filton Athletic&rsquo;s route back to success</h3>
+            <p className="mt-2 max-w-3xl text-sm text-slate-600">
+              Explore a preserved Evening Post feature and an original club-archive summary of a pivotal chapter in
+              Filton Athletic&rsquo;s story.
+            </p>
+            <span className="mt-3 inline-block text-sm font-medium text-[#0b2d52]">Read the archive feature &rarr;</span>
+          </Link>
         </div>
       </main>
 

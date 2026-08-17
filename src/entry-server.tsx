@@ -22,6 +22,7 @@ export function getRoutePaths(): string[] {
   return [
     '/',
     '/archive',
+    '/archive/filton-athletic-evening-post-2009',
     '/programmes',
     '/first-team',
     '/fixtures',

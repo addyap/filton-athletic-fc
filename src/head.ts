@@ -32,6 +32,15 @@ export function headForPath(pathname: string): PageHead {
     }
   }
 
+  if (path === '/archive/filton-athletic-evening-post-2009') {
+    return {
+      ...base,
+      title: 'From the archive: Filton Athletic in 2009 — Filton Athletic FC',
+      description:
+        'A preserved 2009 Evening Post feature and original club-archive summary of Filton Athletic FC’s route back to success.',
+    }
+  }
+
   if (path === '/archive/first-team') {
     return {
       ...base,

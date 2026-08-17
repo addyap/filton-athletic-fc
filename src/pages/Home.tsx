@@ -220,6 +220,10 @@ function Home() {
             <Link to="/archive" className="font-semibold text-[#0b2d52] underline">
               Explore the season archive &rarr;
             </Link>
+            <span className="mx-2 text-slate-300" aria-hidden="true">|</span>
+            <Link to="/archive/filton-athletic-evening-post-2009" className="font-semibold text-[#0b2d52] underline">
+              Read the 2009 press archive &rarr;
+            </Link>
           </p>
         </Reveal>
       </section>
