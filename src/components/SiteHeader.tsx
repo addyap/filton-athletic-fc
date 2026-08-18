@@ -154,13 +154,13 @@ function SiteHeader() {
   return (
     <header className={`sticky top-0 z-50 text-white print:hidden ${transformClasses}`}>
       {/* Sponsor ticker */}
-      <div className="hidden border-b border-white/[0.06] bg-[#071e38] lg:flex lg:items-center" aria-hidden="true">
+      <div className="flex items-center border-b border-white/[0.06] bg-[#071e38]" aria-hidden="true">
         <style>{`
           @keyframes sponsor-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
           .sponsor-ticker { animation: sponsor-scroll 35s linear infinite; }
           .sponsor-ticker:hover { animation-play-state: paused; }
         `}</style>
-        <span className="shrink-0 border-r border-white/10 px-4 py-2 text-xs font-bold uppercase tracking-widest text-slate-400">
+        <span className="shrink-0 border-r border-white/10 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-slate-400 sm:px-4 sm:py-2 sm:text-xs">
           Sponsors
         </span>
         <div className="flex min-w-0 flex-1 overflow-hidden">
@@ -172,16 +172,16 @@ function SiteHeader() {
             ]
             const items = [...ordered, ...ordered]
             return (
-              <div className="sponsor-ticker flex shrink-0 items-center whitespace-nowrap py-2">
+              <div className="sponsor-ticker flex shrink-0 items-center whitespace-nowrap py-1.5 sm:py-2">
                 {items.map((s, i) => (
                   <span key={i} className="flex items-center">
-                    <span className="mx-5 text-xs text-[#c9a84c]" aria-hidden="true">◆</span>
+                    <span className="mx-3 text-[9px] text-[#c9a84c] sm:mx-5 sm:text-xs" aria-hidden="true">◆</span>
                     {s.website ? (
                       <a
                         href={s.website}
                         target="_blank"
                         rel="noreferrer"
-                        className={`text-sm tracking-wide transition hover:underline ${
+                        className={`text-xs tracking-wide transition hover:underline sm:text-sm ${
                           main.includes(s.name) ? 'font-semibold text-[#e8c76a]' : 'text-slate-400 hover:text-white'
                         }`}
                       >
@@ -190,7 +190,7 @@ function SiteHeader() {
                     ) : (
                       <a
                         href="/#sponsors"
-                        className="text-sm tracking-wide text-slate-400 transition hover:text-white hover:underline"
+                        className="text-xs tracking-wide text-slate-400 transition hover:text-white hover:underline sm:text-sm"
                       >
                         {s.name}
                       </a>
