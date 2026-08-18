@@ -153,21 +153,50 @@ function SiteHeader() {
 
   return (
     <header className={`sticky top-0 z-50 text-white print:hidden ${transformClasses}`}>
-      <div className="hidden border-b border-white/[0.08] bg-[#071e38] px-6 py-1.5 lg:block">
-        <div className="mx-auto flex max-w-6xl items-center justify-center gap-1.5 text-xs text-slate-400">
-          <span className="mr-1 font-semibold uppercase tracking-widest text-slate-500">Sponsors</span>
-          {sponsors.map((s, i) => (
-            <span key={s.name} className="flex items-center gap-1.5">
-              {i > 0 && <span className="text-slate-600" aria-hidden="true">·</span>}
-              {s.website ? (
-                <a href={s.website} target="_blank" rel="noreferrer" className="transition hover:text-white hover:underline">
-                  {s.name}
-                </a>
-              ) : (
-                <a href="/#sponsors" className="transition hover:text-white hover:underline">{s.name}</a>
-              )}
-            </span>
-          ))}
+      {/* Sponsor ticker */}
+      <div className="hidden overflow-hidden border-b border-white/[0.06] bg-[#071e38] lg:block" aria-hidden="true">
+        <style>{`
+          @keyframes sponsor-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+          .sponsor-ticker { animation: sponsor-scroll 35s linear infinite; }
+          .sponsor-ticker:hover { animation-play-state: paused; }
+        `}</style>
+        <div className="flex">
+          {(() => {
+            const main = ['BBS Plumbing & Heating Supplies', 'First Auto Care Techs']
+            const ordered = [
+              ...sponsors.filter(s => main.includes(s.name)),
+              ...sponsors.filter(s => !main.includes(s.name)),
+            ]
+            const items = [...ordered, ...ordered]
+            return (
+              <div className="sponsor-ticker flex shrink-0 items-center whitespace-nowrap py-1.5">
+                {items.map((s, i) => (
+                  <span key={i} className="flex items-center">
+                    <span className="mx-5 text-[10px] text-[#c9a84c]" aria-hidden="true">◆</span>
+                    {s.website ? (
+                      <a
+                        href={s.website}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={`text-xs tracking-wide transition hover:underline ${
+                          main.includes(s.name) ? 'font-semibold text-[#e8c76a]' : 'text-slate-400 hover:text-white'
+                        }`}
+                      >
+                        {s.name}
+                      </a>
+                    ) : (
+                      <a
+                        href="/#sponsors"
+                        className="text-xs tracking-wide text-slate-400 transition hover:text-white hover:underline"
+                      >
+                        {s.name}
+                      </a>
+                    )}
+                  </span>
+                ))}
+              </div>
+            )
+          })()}
         </div>
       </div>
       <div className="border-b border-white/10 bg-[#0b2d52]">
