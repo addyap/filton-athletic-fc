@@ -22,6 +22,57 @@ export type LeagueRound = {
 
 export const leagueResults2026_27: LeagueRound[] = [
   {
+    label: 'Matchday 3',
+    iso: '2026-08-15',
+    matches: [
+      {
+        home: 'Bishops Cleeve Development',
+        away: 'Filton Athletic',
+        homeScore: 3,
+        awayScore: 3,
+        homeScorers: 'M New, H Davis, F Smith',
+        awayScorers: 'K Cooper, S Hassan, K Thomas',
+      },
+      {
+        home: 'Quedgeley Wanderers',
+        away: 'Wick',
+        homeScore: 4,
+        awayScore: 0,
+        homeScorers: 'R Spencer, R Stokes, J Chamberlain, T De Quincey Adams',
+      },
+      {
+        home: 'Stoke Gifford SGS United',
+        away: 'AFC Mangotsfield Rocks',
+        homeScore: 1,
+        awayScore: 1,
+        homeScorers: 'T Dunnell-Luff',
+        awayScorers: 'A Batt',
+      },
+      {
+        home: 'Totterdown United',
+        away: 'Chalford',
+        homeScore: 2,
+        awayScore: 2,
+        homeScorers: 'L Sinclair (2)',
+        awayScorers: 'J Keylock, R Barney',
+      },
+    ],
+  },
+  {
+    label: 'Midweek — 12 Aug',
+    iso: '2026-08-12',
+    matches: [
+      {
+        home: 'Filton Athletic',
+        away: 'Stoke Gifford SGS United',
+        homeScore: 1,
+        awayScore: 1,
+        homeScorers: 'M Tovey',
+        awayScorers: 'OG',
+      },
+    ],
+  },
+  {
     label: 'Matchday 2',
     iso: '2026-08-08',
     matches: [

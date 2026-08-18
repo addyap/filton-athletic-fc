@@ -450,12 +450,12 @@ export const leagueTable: TableRow[] = [
   { pos: 6, team: 'Henbury & Rockleaze', p: 1, w: 1, d: 0, l: 0, f: 1, a: 0, gd: 1, pts: 3 },
   { pos: 7, team: 'Tewkesbury Town', p: 1, w: 1, d: 0, l: 0, f: 1, a: 0, gd: 1, pts: 3 },
   { pos: 8, team: 'University of Bristol', p: 2, w: 1, d: 0, l: 1, f: 4, a: 4, gd: 0, pts: 3 },
-  { pos: 9, team: 'Filton Athletic', p: 4, w: 0, d: 3, l: 1, f: 7, a: 8, gd: -1, pts: 3 },
-  { pos: 10, team: 'Chalford', p: 2, w: 0, d: 2, l: 0, f: 0, a: 0, gd: 0, pts: 2 },
+  { pos: 9, team: 'Chalford', p: 3, w: 0, d: 3, l: 0, f: 2, a: 2, gd: 0, pts: 3 },
+  { pos: 10, team: 'Filton Athletic', p: 4, w: 0, d: 3, l: 1, f: 7, a: 8, gd: -1, pts: 3 },
   { pos: 11, team: 'AFC Mangotsfield Rocks', p: 3, w: 0, d: 2, l: 1, f: 3, a: 5, gd: -2, pts: 2 },
   { pos: 12, team: 'Wick', p: 3, w: 0, d: 2, l: 1, f: 1, a: 5, gd: -4, pts: 2 },
-  { pos: 13, team: 'Longlevens Reserves', p: 2, w: 0, d: 1, l: 1, f: 2, a: 4, gd: -2, pts: 1 },
-  { pos: 14, team: 'Totterdown United', p: 2, w: 0, d: 0, l: 2, f: 1, a: 3, gd: -2, pts: 0 },
+  { pos: 13, team: 'Totterdown United', p: 3, w: 0, d: 1, l: 2, f: 3, a: 5, gd: -2, pts: 1 },
+  { pos: 14, team: 'Longlevens Reserves', p: 2, w: 0, d: 1, l: 1, f: 2, a: 4, gd: -2, pts: 1 },
   { pos: 15, team: 'Ruardean Hill Rangers', p: 1, w: 0, d: 0, l: 1, f: 0, a: 7, gd: -7, pts: 0 },
 ]
 
