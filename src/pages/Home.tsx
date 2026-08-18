@@ -240,29 +240,66 @@ function Home() {
         <Reveal className="relative mx-auto max-w-6xl px-6 py-14">
         <SectionHeading icon="heart" title="Club sponsors" className="justify-center" />
         <p className="mt-1 text-center text-sm text-slate-500">Thank you to our sponsors&hellip;</p>
-        <div className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
-          {sponsors.map((s) => (
-            <div key={s.name} className="rounded-xl border border-slate-200 bg-white p-3 transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
-              {sponsorLogos[s.name] && (
-                <img
-                  src={sponsorLogos[s.name]}
-                  alt={`${s.name} logo`}
-                  className="mb-2 h-12 w-full object-contain object-left"
-                />
-              )}
-              <p className="text-sm font-semibold text-[#0b2d52]">
-                {s.website ? (
-                  <a href={s.website} target="_blank" rel="noreferrer" className="hover:underline">
-                    {s.name} &rarr;
-                  </a>
-                ) : (
-                  s.name
-                )}
-              </p>
-              <p className="mt-1 text-xs leading-relaxed text-slate-600">{s.blurb}</p>
-            </div>
-          ))}
-        </div>
+
+        {/* Principal sponsors */}
+        {(() => {
+          const principal = sponsors.filter(s => s.name === 'BBS Plumbing & Heating Supplies' || s.name === 'First Auto Care Techs')
+          const supporting = sponsors.filter(s => s.name !== 'BBS Plumbing & Heating Supplies' && s.name !== 'First Auto Care Techs')
+          return (
+            <>
+              <p className="mt-8 text-center text-xs font-semibold uppercase tracking-widest text-[#0b2d52]/60">Principal sponsors</p>
+              <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {principal.map((s) => (
+                  <div key={s.name} className="flex flex-col items-center rounded-2xl border-2 border-[#0b2d52]/20 bg-white px-8 py-8 text-center shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+                    {sponsorLogos[s.name] && (
+                      <img
+                        src={sponsorLogos[s.name]}
+                        alt={`${s.name} logo`}
+                        className="mb-4 h-20 w-full object-contain"
+                      />
+                    )}
+                    <p className="text-base font-bold text-[#0b2d52]">
+                      {s.website ? (
+                        <a href={s.website} target="_blank" rel="noreferrer" className="hover:underline">
+                          {s.name} &rarr;
+                        </a>
+                      ) : (
+                        s.name
+                      )}
+                    </p>
+                    <p className="mt-1 text-sm text-slate-600">{s.blurb}</p>
+                  </div>
+                ))}
+              </div>
+
+              <p className="mt-8 text-center text-xs font-semibold uppercase tracking-widest text-slate-400">Supporting sponsors</p>
+              <div className="mt-3 grid grid-cols-2 gap-3 lg:grid-cols-4">
+                {supporting.map((s) => (
+                  <div key={s.name} className="rounded-xl border border-slate-200 bg-white p-3 transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
+                    {sponsorLogos[s.name] && (
+                      <img
+                        src={sponsorLogos[s.name]}
+                        alt={`${s.name} logo`}
+                        className="mb-2 h-12 w-full object-contain object-left"
+                      />
+                    )}
+                    <p className="text-sm font-semibold text-[#0b2d52]">
+                      {s.website ? (
+                        <a href={s.website} target="_blank" rel="noreferrer" className="hover:underline">
+                          {s.name} &rarr;
+                        </a>
+                      ) : (
+                        s.name
+                      )}
+                    </p>
+                    <p className="mt-1 text-xs leading-relaxed text-slate-600">{s.blurb}</p>
+                  </div>
+                ))}
+              </div>
+            </>
+          )
+        })()}
+
         <p className="mt-6 text-center text-sm text-slate-500">
           Interested in advertising with the club? Contact{' '}
           <a className="text-[#0b2d52] underline" href="mailto:filtonathleticfc@outlook.com">
