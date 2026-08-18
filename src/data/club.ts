@@ -589,6 +589,19 @@ export const sponsors = [
   { name: 'The Kitchen Den Design Studio', blurb: 'Kitchen design studio', website: 'https://www.thekitchenden.co.uk/' },
   { name: 'Clarius', blurb: 'Change delivery & IT recruitment specialists — 0117 214 1263', website: 'https://clarius.io/' },
   { name: 'New Happy Palace', blurb: 'Chinese takeaway, 553 Filton Avenue, BS7 0QH — 0117 969 3739', website: 'https://www.newhappypalace.com/' },
+  { name: 'RJ Groundworks', blurb: 'Driveways, patios, artificial grass, drainage, fencing & turf — 07413 877008', website: 'https://www.rjgroundworksltd.co.uk/' },
+  { name: 'SA Site Services', blurb: 'Fast, reliable, professional site services — 07423 307 666', website: 'https://sasiteservices.co.uk/' },
+  { name: 'JP Carpentry', blurb: 'Carpentry services — 07805 012685' },
+  { name: 'Kellaway Hire Services', blurb: 'Plant & tool hire — Est. 1997' },
+  { name: 'North Bristol Conversions', blurb: 'Complete carpentry construction' },
+  { name: 'MaxFreight', blurb: 'Freight & logistics', website: 'https://www.maxfreight.co.uk/' },
+  { name: 'SJF Property Solutions', blurb: 'Family run property company — 07517 403964', website: 'https://www.sjfpropertysolutions.com/' },
+  { name: 'EarthworksUK', blurb: 'Grabs, tippers, aggregates, topsoil & skips', website: 'https://earthworksuk.co.uk/' },
+  { name: 'Seamless Floors', blurb: 'Carpet, vinyl, LVT & laminate — 07901 751755', website: 'https://www.seamlessfloorsbristol.co.uk/' },
+  { name: 'A1 Home Improvement', blurb: 'Building & renovation — 01174 018 412', website: 'https://a1home.uk/' },
+  { name: 'A1 Land Improvement', blurb: 'Landscaping & driveways — 01174 018 412', website: 'https://a1land.uk/' },
+  { name: 'James Antony Flooring', blurb: 'Beautiful floors, expertly fitted — 357 Filton Avenue BS7 0BD · 07584 674101' },
+  { name: 'Packhouse', blurb: 'Non-league football intel — @packhousefooty', website: 'https://x.com/packhousefooty' },
 ]
 
 export const groundInfo = {
