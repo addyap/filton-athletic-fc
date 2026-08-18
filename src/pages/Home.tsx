@@ -11,6 +11,7 @@ import gpRoweLogo from '../assets/img/sponsors/gp-rowe.webp'
 import kitchenDenLogo from '../assets/img/sponsors/kitchen-den.webp'
 import clariusLogo from '../assets/img/sponsors/clarius.webp'
 import newHappyPalaceLogo from '../assets/img/sponsors/new-happy-palace.webp'
+import bsfProgrammePage from '../assets/img/bsf-programme-page.webp'
 import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
 import PitchBackdrop from '../components/PitchBackdrop'
@@ -38,6 +39,10 @@ const historyTimeline = [
   {
     year: '2025',
     text: 'Ground upgrades completed — first team, reserves and youth all now play at BBS Park North.',
+  },
+  {
+    year: 'Filton Ultras',
+    text: 'Our supporters group, the Filton Ultras, are behind the team at every game, home and away — bringing the noise and passion that make matchdays at Filton special.',
   },
 ]
 
@@ -196,6 +201,37 @@ function Home() {
             </>
           )
         })()}
+
+        <div className="mt-10 border-t border-slate-200 pt-10">
+          <p className="mb-4 text-center text-xs font-bold uppercase tracking-widest text-slate-400">Club Charity</p>
+          <div className="mx-auto flex max-w-2xl flex-col items-center gap-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:flex-row sm:items-start">
+            <a href="https://www.bensaundersfoundation.org/" target="_blank" rel="noreferrer" className="shrink-0">
+              <img
+                src={bsfProgrammePage}
+                alt="Ben Saunders Foundation — raising funds to support children and young adults with cancer in the UK"
+                className="w-40 rounded-lg shadow-md transition hover:opacity-90 sm:w-48"
+              />
+            </a>
+            <div>
+              <p className="text-base font-bold text-[#0b2d52]">
+                <a href="https://www.bensaundersfoundation.org/" target="_blank" rel="noreferrer" className="hover:underline">
+                  Ben Saunders Foundation &rarr;
+                </a>
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                Founded by Ben Saunders, who has been fighting a rare heart sarcoma since 2019, the BSF raises funds to support children and young adults with cancer across the UK — offering help with whatever they need through the very difficult times they face.
+              </p>
+              <a
+                href="https://www.bensaundersfoundation.org/"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-3 inline-block text-xs font-semibold text-[#0b2d52] underline hover:text-[#2f6b45]"
+              >
+                bensaundersfoundation.org
+              </a>
+            </div>
+          </div>
+        </div>
 
         <p className="mt-6 text-center text-sm text-slate-500">
           Interested in advertising with the club? Contact{' '}
