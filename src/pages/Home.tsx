@@ -95,17 +95,50 @@ function Home() {
           className="pointer-events-none absolute inset-y-0 left-1/2 h-full w-auto -translate-x-1/2 object-contain opacity-25"
         />
         <LatestNewsBanner />
-        <div className="relative mx-auto flex max-w-6xl flex-col items-center px-4 py-[36px] text-center sm:px-6 sm:py-[56px] lg:py-[68px]">
-          <p className="text-sm uppercase tracking-wide text-white sm:text-base lg:text-lg">Marcliff Gloucestershire County Football League</p>
-          <div className="mt-6 flex flex-col items-center gap-2 sm:flex-row sm:justify-center sm:gap-6">
+        <style>{`
+          @keyframes concorde-lead {
+            from { opacity: 0; transform: translateX(-110px); }
+            to   { opacity: 1; transform: translateX(0); }
+          }
+          @keyframes hero-title {
+            0%   { opacity: 0; transform: translateX(-55px); }
+            25%  { opacity: 0; }
+            100% { opacity: 1; transform: translateX(0); }
+          }
+          @keyframes hero-fade {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .concorde-lead-anim, .hero-title-anim, .hero-fade-anim {
+              animation: none !important; opacity: 1 !important; transform: none !important;
+            }
+          }
+        `}</style>
+        <div className="relative mx-auto flex max-w-6xl flex-col items-center px-4 py-[32px] text-center sm:px-6 sm:py-[56px] lg:py-[68px]">
+          <p className="hidden text-sm uppercase tracking-wide text-white sm:block sm:text-base lg:text-lg">Marcliff Gloucestershire County Football League</p>
+          <div className="mt-4 flex flex-col items-center gap-2 sm:mt-6 sm:flex-row sm:justify-center sm:gap-6">
             <ConcordeMark className="invisible hidden h-8 w-auto shrink-0 sm:block sm:h-10 lg:h-11" />
-            <h1 className="text-3xl font-bold sm:text-5xl lg:text-5xl">Home of Filton Athletic FC</h1>
-            <ConcordeMark className="h-8 w-auto shrink-0 text-white sm:h-10 lg:h-11" />
+            <h1
+              className="hero-title-anim text-3xl font-bold sm:text-5xl lg:text-5xl"
+              style={{ animation: 'hero-title 0.95s cubic-bezier(0.2, 0.8, 0.3, 1) both' }}
+            >
+              Home of Filton Athletic FC
+            </h1>
+            <div
+              className="concorde-lead-anim flex shrink-0"
+              style={{ animation: 'concorde-lead 0.72s cubic-bezier(0.2, 0.8, 0.3, 1) both' }}
+            >
+              <ConcordeMark className="h-8 w-auto text-white sm:h-10 lg:h-11" />
+            </div>
           </div>
-          <p className="mx-auto mt-5 max-w-2xl text-base text-slate-100 sm:text-lg lg:text-xl">
+          <p
+            className="hero-fade-anim mx-auto mt-5 max-w-2xl text-base text-slate-100 sm:text-lg lg:text-xl"
+            style={{ animation: 'hero-fade 0.6s ease both 0.7s' }}
+          >
             First team, reserves, A&rsquo;s and youth football in the north of Bristol since the 1960s.
-            <br />
-            Come down to BBS Park North and back the lads.
+            <br className="hidden sm:block" />
+            {' '}Come down to BBS Park North and back the lads.
           </p>
         </div>
         <svg
