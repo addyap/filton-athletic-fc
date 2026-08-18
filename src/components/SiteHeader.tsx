@@ -23,13 +23,13 @@ const matchdayLinks: NavLink[] = [
 const actionLinks: NavLink[] = [
   { href: '/#join', label: 'Join Us' },
   { href: 'https://www.boca-uk.com/webshop/club-shops/filton-athletic-fc/', label: 'Shop', external: true },
+  { href: '/#sponsors', label: 'Sponsors' },
 ]
 
 const clubLinks: NavLink[] = [
   { href: '/programmes', label: 'Matchday Programmes' },
   { href: '/#news', label: 'News' },
   { href: '/#history', label: 'History' },
-  { href: '/#sponsors', label: 'Sponsors' },
   { href: '/archive', label: 'Archive' },
   { href: '/#contact', label: 'Contact & ground' },
 ]
