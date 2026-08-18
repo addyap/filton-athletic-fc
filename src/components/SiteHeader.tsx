@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import crest from '../assets/img/filton-athletic-crest-transparent.webp'
-import bbsPlumbingLogo from '../assets/img/sponsors/bbs-plumbing.webp'
-import firstAutoCareTechsLogo from '../assets/img/sponsors/first-auto-care-techs.webp'
+import { sponsors } from '../data/club'
 
 type NavLink = { href: string; label: string; external?: boolean }
 
@@ -154,6 +153,23 @@ function SiteHeader() {
 
   return (
     <header className={`sticky top-0 z-50 text-white print:hidden ${transformClasses}`}>
+      <div className="hidden border-b border-white/[0.08] bg-[#071e38] px-6 py-1.5 lg:block">
+        <div className="mx-auto flex max-w-6xl items-center justify-center gap-1.5 text-xs text-slate-400">
+          <span className="mr-1 font-semibold uppercase tracking-widest text-slate-500">Sponsors</span>
+          {sponsors.map((s, i) => (
+            <span key={s.name} className="flex items-center gap-1.5">
+              {i > 0 && <span className="text-slate-600" aria-hidden="true">·</span>}
+              {s.website ? (
+                <a href={s.website} target="_blank" rel="noreferrer" className="transition hover:text-white hover:underline">
+                  {s.name}
+                </a>
+              ) : (
+                <a href="/#sponsors" className="transition hover:text-white hover:underline">{s.name}</a>
+              )}
+            </span>
+          ))}
+        </div>
+      </div>
       <div className="border-b border-white/10 bg-[#0b2d52]">
         <div className="flex items-center justify-between gap-4 py-2 pl-0 pr-2 sm:pr-3">
           <Link to="/" onClick={closeMenu} className="flex items-center gap-3 sm:gap-5">
@@ -172,14 +188,6 @@ function SiteHeader() {
             <a href={fullTimeUrl} target="_blank" rel="noreferrer" className="hover:text-white hover:underline">
               FA Full-Time &mdash; league tables &amp; results
             </a>
-            <div className="mt-1 flex items-center gap-3">
-              <a href="https://www.bbsplumb.com/" target="_blank" rel="noreferrer" title="BBS Plumbing & Heating Supplies">
-                <img src={bbsPlumbingLogo} alt="BBS Plumbing & Heating Supplies" className="h-9 w-auto rounded bg-white/95 object-contain px-2 py-1 hover:bg-white" />
-              </a>
-              <a href="https://fact.repair/" target="_blank" rel="noreferrer" title="First Auto Care Techs">
-                <img src={firstAutoCareTechsLogo} alt="First Auto Care Techs" className="h-9 w-auto rounded bg-white/95 object-contain px-2 py-1 hover:bg-white" />
-              </a>
-            </div>
           </div>
 
           <button
