@@ -247,8 +247,7 @@ function Home() {
           const supporting = sponsors.filter(s => s.name !== 'BBS Plumbing & Heating Supplies' && s.name !== 'First Auto Care Techs')
           return (
             <>
-              <p className="mt-8 text-center text-xs font-semibold uppercase tracking-widest text-[#0b2d52]/60">Principal sponsors</p>
-              <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {principal.map((s) => (
                   <div key={s.name} className="flex flex-col items-center rounded-2xl border-2 border-[#0b2d52]/20 bg-white px-8 py-8 text-center shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
                     {sponsorLogos[s.name] && (
@@ -272,8 +271,7 @@ function Home() {
                 ))}
               </div>
 
-              <p className="mt-8 text-center text-xs font-semibold uppercase tracking-widest text-slate-400">Supporting sponsors</p>
-              <div className="mt-3 grid grid-cols-2 gap-3 lg:grid-cols-4">
+              <div className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-4">
                 {supporting.map((s) => (
                   <div key={s.name} className="rounded-xl border border-slate-200 bg-white p-3 transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
                     {sponsorLogos[s.name] && (
