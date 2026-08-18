@@ -164,14 +164,20 @@ function SiteHeader() {
             </div>
           </Link>
 
-          <div className="ml-auto hidden flex-col items-end gap-3 lg:flex">
-            <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">Club sponsors</p>
-            <div className="flex items-center gap-3">
+          <div className="ml-auto hidden flex-col items-end gap-2 whitespace-nowrap text-lg text-slate-300 lg:flex lg:text-xl">
+            <span className="text-base font-semibold uppercase tracking-wide text-slate-400 lg:text-lg">Affiliated links</span>
+            <a href={countyLeagueUrl} target="_blank" rel="noreferrer" className="hover:text-white hover:underline">
+              Marcliff Gloucestershire County Football League
+            </a>
+            <a href={fullTimeUrl} target="_blank" rel="noreferrer" className="hover:text-white hover:underline">
+              FA Full-Time &mdash; league tables &amp; results
+            </a>
+            <div className="mt-1 flex items-center gap-3">
               <a href="https://www.bbsplumb.com/" target="_blank" rel="noreferrer" title="BBS Plumbing & Heating Supplies">
-                <img src={bbsPlumbingLogo} alt="BBS Plumbing & Heating Supplies" className="h-10 w-auto rounded bg-white/95 object-contain px-2 py-1 hover:bg-white" />
+                <img src={bbsPlumbingLogo} alt="BBS Plumbing & Heating Supplies" className="h-9 w-auto rounded bg-white/95 object-contain px-2 py-1 hover:bg-white" />
               </a>
               <a href="https://fact.repair/" target="_blank" rel="noreferrer" title="First Auto Care Techs">
-                <img src={firstAutoCareTechsLogo} alt="First Auto Care Techs" className="h-10 w-auto rounded bg-white/95 object-contain px-2 py-1 hover:bg-white" />
+                <img src={firstAutoCareTechsLogo} alt="First Auto Care Techs" className="h-9 w-auto rounded bg-white/95 object-contain px-2 py-1 hover:bg-white" />
               </a>
             </div>
           </div>
