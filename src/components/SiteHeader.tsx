@@ -181,7 +181,7 @@ function SiteHeader() {
                         href={s.website}
                         target="_blank"
                         rel="noreferrer"
-                        className={`text-xs tracking-wide transition hover:underline sm:text-sm ${
+                        className={`text-sm tracking-wide transition hover:underline sm:text-base ${
                           main.includes(s.name) ? 'font-semibold text-[#e8c76a]' : 'text-slate-400 hover:text-white'
                         }`}
                       >
@@ -190,7 +190,7 @@ function SiteHeader() {
                     ) : (
                       <a
                         href="/#sponsors"
-                        className="text-xs tracking-wide text-slate-400 transition hover:text-white hover:underline sm:text-sm"
+                        className="text-sm tracking-wide text-slate-400 transition hover:text-white hover:underline sm:text-base"
                       >
                         {s.name}
                       </a>
