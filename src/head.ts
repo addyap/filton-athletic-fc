@@ -269,7 +269,9 @@ export function headForPath(pathname: string): PageHead {
             '@context': 'https://schema.org',
             '@type': 'SportsEvent',
             name: `Filton Athletic vs ${programme.fixture.opponent}`,
-            startDate: `${programme.isoDate}T${programme.fixture.time}:00+01:00`,
+            // No UTC offset: schema.org reads this as local time at the ground,
+            // which stays correct across the BST/GMT switch mid-season.
+            startDate: `${programme.isoDate}T${programme.fixture.time}:00`,
             eventStatus: 'https://schema.org/EventScheduled',
             eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
             url: base.canonical,
