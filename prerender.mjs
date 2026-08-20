@@ -9,8 +9,13 @@ import { pathToFileURL } from 'node:url'
 const DIST = 'dist'
 const template = readFileSync(join(DIST, 'index.html'), 'utf-8')
 
-/** Matches the og:image in index.html — pages using it keep the declared dimensions. */
-const DEFAULT_OG_IMAGE = 'https://filtonathletic.co.uk/favicon.jpg'
+/**
+ * Must match OG_IMAGE in src/head.ts and the og:image in index.html. Pages
+ * using it keep the declared 1200x630; pages that substitute their own image
+ * (the historic photographs) get those dimensions stripped, as they aren't
+ * that shape.
+ */
+const DEFAULT_OG_IMAGE = 'https://filtonathletic.co.uk/og-image.jpg'
 
 const { render, getRoutePaths } = await import(
   pathToFileURL(join(process.cwd(), 'dist-ssr', 'entry-server.js')).href

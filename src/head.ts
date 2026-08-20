@@ -6,7 +6,9 @@ import { getHistoricTeamPhoto } from './data/historicTeamPhotos'
 
 /** Canonical production origin. Update here if the club moves to a custom domain. */
 export const SITE_ORIGIN = 'https://filtonathletic.co.uk'
-const OG_IMAGE = `${SITE_ORIGIN}/favicon.jpg`
+// 1200x630 club banner, so shared links get a full-width card rather than the
+// small square one a crest-sized image produces.
+const OG_IMAGE = `${SITE_ORIGIN}/og-image.jpg`
 
 export type PageHead = {
   title: string
