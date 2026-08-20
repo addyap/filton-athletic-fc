@@ -90,14 +90,15 @@ export function headForPath(pathname: string): PageHead {
         ...base,
         title: `${photo.title} — Filton Athletic FC`,
         description: `${photo.collectionLabel} for Filton Athletic ${photo.team}, preserved as an individual club archive record.`,
-        ogImage: photo.imageUrl,
+        // photo.imageUrl is a site-relative path; og:image needs it absolute.
+        ogImage: `${SITE_ORIGIN}${photo.imageUrl}`,
         ogType: 'article',
         jsonLd: [
           {
             '@context': 'https://schema.org',
             '@type': 'ImageObject',
             name: photo.title,
-            contentUrl: photo.imageUrl,
+            contentUrl: `${SITE_ORIGIN}${photo.imageUrl}`,
             description: `${photo.collectionLabel} for Filton Athletic ${photo.team}.`,
             isPartOf: { '@type': 'CollectionPage', name: 'Historic team photographs', url: `${SITE_ORIGIN}/archive/team-photographs` },
           },

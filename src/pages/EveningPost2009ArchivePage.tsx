@@ -4,7 +4,7 @@ import SiteFooter from '../components/SiteFooter'
 import SiteHeader from '../components/SiteHeader'
 import SectionHeading from '../components/SectionHeading'
 
-const newspaperScanUrl = 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663341830314/fwexHGuKyyjovfFq.jpg'
+const newspaperScanUrl = '/archive/photographs/evening-post-2009.jpg'
 
 function EveningPost2009ArchivePage() {
   useEffect(() => {
