@@ -39,10 +39,9 @@ function EveningPost2009ArchivePage() {
                 settled group of players, an active committee and a revived reserves side.
               </p>
               <p>
-                The feature traces the club&rsquo;s path from its St Andrews Meth. roots in 1980 through its 1986 renaming
-                as Filton Athletic, successive promotions and the return of a reserves team. It also records the ambition
-                around the first team at the time, led by manager Darren Jones, and the energy around the club ahead of its
-                30th anniversary.
+                The feature traces the club&rsquo;s path from its St Andrews Meth. roots in the 1960s through its 1986
+                renaming as Filton Athletic, successive promotions and the return of a reserves team. It also records the
+                ambition around the first team at the time, led by manager Darren Jones, and the energy around the club.
               </p>
               <p>
                 More than a results report, the article is a snapshot of the volunteer effort behind the badge: players
@@ -55,7 +54,7 @@ function EveningPost2009ArchivePage() {
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2f6b45]">At a glance</p>
               <dl className="mt-4 grid gap-4 sm:grid-cols-3">
                 <div>
-                  <dt className="text-sm font-semibold text-[#0b2d52]">1980</dt>
+                  <dt className="text-sm font-semibold text-[#0b2d52]">1960s</dt>
                   <dd className="mt-1 text-sm leading-6 text-slate-600">The article recalls the club&rsquo;s launch as St Andrews Meth.</dd>
                 </div>
                 <div>
