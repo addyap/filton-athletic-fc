@@ -88,10 +88,6 @@ function ProgrammeGrid({ items }: { items: Programme[] }) {
 function ProgrammesIndex() {
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.title = 'Matchday programmes — Filton Athletic FC'
-    return () => {
-      document.title = 'Filton Athletic FC'
-    }
   }, [])
 
   return (

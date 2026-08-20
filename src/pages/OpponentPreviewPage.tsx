@@ -234,12 +234,6 @@ function OpponentPreviewPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-    if (preview) {
-      document.title = `Meet the visitors: ${preview.name} — Filton Athletic FC`
-    }
-    return () => {
-      document.title = 'Filton Athletic FC'
-    }
   }, [preview])
 
   return (

@@ -65,12 +65,6 @@ function PostPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-    if (post) {
-      document.title = `${post.title} — Filton Athletic FC`
-    }
-    return () => {
-      document.title = 'Filton Athletic FC'
-    }
   }, [post])
 
   if (!post) {

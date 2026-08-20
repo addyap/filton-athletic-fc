@@ -13,8 +13,38 @@ export type PageHead = {
   description: string
   canonical: string
   ogImage: string
+  /** Open Graph type. Pages that read as content (programmes, posts) use 'article'. */
+  ogType?: 'website' | 'article'
+  /** Page-specific schema.org JSON-LD, injected alongside the site-wide SportsTeam graph. */
+  jsonLd?: Record<string, unknown>[]
   /** Set on draft pages (e.g. unfinished legal pages) to keep them out of search results. */
   noindex?: boolean
+}
+
+const GROUND = {
+  '@type': 'Place',
+  name: 'BBS Park North, Elm Park',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Elm Park',
+    addressLocality: 'Filton, Bristol',
+    postalCode: 'BS34 7PS',
+    addressCountry: 'GB',
+  },
+}
+
+/** schema.org BreadcrumbList — helps Google render the site hierarchy in results. */
+function breadcrumbs(trail: { name: string; path: string }[]): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: trail.map((crumb, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: crumb.name,
+      item: `${SITE_ORIGIN}${crumb.path}`,
+    })),
+  }
 }
 
 const DEFAULT_DESCRIPTION =
@@ -59,6 +89,23 @@ export function headForPath(pathname: string): PageHead {
         title: `${photo.title} — Filton Athletic FC`,
         description: `${photo.collectionLabel} for Filton Athletic ${photo.team}, preserved as an individual club archive record.`,
         ogImage: photo.imageUrl,
+        ogType: 'article',
+        jsonLd: [
+          {
+            '@context': 'https://schema.org',
+            '@type': 'ImageObject',
+            name: photo.title,
+            contentUrl: photo.imageUrl,
+            description: `${photo.collectionLabel} for Filton Athletic ${photo.team}.`,
+            isPartOf: { '@type': 'CollectionPage', name: 'Historic team photographs', url: `${SITE_ORIGIN}/archive/team-photographs` },
+          },
+          breadcrumbs([
+            { name: 'Home', path: '/' },
+            { name: 'Season archive', path: '/archive' },
+            { name: 'Historic team photographs', path: '/archive/team-photographs' },
+            { name: photo.title, path },
+          ]),
+        ],
       }
     }
   }
@@ -87,6 +134,14 @@ export function headForPath(pathname: string): PageHead {
         ...base,
         title: `First team ${season.label} archive — Filton Athletic FC`,
         description: `Filton Athletic FC first team ${season.label} archive — full fixtures, results, final league table${season.squad ? ' and squad' : ''}. ${season.standing}`,
+        jsonLd: [
+          breadcrumbs([
+            { name: 'Home', path: '/' },
+            { name: 'Season archive', path: '/archive' },
+            { name: 'First team', path: '/archive/first-team' },
+            { name: season.label, path },
+          ]),
+        ],
       }
     }
   }
@@ -99,6 +154,14 @@ export function headForPath(pathname: string): PageHead {
         ...base,
         title: `Reserves ${season.label} archive — Filton Athletic FC`,
         description: `Filton Athletic FC Reserves ${season.label} archive — full fixtures, results and final league table. ${season.reserveStanding ?? ''}`,
+        jsonLd: [
+          breadcrumbs([
+            { name: 'Home', path: '/' },
+            { name: 'Season archive', path: '/archive' },
+            { name: 'Reserves', path: '/archive/reserves' },
+            { name: season.label, path },
+          ]),
+        ],
       }
     }
   }
@@ -200,6 +263,29 @@ export function headForPath(pathname: string): PageHead {
         // in more than one season, and identical titles confuse search results.
         title: `Filton Athletic vs ${programme.fixture.opponent}, ${programme.longDate} — Matchday programme`,
         description: `Matchday programme for Filton Athletic vs ${programme.fixture.opponent}, ${programme.longDate}, kick-off ${programme.fixture.time} at BBS Park North. ${programme.competitionName}.`,
+        ogType: 'article',
+        jsonLd: [
+          {
+            '@context': 'https://schema.org',
+            '@type': 'SportsEvent',
+            name: `Filton Athletic vs ${programme.fixture.opponent}`,
+            startDate: `${programme.isoDate}T${programme.fixture.time}:00+01:00`,
+            eventStatus: 'https://schema.org/EventScheduled',
+            eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+            url: base.canonical,
+            location: GROUND,
+            competitor: [
+              { '@type': 'SportsTeam', name: 'Filton Athletic FC', url: `${SITE_ORIGIN}/` },
+              { '@type': 'SportsTeam', name: programme.fixture.opponent },
+            ],
+            organizer: { '@type': 'SportsOrganization', name: programme.competitionName },
+          },
+          breadcrumbs([
+            { name: 'Home', path: '/' },
+            { name: 'Matchday programmes', path: '/programmes' },
+            { name: `vs ${programme.fixture.opponent}`, path: path },
+          ]),
+        ],
       }
     }
   }
@@ -226,6 +312,21 @@ export function headForPath(pathname: string): PageHead {
         ...base,
         title: `${post.title} — Filton Athletic FC`,
         description: post.excerpt,
+        ogType: 'article',
+        jsonLd: [
+          {
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: post.title,
+            description: post.excerpt,
+            url: base.canonical,
+            publisher: {
+              '@type': 'SportsTeam',
+              name: 'Filton Athletic FC',
+              url: `${SITE_ORIGIN}/`,
+            },
+          },
+        ],
       }
     }
   }

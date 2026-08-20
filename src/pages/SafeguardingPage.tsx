@@ -4,10 +4,6 @@ import LegalPage, { LegalSection, Todo } from '../components/LegalPage'
 function SafeguardingPage() {
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.title = 'Safeguarding — Filton Athletic FC'
-    return () => {
-      document.title = 'Filton Athletic FC'
-    }
   }, [])
 
   return (

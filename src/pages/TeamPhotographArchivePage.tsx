@@ -8,10 +8,6 @@ import { historicTeamPhotos } from '../data/historicTeamPhotos'
 function TeamPhotographArchivePage() {
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.title = 'Historic team photographs — Filton Athletic FC'
-    return () => {
-      document.title = 'Filton Athletic FC'
-    }
   }, [])
 
   return (

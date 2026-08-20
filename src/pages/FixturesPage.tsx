@@ -6,10 +6,6 @@ import FixturesSection from '../components/sections/FixturesSection'
 function FixturesPage() {
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.title = 'Fixtures & results — Filton Athletic FC'
-    return () => {
-      document.title = 'Filton Athletic FC'
-    }
   }, [])
 
   return (

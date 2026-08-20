@@ -9,10 +9,6 @@ import { seasons } from '../data/seasons'
 function ReservesArchiveHub() {
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.title = 'Reserves archive — Filton Athletic FC'
-    return () => {
-      document.title = 'Filton Athletic FC'
-    }
   }, [])
 
   const reserveSeasons = seasons.filter((s) => s.reserveTable && s.reserveFixtures)

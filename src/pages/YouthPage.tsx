@@ -8,10 +8,6 @@ import YouthSection from '../components/sections/YouthSection'
 function YouthPage() {
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.title = 'Filton Athletic Youth FC'
-    return () => {
-      document.title = 'Filton Athletic FC'
-    }
   }, [])
 
   return (

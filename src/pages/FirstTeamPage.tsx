@@ -25,12 +25,6 @@ function FirstTeamPage() {
     document.getElementById(location.hash.slice(1))?.scrollIntoView({ behavior: 'smooth' })
   }, [location.hash, location.key])
 
-  useEffect(() => {
-    document.title = 'First Team — Filton Athletic FC'
-    return () => {
-      document.title = 'Filton Athletic FC'
-    }
-  }, [])
 
   return (
     <div className="min-h-screen bg-white text-slate-900">

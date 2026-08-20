@@ -8,10 +8,6 @@ import ReservesSection from '../components/sections/ReservesSection'
 function ReservesPage() {
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.title = 'Reserves — Filton Athletic FC'
-    return () => {
-      document.title = 'Filton Athletic FC'
-    }
   }, [])
 
   return (

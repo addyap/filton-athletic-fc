@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import { usePageHead } from './usePageHead'
 import Home from './pages/Home'
 import PostPage from './pages/PostPage'
 import ProgrammesIndex from './pages/ProgrammesIndex'
@@ -23,6 +24,8 @@ import HistoricTeamPhotoPage from './pages/HistoricTeamPhotoPage'
 
 /** Route table shared by the browser (BrowserRouter) and the prerenderer (StaticRouter). */
 function AppRoutes() {
+  usePageHead()
+
   return (
     <Routes>
       <Route path="/" element={<Home />} />

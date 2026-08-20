@@ -9,6 +9,9 @@ import { pathToFileURL } from 'node:url'
 const DIST = 'dist'
 const template = readFileSync(join(DIST, 'index.html'), 'utf-8')
 
+/** Matches the og:image in index.html — pages using it keep the declared dimensions. */
+const DEFAULT_OG_IMAGE = 'https://filtonathletic.co.uk/favicon.jpg'
+
 const { render, getRoutePaths } = await import(
   pathToFileURL(join(process.cwd(), 'dist-ssr', 'entry-server.js')).href
 )
@@ -36,8 +39,31 @@ function applyHead(html, head) {
   out = replaceAttr(out, '<meta name="twitter:title"', title)
   out = replaceAttr(out, '<meta name="twitter:description"', desc)
   out = out.replace(/(<link rel="canonical" href=)"[^"]*"/, `$1"${canonical}"`)
+
+  if (head.ogImage) {
+    const image = escapeHtml(head.ogImage)
+    out = replaceAttr(out, '<meta property="og:image"', image)
+    out = replaceAttr(out, '<meta name="twitter:image"', image)
+    // The declared dimensions describe the default crest, so they'd be a lie
+    // for any page supplying its own image.
+    if (head.ogImage !== DEFAULT_OG_IMAGE) {
+      out = out.replace(/\s*<meta property="og:image:(width|height)" content="[^"]*" \/>/g, '')
+    }
+  }
+  if (head.ogType) {
+    out = replaceAttr(out, '<meta property="og:type"', escapeHtml(head.ogType))
+  }
   if (head.noindex) {
     out = replaceAttr(out, '<meta name="robots"', 'noindex,follow')
+  }
+  if (head.jsonLd?.length) {
+    const blocks = head.jsonLd
+      .map(
+        (node) =>
+          `    <script type="application/ld+json">\n${JSON.stringify(node, null, 2).replace(/</g, '\\u003c')}\n    </script>`,
+      )
+      .join('\n')
+    out = out.replace('</head>', `${blocks}\n  </head>`)
   }
   return out
 }

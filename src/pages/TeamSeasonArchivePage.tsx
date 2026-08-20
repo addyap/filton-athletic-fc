@@ -32,10 +32,6 @@ function TeamSeasonArchivePage({ team }: { team: Team }) {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.title = data ? `${teamLabel} ${data.label} archive — Filton Athletic FC` : 'Filton Athletic FC'
-    return () => {
-      document.title = 'Filton Athletic FC'
-    }
   }, [data, teamLabel])
 
   if (!data || !table || !fixtures) {

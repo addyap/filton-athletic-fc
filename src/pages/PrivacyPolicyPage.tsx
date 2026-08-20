@@ -4,10 +4,6 @@ import LegalPage, { LegalSection, Todo } from '../components/LegalPage'
 function PrivacyPolicyPage() {
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.title = 'Privacy policy — Filton Athletic FC'
-    return () => {
-      document.title = 'Filton Athletic FC'
-    }
   }, [])
 
   return (

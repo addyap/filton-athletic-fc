@@ -9,10 +9,6 @@ const newspaperScanUrl = 'https://files.manuscdn.com/user_upload_by_module/sessi
 function EveningPost2009ArchivePage() {
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.title = 'From the archive: Filton Athletic in 2009 — Filton Athletic FC'
-    return () => {
-      document.title = 'Filton Athletic FC'
-    }
   }, [])
 
   return (

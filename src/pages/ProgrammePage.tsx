@@ -215,12 +215,6 @@ function ProgrammePage() {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-    if (programme) {
-      document.title = `Filton Athletic vs ${programme.fixture.opponent}, ${programme.longDate} — Matchday programme`
-    }
-    return () => {
-      document.title = 'Filton Athletic FC'
-    }
   }, [programme])
 
   if (!programme) {

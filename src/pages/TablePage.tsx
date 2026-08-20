@@ -6,10 +6,6 @@ import TableSection from '../components/sections/TableSection'
 function TablePage() {
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.title = 'League table — Filton Athletic FC'
-    return () => {
-      document.title = 'Filton Athletic FC'
-    }
   }, [])
 
   return (

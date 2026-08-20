@@ -8,10 +8,6 @@ import SectionHeading from '../components/SectionHeading'
 function ArchivePage() {
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.title = 'Season archive — Filton Athletic FC'
-    return () => {
-      document.title = 'Filton Athletic FC'
-    }
   }, [])
 
   return (

@@ -11,10 +11,6 @@ function HistoricTeamPhotoPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.title = photo ? `${photo.title} — Filton Athletic FC` : 'Historic team photograph — Filton Athletic FC'
-    return () => {
-      document.title = 'Filton Athletic FC'
-    }
   }, [photo])
 
   if (!photo) {

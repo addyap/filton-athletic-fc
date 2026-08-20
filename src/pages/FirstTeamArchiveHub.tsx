@@ -9,10 +9,6 @@ import { seasons } from '../data/seasons'
 function FirstTeamArchiveHub() {
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.title = 'First team archive — Filton Athletic FC'
-    return () => {
-      document.title = 'Filton Athletic FC'
-    }
   }, [])
 
   return (
