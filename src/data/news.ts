@@ -46,6 +46,15 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'as-team-matchday-stoke-gifford',
+    title: "Matchday — Filton A face Stoke Gifford A in their final pre-season friendly",
+    date: '2026-08-21',
+    teams: ['as'],
+    excerpt:
+      'The A’s round off their pre-season programme tomorrow, Saturday 22 August, at home to Stoke Gifford A. 2pm kick-off at Patchway High School, BS32 4AJ. Come down and support the lads before the league campaign gets under way.',
+    link: { href: '/as-team', label: "See the A's fixtures" },
+  },
+  {
     slug: 'matchday-tewkesbury-town',
     title: 'Matchday — Filton Athletic host Tewkesbury Town',
     date: '2026-08-21',
