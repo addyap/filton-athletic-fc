@@ -6,6 +6,7 @@ import macmillanGolfPhoto from '../assets/img/macmillan-golf-challenge.jpg'
 import matchdayUniversityOfBristolPhoto from '../assets/img/matchday-university-of-bristol.jpg'
 import thankYouSouthmeadPhoto from '../assets/img/thank-you-southmead-ben.jpg'
 import matchdayAfcMangotsfieldRocksPhoto from '../assets/img/matchday-afc-mangotsfield-rocks.jpg'
+import matchdayTewkesburyTownPhoto from '../assets/img/matchday-tewkesbury-town.jpg'
 import matchdayStokeGiffordSgsPhoto from '../assets/img/matchday-stoke-gifford-sgs-united.webp'
 import matchdayBishopsCleeveDevelopmentPhoto from '../assets/img/matchday-bishops-cleeve-development.webp'
 import u8sPlayersWantedFlyer from '../assets/img/u8s-players-wanted.jpg'
@@ -44,6 +45,21 @@ export type NewsItem = {
  * edits required.
  */
 export const news: NewsItem[] = [
+  {
+    slug: 'matchday-tewkesbury-town',
+    title: 'Matchday — Filton Athletic host Tewkesbury Town',
+    date: '2026-08-21',
+    teams: ['first-team'],
+    excerpt:
+      'The First Team are back at Elm Park this Saturday 22 August for the next round of the Marcliff Gloucestershire County League season. Kick-off 3pm at Elm Park, BS34 7PS. One club, one community, one family — come along and support the FATS.',
+    images: [
+      {
+        src: matchdayTewkesburyTownPhoto,
+        alt: 'Filton Athletic FC Matchday graphic — Filton Athletic vs Tewkesbury Town, this Saturday, Elm Park, BS34 7PS, kick-off 3pm.',
+      },
+    ],
+    link: { href: '/#matchday', label: 'See matchday details' },
+  },
   {
     slug: 'reserves-result-lawrence-weston',
     title: 'Reserves win 2-0 away at Lawrence Weston',

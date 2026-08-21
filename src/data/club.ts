@@ -1,4 +1,5 @@
 import matchdayAfcMangotsfieldRocksPhoto from '../assets/img/matchday-afc-mangotsfield-rocks.jpg'
+import matchdayTewkesburyTownPhoto from '../assets/img/matchday-tewkesbury-town.jpg'
 import matchdayBishopsCleeveDevelopmentPhoto from '../assets/img/matchday-bishops-cleeve-development.webp'
 import matchStokeGifford1 from '../assets/img/match-stoke-gifford-1.webp'
 import matchStokeGifford2 from '../assets/img/match-stoke-gifford-2.webp'
@@ -137,7 +138,7 @@ export const firstTeamFixtures: Fixture[] = [
     { src: matchStokeGifford5, alt: 'Filton Athletic players line up with the "Home of Filton" banner and crowd behind them at Elm Park.' },
   ] },
   { date: '15/08/26', time: '15:00', competition: 'GCL', opponent: 'Bishops Cleeve Development', venue: 'A', ground: 'Kayte Lane, Southam, GL52 3PD', matchdayImage: matchdayBishopsCleeveDevelopmentPhoto, result: 'D 3-3', scorers: 'K Cooper, S Hassan, K Thomas (pen)', officials: 'Owen Jackson, Shaun Enever, Nigel Rees', awayProgrammeUrl: 'https://3p4oewzml4cd0fez.public.blob.vercel-storage.com/DevsvFilton2.pdf' },
-  { date: '22/08/26', time: '15:00', competition: 'GCL', opponent: 'Tewkesbury Town', venue: 'H' },
+  { date: '22/08/26', time: '15:00', competition: 'GCL', opponent: 'Tewkesbury Town', venue: 'H', matchdayImage: matchdayTewkesburyTownPhoto },
   { date: '05/09/26', time: '15:00', competition: 'Cup', opponent: 'University of Bristol', venue: 'A' },
   { date: '15/09/26', time: '19:45', competition: 'GCL', opponent: 'Longlevens Reserves', venue: 'A' },
   { date: '26/09/26', time: '15:00', competition: 'GCL', opponent: 'Ruardean Hill Rangers', venue: 'H' },
