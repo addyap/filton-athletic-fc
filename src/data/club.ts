@@ -138,7 +138,7 @@ export const firstTeamFixtures: Fixture[] = [
     { src: matchStokeGifford5, alt: 'Filton Athletic players line up with the "Home of Filton" banner and crowd behind them at Elm Park.' },
   ] },
   { date: '15/08/26', time: '15:00', competition: 'GCL', opponent: 'Bishops Cleeve Development', venue: 'A', ground: 'Kayte Lane, Southam, GL52 3PD', matchdayImage: matchdayBishopsCleeveDevelopmentPhoto, result: 'D 3-3', scorers: 'K Cooper, S Hassan, K Thomas (pen)', officials: 'Owen Jackson, Shaun Enever, Nigel Rees', awayProgrammeUrl: 'https://3p4oewzml4cd0fez.public.blob.vercel-storage.com/DevsvFilton2.pdf' },
-  { date: '22/08/26', time: '15:00', competition: 'GCL', opponent: 'Tewkesbury Town', venue: 'H', matchdayImage: matchdayTewkesburyTownPhoto },
+  { date: '22/08/26', time: '15:00', competition: 'GCL', opponent: 'Tewkesbury Town', venue: 'H', matchdayImage: matchdayTewkesburyTownPhoto, result: 'D 1-1', officials: 'Michael Halford (referee), Kevin Slade, Martin Mills' },
   { date: '05/09/26', time: '15:00', competition: 'Cup', opponent: 'University of Bristol', venue: 'A' },
   { date: '15/09/26', time: '19:45', competition: 'GCL', opponent: 'Longlevens Reserves', venue: 'A' },
   { date: '26/09/26', time: '15:00', competition: 'GCL', opponent: 'Ruardean Hill Rangers', venue: 'H' },
@@ -440,23 +440,23 @@ export type TableRow = { pos: number; team: string; p: number; w: number; d: num
 /**
  * 2026/27 league table — Marcliff Gloucestershire County Football League,
  * Division 1. Updated from FA Full-Time; the live/full version (with all results
- * and scorers) is linked from the table section. Snapshot after the 15 August 2026 fixtures.
+ * and scorers) is linked from the table section. Snapshot after the 22 August 2026 fixtures.
  */
 export const leagueTable: TableRow[] = [
-  { pos: 1, team: 'Quedgeley Wanderers', p: 3, w: 2, d: 1, l: 0, f: 13, a: 2, gd: 11, pts: 7 },
-  { pos: 2, team: 'Stoke Gifford SGS United', p: 4, w: 1, d: 3, l: 0, f: 5, a: 4, gd: 1, pts: 6 },
-  { pos: 3, team: 'Bishops Cleeve Development', p: 3, w: 1, d: 1, l: 1, f: 5, a: 4, gd: 1, pts: 4 },
-  { pos: 4, team: 'Frampton United', p: 2, w: 1, d: 1, l: 0, f: 3, a: 2, gd: 1, pts: 4 },
-  { pos: 5, team: 'Broadwell Amateurs', p: 1, w: 1, d: 0, l: 0, f: 2, a: 0, gd: 2, pts: 3 },
-  { pos: 6, team: 'Henbury & Rockleaze', p: 1, w: 1, d: 0, l: 0, f: 1, a: 0, gd: 1, pts: 3 },
-  { pos: 7, team: 'Tewkesbury Town', p: 1, w: 1, d: 0, l: 0, f: 1, a: 0, gd: 1, pts: 3 },
-  { pos: 8, team: 'University of Bristol', p: 2, w: 1, d: 0, l: 1, f: 4, a: 4, gd: 0, pts: 3 },
-  { pos: 9, team: 'Chalford', p: 3, w: 0, d: 3, l: 0, f: 2, a: 2, gd: 0, pts: 3 },
-  { pos: 10, team: 'Filton Athletic', p: 4, w: 0, d: 3, l: 1, f: 7, a: 8, gd: -1, pts: 3 },
-  { pos: 11, team: 'AFC Mangotsfield Rocks', p: 3, w: 0, d: 2, l: 1, f: 3, a: 5, gd: -2, pts: 2 },
-  { pos: 12, team: 'Wick', p: 3, w: 0, d: 2, l: 1, f: 1, a: 5, gd: -4, pts: 2 },
-  { pos: 13, team: 'Totterdown United', p: 3, w: 0, d: 1, l: 2, f: 3, a: 5, gd: -2, pts: 1 },
-  { pos: 14, team: 'Longlevens Reserves', p: 2, w: 0, d: 1, l: 1, f: 2, a: 4, gd: -2, pts: 1 },
+  { pos: 1, team: 'Quedgeley Wanderers', p: 4, w: 3, d: 1, l: 0, f: 18, a: 2, gd: 16, pts: 10 },
+  { pos: 2, team: 'Bishops Cleeve Development', p: 4, w: 2, d: 1, l: 1, f: 7, a: 5, gd: 2, pts: 7 },
+  { pos: 3, team: 'Broadwell Amateurs', p: 2, w: 2, d: 0, l: 0, f: 4, a: 0, gd: 4, pts: 6 },
+  { pos: 4, team: 'University of Bristol', p: 3, w: 2, d: 0, l: 1, f: 8, a: 5, gd: 3, pts: 6 },
+  { pos: 5, team: 'Henbury & Rockleaze', p: 2, w: 2, d: 0, l: 0, f: 5, a: 3, gd: 2, pts: 6 },
+  { pos: 6, team: 'Stoke Gifford SGS United', p: 5, w: 1, d: 3, l: 1, f: 6, a: 6, gd: 0, pts: 6 },
+  { pos: 7, team: 'Tewkesbury Town', p: 2, w: 1, d: 1, l: 0, f: 2, a: 1, gd: 1, pts: 4 },
+  { pos: 8, team: 'Frampton United', p: 3, w: 1, d: 1, l: 1, f: 6, a: 6, gd: 0, pts: 4 },
+  { pos: 9, team: 'Filton Athletic', p: 5, w: 0, d: 4, l: 1, f: 8, a: 9, gd: -1, pts: 4 },
+  { pos: 10, team: 'Longlevens Reserves', p: 4, w: 1, d: 1, l: 2, f: 6, a: 9, gd: -3, pts: 4 },
+  { pos: 11, team: 'Chalford', p: 3, w: 0, d: 3, l: 0, f: 2, a: 2, gd: 0, pts: 3 },
+  { pos: 12, team: 'AFC Mangotsfield Rocks', p: 4, w: 0, d: 2, l: 2, f: 4, a: 8, gd: -4, pts: 2 },
+  { pos: 13, team: 'Wick', p: 4, w: 0, d: 2, l: 2, f: 1, a: 7, gd: -6, pts: 2 },
+  { pos: 14, team: 'Totterdown United', p: 4, w: 0, d: 1, l: 3, f: 3, a: 10, gd: -7, pts: 1 },
   { pos: 15, team: 'Ruardean Hill Rangers', p: 1, w: 0, d: 0, l: 1, f: 0, a: 7, gd: -7, pts: 0 },
 ]
 
