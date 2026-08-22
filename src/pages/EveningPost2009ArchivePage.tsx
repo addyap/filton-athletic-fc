@@ -50,6 +50,26 @@ function EveningPost2009ArchivePage() {
               </p>
             </div>
 
+            <section className="mt-9 rounded-2xl border border-slate-200 p-5 sm:p-6">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2f6b45]">Who&rsquo;s in the photograph</p>
+              <p className="mt-2 text-sm text-slate-500">As named in the Evening Post caption, 20 October 2009.</p>
+              <dl className="mt-4 space-y-4">
+                <div>
+                  <dt className="text-sm font-semibold text-[#0b2d52]">Back row &middot; left to right</dt>
+                  <dd className="mt-1 text-sm leading-6 text-slate-600">
+                    Darren Jones (manager), Martyn Sims, Kenny Wynne, Mike Humby, Gary Keary, Luke Walker,
+                    Matty Price, Rob Cotter, Mark Loftus, Simon Bryan
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-sm font-semibold text-[#0b2d52]">Front row &middot; left to right</dt>
+                  <dd className="mt-1 text-sm leading-6 text-slate-600">
+                    Peter Jefferey, Matthew Shipsey, Craig Lanfear, Chris Misir, Paul Woodrow, Dean Lewis
+                  </dd>
+                </div>
+              </dl>
+            </section>
+
             <section className="mt-9 rounded-2xl border border-slate-200 bg-slate-50 p-5 sm:p-6">
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2f6b45]">At a glance</p>
               <dl className="mt-4 grid gap-4 sm:grid-cols-3">
