@@ -46,6 +46,15 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'as-team-stoke-gifford-cancelled',
+    title: "Today's A's friendly vs Stoke Gifford A cancelled",
+    date: '2026-08-22',
+    teams: ['as'],
+    excerpt:
+      'Today’s pre-season friendly against Stoke Gifford A has been cancelled — the A’s pre-season programme is now complete. Next up: the league campaign kicks off on Saturday 5 September, at home to Parson Street Old Boys Reserves.',
+    link: { href: '/as-team', label: "See the A's fixtures" },
+  },
+  {
     slug: 'as-team-matchday-stoke-gifford',
     title: "Matchday — Filton A face Stoke Gifford A in their final pre-season friendly",
     date: '2026-08-21',

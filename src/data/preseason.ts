@@ -113,6 +113,7 @@ export const aTeamPreSeason2026: PreSeasonFixture[] = [
     opponent: 'Stoke Gifford A',
     venue: 'H',
     venueNote: 'Patchway High, BS32 4AJ',
+    cancelled: true,
   },
 ]
 
