@@ -161,6 +161,7 @@ export const reserveTeamPreSeason2026: PreSeasonFixture[] = [
     opponent: 'Boco Res',
     venue: 'A',
     venueNote: 'AEK Boco, Greenbank Road',
+    cancelled: true,
   },
   {
     label: 'Sat 29 Aug',
