@@ -51,7 +51,7 @@ export const news: NewsItem[] = [
     date: '2026-08-22',
     teams: ['first-team'],
     excerpt:
-      'A share of the spoils at Elm Park as the First Team drew 1-1 with Tewkesbury Town in the Marcliff Gloucestershire County League. Filton sit 9th after five games — four draws and a defeat from the opening day, unbeaten since. #FATS #UTF',
+      'A share of the spoils at Elm Park as the First Team drew 1-1 with Tewkesbury Town in the Marcliff Gloucestershire County League, Filton’s goal coming from an own goal. Filton sit 9th after five games — four draws and a defeat from the opening day, unbeaten since. #FATS #UTF',
     link: { href: '/table', label: 'See the league table' },
   },
   {
