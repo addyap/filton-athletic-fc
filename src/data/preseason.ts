@@ -167,8 +167,7 @@ export const reserveTeamPreSeason2026: PreSeasonFixture[] = [
     label: 'Sat 29 Aug',
     iso: '2026-08-29',
     opponent: 'Odd Down Development',
-    venue: 'H',
-    venueNote: 'Elm Park, BS34 7PS',
+    venue: 'A',
   },
 ]
 

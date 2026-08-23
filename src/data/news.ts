@@ -51,7 +51,7 @@ export const news: NewsItem[] = [
     date: '2026-08-22',
     teams: ['reserves'],
     excerpt:
-      'Saturday’s pre-season friendly away at Boco Res was cancelled in the end. The Reserves are back in action next Saturday 29 August, at home to Odd Down Development.',
+      'Saturday’s pre-season friendly away at Boco Res was cancelled in the end. The Reserves are back in action next Saturday 29 August, away at Odd Down Development.',
     link: { href: '/reserves', label: 'See the Reserves fixtures' },
   },
   {
