@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import crestTrimmed from '../assets/img/filton-athletic-crest-trimmed.webp'
 import playersWantedPoster from '../assets/img/players-wanted.jpg'
 import bbsPlumbingLogo from '../assets/img/sponsors/bbs-plumbing.webp'
 import filtonFeastLogo from '../assets/img/sponsors/filton-feast.webp'
@@ -14,15 +13,13 @@ import newHappyPalaceLogo from '../assets/img/sponsors/new-happy-palace.webp'
 import bsfProgrammePage from '../assets/img/bsf-programme-page.webp'
 import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
-import PitchBackdrop from '../components/PitchBackdrop'
-import ConcordeMark from '../components/ConcordeMark'
+import Hero from '../components/Hero'
 import MatchdaySection from '../components/MatchdaySection'
 import SocialSection from '../components/SocialSection'
 import NewsFeed from '../components/NewsFeed'
 import SectionHeading from '../components/SectionHeading'
 import Reveal from '../components/Reveal'
 import { BootMark, NewspaperMark, TrophyMark, RosetteMark } from '../components/SectionArt'
-import LatestNewsBanner from '../components/LatestNewsBanner'
 import LatestResultsSection from '../components/LatestResultsSection'
 import ClubFixturesCalendar from '../components/ClubFixturesCalendar'
 import { posts, formatPostDate } from '../data/posts'
@@ -91,70 +88,7 @@ function Home() {
       <SiteHeader />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#7f9ad6] via-[#1c3f6e] to-[#0a2340] text-white">
-        <PitchBackdrop />
-        <img
-          src={crestTrimmed}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-y-0 left-1/2 h-full w-auto -translate-x-1/2 object-contain opacity-25"
-        />
-        <LatestNewsBanner />
-        <style>{`
-          @keyframes concorde-lead {
-            from { opacity: 0; transform: translateX(-110px); }
-            to   { opacity: 1; transform: translateX(0); }
-          }
-          @keyframes hero-title {
-            0%   { opacity: 0; transform: translateX(-55px); }
-            25%  { opacity: 0; }
-            100% { opacity: 1; transform: translateX(0); }
-          }
-          @keyframes hero-fade {
-            from { opacity: 0; }
-            to   { opacity: 1; }
-          }
-          @media (prefers-reduced-motion: reduce) {
-            .concorde-lead-anim, .hero-title-anim, .hero-fade-anim {
-              animation: none !important; opacity: 1 !important; transform: none !important;
-            }
-          }
-        `}</style>
-        <div className="relative mx-auto flex max-w-6xl flex-col items-center px-4 py-[32px] text-center sm:px-6 sm:py-[56px] lg:py-[68px]">
-          <p className="hidden text-sm uppercase tracking-wide text-white sm:block sm:text-base lg:text-lg">Marcliff Gloucestershire County Football League</p>
-          <div className="mt-4 flex flex-col items-center gap-2 sm:mt-6 sm:flex-row sm:justify-center sm:gap-6">
-            <ConcordeMark className="invisible hidden h-8 w-auto shrink-0 sm:block sm:h-10 lg:h-11" />
-            <h1
-              className="hero-title-anim text-3xl font-bold sm:text-5xl lg:text-5xl"
-              style={{ animation: 'hero-title 0.95s cubic-bezier(0.2, 0.8, 0.3, 1) both' }}
-            >
-              Home of Filton Athletic FC
-            </h1>
-            <div
-              className="concorde-lead-anim flex shrink-0"
-              style={{ animation: 'concorde-lead 0.72s cubic-bezier(0.2, 0.8, 0.3, 1) both' }}
-            >
-              <ConcordeMark className="h-8 w-auto text-white sm:h-10 lg:h-11" />
-            </div>
-          </div>
-          <p
-            className="hero-fade-anim mx-auto mt-5 max-w-2xl text-base text-slate-100 sm:text-lg lg:text-xl"
-            style={{ animation: 'hero-fade 0.6s ease both 0.7s' }}
-          >
-            First team, reserves, A&rsquo;s and youth football in the north of Bristol since the 1960s.
-            <br className="hidden sm:block" />
-            {' '}Come down to BBS Park North and back the lads.
-          </p>
-        </div>
-        <svg
-          className="pointer-events-none absolute -bottom-px left-0 w-full text-slate-50"
-          viewBox="0 0 1440 60"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <path fill="currentColor" d="M0,32 C240,64 480,0 720,16 C960,32 1200,64 1440,32 L1440,60 L0,60 Z" />
-        </svg>
-      </section>
+      <Hero />
 
       <MatchdaySection />
       <ClubFixturesCalendar />
