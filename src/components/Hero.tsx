@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import LatestNewsBanner from './LatestNewsBanner'
+import crestTrimmed from '../assets/img/filton-athletic-crest-trimmed.webp'
 
 /**
  * "Wheels Up" — the signature hero.
@@ -168,7 +169,7 @@ function Hero() {
   return (
     <section
       ref={stageRef}
-      className="fah relative flex min-h-[86svh] flex-col overflow-hidden bg-[#04101f] text-white"
+      className="fah relative flex min-h-[64svh] flex-col overflow-hidden bg-[#04101f] text-white"
     >
       <style>{`
         .fah { --amber:#f4a94b; --burn:#ff8a3d; --vapour:#eaf1fb; }
@@ -191,6 +192,14 @@ function Hero() {
         .fah-ground { position:absolute; left:50%; bottom:0; width:160%; height:34%; z-index:2;
           transform:translateX(-50%); pointer-events:none; opacity:0;
           animation:fah-up 1.2s ease .8s forwards; }
+        .fah-crest {
+          position:absolute; inset-block:0; left:50%; transform:translateX(-50%);
+          height:100%; width:auto; z-index:2; pointer-events:none; object-fit:contain;
+          opacity:0; mix-blend-mode:soft-light;
+          filter:drop-shadow(0 2px 1px rgba(0,0,0,.5)) drop-shadow(0 -1px 1px rgba(255,255,255,.12));
+          animation:fah-crest 1.6s ease .3s forwards;
+        }
+        @keyframes fah-crest { to { opacity:.22; } }
         .fah-flight { position:absolute; inset:0; z-index:3; pointer-events:none; will-change:transform; }
         .fah-trail { position:absolute; inset:0; width:100%; height:100%; }
         .fah-trailhead { fill:none; stroke:url(#fahTrail); stroke-width:3; stroke-linecap:round;
@@ -264,6 +273,7 @@ function Hero() {
 
         @media (prefers-reduced-motion: reduce) {
           .fah-horizon { opacity:1; transform:none; animation:none; }
+          .fah-crest { opacity:.22; animation:none; }
           .fah-stars, .fah-ground, .fah-eyebrow, .fah-sub, .fah-cta, .fah-fs, .fah-cue { opacity:1; animation:none; }
           .fah-craft { opacity:1; transform:rotate(-22deg); animation:none; }
           .fah-line > span { transform:none; animation:none; }
@@ -276,6 +286,15 @@ function Hero() {
       <div className="fah-sky" data-sky data-depth="6" />
       <canvas ref={canvasRef} className="fah-stars" data-depth="10" aria-hidden="true" />
       <div className="fah-horizon" />
+
+      {/* Club crest, embossed faintly into the sky */}
+      <img
+        src={crestTrimmed}
+        alt=""
+        aria-hidden="true"
+        className="fah-crest"
+        data-depth="8"
+      />
 
       {/* Pitch geometry resting on the horizon */}
       <svg
@@ -363,7 +382,7 @@ function Hero() {
       {/* Foreground lockup */}
       <div
         data-content
-        className="relative z-20 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-5 py-10 sm:px-6 sm:py-14"
+        className="relative z-20 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-5 py-8 sm:px-6 sm:py-10"
       >
         <span className="fah-eyebrow inline-flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.14em] text-[#9fb6d6] sm:text-xs">
           <span className="fah-tick" />
