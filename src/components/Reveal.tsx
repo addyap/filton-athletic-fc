@@ -22,7 +22,12 @@ function Reveal({ children, className }: { children: ReactNode; className?: stri
           observer.disconnect()
         }
       },
-      { threshold: 0.15, rootMargin: '0px 0px -60px 0px' },
+      // threshold 0 (fire on any intersection) rather than a fixed fraction:
+      // a fraction can never be reached when the element is taller than the
+      // viewport (e.g. the squad grid at one column on mobile), leaving it
+      // stuck in the hidden state. rootMargin still holds the reveal until the
+      // element is a little way into view.
+      { threshold: 0, rootMargin: '0px 0px -60px 0px' },
     )
     observer.observe(el)
     return () => observer.disconnect()
