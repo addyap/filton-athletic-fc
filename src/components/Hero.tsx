@@ -169,7 +169,7 @@ function Hero() {
   return (
     <section
       ref={stageRef}
-      className="fah relative flex min-h-[64svh] flex-col overflow-hidden bg-[#04101f] text-white"
+      className="fah relative flex min-h-[56svh] flex-col overflow-hidden bg-[#04101f] text-white"
     >
       <style>{`
         .fah { --amber:#f4a94b; --burn:#ff8a3d; --vapour:#eaf1fb; }
@@ -246,7 +246,7 @@ function Hero() {
 
         .fah-h1 { font-family:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
           font-weight:900; letter-spacing:-.02em; line-height:.94;
-          font-size:clamp(2.5rem,8vw,6rem); text-wrap:balance; max-width:14ch; margin:0; }
+          font-size:clamp(2.25rem,6.6vw,4.75rem); text-wrap:balance; max-width:14ch; margin:0; }
         .fah-line { display:block; overflow:hidden; }
         .fah-line > span { display:block; transform:translateY(105%); }
         .fah-l1 > span { animation:fah-rise 1s cubic-bezier(.22,.68,.24,1) 1.15s forwards; }
@@ -389,7 +389,7 @@ function Hero() {
           Filton Athletic FC — North Bristol, est. 1960s
         </span>
 
-        <h1 className="fah-h1 mt-4">
+        <h1 className="fah-h1 mt-3">
           <span className="fah-line fah-l1">
             <span>We play where</span>
           </span>
@@ -400,12 +400,12 @@ function Hero() {
           </span>
         </h1>
 
-        <p className="fah-sub mt-6 max-w-[46ch] text-base leading-relaxed text-[#cdddf1] sm:text-lg lg:text-xl">
+        <p className="fah-sub mt-5 max-w-[46ch] text-base leading-relaxed text-[#cdddf1] sm:text-lg">
           Grassroots football in Filton — birthplace of Concorde. First team, reserves,
           A&rsquo;s and youth at BBS Park North. Come down and back the lads.
         </p>
 
-        <div className="fah-cta mt-8 flex flex-wrap gap-3.5">
+        <div className="fah-cta mt-7 flex flex-wrap gap-3.5">
           <Link
             to="/#club-calendar"
             className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-b from-[#ffb85c] to-[#f4a94b] px-6 py-3.5 font-semibold text-[#2a1602] shadow-[0_10px_30px_-8px_rgba(244,169,75,0.6)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_44px_-10px_rgba(255,138,61,0.85)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f4a94b]"
