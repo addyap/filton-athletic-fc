@@ -303,7 +303,7 @@ export function headForPath(pathname: string): PageHead {
       const when = fixture ? `, ${fixture.venue === 'H' ? 'at home' : 'away'} on ${fixture.date}` : ''
       return {
         ...base,
-        title: `Meet the visitors: ${preview.name} — Filton Athletic FC`,
+        title: `Meet the opposition: ${preview.name} — Filton Athletic FC`,
         description: `Get to know ${preview.name} ahead of Filton Athletic vs ${preview.name}${when} — club history, key players and full squad. Full matchday programme to follow.`,
       }
     }

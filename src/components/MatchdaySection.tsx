@@ -210,7 +210,7 @@ function MatchdaySection() {
                     to={`/preview/${nextPreview.slug}`}
                     className="group mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#0b2d52] transition hover:bg-[#a9e0b8]"
                   >
-                    Meet the visitors
+                    Meet the opposition
                     <span className="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
                   </Link>
                 )

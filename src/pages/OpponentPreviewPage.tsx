@@ -96,7 +96,7 @@ function PlayerCard({ name, position, age }: { name: string; position: string; a
 
 function OpponentPreviewInner({ preview }: { preview: OpponentPreview }) {
   const fixture = fixtureForPreview(preview)
-  const title = `Meet the visitors: ${preview.name}`
+  const title = `Meet the opposition: ${preview.name}`
 
   return (
     <article className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
