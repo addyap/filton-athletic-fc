@@ -46,6 +46,15 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'preseason-finale-reserves-as',
+    title: 'Reserves and A’s close out pre-season on Saturday',
+    date: '2026-08-28',
+    teams: ['reserves', 'as'],
+    excerpt:
+      'The final pre-season fixtures come tomorrow, Saturday 29 August. The Reserves head down to Bath to face Odd Down AFC Development (2pm, BA2 2PR), while the A’s take on Bristol Boys FC (2pm, Patchway High School, BS32 4AJ). Both sides look to round off a strong pre-season and carry that form into the opening league game next week. Come down and back the lads. #FATS #UTF',
+    link: { href: '/reserves', label: 'See the fixtures' },
+  },
+  {
     slug: 'reserves-boco-cancelled',
     title: "Reserves' friendly vs Boco Res cancelled",
     date: '2026-08-22',
