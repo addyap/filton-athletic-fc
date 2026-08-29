@@ -115,6 +115,13 @@ export const aTeamPreSeason2026: PreSeasonFixture[] = [
     venueNote: 'Patchway High, BS32 4AJ',
     cancelled: true,
   },
+  {
+    label: 'Sat 29 Aug',
+    iso: '2026-08-29',
+    opponent: 'Bristol Boys FC',
+    venue: 'H',
+    venueNote: 'Patchway High, BS32 4AJ',
+  },
 ]
 
 /**
@@ -166,8 +173,9 @@ export const reserveTeamPreSeason2026: PreSeasonFixture[] = [
   {
     label: 'Sat 29 Aug',
     iso: '2026-08-29',
-    opponent: 'Odd Down Development',
+    opponent: 'Odd Down AFC Development',
     venue: 'A',
+    venueNote: 'Odd Down AFC, Bath, BA2 2PR',
   },
 ]
 
