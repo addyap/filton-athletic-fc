@@ -176,6 +176,7 @@ export const reserveTeamPreSeason2026: PreSeasonFixture[] = [
     opponent: 'Odd Down AFC Development',
     venue: 'A',
     venueNote: 'Odd Down AFC, Bath, BA2 2PR',
+    result: 'L 0-4',
   },
 ]
 
