@@ -46,6 +46,15 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'as-bristol-boys-cancelled',
+    title: "A’s friendly vs Bristol Boys FC cancelled",
+    date: '2026-08-29',
+    teams: ['as'],
+    excerpt:
+      'Saturday’s pre-season friendly at home to Bristol Boys FC was called off. The A’s now turn their attention to the opening game of their 2026/27 Bristol & Suburban Division Four campaign next week.',
+    link: { href: '/as-team', label: "See the A's fixtures" },
+  },
+  {
     slug: 'preseason-finale-reserves-as',
     title: 'Reserves and A’s close out pre-season on Saturday',
     date: '2026-08-28',

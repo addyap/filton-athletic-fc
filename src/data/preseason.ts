@@ -121,6 +121,7 @@ export const aTeamPreSeason2026: PreSeasonFixture[] = [
     opponent: 'Bristol Boys FC',
     venue: 'H',
     venueNote: 'Patchway High, BS32 4AJ',
+    cancelled: true,
   },
 ]
 
