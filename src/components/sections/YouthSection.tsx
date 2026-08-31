@@ -74,16 +74,18 @@ function YouthSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/15 pt-10">
-          <h3 className="text-center text-lg font-bold text-white lg:text-left">Youth team sponsors</h3>
-          <p className="mt-1 text-center text-sm text-slate-300 lg:text-left">A big thank you to the businesses backing our young players&hellip;</p>
-          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 border-t border-white/15 pt-12">
+          <h3 className="text-center text-2xl font-extrabold tracking-tight text-white sm:text-3xl">Youth team sponsors</h3>
+          <p className="mx-auto mt-2 max-w-2xl text-center text-base text-slate-300">A big thank you to the businesses backing our young players&hellip;</p>
+          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
             {youthSponsors.map((s) => (
-              <div key={s.team} className="flex flex-col rounded-xl bg-white p-4 text-center shadow-sm ring-1 ring-white/20 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
-                <span className="mb-3 inline-flex self-center rounded-full bg-[#0b2d52] px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">{s.team}</span>
-                <img src={s.logo} alt={`${s.name} — ${s.team} team sponsor`} className="mb-3 h-16 w-full object-contain" />
-                <p className="text-sm font-bold text-[#0b2d52]">{s.name}</p>
-                <p className="mt-1 text-xs leading-relaxed text-slate-600">{s.blurb}</p>
+              <div key={s.team} className="flex flex-col rounded-2xl bg-white p-6 text-center shadow-md ring-1 ring-white/20 transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl sm:p-8">
+                <span className="mb-5 inline-flex self-center rounded-full bg-[#0b2d52] px-5 py-1.5 text-base font-extrabold uppercase tracking-wide text-white">{s.team}</span>
+                <div className="flex flex-1 items-center justify-center">
+                  <img src={s.logo} alt={`${s.name} — ${s.team} team sponsor`} className="h-40 w-full object-contain sm:h-48" />
+                </div>
+                <p className="mt-5 text-xl font-bold text-[#0b2d52]">{s.name}</p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">{s.blurb}</p>
               </div>
             ))}
           </div>
