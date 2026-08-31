@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { youthU9Fixtures, youthU10Fixtures, youthU11Fixtures, youthU12Fixtures, youthU13Fixtures, type YouthFixture } from '../data/club'
+import { youthU9Fixtures, youthU10Fixtures, youthU11Fixtures, youthU12Fixtures, youthU13Fixtures, youthFixtureId, type YouthFixture } from '../data/club'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 import templineLogo from '../assets/img/sponsors/youth-templine.webp'
@@ -288,10 +288,11 @@ function YouthFixturesCalendar() {
                             const team = teamDetails[fixture.team]
                             const venueLabel = fixture.venue === 'H' ? 'Home' : 'Away'
                             return (
-                              <article
+                              <a
                                 key={`${fixture.team}-${fixture.date}-${fixture.time}-${fixture.opponent}`}
-                                title={`${team.label}: ${venueLabel} v ${fixture.opponent}, ${fixture.time}${fixture.result ? ` — ${fixture.result}` : ''}`}
-                                className={`mt-1 rounded border border-slate-200 border-l-4 px-1.5 py-1 text-[10px] leading-tight shadow-sm ${team.blockClass}`}
+                                href={`#${youthFixtureId(fixture.team, fixture)}`}
+                                title={`${team.label}: ${venueLabel} v ${fixture.opponent}, ${fixture.time}${fixture.result ? ` — ${fixture.result}` : ''} — jump to full fixture list`}
+                                className={`mt-1 block cursor-pointer rounded border border-slate-200 border-l-4 px-1.5 py-1 text-[10px] leading-tight shadow-sm transition hover:brightness-95 hover:shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0b2d52] ${team.blockClass}`}
                               >
                                 <div className="flex items-center justify-between gap-1">
                                   <span className="font-extrabold tracking-wide">{team.shortLabel}</span>
@@ -301,7 +302,7 @@ function YouthFixturesCalendar() {
                                   {fixture.venue === 'H' ? 'vs' : '@'} {fixture.opponent}
                                 </p>
                                 {fixture.result && <p className="mt-0.5 font-bold opacity-75">{fixture.result}</p>}
-                              </article>
+                              </a>
                             )
                           })}
                         </>
@@ -318,7 +319,12 @@ function YouthFixturesCalendar() {
               const team = teamDetails[fixture.team]
               const venueLabel = fixture.venue === 'H' ? 'Home' : 'Away'
               return (
-                <article key={`${fixture.team}-${fixture.date}-${fixture.time}-${fixture.opponent}`} className="flex gap-3 rounded-xl border border-slate-200 bg-slate-50/70 p-3">
+                <a
+                  key={`${fixture.team}-${fixture.date}-${fixture.time}-${fixture.opponent}`}
+                  href={`#${youthFixtureId(fixture.team, fixture)}`}
+                  title="Jump to this match in the full fixture list"
+                  className="flex gap-3 rounded-xl border border-slate-200 bg-slate-50/70 p-3 transition hover:border-[#0b2d52]/40 hover:bg-white hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0b2d52]"
+                >
                   <time dateTime={dateKey(fixture.startsAt)} className="flex w-12 shrink-0 flex-col items-center rounded-lg bg-white py-1 text-center shadow-sm ring-1 ring-slate-200">
                     <span className="text-[10px] font-bold uppercase tracking-wide text-slate-500">
                       {new Intl.DateTimeFormat('en-GB', { month: 'short' }).format(fixture.startsAt)}
@@ -334,7 +340,7 @@ function YouthFixturesCalendar() {
                     <p className="mt-0.5 text-xs text-slate-500">{fixture.ground ?? (fixture.venue === 'H' ? 'Elm Park, BS34 7PS' : 'Venue to be confirmed')}</p>
                     {fixture.result && <p className="mt-1 text-xs font-bold text-slate-700">Result: {fixture.result}</p>}
                   </div>
-                </article>
+                </a>
               )
             })}
           </div>

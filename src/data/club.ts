@@ -336,6 +336,12 @@ export type YouthFixture = {
   result?: string
 }
 
+/** Stable DOM id shared by the calendar match block and its full-list table row. */
+export function youthFixtureId(teamKey: string, f: Pick<YouthFixture, 'date' | 'time' | 'opponent'>): string {
+  const slug = f.opponent.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+  return `fx-${teamKey}-${f.date.replace(/\//g, '')}-${f.time.replace(':', '')}-${slug}`
+}
+
 /** 2026/27 U9 fixtures — Hanham Minor League, from FA Full-Time. */
 export const youthU9Fixtures: YouthFixture[] = [
   { date: '13/09/26', time: '14:00', competition: 'Cup', opponent: 'Port of Bristol Green', venue: 'A', ground: 'Port of Bristol Sports & Community Hub, BS11 9XW' },

@@ -63,3 +63,13 @@ html {
     transform: none;
   }
 }
+
+/* Brief highlight when a full-list row is targeted from a calendar match. */
+@keyframes fixture-flash {
+  0% {
+    background-color: rgb(252 211 77); /* amber-300 */
+  }
+  100% {
+    background-color: rgb(254 243 199); /* amber-100 — settles into the :target hold */
+  }
+}

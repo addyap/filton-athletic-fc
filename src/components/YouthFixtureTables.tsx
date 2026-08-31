@@ -4,6 +4,7 @@ import {
   youthU11Fixtures,
   youthU12Fixtures,
   youthU13Fixtures,
+  youthFixtureId,
   type YouthFixture,
 } from '../data/club'
 import Reveal from './Reveal'
@@ -24,6 +25,7 @@ function compLabel(c: YouthFixture['competition']) {
 }
 
 type FixtureTable = {
+  key: string
   team: string
   league: string
   badgeClass: string
@@ -31,11 +33,11 @@ type FixtureTable = {
 }
 
 const fixtureTables: FixtureTable[] = [
-  { team: 'U9s', league: 'Hanham Minor League — Group 7', badgeClass: 'bg-sky-600 text-white', fixtures: youthU9Fixtures },
-  { team: 'U10s', league: 'Hanham Minor League — Group 3', badgeClass: 'bg-violet-600 text-white', fixtures: youthU10Fixtures },
-  { team: 'U11s', league: 'Hanham Minor League — Group 4', badgeClass: 'bg-[#0b2d52] text-white', fixtures: youthU11Fixtures },
-  { team: 'U12s', league: 'Avon Youth League — Division 7', badgeClass: 'bg-emerald-700 text-white', fixtures: youthU12Fixtures },
-  { team: 'U13s', league: 'Avon Youth League — Division 6', badgeClass: 'bg-amber-500 text-slate-950', fixtures: youthU13Fixtures },
+  { key: 'u9', team: 'U9s', league: 'Hanham Minor League — Group 7', badgeClass: 'bg-sky-600 text-white', fixtures: youthU9Fixtures },
+  { key: 'u10', team: 'U10s', league: 'Hanham Minor League — Group 3', badgeClass: 'bg-violet-600 text-white', fixtures: youthU10Fixtures },
+  { key: 'u11', team: 'U11s', league: 'Hanham Minor League — Group 4', badgeClass: 'bg-[#0b2d52] text-white', fixtures: youthU11Fixtures },
+  { key: 'u12', team: 'U12s', league: 'Avon Youth League — Division 7', badgeClass: 'bg-emerald-700 text-white', fixtures: youthU12Fixtures },
+  { key: 'u13', team: 'U13s', league: 'Avon Youth League — Division 6', badgeClass: 'bg-amber-500 text-slate-950', fixtures: youthU13Fixtures },
 ]
 
 function YouthFixtureTables() {
@@ -70,7 +72,7 @@ function YouthFixtureTables() {
                   </thead>
                   <tbody>
                     {table.fixtures.map((f) => (
-                      <tr key={`${f.date}-${f.time}-${f.opponent}`} className="border-t border-slate-200 odd:bg-white even:bg-slate-50">
+                      <tr key={`${f.date}-${f.time}-${f.opponent}`} id={youthFixtureId(table.key, f)} className="scroll-mt-28 border-t border-slate-200 odd:bg-white even:bg-slate-50 target:bg-amber-100 target:[animation:fixture-flash_1.6s_ease-out]">
                         <td className="whitespace-nowrap px-3 py-1.5">
                           {f.date} <span className="text-slate-500">{f.time}</span>
                         </td>
