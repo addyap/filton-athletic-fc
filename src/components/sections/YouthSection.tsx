@@ -2,6 +2,7 @@ import SectionHeading from '../SectionHeading'
 import Reveal from '../Reveal'
 import { RisingStarsMark } from '../SectionArt'
 import YouthFixturesCalendar from '../YouthFixturesCalendar'
+import YouthFixtureTables from '../YouthFixtureTables'
 import u13sGirlsTeamFlyer from '../../assets/img/u13s-girls-team.jpg'
 import u8sPlayersWantedFlyer from '../../assets/img/u8s-players-wanted.jpg'
 import accreditedClubBadge from '../../assets/img/accredited-club-england.jpeg'
@@ -94,6 +95,7 @@ function YouthSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
     </section>
 
     <YouthFixturesCalendar />
+    <YouthFixtureTables />
     </>
   )
 }
