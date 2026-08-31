@@ -1,9 +1,9 @@
 import { useMemo, useState } from 'react'
-import { youthU11Fixtures, youthU12Fixtures, youthU13Fixtures, type YouthFixture } from '../data/club'
+import { youthU9Fixtures, youthU10Fixtures, youthU11Fixtures, youthU12Fixtures, youthU13Fixtures, type YouthFixture } from '../data/club'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 
-type CalendarTeam = 'u11' | 'u12' | 'u13'
+type CalendarTeam = 'u9' | 'u10' | 'u11' | 'u12' | 'u13'
 type TeamFilter = 'all' | CalendarTeam
 
 type CalendarFixture = YouthFixture & {
@@ -20,6 +20,20 @@ const teamDetails: Record<
   CalendarTeam,
   { label: string; shortLabel: string; league: string; chipClass: string; blockClass: string }
 > = {
+  u9: {
+    label: 'U9s',
+    shortLabel: 'U9',
+    league: 'Hanham Minor League',
+    chipClass: 'bg-sky-600 text-white',
+    blockClass: 'border-l-sky-500 bg-sky-50 text-sky-950',
+  },
+  u10: {
+    label: 'U10s',
+    shortLabel: 'U10',
+    league: 'Hanham Minor League',
+    chipClass: 'bg-violet-600 text-white',
+    blockClass: 'border-l-violet-500 bg-violet-50 text-violet-950',
+  },
   u11: {
     label: 'U11s',
     shortLabel: 'U11',
@@ -45,6 +59,8 @@ const teamDetails: Record<
 
 const filters: { id: TeamFilter; label: string }[] = [
   { id: 'all', label: 'All teams' },
+  { id: 'u9', label: 'U9s' },
+  { id: 'u10', label: 'U10s' },
   { id: 'u11', label: 'U11s' },
   { id: 'u12', label: 'U12s' },
   { id: 'u13', label: 'U13s' },
@@ -70,6 +86,8 @@ function toCalendarFixture(fixture: YouthFixture, team: CalendarTeam): CalendarF
 }
 
 const allFixtures: CalendarFixture[] = [
+  ...youthU9Fixtures.map((fixture) => toCalendarFixture(fixture, 'u9')),
+  ...youthU10Fixtures.map((fixture) => toCalendarFixture(fixture, 'u10')),
   ...youthU11Fixtures.map((fixture) => toCalendarFixture(fixture, 'u11')),
   ...youthU12Fixtures.map((fixture) => toCalendarFixture(fixture, 'u12')),
   ...youthU13Fixtures.map((fixture) => toCalendarFixture(fixture, 'u13')),
@@ -129,7 +147,7 @@ function YouthFixturesCalendar() {
       <Reveal className="relative mx-auto max-w-6xl px-6 py-14">
         <SectionHeading icon="calendar" title="Youth fixtures calendar" className="justify-center" as="h2" />
         <p id="youth-calendar-heading" className="mt-1 text-center text-sm text-slate-600">
-          Every U11s, U12s and U13s fixture in one view. U11s play in the Hanham Minor League; U12s and U13s in the Avon Youth League.
+          Every U9s, U10s, U11s, U12s and U13s fixture in one view. U9s, U10s and U11s play in the Hanham Minor League; U12s and U13s in the Avon Youth League.
         </p>
 
         <div className="mt-7 rounded-2xl border border-slate-200 bg-white p-3 shadow-[0_18px_45px_-32px_rgba(11,45,82,0.55)] sm:p-5">

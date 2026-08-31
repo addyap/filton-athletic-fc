@@ -336,6 +336,57 @@ export type YouthFixture = {
   result?: string
 }
 
+/** 2026/27 U9 fixtures — Hanham Minor League, from FA Full-Time. */
+export const youthU9Fixtures: YouthFixture[] = [
+  { date: '13/09/26', time: '14:00', competition: 'Cup', opponent: 'Port of Bristol Green', venue: 'A', ground: 'Port of Bristol Sports & Community Hub, BS11 9XW' },
+  { date: '27/09/26', time: '14:00', competition: 'Cup', opponent: 'Thornbury Town Kestrels', venue: 'A', ground: 'Christ The King Primary School, BS35 1AW' },
+  { date: '11/10/26', time: '14:00', competition: 'L', opponent: 'Keynsham Town Golds', venue: 'H' },
+  { date: '01/11/26', time: '14:00', competition: 'L', opponent: 'Bromley Heath United', venue: 'H' },
+  { date: '08/11/26', time: '14:00', competition: 'L', opponent: 'Cutters Friday Juniors', venue: 'H' },
+  { date: '15/11/26', time: '12:30', competition: 'L', opponent: 'Yate United Colts', venue: 'A', ground: 'Yate Outdoor Sports Complex, BS37 7LA' },
+  { date: '22/11/26', time: '14:00', competition: 'L', opponent: 'AEK Boco Rangers', venue: 'H' },
+  { date: '29/11/26', time: '14:00', competition: 'L', opponent: 'Thornbury Town Kestrels', venue: 'A', ground: 'Christ The King Primary School, BS35 1AW' },
+  { date: '06/12/26', time: '14:00', competition: 'L', opponent: 'Port of Bristol Green', venue: 'H' },
+  { date: '20/12/26', time: '14:00', competition: 'L', opponent: 'Keynsham Town Golds', venue: 'A', ground: 'Crown Fields, BS31 2BE' },
+  { date: '10/01/27', time: '10:30', competition: 'L', opponent: 'Bromley Heath United', venue: 'A', ground: 'Pomphrey Hill Pavilion, BS16 9NF' },
+  { date: '17/01/27', time: '14:00', competition: 'L', opponent: 'Cutters Friday Juniors', venue: 'A', ground: 'Cutters FC, Stockwood Lane, BS14 8SL' },
+  { date: '24/01/27', time: '14:00', competition: 'L', opponent: 'Yate United Colts', venue: 'H' },
+  { date: '31/01/27', time: '10:30', competition: 'L', opponent: 'AEK Boco Rangers', venue: 'A', ground: 'Tennis Court Road PF, BS15 4RQ' },
+  { date: '07/02/27', time: '14:00', competition: 'L', opponent: 'Thornbury Town Kestrels', venue: 'H' },
+  { date: '21/02/27', time: '14:00', competition: 'Cup', opponent: 'Keynsham Town Golds', venue: 'A', ground: 'Crown Fields, BS31 2BE' },
+  { date: '28/02/27', time: '14:00', competition: 'Cup', opponent: 'Cutters Friday Juniors', venue: 'H' },
+  { date: '07/03/27', time: '14:00', competition: 'Cup', opponent: 'St Vallier', venue: 'H' },
+  { date: '21/03/27', time: '14:00', competition: 'L', opponent: 'Port of Bristol Green', venue: 'A', ground: 'Port of Bristol Sports & Community Hub, BS11 9XW' },
+]
+
+/** 2026/27 U10 fixtures — Hanham Minor League, from FA Full-Time. */
+export const youthU10Fixtures: YouthFixture[] = [
+  { date: '06/09/26', time: '10:30', competition: 'L', opponent: 'St Vallier', venue: 'H' },
+  { date: '13/09/26', time: '10:30', competition: 'Cup', opponent: 'Imperial Junior', venue: 'H' },
+  { date: '20/09/26', time: '10:30', competition: 'Cup', opponent: 'Bromley Heath United', venue: 'A', ground: 'Pomphrey Hill Pavilion, BS16 9NF' },
+  { date: '27/09/26', time: '10:30', competition: 'Cup', opponent: 'Hanham Abbotonians', venue: 'H' },
+  { date: '11/10/26', time: '14:00', competition: 'L', opponent: 'Hanham Abbotonians', venue: 'A', ground: 'Lees Hill PF, BS15 4TW' },
+  { date: '18/10/26', time: '10:30', competition: 'L', opponent: 'St Aldhelms Juniors', venue: 'H' },
+  { date: '01/11/26', time: '10:30', competition: 'L', opponent: 'Shine Saints Juniors', venue: 'A', ground: 'Shine Sports Ground, BS6 7XW' },
+  { date: '08/11/26', time: '14:00', competition: 'L', opponent: 'Keynsham Town Juniors', venue: 'A', ground: 'The Meadows Community Building, BS31 1FL' },
+  { date: '15/11/26', time: '10:30', competition: 'L', opponent: 'Imperial Junior', venue: 'H' },
+  { date: '22/11/26', time: '10:30', competition: 'L', opponent: 'Bromley Heath United', venue: 'A', ground: 'Pomphrey Hill Pavilion, BS16 9NF' },
+  { date: '29/11/26', time: '10:30', competition: 'L', opponent: 'Emersons Green Spartans', venue: 'H' },
+  { date: '06/12/26', time: '10:30', competition: 'L', opponent: 'Royale West', venue: 'A', ground: 'Royale West FC, BS5 7RW' },
+  { date: '13/12/26', time: '14:00', competition: 'L', opponent: 'St Vallier', venue: 'A', ground: 'Lockleaze Sports Centre, BS7 9XF' },
+  { date: '20/12/26', time: '10:30', competition: 'L', opponent: 'Hanham Abbotonians', venue: 'H' },
+  { date: '03/01/27', time: '10:30', competition: 'L', opponent: 'St Aldhelms Juniors', venue: 'A', ground: 'Headley Park School, BS13 7QB' },
+  { date: '10/01/27', time: '10:30', competition: 'L', opponent: 'Shine Saints Juniors', venue: 'H' },
+  { date: '17/01/27', time: '10:30', competition: 'L', opponent: 'Keynsham Town Juniors', venue: 'H' },
+  { date: '24/01/27', time: '10:30', competition: 'L', opponent: 'Imperial Junior', venue: 'A', ground: 'Imperial Ground, BS14 9EA' },
+  { date: '31/01/27', time: '10:30', competition: 'L', opponent: 'Bromley Heath United', venue: 'H' },
+  { date: '07/02/27', time: '10:30', competition: 'L', opponent: 'Emersons Green Spartans', venue: 'A', ground: 'Walker PF, BS16 6TZ' },
+  { date: '21/02/27', time: '10:30', competition: 'Cup', opponent: 'Royale West', venue: 'A', ground: 'Royale West FC, BS5 7RW' },
+  { date: '28/02/27', time: '10:30', competition: 'Cup', opponent: 'Emersons Green Spartans', venue: 'H' },
+  { date: '07/03/27', time: '10:30', competition: 'Cup', opponent: 'Bath City Romans', venue: 'A', ground: 'Lansdown PF (North), BA1 9BJ' },
+  { date: '21/03/27', time: '10:30', competition: 'L', opponent: 'Royale West', venue: 'H' },
+]
+
 /** 2026/27 U11 fixtures — Hanham Minor League, from FA Full-Time. */
 export const youthU11Fixtures: YouthFixture[] = [
   { date: '06/09/26', time: '14:00', competition: 'L', opponent: 'Stoke Lane Athletic', venue: 'A', ground: 'Little Stoke PF, BS34 6HR' },
