@@ -1,8 +1,10 @@
 import SectionHeading from '../SectionHeading'
 import Reveal from '../Reveal'
 import { RisingStarsMark } from '../SectionArt'
+import YouthFixturesCalendar from '../YouthFixturesCalendar'
 import u13sGirlsTeamFlyer from '../../assets/img/u13s-girls-team.jpg'
 import u8sPlayersWantedFlyer from '../../assets/img/u8s-players-wanted.jpg'
+import accreditedClubBadge from '../../assets/img/accredited-club-england.jpeg'
 import { youthU11Fixtures, type YouthFixture } from '../../data/club'
 
 function resultBadge(result?: string) {
@@ -38,6 +40,18 @@ function YouthSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
               <p>Email: <a className="underline" href="mailto:filtonathleticfc@outlook.com">filtonathleticfc@outlook.com</a></p>
               <p>Ollie: 07429 595476</p>
             </div>
+            <div className="mt-6 flex justify-center lg:justify-start">
+              <div className="inline-flex items-center gap-3 rounded-lg bg-white px-4 py-3 shadow-sm ring-1 ring-white/20">
+                <img
+                  src={accreditedClubBadge}
+                  alt="FA Accredited Club — part of England Football"
+                  className="h-10 w-auto"
+                />
+                <span className="max-w-[9rem] text-xs font-semibold leading-tight text-[#0b2d52]">
+                  An FA Accredited Club &mdash; part of England Football
+                </span>
+              </div>
+            </div>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:w-[580px] lg:flex-none">
             <div>
@@ -65,6 +79,8 @@ function YouthSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
         </div>
       </Reveal>
     </section>
+
+    <YouthFixturesCalendar />
 
     {youthU11Fixtures.length > 0 && (
       <section id="youth-u11-fixtures" className="border-t border-slate-200 bg-slate-50">

@@ -364,6 +364,50 @@ export const youthU11Fixtures: YouthFixture[] = [
   { date: '21/03/27', time: '10:30', competition: 'L', opponent: 'Downend Saints', venue: 'A', ground: 'Badminton Road Playing Fields, BS16 6QW' },
 ]
 
+/** 2026/27 U12 fixtures — Avon Youth League, Division 7, from FA Full-Time. */
+export const youthU12Fixtures: YouthFixture[] = [
+  { date: '06/09/26', time: '10:30', competition: 'L', opponent: 'Frampton Rangers Reds', venue: 'H' },
+  { date: '13/09/26', time: '10:30', competition: 'L', opponent: 'Shine Saints Colts', venue: 'A', ground: 'Shine Community Sports Ground, BS6 7XW' },
+  { date: '20/09/26', time: '10:30', competition: 'L', opponent: 'St Vallier', venue: 'H' },
+  { date: '27/09/26', time: '10:30', competition: 'L', opponent: 'Clifton United Orange', venue: 'A', ground: 'Clifton College Sports Ground, BS8 3QD' },
+  { date: '04/10/26', time: '10:30', competition: 'L', opponent: 'Keynsham Town Black', venue: 'H' },
+  { date: '11/10/26', time: '10:30', competition: 'L', opponent: 'Hanham Abbotonians Blues', venue: 'H' },
+  { date: '18/10/26', time: '10:30', competition: 'L', opponent: 'Warmley Rangers Wolves', venue: 'A', ground: 'Warmley Rangers FC, High Street, BS30 9TL' },
+  { date: '08/11/26', time: '10:30', competition: 'L', opponent: 'Kings Weston Athletic', venue: 'H' },
+  { date: '15/11/26', time: '14:00', competition: 'L', opponent: 'Red Falcon Club Red', venue: 'A', ground: 'Somerdale Pavilion, BS31 2FW' },
+  { date: '22/11/26', time: '10:30', competition: 'L', opponent: 'Frampton Rangers Reds', venue: 'A', ground: 'The Park (Crossbow House), BS36 2DB' },
+  { date: '29/11/26', time: '10:30', competition: 'L', opponent: 'Shine Saints Colts', venue: 'H' },
+  { date: '06/12/26', time: '12:00', competition: 'L', opponent: 'St Vallier', venue: 'A', ground: 'Lockleaze Sports Centre, BS7 9XF' },
+  { date: '13/12/26', time: '10:30', competition: 'L', opponent: 'Clifton United Orange', venue: 'H' },
+  { date: '10/01/27', time: '14:00', competition: 'L', opponent: 'Keynsham Town Black', venue: 'A', ground: 'Broadlands Playing Fields, BS31 2BE' },
+  { date: '17/01/27', time: '12:15', competition: 'L', opponent: 'Hanham Abbotonians Blues', venue: 'A', ground: 'Lees Hill PF, BS15 4TW' },
+  { date: '24/01/27', time: '10:30', competition: 'L', opponent: 'Warmley Rangers Wolves', venue: 'H' },
+  { date: '31/01/27', time: '10:30', competition: 'L', opponent: 'Kings Weston Athletic', venue: 'A', ground: 'Kingsweston Sports & Social Club, BS11 0UT' },
+  { date: '07/02/27', time: '10:30', competition: 'L', opponent: 'Red Falcon Club Red', venue: 'H' },
+]
+
+/** 2026/27 U13 fixtures — Avon Youth League, Division 6, from FA Full-Time. */
+export const youthU13Fixtures: YouthFixture[] = [
+  { date: '06/09/26', time: '10:30', competition: 'L', opponent: 'Hanham Abbotonians Falcons', venue: 'A', ground: 'Lees Hill PF, BS15 4TW' },
+  { date: '13/09/26', time: '10:30', competition: 'L', opponent: 'Fry Club JFC Juniors', venue: 'H', result: 'P-P' },
+  { date: '13/09/26', time: '14:00', competition: 'L', opponent: 'St Aldhelms Juniors', venue: 'A', ground: 'Hengrove Ath FC, BS14 0BT' },
+  { date: '20/09/26', time: '12:00', competition: 'L', opponent: 'St Vallier Blue', venue: 'A', ground: 'Lockleaze Sports Centre, BS7 9XF' },
+  { date: '27/09/26', time: '10:30', competition: 'L', opponent: 'Bristol Rovers Supporters White', venue: 'H' },
+  { date: '04/10/26', time: '10:30', competition: 'L', opponent: 'Warmley Rangers Blacks', venue: 'A', ground: 'Warmley Rangers FC, High Street, BS30 9TL' },
+  { date: '11/10/26', time: '10:30', competition: 'L', opponent: 'Bristol Central Colts', venue: 'A', ground: 'Rose Green Leisure Centre, BS5 7DR' },
+  { date: '18/10/26', time: '10:30', competition: 'L', opponent: 'St Aldhelms Juniors', venue: 'H' },
+  { date: '08/11/26', time: '10:30', competition: 'L', opponent: 'Bristol Rovers Supporters Yellow', venue: 'A', ground: 'Southey Ave PF, BS15 1UL' },
+  { date: '15/11/26', time: '10:30', competition: 'L', opponent: 'Berrow', venue: 'H' },
+  { date: '22/11/26', time: '10:30', competition: 'L', opponent: 'Hanham Abbotonians Falcons', venue: 'H' },
+  { date: '29/11/26', time: '10:30', competition: 'L', opponent: 'Fry Club JFC Juniors', venue: 'A', ground: 'Somerdale Pavilion, BS31 2FW' },
+  { date: '06/12/26', time: '10:30', competition: 'L', opponent: 'St Vallier Blue', venue: 'H' },
+  { date: '13/12/26', time: '10:30', competition: 'L', opponent: 'Bristol Rovers Supporters White', venue: 'A', ground: 'Southey Ave PF, BS15 1UL' },
+  { date: '10/01/27', time: '10:30', competition: 'L', opponent: 'Warmley Rangers Blacks', venue: 'H' },
+  { date: '17/01/27', time: '10:30', competition: 'L', opponent: 'Bristol Central Colts', venue: 'H' },
+  { date: '31/01/27', time: '10:30', competition: 'L', opponent: 'Bristol Rovers Supporters Yellow', venue: 'H' },
+  { date: '07/02/27', time: '10:30', competition: 'L', opponent: 'Berrow', venue: 'A', ground: 'Worle Community School, BS22 6AQ' },
+]
+
 /** 2026/27 A's league fixtures — Bristol & Suburban League, Division Four, from FA Full-Time. */
 export const aTeamFixtures: ReserveFixture[] = [
   { date: '05/09/26', time: '14:00', competition: 'BSD4', opponent: 'Parson Street Old Boys Reserves', venue: 'H', ground: 'BAWA Leisure' },
