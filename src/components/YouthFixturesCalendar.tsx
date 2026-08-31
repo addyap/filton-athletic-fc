@@ -2,6 +2,9 @@ import { useMemo, useState } from 'react'
 import { youthU9Fixtures, youthU10Fixtures, youthU11Fixtures, youthU12Fixtures, youthU13Fixtures, type YouthFixture } from '../data/club'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
+import templineLogo from '../assets/img/sponsors/youth-templine.webp'
+import premiereInstallationsLogo from '../assets/img/sponsors/youth-premiere-installations.webp'
+import youthNewHappyPalaceLogo from '../assets/img/sponsors/youth-new-happy-palace.webp'
 
 type CalendarTeam = 'u9' | 'u10' | 'u11' | 'u12' | 'u13'
 type TeamFilter = 'all' | CalendarTeam
@@ -66,6 +69,12 @@ const filters: { id: TeamFilter; label: string }[] = [
   { id: 'u13', label: 'U13s' },
 ]
 
+const teamSponsors: Partial<Record<CalendarTeam, { name: string; logo: string }>> = {
+  u9: { name: 'Templine Electrical Services', logo: templineLogo },
+  u10: { name: 'Premiere Installations SW', logo: premiereInstallationsLogo },
+  u13: { name: 'New Happy Palace', logo: youthNewHappyPalaceLogo },
+}
+
 const weekdayLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
 function dateFromFixture(date: string): Date {
@@ -126,6 +135,13 @@ function YouthFixturesCalendar() {
       return groups
     }, {})
   }, [filteredFixtures])
+
+  const sponsoredTeams: CalendarTeam[] =
+    teamFilter === 'all'
+      ? (Object.keys(teamSponsors) as CalendarTeam[])
+      : teamSponsors[teamFilter]
+        ? [teamFilter]
+        : []
 
   if (!selectedMonth) return null
 
@@ -213,6 +229,30 @@ function YouthFixturesCalendar() {
               ))}
             </div>
           </div>
+
+          {sponsoredTeams.length > 0 && (
+            <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-3 rounded-xl border border-slate-200 bg-white px-4 py-3">
+              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-slate-400">
+                {teamFilter === 'all' ? 'Team sponsors' : 'Team sponsor'}
+              </span>
+              {sponsoredTeams.map((team) => {
+                const sponsor = teamSponsors[team]!
+                return (
+                  <span key={team} className="inline-flex items-center gap-2.5">
+                    <span className={`rounded-full px-2 py-0.5 text-[10px] font-extrabold tracking-wide ${teamDetails[team].chipClass}`}>
+                      {teamDetails[team].label}
+                    </span>
+                    <img
+                      src={sponsor.logo}
+                      alt={`${sponsor.name} — ${teamDetails[team].label} team sponsor`}
+                      className="h-10 w-auto max-w-[130px] rounded object-contain"
+                    />
+                    <span className="text-xs font-semibold text-slate-600">{sponsor.name}</span>
+                  </span>
+                )
+              })}
+            </div>
+          )}
 
           <div className="mt-4 overflow-x-auto rounded-xl border border-slate-200 bg-slate-100/70">
             <div className="min-w-[760px]">
