@@ -646,6 +646,7 @@ export const sponsors = [
   { name: 'A1 Home Improvement', blurb: 'Building & renovation — 01174 018 412', website: 'https://a1home.uk/' },
   { name: 'A1 Land Improvement', blurb: 'Landscaping & driveways — 01174 018 412', website: 'https://a1land.uk/' },
   { name: 'James Antony Flooring', blurb: 'Beautiful floors, expertly fitted — 357 Filton Avenue BS7 0BD · 07584 674101' },
+  { name: 'Optimum Flooring', blurb: 'All types of commercial & domestic flooring undertaken — 07925 588068' },
   { name: 'Packhouse', blurb: 'Non-league football intel — @packhousefooty', website: 'https://x.com/packhousefooty' },
 ]
 

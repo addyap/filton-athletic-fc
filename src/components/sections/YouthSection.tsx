@@ -5,6 +5,17 @@ import YouthFixturesCalendar from '../YouthFixturesCalendar'
 import u13sGirlsTeamFlyer from '../../assets/img/u13s-girls-team.jpg'
 import u8sPlayersWantedFlyer from '../../assets/img/u8s-players-wanted.jpg'
 import accreditedClubBadge from '../../assets/img/accredited-club-england.jpeg'
+import apdAspireLogo from '../../assets/img/sponsors/youth-apd-aspire.webp'
+import templineLogo from '../../assets/img/sponsors/youth-templine.webp'
+import premiereInstallationsLogo from '../../assets/img/sponsors/youth-premiere-installations.webp'
+import youthNewHappyPalaceLogo from '../../assets/img/sponsors/youth-new-happy-palace.webp'
+
+const youthSponsors = [
+  { team: 'U8', name: 'APD Aspire Property Design', blurb: 'Carpentry, joinery, renovations & fit-outs — 07518 250520', logo: apdAspireLogo },
+  { team: 'U9', name: 'Templine Electrical Services', blurb: 'Jordan@templine-electrical.co.uk', logo: templineLogo },
+  { team: 'U10', name: 'Premiere Installations SW', blurb: 'Bathroom design & installations — 07585 957594', logo: premiereInstallationsLogo },
+  { team: 'U13', name: 'New Happy Palace', blurb: 'Chinese takeaway, 553 Filton Avenue, BS7 0QH — 0117 969 3739', logo: youthNewHappyPalaceLogo },
+]
 
 function YouthSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
   return (
@@ -60,6 +71,21 @@ function YouthSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
                 you&rsquo;re interested.
               </p>
             </div>
+          </div>
+        </div>
+
+        <div className="mt-12 border-t border-white/15 pt-10">
+          <h3 className="text-center text-lg font-bold text-white lg:text-left">Youth team sponsors</h3>
+          <p className="mt-1 text-center text-sm text-slate-300 lg:text-left">A big thank you to the businesses backing our young players&hellip;</p>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {youthSponsors.map((s) => (
+              <div key={s.team} className="flex flex-col rounded-xl bg-white p-4 text-center shadow-sm ring-1 ring-white/20 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+                <span className="mb-3 inline-flex self-center rounded-full bg-[#0b2d52] px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">{s.team}</span>
+                <img src={s.logo} alt={`${s.name} — ${s.team} team sponsor`} className="mb-3 h-16 w-full object-contain" />
+                <p className="text-sm font-bold text-[#0b2d52]">{s.name}</p>
+                <p className="mt-1 text-xs leading-relaxed text-slate-600">{s.blurb}</p>
+              </div>
+            ))}
           </div>
         </div>
       </Reveal>

@@ -10,6 +10,7 @@ import gpRoweLogo from '../assets/img/sponsors/gp-rowe.webp'
 import kitchenDenLogo from '../assets/img/sponsors/kitchen-den.webp'
 import clariusLogo from '../assets/img/sponsors/clarius.webp'
 import newHappyPalaceLogo from '../assets/img/sponsors/new-happy-palace.webp'
+import optimumFlooringLogo from '../assets/img/sponsors/optimum-flooring.webp'
 import bsfProgrammePage from '../assets/img/bsf-programme-page.webp'
 import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
@@ -61,6 +62,7 @@ const sponsorLogos: Record<string, string> = {
   'The Kitchen Den Design Studio': kitchenDenLogo,
   Clarius: clariusLogo,
   'New Happy Palace': newHappyPalaceLogo,
+  'Optimum Flooring': optimumFlooringLogo,
 }
 
 function Home() {
