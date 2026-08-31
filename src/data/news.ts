@@ -46,6 +46,15 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'youth-section-updated-2026-27',
+    title: 'Youth section updated for 2026/27',
+    date: '2026-08-31',
+    teams: ['youth'],
+    excerpt:
+      'Our Youth pages are fully up to date for the new season. Every age group from U9s to U13s now has its complete 2026/27 fixture list, all pulled together in a month-by-month calendar — and you can tap any match to jump straight to its full details in the season list below. We’ve also added the new team sponsors backing our young players; a big thank you to them all.',
+    link: { href: '/youth', label: 'See the Youth section' },
+  },
+  {
     slug: 'as-bristol-boys-cancelled',
     title: "A’s friendly vs Bristol Boys FC cancelled",
     date: '2026-08-29',
