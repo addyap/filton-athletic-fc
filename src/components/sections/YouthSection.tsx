@@ -30,7 +30,7 @@ function YouthSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
           <div className="lg:flex-1">
             <p className="mx-auto max-w-3xl text-slate-200 lg:mx-0">
               Various age groups, mixed groups of boys and girls: YDS (Year 1 and below), U7s (Year 2), U8s
-              (Year 3), U9s (Year 4), U10s (Year 5), U11s (Year 6) and U12s. FA qualified coaches, DBS checked.
+              (Year 3), U9s (Year 4), U10s (Year 5), U11s (Year 6), U12s and U13s. FA qualified coaches, DBS checked.
               Be part of a team and most importantly have fun!
             </p>
             <p className="mt-4 text-slate-200">Home games at BBS Park North, Elm Park, Filton.</p>
