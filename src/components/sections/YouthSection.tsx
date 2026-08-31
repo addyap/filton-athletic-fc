@@ -36,7 +36,6 @@ function YouthSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
             <p className="mt-4 text-slate-200">Home games at BBS Park North, Elm Park, Filton.</p>
             <div className="mt-6 flex flex-wrap justify-center gap-6 text-sm lg:justify-start">
               <p>Email: <a className="underline" href="mailto:filtonathleticfc@outlook.com">filtonathleticfc@outlook.com</a></p>
-              <p>Kev: 07710 581381</p>
               <p>Ollie: 07429 595476</p>
             </div>
           </div>
