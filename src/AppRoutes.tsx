@@ -9,6 +9,7 @@ import TablePage from './pages/TablePage'
 import YouthPage from './pages/YouthPage'
 import ContactPage from './pages/ContactPage'
 import ArchivePage from './pages/ArchivePage'
+import ArchiveFeaturePage from './pages/ArchiveFeaturePage'
 import FirstTeamArchiveHub from './pages/FirstTeamArchiveHub'
 import ReservesArchiveHub from './pages/ReservesArchiveHub'
 import TeamSeasonArchivePage from './pages/TeamSeasonArchivePage'
@@ -24,6 +25,7 @@ function AppRoutes() {
       <Route path="/" element={<Home />} />
       <Route path="/join/:slug" element={<PostPage />} />
       <Route path="/archive" element={<ArchivePage />} />
+      <Route path="/history/:slug" element={<ArchiveFeaturePage />} />
       <Route path="/archive/first-team" element={<FirstTeamArchiveHub />} />
       <Route path="/archive/reserves" element={<ReservesArchiveHub />} />
       <Route path="/archive/first-team/:season" element={<TeamSeasonArchivePage team="first-team" />} />

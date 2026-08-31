@@ -6,6 +6,7 @@ import { programmes } from './data/programmes'
 import { posts } from './data/posts'
 import { seasons } from './data/seasons'
 import { opponentPreviews } from './data/opponents'
+import { archiveFeatures } from './data/archiveFeatures'
 
 /** Render a single route to static HTML plus its resolved <head> metadata. */
 export function render(url: string): { appHtml: string; head: PageHead } {
@@ -34,6 +35,7 @@ export function getRoutePaths(): string[] {
     ...programmes.map((p) => `/programme/${p.slug}`),
     ...opponentPreviews.map((p) => `/preview/${p.slug}`),
     ...posts.map((p) => `/join/${p.slug}`),
+    ...archiveFeatures.map((f) => `/history/${f.slug}`),
     '/archive/first-team',
     '/archive/reserves',
     ...seasons.map((s) => `/archive/first-team/${s.slug}`),

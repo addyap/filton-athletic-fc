@@ -2,6 +2,7 @@ import { getProgramme } from './data/programmes'
 import { getPost } from './data/posts'
 import { findSeason } from './data/seasons'
 import { getOpponentPreview, fixtureForPreview } from './data/opponents'
+import { getArchiveFeature } from './data/archiveFeatures'
 
 /** Canonical production origin. Update here if the club moves to a custom domain. */
 export const SITE_ORIGIN = 'https://filtonathletic.co.uk'
@@ -172,6 +173,18 @@ export function headForPath(pathname: string): PageHead {
         ...base,
         title: `Meet the visitors: ${preview.name} — Filton Athletic FC`,
         description: `Get to know ${preview.name} ahead of Filton Athletic vs ${preview.name}${when} — club history, key players and full squad. Full matchday programme to follow.`,
+      }
+    }
+  }
+
+  const historyMatch = path.match(/^\/history\/(.+)$/)
+  if (historyMatch) {
+    const feature = getArchiveFeature(historyMatch[1])
+    if (feature) {
+      return {
+        ...base,
+        title: `${feature.headline} — From the archive — Filton Athletic FC`,
+        description: feature.summary,
       }
     }
   }

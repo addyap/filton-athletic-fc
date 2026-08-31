@@ -30,6 +30,7 @@ import YouthSection from '../components/sections/YouthSection'
 import ReservesSection from '../components/sections/ReservesSection'
 import AsTeamSection from '../components/sections/AsTeamSection'
 import { posts, formatPostDate } from '../data/posts'
+import { archiveFeatures } from '../data/archiveFeatures'
 import { playerPhotos2025_26 as playerPhotos } from '../data/playerPhotos'
 import {
   officials,
@@ -205,6 +206,33 @@ function Home() {
             committee, and fortunate to be supported by some of the best fans in the world: the self-proclaimed
             Filton Ultras!
           </p>
+
+          {archiveFeatures.length > 0 && (
+            <div className="mt-8">
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+                From the archive
+              </p>
+              <div className="mt-3 grid gap-4 sm:grid-cols-2">
+                {archiveFeatures.map((f) => (
+                  <Link
+                    key={f.slug}
+                    to={`/history/${f.slug}`}
+                    className="group block rounded-lg border border-slate-200 bg-white p-5 transition hover:border-[#0b2d52] hover:shadow-sm"
+                  >
+                    <span className="text-xs font-medium text-slate-500">
+                      {f.publication} &middot; {f.edition}
+                    </span>
+                    <h5 className="mt-2 font-serif text-lg font-bold leading-snug text-[#0b2d52]">
+                      {f.headline}
+                    </h5>
+                    <span className="mt-3 inline-block text-sm font-medium text-[#0b2d52]">
+                      Read the cutting &rarr;
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
 
           <h4 className="mt-10 text-lg font-semibold text-[#0b2d52]">Club officials</h4>
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
