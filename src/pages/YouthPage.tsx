@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
 import SectionHeading from '../components/SectionHeading'
@@ -6,9 +7,18 @@ import NewsFeed from '../components/NewsFeed'
 import YouthSection from '../components/sections/YouthSection'
 
 function YouthPage() {
+  const location = useLocation()
+
   useEffect(() => {
+    if (location.hash) {
+      const el = document.getElementById(location.hash.slice(1))
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' })
+        return
+      }
+    }
     window.scrollTo(0, 0)
-  }, [])
+  }, [location.hash])
 
   return (
     <div className="min-h-screen bg-white text-slate-900">

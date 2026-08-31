@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { aTeamFixtures, firstTeamFixtures, reserveFixtures } from '../data/club'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
@@ -285,6 +286,18 @@ function ClubFixturesCalendar() {
             })}
           </div>
         </div>
+
+        <Link
+          to="/youth#youth-calendar"
+          className="group mt-5 flex flex-col items-center justify-center gap-1 rounded-2xl border border-dashed border-[#0b2d52]/25 bg-white/60 px-5 py-4 text-center transition hover:border-[#0b2d52]/50 hover:bg-white sm:flex-row sm:gap-2"
+        >
+          <span className="text-sm text-slate-600">
+            Following our young players too? Every U9s&ndash;U13s fixture has its own calendar.
+          </span>
+          <span className="text-sm font-bold text-[#0b2d52] group-hover:underline">
+            See the Youth fixtures &rarr;
+          </span>
+        </Link>
       </Reveal>
     </section>
   )
