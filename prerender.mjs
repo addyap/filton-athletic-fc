@@ -117,6 +117,18 @@ for (const path of paths) {
   if (!head.noindex) sitemapPaths.push(path)
 }
 
+// 404 page: render an unmatched path (React shows <NotFoundPage>, head is
+// noindex) and write it to dist/404.html. With the SPA catch-all rewrite
+// removed from vercel.json, Vercel serves this for any unknown URL with a real
+// 404 status instead of a soft-404 homepage. Not added to the sitemap.
+{
+  const { appHtml, head } = render('/404')
+  let notFound = applyHead(template, head)
+  notFound = notFound.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
+  writeFileSync(join(DIST, '404.html'), notFound)
+  console.log('Wrote 404.html (noindex).')
+}
+
 const urls = sitemapPaths
   .map((path) => {
     const key = path.replace(/\/$/, '') || '/'

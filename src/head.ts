@@ -57,6 +57,14 @@ export function headForPath(pathname: string): PageHead {
   const path = pathname.replace(/\/+$/, '') || '/'
   const base = { canonical: `${SITE_ORIGIN}${path === '/' ? '/' : path}`, ogImage: OG_IMAGE }
 
+  if (path === '/') {
+    return {
+      ...base,
+      title: 'Filton Athletic FC',
+      description: DEFAULT_DESCRIPTION,
+    }
+  }
+
   if (path === '/archive') {
     return {
       ...base,
@@ -226,7 +234,7 @@ export function headForPath(pathname: string): PageHead {
       ...base,
       title: 'Filton Athletic Youth FC',
       description:
-        'Youth football at Filton Athletic FC — mixed teams from YDS through to U12s, and a new U13s girls team forming for 2026/27. FA qualified, DBS checked coaches.',
+        'Youth football at Filton Athletic FC — mixed boys’ and girls’ teams from YDS through to U13s, with a full fixtures calendar and a new U13s girls team forming for 2026/27. FA qualified, DBS checked coaches.',
     }
   }
 
@@ -336,9 +344,12 @@ export function headForPath(pathname: string): PageHead {
     }
   }
 
+  // Unknown path — a 404. Kept out of the index so stray URLs never rank.
   return {
     ...base,
-    title: 'Filton Athletic FC',
-    description: DEFAULT_DESCRIPTION,
+    title: 'Page not found — Filton Athletic FC',
+    description:
+      'Sorry, we couldn’t find that page. Head back to the Filton Athletic FC home page for fixtures, results, tables and club news.',
+    noindex: true,
   }
 }

@@ -21,6 +21,7 @@ import SafeguardingPage from './pages/SafeguardingPage'
 import EveningPost2009ArchivePage from './pages/EveningPost2009ArchivePage'
 import TeamPhotographArchivePage from './pages/TeamPhotographArchivePage'
 import HistoricTeamPhotoPage from './pages/HistoricTeamPhotoPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 /** Route table shared by the browser (BrowserRouter) and the prerenderer (StaticRouter). */
 function AppRoutes() {
@@ -50,7 +51,7 @@ function AppRoutes() {
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
       <Route path="/safeguarding" element={<SafeguardingPage />} />
-      <Route path="*" element={<Home />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   )
 }
