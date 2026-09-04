@@ -17,6 +17,7 @@ function resultBadge(result?: string, cancelled?: boolean) {
 
 function ReservesSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
   const gallery = matchGalleryItems(reserveFixtures)
+  const matchday = reserveFixtures.find((f) => f.matchdayImage && !f.result)
   return (
     <>
     <section id="reserves" className="border-t border-slate-200 bg-emerald-50/60">
@@ -33,6 +34,31 @@ function ReservesSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) 
           <p className="mt-1 font-bold text-[#0b2d52]">{officials.reserveTeamCoaches.join(', ')}</p>
         </div>
       </div>
+
+      {matchday && (
+        <div className="mx-auto mt-8 max-w-2xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+          <img
+            src={matchday.matchdayImage}
+            alt={`Matchday graphic — Filton Athletic Reserves vs ${matchday.opponent}`}
+            className="w-full object-contain"
+          />
+          <div className="p-5 text-center">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#e7f0e9] px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#2f6b45]">
+              Next match
+            </span>
+            <p className="mt-3 text-lg font-bold text-[#0b2d52]">
+              {matchday.venue === 'A' ? (
+                <>{matchday.opponent} vs Filton Athletic Reserves</>
+              ) : (
+                <>Filton Athletic Reserves vs {matchday.opponent}</>
+              )}
+            </p>
+            <p className="mt-1 text-sm text-slate-500">
+              {matchday.date} &middot; Kick-off {matchday.time} &middot; {matchday.ground}
+            </p>
+          </div>
+        </div>
+      )}
 
       {reserveTeamPreSeason2026.length > 0 && (
         <>

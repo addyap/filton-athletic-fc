@@ -1,6 +1,8 @@
 import matchdayAfcMangotsfieldRocksPhoto from '../assets/img/matchday-afc-mangotsfield-rocks.jpg'
 import matchdayTewkesburyTownPhoto from '../assets/img/matchday-tewkesbury-town.jpg'
 import matchdayBishopsCleeveDevelopmentPhoto from '../assets/img/matchday-bishops-cleeve-development.webp'
+import matchdayUniversityOfBristolLeagueCupPhoto from '../assets/img/matchday-university-of-bristol-league-cup.jpg'
+import matchdayReservesAsHomeOpenerPhoto from '../assets/img/matchday-reserves-as-home-opener.jpg'
 import matchStokeGifford1 from '../assets/img/match-stoke-gifford-1.webp'
 import matchStokeGifford2 from '../assets/img/match-stoke-gifford-2.webp'
 import matchStokeGifford3 from '../assets/img/match-stoke-gifford-3.webp'
@@ -139,7 +141,7 @@ export const firstTeamFixtures: Fixture[] = [
   ] },
   { date: '15/08/26', time: '15:00', competition: 'GCL', opponent: 'Bishops Cleeve Development', venue: 'A', ground: 'Kayte Lane, Southam, GL52 3PD', matchdayImage: matchdayBishopsCleeveDevelopmentPhoto, result: 'D 3-3', scorers: 'K Cooper, S Hassan, K Thomas (pen)', officials: 'Owen Jackson, Shaun Enever, Nigel Rees', awayProgrammeUrl: 'https://3p4oewzml4cd0fez.public.blob.vercel-storage.com/DevsvFilton2.pdf' },
   { date: '22/08/26', time: '15:00', competition: 'GCL', opponent: 'Tewkesbury Town', venue: 'H', matchdayImage: matchdayTewkesburyTownPhoto, result: 'D 1-1', scorers: 'OG', attendance: 60, officials: 'Michael Halford (referee), Kevin Slade, Martin Mills' },
-  { date: '05/09/26', time: '15:00', competition: 'Cup', opponent: 'University of Bristol', venue: 'A' },
+  { date: '05/09/26', time: '15:00', competition: 'LJC', opponent: 'University of Bristol', venue: 'A', ground: 'Coombe Dingle Sports Complex, BS9 2BJ', matchdayImage: matchdayUniversityOfBristolLeagueCupPhoto },
   { date: '15/09/26', time: '19:45', competition: 'GCL', opponent: 'Longlevens Reserves', venue: 'A' },
   { date: '26/09/26', time: '15:00', competition: 'GCL', opponent: 'Ruardean Hill Rangers', venue: 'H' },
   { date: '03/10/26', time: '15:00', competition: 'GCL', opponent: 'Wick', venue: 'A' },
@@ -293,12 +295,14 @@ export type ReserveFixture = {
   result?: string
   scorers?: string
   cards?: string
+  /** The official matchday graphic for this fixture, if one's been produced. */
+  matchdayImage?: string
   matchPhotos?: { src: string; alt: string }[]
 }
 
 /** 2026/27 reserve fixtures — Bristol & Suburban Premier Division, from FA Full-Time. */
 export const reserveFixtures: ReserveFixture[] = [
-  { date: '05/09/26', time: '14:00', competition: 'PREM', opponent: 'Cosmos UK Saturday First', venue: 'H', ground: 'Elm Park, BS34 7PS' },
+  { date: '05/09/26', time: '14:00', competition: 'PREM', opponent: 'Cosmos UK Saturday First', venue: 'H', ground: 'Elm Park, BS34 7PS', matchdayImage: matchdayReservesAsHomeOpenerPhoto },
   { date: '12/09/26', time: '14:00', competition: 'PREM', opponent: 'Almondsbury Reserves', venue: 'A', ground: 'Stoke Gifford Stadium', result: 'P-P' },
   { date: '19/09/26', time: '14:00', competition: 'CC', opponent: 'Lion First', venue: 'H', ground: 'Elm Park, BS34 7PS' },
   { date: '26/09/26', time: '14:00', competition: 'PREM', opponent: 'Henbury & Rockleaze Reserves', venue: 'A', ground: 'Arnall Drive Playing Fields' },
@@ -467,7 +471,7 @@ export const youthU13Fixtures: YouthFixture[] = [
 
 /** 2026/27 A's league fixtures — Bristol & Suburban League, Division Four, from FA Full-Time. */
 export const aTeamFixtures: ReserveFixture[] = [
-  { date: '05/09/26', time: '14:00', competition: 'BSD4', opponent: 'Parson Street Old Boys Reserves', venue: 'H', ground: 'BAWA Leisure' },
+  { date: '05/09/26', time: '14:00', competition: 'BSD4', opponent: 'Parson Street Old Boys Reserves', venue: 'H', ground: 'BAWA Leisure, BS34 7RG', matchdayImage: matchdayReservesAsHomeOpenerPhoto },
   { date: '12/09/26', time: '14:00', competition: 'BSD4', opponent: 'Hanham Abbotonians Reserves', venue: 'H', ground: 'BAWA Leisure' },
   { date: '26/09/26', time: '14:00', competition: 'BSD4', opponent: 'Shaftesbury Crusade A', venue: 'A', ground: 'Pen Park Sports Ground' },
   { date: '03/10/26', time: '14:00', competition: 'BSD4', opponent: 'Severn Beach Wanderers Reserves', venue: 'H', ground: 'BAWA Leisure' },

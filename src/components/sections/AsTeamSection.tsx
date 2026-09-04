@@ -17,6 +17,7 @@ function resultBadge(result?: string, cancelled?: boolean) {
 
 function AsTeamSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
   const gallery = matchGalleryItems(aTeamFixtures)
+  const matchday = aTeamFixtures.find((f) => f.matchdayImage && !f.result)
   return (
     <>
     <section id="as-team" className="border-t border-slate-200 bg-[#e3ebf8]/60">
@@ -33,6 +34,31 @@ function AsTeamSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
           <p className="mt-1 font-bold text-[#0b2d52]">{officials.aTeamCoaches.join(', ')}</p>
         </div>
       </div>
+
+      {matchday && (
+        <div className="mx-auto mt-8 max-w-2xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+          <img
+            src={matchday.matchdayImage}
+            alt={`Matchday graphic — Filton Athletic A Team vs ${matchday.opponent}`}
+            className="w-full object-contain"
+          />
+          <div className="p-5 text-center">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#e3ebf8] px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#0b2d52]">
+              Next match
+            </span>
+            <p className="mt-3 text-lg font-bold text-[#0b2d52]">
+              {matchday.venue === 'A' ? (
+                <>{matchday.opponent} vs Filton Athletic A Team</>
+              ) : (
+                <>Filton Athletic A Team vs {matchday.opponent}</>
+              )}
+            </p>
+            <p className="mt-1 text-sm text-slate-500">
+              {matchday.date} &middot; Kick-off {matchday.time} &middot; {matchday.ground}
+            </p>
+          </div>
+        </div>
+      )}
 
       <p className="mt-8 text-center text-lg font-semibold text-[#0b2d52]">Pre-season fixtures</p>
       <p className="mt-1 text-center text-sm text-slate-500">
