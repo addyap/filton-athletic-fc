@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { youthU9Fixtures, youthU10Fixtures, youthU11Fixtures, youthU12Fixtures, youthU13Fixtures, youthFixtureId, type YouthFixture } from '../data/club'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
@@ -111,9 +111,33 @@ const calendarMonths: CalendarMonth[] = Array.from(
   ).values(),
 )
 
+/**
+ * The month the calendar should open on for a given "today": the current month
+ * if there are fixtures in it, otherwise the next upcoming fixture month, and
+ * failing that (all fixtures in the past) the most recent one.
+ */
+function focusMonthKey(now: Date): string {
+  if (calendarMonths.length === 0) return ''
+  const current = monthKey(now)
+  const exact = calendarMonths.find((month) => month.key === current)
+  if (exact) return exact.key
+  const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1)
+  const upcoming = calendarMonths.find((month) => month.date.getTime() >= startOfMonth.getTime())
+  return (upcoming ?? calendarMonths[calendarMonths.length - 1]).key
+}
+
 function YouthFixturesCalendar() {
+  // Start on the season's first month so the prerendered/SSR HTML is
+  // deterministic, then jump to today's month once we're on the client.
   const [selectedMonthKey, setSelectedMonthKey] = useState(calendarMonths[0]?.key ?? '')
   const [teamFilter, setTeamFilter] = useState<TeamFilter>('all')
+  const [todayKey, setTodayKey] = useState<string | null>(null)
+
+  useEffect(() => {
+    const now = new Date()
+    setSelectedMonthKey(focusMonthKey(now))
+    setTodayKey(dateKey(now))
+  }, [])
 
   const selectedMonthIndex = calendarMonths.findIndex((month) => month.key === selectedMonthKey)
   const selectedMonth = calendarMonths[selectedMonthIndex] ?? calendarMonths[0]
@@ -271,17 +295,24 @@ function YouthFixturesCalendar() {
                     ? new Date(selectedMonth.date.getFullYear(), selectedMonth.date.getMonth(), dayNumber)
                     : null
                   const dayFixtures = date ? fixturesByDate[dateKey(date)] ?? [] : []
+                  const isToday = date != null && dateKey(date) === todayKey
 
                   return (
                     <div
                       key={date ? dateKey(date) : `empty-${index}`}
                       className={`min-h-35 border-b border-r border-slate-200 p-1.5 ${
-                        isCurrentMonthDay ? 'bg-white' : 'bg-slate-50/70'
+                        isToday ? 'bg-[#eef5ef] ring-1 ring-inset ring-[#3f8a5b]/40' : isCurrentMonthDay ? 'bg-white' : 'bg-slate-50/70'
                       }`}
+                      aria-current={isToday ? 'date' : undefined}
                     >
                       {date && (
                         <>
-                          <time dateTime={dateKey(date)} className="inline-flex h-6 min-w-6 items-center justify-center rounded-full px-1 text-xs font-bold text-slate-600">
+                          <time
+                            dateTime={dateKey(date)}
+                            className={`inline-flex h-6 min-w-6 items-center justify-center rounded-full px-1 text-xs font-bold ${
+                              isToday ? 'bg-[#3f8a5b] text-white' : 'text-slate-600'
+                            }`}
+                          >
                             {dayNumber}
                           </time>
                           {dayFixtures.map((fixture) => {
