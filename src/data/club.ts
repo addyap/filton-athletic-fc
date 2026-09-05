@@ -141,7 +141,7 @@ export const firstTeamFixtures: Fixture[] = [
   ] },
   { date: '15/08/26', time: '15:00', competition: 'GCL', opponent: 'Bishops Cleeve Development', venue: 'A', ground: 'Kayte Lane, Southam, GL52 3PD', matchdayImage: matchdayBishopsCleeveDevelopmentPhoto, result: 'D 3-3', scorers: 'K Cooper, S Hassan, K Thomas (pen)', officials: 'Owen Jackson, Shaun Enever, Nigel Rees', awayProgrammeUrl: 'https://3p4oewzml4cd0fez.public.blob.vercel-storage.com/DevsvFilton2.pdf' },
   { date: '22/08/26', time: '15:00', competition: 'GCL', opponent: 'Tewkesbury Town', venue: 'H', matchdayImage: matchdayTewkesburyTownPhoto, result: 'D 1-1', scorers: 'OG', attendance: 60, officials: 'Michael Halford (referee), Kevin Slade, Martin Mills' },
-  { date: '05/09/26', time: '15:00', competition: 'LJC', opponent: 'University of Bristol', venue: 'A', ground: 'Coombe Dingle Sports Complex, BS9 2BJ', matchdayImage: matchdayUniversityOfBristolLeagueCupPhoto },
+  { date: '05/09/26', time: '15:00', competition: 'LJC', opponent: 'University of Bristol', venue: 'A', ground: 'Coombe Dingle Sports Complex, BS9 2BJ', matchdayImage: matchdayUniversityOfBristolLeagueCupPhoto, result: 'L 0-7' },
   { date: '15/09/26', time: '19:45', competition: 'GCL', opponent: 'Longlevens Reserves', venue: 'A' },
   { date: '26/09/26', time: '15:00', competition: 'GCL', opponent: 'Ruardean Hill Rangers', venue: 'H' },
   { date: '03/10/26', time: '15:00', competition: 'GCL', opponent: 'Wick', venue: 'A' },
@@ -302,7 +302,7 @@ export type ReserveFixture = {
 
 /** 2026/27 reserve fixtures — Bristol & Suburban Premier Division, from FA Full-Time. */
 export const reserveFixtures: ReserveFixture[] = [
-  { date: '05/09/26', time: '14:00', competition: 'PREM', opponent: 'Cosmos UK Saturday First', venue: 'H', ground: 'Elm Park, BS34 7PS', matchdayImage: matchdayReservesAsHomeOpenerPhoto },
+  { date: '05/09/26', time: '14:00', competition: 'PREM', opponent: 'Cosmos UK Saturday First', venue: 'H', ground: 'Elm Park, BS34 7PS', matchdayImage: matchdayReservesAsHomeOpenerPhoto, result: 'L 1-3', scorers: 'R Evans', cards: 'R Whalen (Y), F Dorrington (Y)' },
   { date: '12/09/26', time: '14:00', competition: 'PREM', opponent: 'Almondsbury Reserves', venue: 'A', ground: 'Stoke Gifford Stadium', result: 'P-P' },
   { date: '19/09/26', time: '14:00', competition: 'CC', opponent: 'Lion First', venue: 'H', ground: 'Elm Park, BS34 7PS' },
   { date: '26/09/26', time: '14:00', competition: 'PREM', opponent: 'Henbury & Rockleaze Reserves', venue: 'A', ground: 'Arnall Drive Playing Fields' },
@@ -471,7 +471,7 @@ export const youthU13Fixtures: YouthFixture[] = [
 
 /** 2026/27 A's league fixtures — Bristol & Suburban League, Division Four, from FA Full-Time. */
 export const aTeamFixtures: ReserveFixture[] = [
-  { date: '05/09/26', time: '14:00', competition: 'BSD4', opponent: 'Parson Street Old Boys Reserves', venue: 'H', ground: 'BAWA Leisure, BS34 7RG', matchdayImage: matchdayReservesAsHomeOpenerPhoto },
+  { date: '05/09/26', time: '14:00', competition: 'BSD4', opponent: 'Parson Street Old Boys Reserves', venue: 'H', ground: 'BAWA Leisure, BS34 7RG', matchdayImage: matchdayReservesAsHomeOpenerPhoto, result: 'W 8-0' },
   { date: '12/09/26', time: '14:00', competition: 'BSD4', opponent: 'Hanham Abbotonians Reserves', venue: 'H', ground: 'BAWA Leisure' },
   { date: '26/09/26', time: '14:00', competition: 'BSD4', opponent: 'Shaftesbury Crusade A', venue: 'A', ground: 'Pen Park Sports Ground' },
   { date: '03/10/26', time: '14:00', competition: 'BSD4', opponent: 'Severn Beach Wanderers Reserves', venue: 'H', ground: 'BAWA Leisure' },
