@@ -642,18 +642,18 @@ export const reserveTable: TableRow[] = [
 
 /** 2026/27 A's division table — Bristol & Suburban League, Division Four, from FA Full-Time. */
 export const asTeamTable: TableRow[] = [
-  { pos: 1, team: 'Avonmouth A', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
-  { pos: 2, team: 'Cutters Friday FC Reserve', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
-  { pos: 3, team: 'Eighty One United 1st', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
-  { pos: 4, team: 'Filton Athletic A', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
-  { pos: 5, team: 'Hanham Abbotonians Reserves', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
-  { pos: 6, team: 'Imperial A', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
-  { pos: 7, team: 'Made For Ever Development', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
-  { pos: 8, team: 'Parson Street Old Boys Reserves', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
-  { pos: 9, team: 'Severn Beach Wanderers Reserves', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
-  { pos: 10, team: 'Shaftesbury Crusade A', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
-  { pos: 11, team: 'St Vallier First', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
-  { pos: 12, team: 'Stoke Gifford SGS United A', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
+  { pos: 1, team: 'Filton Athletic A', p: 1, w: 1, d: 0, l: 0, f: 8, a: 0, gd: 8, pts: 3 },
+  { pos: 2, team: 'Stoke Gifford SGS United A', p: 1, w: 1, d: 0, l: 0, f: 9, a: 2, gd: 7, pts: 3 },
+  { pos: 3, team: 'Avonmouth A', p: 1, w: 1, d: 0, l: 0, f: 3, a: 1, gd: 2, pts: 3 },
+  { pos: 4, team: 'Shaftesbury Crusade A', p: 1, w: 1, d: 0, l: 0, f: 4, a: 3, gd: 1, pts: 3 },
+  { pos: 5, team: 'Eighty One United 1st', p: 1, w: 1, d: 0, l: 0, f: 3, a: 2, gd: 1, pts: 3 },
+  { pos: 6, team: 'Imperial A', p: 1, w: 0, d: 1, l: 0, f: 1, a: 1, gd: 0, pts: 1 },
+  { pos: 7, team: 'Severn Beach Wanderers Reserves', p: 1, w: 0, d: 1, l: 0, f: 1, a: 1, gd: 0, pts: 1 },
+  { pos: 8, team: 'Cutters Friday Reserves', p: 1, w: 0, d: 0, l: 1, f: 3, a: 4, gd: -1, pts: 0 },
+  { pos: 9, team: 'St Vallier First', p: 1, w: 0, d: 0, l: 1, f: 2, a: 3, gd: -1, pts: 0 },
+  { pos: 10, team: 'Made For Ever Development', p: 1, w: 0, d: 0, l: 1, f: 1, a: 3, gd: -2, pts: 0 },
+  { pos: 11, team: 'Hanham Abbotonians Reserves', p: 1, w: 0, d: 0, l: 1, f: 2, a: 9, gd: -7, pts: 0 },
+  { pos: 12, team: 'Parson Street Old Boys Reserves', p: 1, w: 0, d: 0, l: 1, f: 0, a: 8, gd: -8, pts: 0 },
 ]
 
 /** Archived final 2024/25 reserve league table — Division Four. */
