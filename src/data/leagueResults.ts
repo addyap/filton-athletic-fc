@@ -22,6 +22,50 @@ export type LeagueRound = {
 
 export const leagueResults2026_27: LeagueRound[] = [
   {
+    label: 'Matchday 4',
+    iso: '2026-08-22',
+    matches: [
+      {
+        home: 'Filton Athletic',
+        away: 'Tewkesbury Town',
+        homeScore: 1,
+        awayScore: 1,
+        homeScorers: 'Own goal',
+        awayScorers: 'D Beasley',
+      },
+      {
+        home: 'Stoke Gifford SGS United',
+        away: 'Bishops Cleeve Development',
+        homeScore: 1,
+        awayScore: 2,
+        homeScorers: 'O Cox',
+        awayScorers: 'N Payne, H Davis',
+      },
+      {
+        home: 'Quedgeley Wanderers',
+        away: 'Totterdown United',
+        homeScore: 5,
+        awayScore: 0,
+        homeScorers: 'T De Quincey Adams, J Chamberlain, D Venn, R Stokes, F Jenner',
+      },
+      {
+        home: 'Henbury & Rockleaze',
+        away: 'Frampton United',
+        homeScore: 4,
+        awayScore: 3,
+        homeScorers: 'K Mannings, T Collins, N Jones, J Capon',
+        awayScorers: 'S Shilton, K Marks, F Porter',
+      },
+      {
+        home: 'Broadwell Amateurs',
+        away: 'Wick',
+        homeScore: 2,
+        awayScore: 0,
+        homeScorers: 'A Powell (2)',
+      },
+    ],
+  },
+  {
     label: 'Matchday 3',
     iso: '2026-08-15',
     matches: [
