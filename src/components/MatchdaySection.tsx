@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import crestTrimmed from '../assets/img/filton-athletic-crest-trimmed.webp'
 import elmParkPitch from '../assets/img/elm-park-pitch.jpg'
+import matchdayAllTeams from '../assets/img/matchday-all-teams.jpg'
 import {
   nextFirstTeamFixture,
   lastFirstTeamResult,
@@ -52,6 +53,21 @@ function MatchdaySection() {
   if (!next && !last) {
     return (
       <section id="matchday" aria-label="Matchday" className="border-b border-slate-200 bg-slate-50">
+        <div className="mx-auto max-w-6xl px-4 pt-10 sm:px-6">
+          <figure className="overflow-hidden rounded-2xl shadow-lg ring-1 ring-slate-200">
+            <img
+              src={matchdayAllTeams}
+              alt="Filton Athletic FC matchday — the squad in a pre-match huddle, framed by club sponsors."
+              className="w-full object-cover"
+              loading="lazy"
+              width={1168}
+              height={880}
+            />
+            <figcaption className="sr-only">
+              Matchday at Filton Athletic FC — first team, reserves, A&rsquo;s and youth. #FATS #UTF
+            </figcaption>
+          </figure>
+        </div>
         <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
           <div className="rounded-2xl border border-[#0b2d52] bg-[#0b2d52] p-6 text-center text-white sm:p-8">
             <span className="text-xs font-semibold uppercase tracking-wide text-[#a9e0b8]">2026/27 season</span>
@@ -88,6 +104,22 @@ function MatchdaySection() {
         <h2 className="text-xs font-bold uppercase tracking-widest text-[#0b2d52]">
           Matchday <span className="text-slate-400">&middot; #FATS #UTF</span>
         </h2>
+      </div>
+
+      <div className="mx-auto max-w-6xl px-4 pt-4 sm:px-6">
+        <figure className="overflow-hidden rounded-2xl shadow-lg ring-1 ring-slate-200">
+          <img
+            src={matchdayAllTeams}
+            alt="Filton Athletic FC matchday — the squad in a pre-match huddle, framed by club sponsors."
+            className="w-full object-cover"
+            loading="lazy"
+            width={1168}
+            height={880}
+          />
+          <figcaption className="sr-only">
+            Matchday at Filton Athletic FC — first team, reserves, A&rsquo;s and youth. #FATS #UTF
+          </figcaption>
+        </figure>
       </div>
 
       <div className={`mx-auto grid max-w-6xl gap-6 px-4 pb-10 pt-4 sm:px-6 ${last ? 'lg:grid-cols-3 lg:items-start' : ''}`}>
