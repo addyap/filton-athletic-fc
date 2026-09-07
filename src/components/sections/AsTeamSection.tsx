@@ -3,6 +3,7 @@ import SectionHeading from '../SectionHeading'
 import LeagueTableWidget from '../LeagueTableWidget'
 import Reveal from '../Reveal'
 import MatchGallery from '../MatchGallery'
+import VenueTag from '../VenueTag'
 import { asTeamTable, aTeamFixtures, matchGalleryItems, officials } from '../../data/club'
 import { aTeamPreSeason2026 } from '../../data/preseason'
 
@@ -80,7 +81,7 @@ function AsTeamSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
                 <td className="whitespace-nowrap px-3 py-1.5">{f.label}</td>
                 <td className="px-3 py-1.5">{f.opponent}</td>
                 <td className="whitespace-nowrap px-3 py-1.5">
-                  {f.venue}
+                  <VenueTag venue={f.venue} />
                   {f.venueNote && <span className="text-slate-500"> &middot; {f.venueNote}</span>}
                 </td>
                 <td className="px-3 py-1.5">
@@ -118,7 +119,7 @@ function AsTeamSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
                     </td>
                     <td className="hidden px-3 py-1.5 sm:table-cell">{f.competition}</td>
                     <td className="px-3 py-1.5">{f.opponent}</td>
-                    <td className="px-3 py-1.5">{f.venue}</td>
+                    <td className="px-3 py-1.5"><VenueTag venue={f.venue} /></td>
                     <td className="px-3 py-1.5">
                       <span className={`rounded px-2 py-0.5 text-xs font-semibold ${resultBadge(f.result)}`}>
                         {f.result ?? 'Upcoming'}

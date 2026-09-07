@@ -9,6 +9,7 @@ import {
 } from '../data/club'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
+import VenueTag from './VenueTag'
 
 function resultBadge(result?: string) {
   if (!result) return 'bg-slate-100 text-slate-500'
@@ -78,7 +79,7 @@ function YouthFixtureTables() {
                         </td>
                         <td className="hidden px-3 py-1.5 sm:table-cell">{compLabel(f.competition)}</td>
                         <td className="px-3 py-1.5">{f.opponent}</td>
-                        <td className="px-3 py-1.5">{f.venue}</td>
+                        <td className="px-3 py-1.5"><VenueTag venue={f.venue} /></td>
                         <td className="hidden px-3 py-1.5 text-slate-600 md:table-cell">
                           {f.venue === 'H' ? 'Elm Park, BS34 7PS' : (f.ground ?? '—')}
                         </td>

@@ -4,6 +4,7 @@ import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
 import SectionHeading from '../components/SectionHeading'
 import LeagueTableWidget from '../components/LeagueTableWidget'
+import VenueTag from '../components/VenueTag'
 import { findSeason } from '../data/seasons'
 
 type Team = 'first-team' | 'reserves'
@@ -113,7 +114,7 @@ function TeamSeasonArchivePage({ team }: { team: Team }) {
                     </td>
                     <td className="hidden px-3 py-1.5 sm:table-cell">{f.competition}</td>
                     <td className="px-3 py-1.5">{f.opponent}</td>
-                    <td className="px-3 py-1.5">{f.venue}</td>
+                    <td className="px-3 py-1.5"><VenueTag venue={f.venue} /></td>
                     <td className="px-3 py-1.5">
                       <span className={`rounded px-2 py-0.5 text-xs font-semibold ${resultBadge(f.result)}`}>
                         {f.result ?? 'Upcoming'}

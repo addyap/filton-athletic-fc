@@ -1,6 +1,7 @@
 import SectionHeading from '../SectionHeading'
 import Reveal from '../Reveal'
 import { CalendarMark } from '../SectionArt'
+import VenueTag from '../VenueTag'
 import { preSeason2026, preSeasonRecord } from '../../data/preseason'
 
 function resultBadge(result?: string, cancelled?: boolean) {
@@ -58,7 +59,7 @@ function PreSeasonSection({ headingLevel }: { headingLevel?: 'h1' | 'h2' | 'h3' 
                   <td className="whitespace-nowrap px-3 py-1.5">{f.label}</td>
                   <td className="px-3 py-1.5">{f.opponent}</td>
                   <td className="whitespace-nowrap px-3 py-1.5">
-                    {f.venue}
+                    <VenueTag venue={f.venue} />
                     {f.venueNote && <span className="text-slate-500"> &middot; {f.venueNote}</span>}
                   </td>
                   <td className="px-3 py-1.5">
