@@ -25,6 +25,27 @@ function resultTone(result: string) {
   return 'bg-amber-100 text-amber-800'
 }
 
+/**
+ * Compact H / A tag so home and away games read at a glance — the scoreline is
+ * always written home-team-first (see the "Last result" / "Next match" titles),
+ * so this letter is what tells you which side Filton were.
+ */
+function VenueTag({ venue }: { venue: Fixture['venue'] }) {
+  const label = venue === 'H' ? 'Home' : venue === 'A' ? 'Away' : 'Neutral'
+  const letter = venue === 'H' ? 'H' : venue === 'A' ? 'A' : 'N'
+  return (
+    <span
+      title={`${label} game`}
+      aria-label={`${label} game`}
+      className={`inline-flex h-7 w-7 items-center justify-center rounded-full text-sm font-bold ${
+        venue === 'H' ? 'bg-[#0b2d52] text-white' : 'bg-slate-200 text-[#0b2d52]'
+      }`}
+    >
+      {letter}
+    </span>
+  )
+}
+
 /** Kick-off as a Date, combining the DD/MM/YY date and HH:MM time (local). */
 function kickoffDate(f: Fixture): Date {
   const [dd, mm, yy] = f.date.split('/').map(Number)
@@ -243,6 +264,7 @@ function MatchdaySection() {
               <span className={`rounded-full px-3 py-1 text-base font-bold ${resultTone(last.result!)}`}>
                 {last.result}
               </span>
+              <VenueTag venue={last.venue} />
             </div>
             {last.scorers && <p className="mt-2 text-sm text-slate-600">{last.scorers}</p>}
             {(last.attendance != null || last.officials) && (
