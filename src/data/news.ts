@@ -46,6 +46,15 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'matchday-roundup-5-september',
+    title: 'Saturday round-up: A’s open with an 8-0 win',
+    date: '2026-09-05',
+    teams: ['first-team', 'reserves', 'as'],
+    excerpt:
+      'A mixed Saturday across the club. The A’s made a flying start to their Bristol & Suburban Division Four campaign, thrashing Parson Street Old Boys Reserves 8-0 at BAWA to sit top of the table. The Reserves were edged 1-3 at home by Cosmos UK Saturday First in the Premier Division, with Reece Evans on the mark. The First Team’s cup run ended with a 7-0 defeat away at University of Bristol. #FATS #UTF',
+    link: { href: '/as-team', label: 'See the A’s Division Four table' },
+  },
+  {
     slug: 'youth-section-updated-2026-27',
     title: 'Youth section updated for 2026/27',
     date: '2026-08-31',

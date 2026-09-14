@@ -3,6 +3,7 @@ import SectionHeading from '../SectionHeading'
 import LeagueTableWidget from '../LeagueTableWidget'
 import Reveal from '../Reveal'
 import MatchGallery from '../MatchGallery'
+import VenueTag from '../VenueTag'
 import { reserveTable, reserveFixtures, matchGalleryItems, officials } from '../../data/club'
 import { reserveTeamPreSeason2026 } from '../../data/preseason'
 
@@ -79,7 +80,7 @@ function ReservesSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) 
                     <td className="whitespace-nowrap px-3 py-1.5">{f.label}</td>
                     <td className="px-3 py-1.5">{f.opponent}</td>
                     <td className="whitespace-nowrap px-3 py-1.5">
-                      {f.venue}
+                      <VenueTag venue={f.venue} />
                       {f.venueNote && <span className="text-slate-500"> &middot; {f.venueNote}</span>}
                     </td>
                     <td className="px-3 py-1.5">
@@ -119,6 +120,8 @@ function ReservesSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) 
                     <th className="hidden px-3 py-2 text-left font-semibold sm:table-cell">Comp</th>
                     <th className="px-3 py-2 text-left font-semibold">Opponent</th>
                     <th className="px-3 py-2 text-left font-semibold">Venue</th>
+                    <th className="px-3 py-2 text-left font-semibold">Result</th>
+                    <th className="hidden px-3 py-2 text-left font-semibold md:table-cell">Scorers</th>
                     <th className="hidden px-3 py-2 text-left font-semibold md:table-cell">Ground</th>
                   </tr>
                 </thead>
@@ -130,7 +133,13 @@ function ReservesSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) 
                       </td>
                       <td className="hidden px-3 py-1.5 sm:table-cell">{f.competition}</td>
                       <td className="px-3 py-1.5">{f.opponent}</td>
-                      <td className="px-3 py-1.5">{f.venue}</td>
+                      <td className="px-3 py-1.5"><VenueTag venue={f.venue} /></td>
+                      <td className="px-3 py-1.5">
+                        <span className={`rounded px-2 py-0.5 text-xs font-semibold ${resultBadge(f.result)}`}>
+                          {f.result ?? 'Upcoming'}
+                        </span>
+                      </td>
+                      <td className="hidden px-3 py-1.5 text-slate-600 md:table-cell">{f.scorers ?? '-'}</td>
                       <td className="hidden px-3 py-1.5 text-slate-600 md:table-cell">{f.ground}</td>
                     </tr>
                   ))}

@@ -12,6 +12,7 @@ import {
 } from '../data/programmes'
 import { previewForOpponent } from '../data/opponents'
 import { groundInfo, type Fixture } from '../data/club'
+import VenueTag from './VenueTag'
 
 const DAY_MS = 24 * 60 * 60 * 1000
 const pad = (n: number) => String(n).padStart(2, '0')
@@ -149,8 +150,8 @@ function MatchdaySection() {
                   </span>
                   Next match
                 </span>
-                <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide">
-                  {venueLabel(next.venue)}
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide">
+                  <VenueTag venue={next.venue} onDark /> {venueLabel(next.venue)}
                 </span>
                 <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#a9e0b8]">
                   2026/27 season
@@ -275,6 +276,7 @@ function MatchdaySection() {
               <span className={`rounded-full px-3 py-1 text-base font-bold ${resultTone(last.result!)}`}>
                 {last.result}
               </span>
+              <VenueTag venue={last.venue} />
             </div>
             {last.scorers && <p className="mt-2 text-sm text-slate-600">{last.scorers}</p>}
             {(last.attendance != null || last.officials) && (

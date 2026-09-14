@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import SectionHeading from '../SectionHeading'
 import Reveal from '../Reveal'
 import MatchGallery from '../MatchGallery'
+import VenueTag from '../VenueTag'
 import { CalendarMark } from '../SectionArt'
 import { firstTeamFixtures, matchGalleryItems } from '../../data/club'
 import { programmeForFixture } from '../../data/programmes'
@@ -58,7 +59,7 @@ function FixturesSection({ headingLevel }: { headingLevel?: 'h1' | 'h2' | 'h3' }
                     </td>
                     <td className="hidden px-3 py-1.5 sm:table-cell">{f.competition}</td>
                     <td className="px-3 py-1.5">{f.opponent}</td>
-                    <td className="px-3 py-1.5">{f.venue}</td>
+                    <td className="px-3 py-1.5"><VenueTag venue={f.venue} /></td>
                     <td className="px-3 py-1.5">
                       <span className={`rounded px-2 py-0.5 text-xs font-semibold ${resultBadge(f.result)}`}>
                         {f.result ?? 'Upcoming'}
