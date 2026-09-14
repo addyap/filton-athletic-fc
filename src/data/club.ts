@@ -2,6 +2,7 @@ import matchdayAfcMangotsfieldRocksPhoto from '../assets/img/matchday-afc-mangot
 import matchdayTewkesburyTownPhoto from '../assets/img/matchday-tewkesbury-town.jpg'
 import matchdayBishopsCleeveDevelopmentPhoto from '../assets/img/matchday-bishops-cleeve-development.webp'
 import matchdayUniversityOfBristolLeagueCupPhoto from '../assets/img/matchday-university-of-bristol-league-cup.jpg'
+import matchdayLonglevensReservesPhoto from '../assets/img/matchday-longlevens-reserves.jpg'
 import matchdayReservesAsHomeOpenerPhoto from '../assets/img/matchday-reserves-as-home-opener.jpg'
 import matchStokeGifford1 from '../assets/img/match-stoke-gifford-1.webp'
 import matchStokeGifford2 from '../assets/img/match-stoke-gifford-2.webp'
@@ -142,7 +143,7 @@ export const firstTeamFixtures: Fixture[] = [
   { date: '15/08/26', time: '15:00', competition: 'GCL', opponent: 'Bishops Cleeve Development', venue: 'A', ground: 'Kayte Lane, Southam, GL52 3PD', matchdayImage: matchdayBishopsCleeveDevelopmentPhoto, result: 'D 3-3', scorers: 'K Cooper, S Hassan, K Thomas (pen)', officials: 'Owen Jackson, Shaun Enever, Nigel Rees', awayProgrammeUrl: 'https://3p4oewzml4cd0fez.public.blob.vercel-storage.com/DevsvFilton2.pdf' },
   { date: '22/08/26', time: '15:00', competition: 'GCL', opponent: 'Tewkesbury Town', venue: 'H', matchdayImage: matchdayTewkesburyTownPhoto, result: 'D 1-1', scorers: 'OG', attendance: 60, officials: 'Michael Halford (referee), Kevin Slade, Martin Mills' },
   { date: '05/09/26', time: '15:00', competition: 'LJC', opponent: 'University of Bristol', venue: 'A', ground: 'Coombe Dingle Sports Complex, BS9 2BJ', matchdayImage: matchdayUniversityOfBristolLeagueCupPhoto },
-  { date: '15/09/26', time: '19:45', competition: 'GCL', opponent: 'Longlevens Reserves', venue: 'A' },
+  { date: '15/09/26', time: '19:45', competition: 'GCL', opponent: 'Longlevens Reserves', venue: 'A', ground: 'Saw Mills End, GL4 3DG', matchdayImage: matchdayLonglevensReservesPhoto },
   { date: '26/09/26', time: '15:00', competition: 'GCL', opponent: 'Ruardean Hill Rangers', venue: 'H' },
   { date: '03/10/26', time: '15:00', competition: 'GCL', opponent: 'Wick', venue: 'A' },
   { date: '10/10/26', time: '15:00', competition: 'GCL', opponent: 'Totterdown United', venue: 'H' },
