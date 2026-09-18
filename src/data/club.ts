@@ -4,6 +4,7 @@ import matchdayBishopsCleeveDevelopmentPhoto from '../assets/img/matchday-bishop
 import matchdayUniversityOfBristolLeagueCupPhoto from '../assets/img/matchday-university-of-bristol-league-cup.jpg'
 import matchdayLonglevensReservesPhoto from '../assets/img/matchday-longlevens-reserves.jpg'
 import matchdayReservesAsHomeOpenerPhoto from '../assets/img/matchday-reserves-as-home-opener.jpg'
+import matchdayLionShaftesburyPhoto from '../assets/img/matchday-lion-shaftesbury.jpg'
 import matchStokeGifford1 from '../assets/img/match-stoke-gifford-1.webp'
 import matchStokeGifford2 from '../assets/img/match-stoke-gifford-2.webp'
 import matchStokeGifford3 from '../assets/img/match-stoke-gifford-3.webp'
@@ -305,7 +306,7 @@ export type ReserveFixture = {
 export const reserveFixtures: ReserveFixture[] = [
   { date: '05/09/26', time: '14:00', competition: 'PREM', opponent: 'Cosmos UK Saturday First', venue: 'H', ground: 'Elm Park, BS34 7PS', matchdayImage: matchdayReservesAsHomeOpenerPhoto, result: 'L 1-3', scorers: 'R Evans', cards: 'R Whalen (Y), F Dorrington (Y)' },
   { date: '12/09/26', time: '14:00', competition: 'PREM', opponent: 'Almondsbury Reserves', venue: 'A', ground: 'Stoke Gifford Stadium', result: 'P-P' },
-  { date: '19/09/26', time: '14:00', competition: 'CC', opponent: 'Lion First', venue: 'H', ground: 'Elm Park, BS34 7PS' },
+  { date: '19/09/26', time: '14:00', competition: 'CC', opponent: 'Lion First', venue: 'H', ground: 'Elm Park, BS34 7PS', matchdayImage: matchdayLionShaftesburyPhoto },
   { date: '26/09/26', time: '14:00', competition: 'PREM', opponent: 'Henbury & Rockleaze Reserves', venue: 'A', ground: 'Arnall Drive Playing Fields' },
   { date: '03/10/26', time: '14:00', competition: 'PREM', opponent: 'AFC Bohemia First', venue: 'H', ground: 'Elm Park, BS34 7PS' },
   { date: '31/10/26', time: '14:00', competition: 'PREM', opponent: 'Avonmouth Reserves', venue: 'A', ground: 'King George V Recreation Ground' },
@@ -474,7 +475,7 @@ export const youthU13Fixtures: YouthFixture[] = [
 export const aTeamFixtures: ReserveFixture[] = [
   { date: '05/09/26', time: '14:00', competition: 'BSD4', opponent: 'Parson Street Old Boys Reserves', venue: 'H', ground: 'BAWA Leisure, BS34 7RG', matchdayImage: matchdayReservesAsHomeOpenerPhoto, result: 'W 8-0' },
   { date: '12/09/26', time: '14:00', competition: 'BSD4', opponent: 'Hanham Abbotonians Reserves', venue: 'H', ground: 'BAWA Leisure' },
-  { date: '26/09/26', time: '14:00', competition: 'BSD4', opponent: 'Shaftesbury Crusade A', venue: 'A', ground: 'Pen Park Sports Ground' },
+  { date: '19/09/26', time: '14:00', competition: 'BSD4', opponent: 'Shaftesbury Crusade A', venue: 'A', ground: 'Pen Park Sports Ground, BS10 6WF', matchdayImage: matchdayLionShaftesburyPhoto },
   { date: '03/10/26', time: '14:00', competition: 'BSD4', opponent: 'Severn Beach Wanderers Reserves', venue: 'H', ground: 'BAWA Leisure' },
   { date: '10/10/26', time: '14:00', competition: 'BSD4', opponent: 'Eighty One United 1st', venue: 'H', ground: 'BAWA Leisure' },
   { date: '31/10/26', time: '14:00', competition: 'BSD4', opponent: 'St Vallier First', venue: 'A', ground: 'Lockleaze Sports Club' },
