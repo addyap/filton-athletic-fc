@@ -306,7 +306,7 @@ export type ReserveFixture = {
 export const reserveFixtures: ReserveFixture[] = [
   { date: '05/09/26', time: '14:00', competition: 'PREM', opponent: 'Cosmos UK Saturday First', venue: 'H', ground: 'Elm Park, BS34 7PS', matchdayImage: matchdayReservesAsHomeOpenerPhoto, result: 'L 1-3', scorers: 'R Evans', cards: 'R Whalen (Y), F Dorrington (Y)' },
   { date: '12/09/26', time: '14:00', competition: 'PREM', opponent: 'Almondsbury Reserves', venue: 'A', ground: 'Stoke Gifford Stadium', result: 'P-P' },
-  { date: '19/09/26', time: '14:00', competition: 'CC', opponent: 'Lion First', venue: 'H', ground: 'Elm Park, BS34 7PS', matchdayImage: matchdayLionShaftesburyPhoto },
+  { date: '19/09/26', time: '14:00', competition: 'CC', opponent: 'Lion First', venue: 'H', ground: 'Elm Park, BS34 7PS', matchdayImage: matchdayLionShaftesburyPhoto, result: 'W 3-0', scorers: 'A Williams, R Buss, K Terry' },
   { date: '26/09/26', time: '14:00', competition: 'PREM', opponent: 'Henbury & Rockleaze Reserves', venue: 'A', ground: 'Arnall Drive Playing Fields' },
   { date: '03/10/26', time: '14:00', competition: 'PREM', opponent: 'AFC Bohemia First', venue: 'H', ground: 'Elm Park, BS34 7PS' },
   { date: '31/10/26', time: '14:00', competition: 'PREM', opponent: 'Avonmouth Reserves', venue: 'A', ground: 'King George V Recreation Ground' },
