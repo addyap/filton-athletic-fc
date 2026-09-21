@@ -475,7 +475,7 @@ export const youthU13Fixtures: YouthFixture[] = [
 export const aTeamFixtures: ReserveFixture[] = [
   { date: '05/09/26', time: '14:00', competition: 'BSD4', opponent: 'Parson Street Old Boys Reserves', venue: 'H', ground: 'BAWA Leisure, BS34 7RG', matchdayImage: matchdayReservesAsHomeOpenerPhoto, result: 'W 8-0' },
   { date: '12/09/26', time: '14:00', competition: 'BSD4', opponent: 'Hanham Abbotonians Reserves', venue: 'H', ground: 'BAWA Leisure' },
-  { date: '19/09/26', time: '14:00', competition: 'BSD4', opponent: 'Shaftesbury Crusade A', venue: 'A', ground: 'Pen Park Sports Ground, BS10 6WF', matchdayImage: matchdayLionShaftesburyPhoto },
+  { date: '19/09/26', time: '14:00', competition: 'BSD4', opponent: 'Shaftesbury Crusade A', venue: 'A', ground: 'Pen Park Sports Ground, BS10 6WF', matchdayImage: matchdayLionShaftesburyPhoto, result: 'L 8-0' },
   { date: '03/10/26', time: '14:00', competition: 'BSD4', opponent: 'Severn Beach Wanderers Reserves', venue: 'H', ground: 'BAWA Leisure' },
   { date: '10/10/26', time: '14:00', competition: 'BSD4', opponent: 'Eighty One United 1st', venue: 'H', ground: 'BAWA Leisure' },
   { date: '31/10/26', time: '14:00', competition: 'BSD4', opponent: 'St Vallier First', venue: 'A', ground: 'Lockleaze Sports Club' },
