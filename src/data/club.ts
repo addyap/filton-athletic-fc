@@ -146,7 +146,7 @@ export const firstTeamFixtures: Fixture[] = [
   { date: '22/08/26', time: '15:00', competition: 'GCL', opponent: 'Tewkesbury Town', venue: 'H', matchdayImage: matchdayTewkesburyTownPhoto, result: 'D 1-1', scorers: 'OG', attendance: 60, officials: 'Michael Halford (referee), Kevin Slade, Martin Mills' },
   { date: '05/09/26', time: '15:00', competition: 'LJC', opponent: 'University of Bristol', venue: 'A', ground: 'Coombe Dingle Sports Complex, BS9 2BJ', matchdayImage: matchdayUniversityOfBristolLeagueCupPhoto, result: 'L 7-0' },
   { date: '15/09/26', time: '19:45', competition: 'GCL', opponent: 'Longlevens AFC', venue: 'A', ground: 'Saw Mills End, GL4 3DG', matchdayImage: matchdayLonglevensReservesPhoto, awayProgrammeUrl: 'https://3p4oewzml4cd0fez.public.blob.vercel-storage.com/Longlevens%20Reserves%20vs.%20%20Filton%20Athletic%20-%20Matchday%20Programme-2.pdf', result: 'L 2-1', scorers: 'S Hassan' },
-  { date: '26/09/26', time: '15:00', competition: 'GCL', opponent: 'Ruardean Hill Rangers', venue: 'H' },
+  { date: '26/09/26', time: '14:00', competition: 'GFA', opponent: 'Oldland Abbotonians Reserves', venue: 'A', ground: 'Aitchison Playing Fields, BS30 9SZ', result: 'W (walkover)' },
   { date: '03/10/26', time: '15:00', competition: 'GCL', opponent: 'Wick', venue: 'A', ground: 'Wick Playing Fields, BS30 5RJ', matchdayImage: weekendFixtures2026_10_03 },
   { date: '10/10/26', time: '15:00', competition: 'GCL', opponent: 'Totterdown United', venue: 'H' },
   { date: '31/10/26', time: '15:00', competition: 'GCL', opponent: 'Henbury & Rockleaze', venue: 'H' },
