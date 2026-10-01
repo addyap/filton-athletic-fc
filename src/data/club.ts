@@ -562,24 +562,24 @@ export type TableRow = { pos: number; team: string; p: number; w: number; d: num
 /**
  * 2026/27 league table — Marcliff Gloucestershire County Football League,
  * Division 1. Updated from FA Full-Time; the live/full version (with all results
- * and scorers) is linked from the table section. Snapshot after the 22 August 2026 fixtures.
+ * and scorers) is linked from the table section. Snapshot after the 26 September 2026 fixtures.
  */
 export const leagueTable: TableRow[] = [
-  { pos: 1, team: 'Quedgeley Wanderers', p: 4, w: 3, d: 1, l: 0, f: 18, a: 2, gd: 16, pts: 10 },
-  { pos: 2, team: 'Bishops Cleeve Development', p: 4, w: 2, d: 1, l: 1, f: 7, a: 5, gd: 2, pts: 7 },
-  { pos: 3, team: 'Broadwell Amateurs', p: 2, w: 2, d: 0, l: 0, f: 4, a: 0, gd: 4, pts: 6 },
-  { pos: 4, team: 'University of Bristol', p: 3, w: 2, d: 0, l: 1, f: 8, a: 5, gd: 3, pts: 6 },
-  { pos: 5, team: 'Henbury & Rockleaze', p: 2, w: 2, d: 0, l: 0, f: 5, a: 3, gd: 2, pts: 6 },
-  { pos: 6, team: 'Stoke Gifford SGS United', p: 5, w: 1, d: 3, l: 1, f: 6, a: 6, gd: 0, pts: 6 },
-  { pos: 7, team: 'Tewkesbury Town', p: 2, w: 1, d: 1, l: 0, f: 2, a: 1, gd: 1, pts: 4 },
-  { pos: 8, team: 'Frampton United', p: 3, w: 1, d: 1, l: 1, f: 6, a: 6, gd: 0, pts: 4 },
-  { pos: 9, team: 'Filton Athletic', p: 5, w: 0, d: 4, l: 1, f: 8, a: 9, gd: -1, pts: 4 },
-  { pos: 10, team: 'Longlevens Reserves', p: 4, w: 1, d: 1, l: 2, f: 6, a: 9, gd: -3, pts: 4 },
-  { pos: 11, team: 'Chalford', p: 3, w: 0, d: 3, l: 0, f: 2, a: 2, gd: 0, pts: 3 },
-  { pos: 12, team: 'AFC Mangotsfield Rocks', p: 4, w: 0, d: 2, l: 2, f: 4, a: 8, gd: -4, pts: 2 },
-  { pos: 13, team: 'Wick', p: 4, w: 0, d: 2, l: 2, f: 1, a: 7, gd: -6, pts: 2 },
-  { pos: 14, team: 'Totterdown United', p: 4, w: 0, d: 1, l: 3, f: 3, a: 10, gd: -7, pts: 1 },
-  { pos: 15, team: 'Ruardean Hill Rangers', p: 1, w: 0, d: 0, l: 1, f: 0, a: 7, gd: -7, pts: 0 },
+  { pos: 1, team: 'Quedgeley Wanderers', p: 7, w: 5, d: 2, l: 0, f: 26, a: 3, gd: 23, pts: 17 },
+  { pos: 2, team: 'Bishops Cleeve Development', p: 7, w: 4, d: 1, l: 2, f: 13, a: 10, gd: 3, pts: 13 },
+  { pos: 3, team: 'University of Bristol', p: 5, w: 4, d: 0, l: 1, f: 13, a: 5, gd: 8, pts: 12 },
+  { pos: 4, team: 'Broadwell Amateurs', p: 4, w: 4, d: 0, l: 0, f: 10, a: 2, gd: 8, pts: 12 },
+  { pos: 5, team: 'Henbury & Rockleaze', p: 6, w: 3, d: 1, l: 2, f: 10, a: 10, gd: 0, pts: 10 },
+  { pos: 6, team: 'Longlevens Reserves', p: 7, w: 3, d: 1, l: 3, f: 12, a: 14, gd: -2, pts: 10 },
+  { pos: 7, team: 'AFC Mangotsfield Rocks', p: 7, w: 2, d: 2, l: 3, f: 14, a: 12, gd: 2, pts: 8 },
+  { pos: 8, team: 'Tewkesbury Town', p: 3, w: 2, d: 1, l: 0, f: 4, a: 2, gd: 2, pts: 7 },
+  { pos: 9, team: 'Frampton United', p: 5, w: 1, d: 3, l: 1, f: 7, a: 7, gd: 0, pts: 6 },
+  { pos: 10, team: 'Stoke Gifford SGS United', p: 8, w: 1, d: 3, l: 4, f: 9, a: 14, gd: -5, pts: 6 },
+  { pos: 11, team: 'Wick', p: 8, w: 1, d: 3, l: 4, f: 7, a: 13, gd: -6, pts: 6 },
+  { pos: 12, team: 'Filton Athletic', p: 6, w: 0, d: 4, l: 2, f: 9, a: 11, gd: -2, pts: 4 },
+  { pos: 13, team: 'Chalford', p: 5, w: 0, d: 4, l: 1, f: 2, a: 5, gd: -3, pts: 4 },
+  { pos: 14, team: 'Ruardean Hill Rangers', p: 3, w: 1, d: 0, l: 2, f: 3, a: 12, gd: -9, pts: 3 },
+  { pos: 15, team: 'Totterdown United', p: 7, w: 0, d: 1, l: 6, f: 4, a: 23, gd: -19, pts: 1 },
 ]
 
 /** Archived final 2023/24 league table — Bristol & Suburban Premier Division. Filton finished 1st, Champions. */
@@ -641,36 +641,36 @@ export const leagueTable2025_26: TableRow[] = [
 
 /** 2026/27 reserve league table — Bristol & Suburban Premier Division, from FA Full-Time. */
 export const reserveTable: TableRow[] = [
-  { pos: 1, team: 'AFC Bohemia First', p: 1, w: 1, d: 0, l: 0, f: 6, a: 0, gd: 6, pts: 3 },
-  { pos: 2, team: 'Wessex Wanderers First', p: 1, w: 1, d: 0, l: 0, f: 6, a: 0, gd: 6, pts: 3 },
-  { pos: 3, team: 'Cosmos UK Saturday First', p: 1, w: 1, d: 0, l: 0, f: 3, a: 1, gd: 2, pts: 3 },
-  { pos: 4, team: 'Old Cothamians First', p: 1, w: 0, d: 1, l: 0, f: 3, a: 3, gd: 0, pts: 1 },
-  { pos: 5, team: 'Shaftesbury Crusade First', p: 1, w: 0, d: 1, l: 0, f: 3, a: 3, gd: 0, pts: 1 },
-  { pos: 6, team: 'Almondsbury Reserves', p: 1, w: 0, d: 1, l: 0, f: 0, a: 0, gd: 0, pts: 1 },
-  { pos: 7, team: 'Jamaica Bell, The First', p: 1, w: 0, d: 1, l: 0, f: 0, a: 0, gd: 0, pts: 1 },
-  { pos: 8, team: 'Avonmouth Reserves', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
-  { pos: 9, team: 'Mendip Broadwalk Res', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
-  { pos: 10, team: 'Southmead First', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
-  { pos: 11, team: 'Warmley Rangers First', p: 0, w: 0, d: 0, l: 0, f: 0, a: 0, gd: 0, pts: 0 },
-  { pos: 12, team: 'Filton Athletic Reserves', p: 1, w: 0, d: 0, l: 1, f: 1, a: 3, gd: -2, pts: 0 },
-  { pos: 13, team: 'Henbury & Rockleaze Reserves', p: 1, w: 0, d: 0, l: 1, f: 0, a: 6, gd: -6, pts: 0 },
-  { pos: 14, team: 'Phoenix NextGen First', p: 1, w: 0, d: 0, l: 1, f: 0, a: 6, gd: -6, pts: 0 },
+  { pos: 1, team: 'Wessex Wanderers First', p: 3, w: 3, d: 0, l: 0, f: 17, a: 3, gd: 14, pts: 9 },
+  { pos: 2, team: 'Shaftesbury Crusade First', p: 3, w: 2, d: 1, l: 0, f: 8, a: 4, gd: 4, pts: 7 },
+  { pos: 3, team: 'Southmead First', p: 2, w: 2, d: 0, l: 0, f: 9, a: 1, gd: 8, pts: 6 },
+  { pos: 4, team: 'Avonmouth Reserves', p: 2, w: 2, d: 0, l: 0, f: 7, a: 2, gd: 5, pts: 6 },
+  { pos: 5, team: 'AFC Bohemia First', p: 3, w: 1, d: 1, l: 1, f: 12, a: 8, gd: 4, pts: 4 },
+  { pos: 6, team: 'Almondsbury Reserves', p: 2, w: 1, d: 1, l: 0, f: 3, a: 0, gd: 3, pts: 4 },
+  { pos: 7, team: 'Mendip Broadwalk Res', p: 2, w: 1, d: 1, l: 0, f: 9, a: 7, gd: 2, pts: 4 },
+  { pos: 8, team: 'Jamaica Bell, The First', p: 3, w: 1, d: 1, l: 1, f: 3, a: 4, gd: -1, pts: 4 },
+  { pos: 9, team: 'Cosmos UK Saturday First', p: 3, w: 1, d: 0, l: 2, f: 6, a: 12, gd: -6, pts: 3 },
+  { pos: 10, team: 'Filton Athletic Reserves', p: 2, w: 0, d: 1, l: 1, f: 1, a: 3, gd: -2, pts: 1 },
+  { pos: 11, team: 'Old Cothamians First', p: 3, w: 0, d: 1, l: 2, f: 3, a: 8, gd: -5, pts: 1 },
+  { pos: 12, team: 'Henbury & Rockleaze Reserves', p: 3, w: 0, d: 1, l: 2, f: 0, a: 8, gd: -8, pts: 1 },
+  { pos: 13, team: 'Warmley Rangers First', p: 2, w: 0, d: 0, l: 2, f: 3, a: 10, gd: -7, pts: 0 },
+  { pos: 14, team: 'Phoenix NextGen First', p: 3, w: 0, d: 0, l: 3, f: 0, a: 11, gd: -11, pts: 0 },
 ]
 
 /** 2026/27 A's division table — Bristol & Suburban League, Division Four, from FA Full-Time. */
 export const asTeamTable: TableRow[] = [
-  { pos: 1, team: 'Filton Athletic A', p: 1, w: 1, d: 0, l: 0, f: 8, a: 0, gd: 8, pts: 3 },
-  { pos: 2, team: 'Stoke Gifford SGS United A', p: 1, w: 1, d: 0, l: 0, f: 9, a: 2, gd: 7, pts: 3 },
-  { pos: 3, team: 'Avonmouth A', p: 1, w: 1, d: 0, l: 0, f: 3, a: 1, gd: 2, pts: 3 },
-  { pos: 4, team: 'Shaftesbury Crusade A', p: 1, w: 1, d: 0, l: 0, f: 4, a: 3, gd: 1, pts: 3 },
-  { pos: 5, team: 'Eighty One United 1st', p: 1, w: 1, d: 0, l: 0, f: 3, a: 2, gd: 1, pts: 3 },
-  { pos: 6, team: 'Imperial A', p: 1, w: 0, d: 1, l: 0, f: 1, a: 1, gd: 0, pts: 1 },
-  { pos: 7, team: 'Severn Beach Wanderers Reserves', p: 1, w: 0, d: 1, l: 0, f: 1, a: 1, gd: 0, pts: 1 },
-  { pos: 8, team: 'Cutters Friday Reserves', p: 1, w: 0, d: 0, l: 1, f: 3, a: 4, gd: -1, pts: 0 },
-  { pos: 9, team: 'St Vallier First', p: 1, w: 0, d: 0, l: 1, f: 2, a: 3, gd: -1, pts: 0 },
-  { pos: 10, team: 'Made For Ever Development', p: 1, w: 0, d: 0, l: 1, f: 1, a: 3, gd: -2, pts: 0 },
-  { pos: 11, team: 'Hanham Abbotonians Reserves', p: 1, w: 0, d: 0, l: 1, f: 2, a: 9, gd: -7, pts: 0 },
-  { pos: 12, team: 'Parson Street Old Boys Reserves', p: 1, w: 0, d: 0, l: 1, f: 0, a: 8, gd: -8, pts: 0 },
+  { pos: 1, team: 'Shaftesbury Crusade A', p: 3, w: 3, d: 0, l: 0, f: 19, a: 3, gd: 16, pts: 9 },
+  { pos: 2, team: 'Stoke Gifford SGS United A', p: 3, w: 3, d: 0, l: 0, f: 16, a: 4, gd: 12, pts: 9 },
+  { pos: 3, team: 'St Vallier First', p: 3, w: 2, d: 0, l: 1, f: 17, a: 7, gd: 10, pts: 6 },
+  { pos: 4, team: 'Eighty One United 1st', p: 2, w: 2, d: 0, l: 0, f: 8, a: 4, gd: 4, pts: 6 },
+  { pos: 5, team: 'Filton Athletic A', p: 3, w: 2, d: 0, l: 1, f: 8, a: 8, gd: 0, pts: 6 },
+  { pos: 6, team: 'Cutters Friday Reserves', p: 2, w: 1, d: 0, l: 1, f: 7, a: 7, gd: 0, pts: 3 },
+  { pos: 7, team: 'Avonmouth A', p: 3, w: 1, d: 0, l: 2, f: 10, a: 12, gd: -2, pts: 3 },
+  { pos: 8, team: 'Severn Beach Wanderers Reserves', p: 3, w: 0, d: 2, l: 1, f: 2, a: 10, gd: -8, pts: 2 },
+  { pos: 9, team: 'Imperial A', p: 2, w: 0, d: 1, l: 1, f: 1, a: 4, gd: -3, pts: 1 },
+  { pos: 10, team: 'Hanham Abbotonians Reserves', p: 3, w: 0, d: 1, l: 2, f: 3, a: 10, gd: -7, pts: 1 },
+  { pos: 11, team: 'Made For Ever Development', p: 2, w: 0, d: 0, l: 2, f: 3, a: 8, gd: -5, pts: 0 },
+  { pos: 12, team: 'Parson Street Old Boys Reserves', p: 3, w: 0, d: 0, l: 3, f: 2, a: 19, gd: -17, pts: 0 },
 ]
 
 /** Archived final 2024/25 reserve league table — Division Four. */
