@@ -149,6 +149,7 @@ export const firstTeamFixtures: Fixture[] = [
   { date: '26/09/26', time: '14:00', competition: 'GFA', opponent: 'Oldland Abbotonians Reserves', venue: 'A', ground: 'Aitchison Playing Fields, BS30 9SZ', result: 'W (walkover)' },
   { date: '03/10/26', time: '15:00', competition: 'GCL', opponent: 'Wick', venue: 'A', ground: 'Wick Playing Fields, BS30 5RJ', matchdayImage: weekendFixtures2026_10_03 },
   { date: '10/10/26', time: '15:00', competition: 'GCL', opponent: 'Totterdown United', venue: 'H' },
+  { date: '17/10/26', time: '14:00', competition: 'GFA', opponent: 'Shirehampton Reserves', venue: 'H' },
   { date: '31/10/26', time: '15:00', competition: 'GCL', opponent: 'Henbury & Rockleaze', venue: 'H' },
   { date: '07/11/26', time: '14:00', competition: 'GCL', opponent: 'Frampton United', venue: 'H' },
   { date: '21/11/26', time: '14:00', competition: 'GCL', opponent: 'Chalford', venue: 'A' },
@@ -158,7 +159,7 @@ export const firstTeamFixtures: Fixture[] = [
   { date: '19/12/26', time: '14:00', competition: 'GCL', opponent: 'AFC Mangotsfield Rocks', venue: 'H' },
   { date: '26/12/26', time: '14:00', competition: 'GCL', opponent: 'Bishops Cleeve Development', venue: 'H' },
   { date: '02/01/27', time: '14:00', competition: 'GCL', opponent: 'Tewkesbury Town', venue: 'A' },
-  { date: '09/01/27', time: '14:00', competition: 'GCL', opponent: 'Stoke Gifford SGS United', venue: 'A' },
+  { date: '09/01/27', time: '15:00', competition: 'GCL', opponent: 'Stoke Gifford SGS United', venue: 'A' },
   { date: '16/01/27', time: '14:00', competition: 'GCL', opponent: 'Longlevens AFC', venue: 'H' },
   { date: '23/01/27', time: '14:00', competition: 'GCL', opponent: 'Ruardean Hill Rangers', venue: 'A' },
   { date: '30/01/27', time: '14:00', competition: 'GCL', opponent: 'Wick', venue: 'H' },
@@ -166,8 +167,9 @@ export const firstTeamFixtures: Fixture[] = [
   { date: '27/02/27', time: '14:00', competition: 'GCL', opponent: 'Henbury & Rockleaze', venue: 'A' },
   { date: '06/03/27', time: '15:00', competition: 'GCL', opponent: 'Frampton United', venue: 'A' },
   { date: '20/03/27', time: '15:00', competition: 'GCL', opponent: 'Quedgeley Wanderers', venue: 'A' },
-  { date: '27/03/27', time: '14:00', competition: 'GCL', opponent: 'Broadwell Amateurs', venue: 'H' },
+  { date: '27/03/27', time: '15:00', competition: 'GCL', opponent: 'Broadwell Amateurs', venue: 'H' },
   { date: '03/04/27', time: '15:00', competition: 'GCL', opponent: 'Chalford', venue: 'H' },
+  { date: '10/04/27', time: '15:00', competition: 'GCL', opponent: 'Ruardean Hill Rangers', venue: 'H' },
 ]
 
 /**
