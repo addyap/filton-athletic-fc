@@ -65,6 +65,7 @@ const competitionNames: Record<string, string> = {
   GCL: 'Marcliff Gloucestershire County Football League',
   LJC: 'Les James League Cup',
   GFA: 'GFA Senior Amateur Cup',
+  CC: 'County Cup',
   SEN: 'Bristol & Suburban Senior League',
   ABC: 'Alf Bosley Cup',
   BSP: 'Bristol & Suburban Premier Division',
