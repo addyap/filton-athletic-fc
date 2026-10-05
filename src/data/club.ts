@@ -147,7 +147,7 @@ export const firstTeamFixtures: Fixture[] = [
   { date: '05/09/26', time: '15:00', competition: 'LJC', opponent: 'University of Bristol', venue: 'A', ground: 'Coombe Dingle Sports Complex, BS9 2BJ', matchdayImage: matchdayUniversityOfBristolLeagueCupPhoto, result: 'L 7-0' },
   { date: '15/09/26', time: '19:45', competition: 'GCL', opponent: 'Longlevens AFC', venue: 'A', ground: 'Saw Mills End, GL4 3DG', matchdayImage: matchdayLonglevensReservesPhoto, awayProgrammeUrl: 'https://3p4oewzml4cd0fez.public.blob.vercel-storage.com/Longlevens%20Reserves%20vs.%20%20Filton%20Athletic%20-%20Matchday%20Programme-2.pdf', result: 'L 2-1', scorers: 'S Hassan' },
   { date: '26/09/26', time: '14:00', competition: 'CC', opponent: 'Oldland Abbotonians Reserves', venue: 'A', ground: 'Aitchison Playing Fields, BS30 9SZ', result: 'W (walkover)' },
-  { date: '03/10/26', time: '15:00', competition: 'GCL', opponent: 'Wick', venue: 'A', ground: 'Wick Playing Fields, BS30 5RJ', matchdayImage: weekendFixtures2026_10_03 },
+  { date: '03/10/26', time: '15:00', competition: 'GCL', opponent: 'Wick', venue: 'A', ground: 'Wick Playing Fields, BS30 5RJ', matchdayImage: weekendFixtures2026_10_03, result: 'W 2-1', scorers: 'T Anderson, T Merrett', attendance: 52 },
   { date: '10/10/26', time: '15:00', competition: 'GCL', opponent: 'Totterdown United', venue: 'H' },
   { date: '17/10/26', time: '14:00', competition: 'CC', opponent: 'Shirehampton Reserves', venue: 'H' },
   { date: '31/10/26', time: '15:00', competition: 'GCL', opponent: 'Henbury & Rockleaze', venue: 'H' },
@@ -311,7 +311,7 @@ export const reserveFixtures: ReserveFixture[] = [
   { date: '12/09/26', time: '14:00', competition: 'PREM', opponent: 'Almondsbury Reserves', venue: 'A', ground: 'Stoke Gifford Stadium', result: 'P-P' },
   { date: '19/09/26', time: '14:00', competition: 'CC', opponent: 'Lion First', venue: 'H', ground: 'Elm Park, BS34 7PS', matchdayImage: matchdayLionShaftesburyPhoto, result: 'W 3-0', scorers: 'A Williams, R Buss, K Terry' },
   { date: '26/09/26', time: '14:00', competition: 'PREM', opponent: 'Henbury & Rockleaze Reserves', venue: 'H', ground: 'Elm Park, BS34 7PS', result: 'D 0-0' },
-  { date: '03/10/26', time: '14:00', competition: 'PREM', opponent: 'AFC Bohemia First', venue: 'H', ground: 'Elm Park, BS34 7PS', matchdayImage: weekendFixtures2026_10_03 },
+  { date: '03/10/26', time: '14:00', competition: 'PREM', opponent: 'AFC Bohemia First', venue: 'H', ground: 'Elm Park, BS34 7PS', matchdayImage: weekendFixtures2026_10_03, result: 'D 3-3' },
   { date: '17/10/26', time: '14:00', competition: 'CC', opponent: 'Cribbs Reserves', venue: 'A', ground: 'Cribbs FC' },
   { date: '31/10/26', time: '14:00', competition: 'PREM', opponent: 'Avonmouth Reserves', venue: 'A', ground: 'King George V Recreation Ground' },
   { date: '07/11/26', time: '14:00', competition: 'PREM', opponent: 'Warmley Rangers First', venue: 'A', ground: 'Warmley Rangers FC' },
@@ -480,7 +480,7 @@ export const aTeamFixtures: ReserveFixture[] = [
   { date: '05/09/26', time: '14:00', competition: 'BSD4', opponent: 'Parson Street Old Boys Reserves', venue: 'H', ground: 'BAWA Leisure, BS34 7RG', matchdayImage: matchdayReservesAsHomeOpenerPhoto, result: 'W 8-0' },
   { date: '12/09/26', time: '14:00', competition: 'BSD4', opponent: 'Hanham Abbotonians Reserves', venue: 'H', ground: 'BAWA Leisure', result: 'W (walkover)' },
   { date: '19/09/26', time: '14:00', competition: 'BSD4', opponent: 'Shaftesbury Crusade A', venue: 'A', ground: 'Pen Park Sports Ground, BS10 6WF', matchdayImage: matchdayLionShaftesburyPhoto, result: 'L 8-0' },
-  { date: '03/10/26', time: '14:00', competition: 'BSD4', opponent: 'Severn Beach Wanderers Reserves', venue: 'H', ground: 'BAWA Leisure, BS34 7RG', matchdayImage: weekendFixtures2026_10_03 },
+  { date: '03/10/26', time: '14:00', competition: 'BSD4', opponent: 'Severn Beach Wanderers Reserves', venue: 'H', ground: 'BAWA Leisure, BS34 7RG', matchdayImage: weekendFixtures2026_10_03, result: 'L (walkover)' },
   { date: '10/10/26', time: '14:00', competition: 'BSD4', opponent: 'Eighty One United 1st', venue: 'H', ground: 'BAWA Leisure' },
   { date: '24/10/26', time: '14:00', competition: 'CC', opponent: 'Iron Acton A', venue: 'H', ground: 'BAWA Leisure' },
   { date: '31/10/26', time: '14:00', competition: 'BSD4', opponent: 'St Vallier First', venue: 'A', ground: 'Lockleaze Sports Club' },
@@ -562,24 +562,24 @@ export type TableRow = { pos: number; team: string; p: number; w: number; d: num
 /**
  * 2026/27 league table — Marcliff Gloucestershire County Football League,
  * Division 1. Updated from FA Full-Time; the live/full version (with all results
- * and scorers) is linked from the table section. Snapshot after the 26 September 2026 fixtures.
+ * and scorers) is linked from the table section. Snapshot after the 3 October 2026 fixtures.
  */
 export const leagueTable: TableRow[] = [
-  { pos: 1, team: 'Quedgeley Wanderers', p: 7, w: 5, d: 2, l: 0, f: 26, a: 3, gd: 23, pts: 17 },
-  { pos: 2, team: 'Bishops Cleeve Development', p: 7, w: 4, d: 1, l: 2, f: 13, a: 10, gd: 3, pts: 13 },
-  { pos: 3, team: 'University of Bristol', p: 5, w: 4, d: 0, l: 1, f: 13, a: 5, gd: 8, pts: 12 },
-  { pos: 4, team: 'Broadwell Amateurs', p: 4, w: 4, d: 0, l: 0, f: 10, a: 2, gd: 8, pts: 12 },
-  { pos: 5, team: 'Henbury & Rockleaze', p: 6, w: 3, d: 1, l: 2, f: 10, a: 10, gd: 0, pts: 10 },
+  { pos: 1, team: 'Quedgeley Wanderers', p: 8, w: 6, d: 2, l: 0, f: 27, a: 3, gd: 24, pts: 20 },
+  { pos: 2, team: 'Bishops Cleeve Development', p: 8, w: 5, d: 1, l: 2, f: 17, a: 13, gd: 4, pts: 16 },
+  { pos: 3, team: 'Broadwell Amateurs', p: 5, w: 5, d: 0, l: 0, f: 16, a: 4, gd: 12, pts: 15 },
+  { pos: 4, team: 'University of Bristol', p: 6, w: 5, d: 0, l: 1, f: 16, a: 7, gd: 9, pts: 15 },
+  { pos: 5, team: 'Henbury & Rockleaze', p: 7, w: 3, d: 1, l: 3, f: 12, a: 13, gd: -1, pts: 10 },
   { pos: 6, team: 'Longlevens Reserves', p: 7, w: 3, d: 1, l: 3, f: 12, a: 14, gd: -2, pts: 10 },
   { pos: 7, team: 'AFC Mangotsfield Rocks', p: 7, w: 2, d: 2, l: 3, f: 14, a: 12, gd: 2, pts: 8 },
   { pos: 8, team: 'Tewkesbury Town', p: 3, w: 2, d: 1, l: 0, f: 4, a: 2, gd: 2, pts: 7 },
-  { pos: 9, team: 'Frampton United', p: 5, w: 1, d: 3, l: 1, f: 7, a: 7, gd: 0, pts: 6 },
-  { pos: 10, team: 'Stoke Gifford SGS United', p: 8, w: 1, d: 3, l: 4, f: 9, a: 14, gd: -5, pts: 6 },
-  { pos: 11, team: 'Wick', p: 8, w: 1, d: 3, l: 4, f: 7, a: 13, gd: -6, pts: 6 },
-  { pos: 12, team: 'Filton Athletic', p: 6, w: 0, d: 4, l: 2, f: 9, a: 11, gd: -2, pts: 4 },
-  { pos: 13, team: 'Chalford', p: 5, w: 0, d: 4, l: 1, f: 2, a: 5, gd: -3, pts: 4 },
-  { pos: 14, team: 'Ruardean Hill Rangers', p: 3, w: 1, d: 0, l: 2, f: 3, a: 12, gd: -9, pts: 3 },
-  { pos: 15, team: 'Totterdown United', p: 7, w: 0, d: 1, l: 6, f: 4, a: 23, gd: -19, pts: 1 },
+  { pos: 9, team: 'Filton Athletic', p: 7, w: 1, d: 4, l: 2, f: 11, a: 12, gd: -1, pts: 7 },
+  { pos: 10, team: 'Frampton United', p: 6, w: 1, d: 3, l: 2, f: 9, a: 13, gd: -4, pts: 6 },
+  { pos: 11, team: 'Stoke Gifford SGS United', p: 9, w: 1, d: 3, l: 5, f: 11, a: 18, gd: -7, pts: 6 },
+  { pos: 12, team: 'Wick', p: 9, w: 1, d: 3, l: 5, f: 8, a: 15, gd: -7, pts: 6 },
+  { pos: 13, team: 'Ruardean Hill Rangers', p: 4, w: 2, d: 0, l: 2, f: 7, a: 14, gd: -7, pts: 6 },
+  { pos: 14, team: 'Chalford', p: 6, w: 0, d: 4, l: 2, f: 2, a: 6, gd: -4, pts: 4 },
+  { pos: 15, team: 'Totterdown United', p: 8, w: 0, d: 1, l: 7, f: 7, a: 27, gd: -20, pts: 1 },
 ]
 
 /** Archived final 2023/24 league table — Bristol & Suburban Premier Division. Filton finished 1st, Champions. */
