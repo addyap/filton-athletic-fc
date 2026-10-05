@@ -46,6 +46,15 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'matchday-roundup-3-october',
+    title: 'Saturday round-up: First Team win 2-1 at Wick',
+    date: '2026-10-03',
+    teams: ['first-team', 'reserves', 'as'],
+    excerpt:
+      'A good afternoon on the road for the First Team, who came away from Wick with a 2-1 win thanks to goals from Anderson and Merrett in front of 52. The Reserves shared six at Elm Park, drawing 3-3 with AFC Bohemia First through Matty Hoare, Fin Dorrington and Reece Evans. The A’s went down to a walkover at home to Severn Beach Wanderers Reserves. #FATS #UTF',
+    link: { href: '/#club-calendar', label: 'See the latest results and tables' },
+  },
+  {
     slug: 'matchday-roundup-5-september',
     title: 'Saturday round-up: A’s open with an 8-0 win',
     date: '2026-09-05',
