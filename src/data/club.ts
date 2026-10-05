@@ -311,7 +311,7 @@ export const reserveFixtures: ReserveFixture[] = [
   { date: '12/09/26', time: '14:00', competition: 'PREM', opponent: 'Almondsbury Reserves', venue: 'A', ground: 'Stoke Gifford Stadium', result: 'P-P' },
   { date: '19/09/26', time: '14:00', competition: 'CC', opponent: 'Lion First', venue: 'H', ground: 'Elm Park, BS34 7PS', matchdayImage: matchdayLionShaftesburyPhoto, result: 'W 3-0', scorers: 'A Williams, R Buss, K Terry' },
   { date: '26/09/26', time: '14:00', competition: 'PREM', opponent: 'Henbury & Rockleaze Reserves', venue: 'H', ground: 'Elm Park, BS34 7PS', result: 'D 0-0' },
-  { date: '03/10/26', time: '14:00', competition: 'PREM', opponent: 'AFC Bohemia First', venue: 'H', ground: 'Elm Park, BS34 7PS', matchdayImage: weekendFixtures2026_10_03, result: 'D 3-3' },
+  { date: '03/10/26', time: '14:00', competition: 'PREM', opponent: 'AFC Bohemia First', venue: 'H', ground: 'Elm Park, BS34 7PS', matchdayImage: weekendFixtures2026_10_03, result: 'D 3-3', scorers: 'M Hoare, F Dorrington, R Evans' },
   { date: '17/10/26', time: '14:00', competition: 'CC', opponent: 'Cribbs Reserves', venue: 'A', ground: 'Cribbs FC' },
   { date: '31/10/26', time: '14:00', competition: 'PREM', opponent: 'Avonmouth Reserves', venue: 'A', ground: 'King George V Recreation Ground' },
   { date: '07/11/26', time: '14:00', competition: 'PREM', opponent: 'Warmley Rangers First', venue: 'A', ground: 'Warmley Rangers FC' },
