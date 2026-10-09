@@ -4,6 +4,7 @@ import matchdayBishopsCleeveDevelopmentPhoto from '../assets/img/matchday-bishop
 import matchdayUniversityOfBristolLeagueCupPhoto from '../assets/img/matchday-university-of-bristol-league-cup.jpg'
 import matchdayLonglevensReservesPhoto from '../assets/img/matchday-longlevens-reserves.jpg'
 import weekendFixtures2026_10_03 from '../assets/img/weekend-fixtures-2026-10-03.jpg'
+import weekendFixtures2026_10_10 from '../assets/img/weekend-fixtures-2026-10-10.jpg'
 import matchdayReservesAsHomeOpenerPhoto from '../assets/img/matchday-reserves-as-home-opener.jpg'
 import matchdayLionShaftesburyPhoto from '../assets/img/matchday-lion-shaftesbury.jpg'
 import matchStokeGifford1 from '../assets/img/match-stoke-gifford-1.webp'
@@ -148,7 +149,7 @@ export const firstTeamFixtures: Fixture[] = [
   { date: '15/09/26', time: '19:45', competition: 'GCL', opponent: 'Longlevens AFC', venue: 'A', ground: 'Saw Mills End, GL4 3DG', matchdayImage: matchdayLonglevensReservesPhoto, awayProgrammeUrl: 'https://3p4oewzml4cd0fez.public.blob.vercel-storage.com/Longlevens%20Reserves%20vs.%20%20Filton%20Athletic%20-%20Matchday%20Programme-2.pdf', result: 'L 2-1', scorers: 'S Hassan' },
   { date: '26/09/26', time: '14:00', competition: 'CC', opponent: 'Oldland Abbotonians Reserves', venue: 'A', ground: 'Aitchison Playing Fields, BS30 9SZ', result: 'W (walkover)' },
   { date: '03/10/26', time: '15:00', competition: 'GCL', opponent: 'Wick', venue: 'A', ground: 'Wick Playing Fields, BS30 5RJ', matchdayImage: weekendFixtures2026_10_03, result: 'W 2-1', scorers: 'T Anderson, T Merrett', attendance: 52 },
-  { date: '10/10/26', time: '15:00', competition: 'GCL', opponent: 'Totterdown United', venue: 'H' },
+  { date: '10/10/26', time: '15:00', competition: 'GCL', opponent: 'Totterdown United', venue: 'H', matchdayImage: weekendFixtures2026_10_10 },
   { date: '17/10/26', time: '14:00', competition: 'CC', opponent: 'Shirehampton Reserves', venue: 'H' },
   { date: '31/10/26', time: '15:00', competition: 'GCL', opponent: 'Henbury & Rockleaze', venue: 'H' },
   { date: '07/11/26', time: '14:00', competition: 'GCL', opponent: 'Frampton United', venue: 'H' },
@@ -481,7 +482,7 @@ export const aTeamFixtures: ReserveFixture[] = [
   { date: '12/09/26', time: '14:00', competition: 'BSD4', opponent: 'Hanham Abbotonians Reserves', venue: 'H', ground: 'BAWA Leisure', result: 'W (walkover)' },
   { date: '19/09/26', time: '14:00', competition: 'BSD4', opponent: 'Shaftesbury Crusade A', venue: 'A', ground: 'Pen Park Sports Ground, BS10 6WF', matchdayImage: matchdayLionShaftesburyPhoto, result: 'L 8-0' },
   { date: '03/10/26', time: '14:00', competition: 'BSD4', opponent: 'Severn Beach Wanderers Reserves', venue: 'H', ground: 'BAWA Leisure, BS34 7RG', matchdayImage: weekendFixtures2026_10_03, result: 'L (walkover)' },
-  { date: '10/10/26', time: '14:00', competition: 'BSD4', opponent: 'Eighty One United 1st', venue: 'H', ground: 'BAWA Leisure' },
+  { date: '10/10/26', time: '14:00', competition: 'BSD4', opponent: 'Eighty One United 1st', venue: 'H', ground: 'BAWA Leisure, BS34 7RG', matchdayImage: weekendFixtures2026_10_10 },
   { date: '24/10/26', time: '14:00', competition: 'CC', opponent: 'Iron Acton A', venue: 'H', ground: 'BAWA Leisure' },
   { date: '31/10/26', time: '14:00', competition: 'BSD4', opponent: 'St Vallier First', venue: 'A', ground: 'Lockleaze Sports Club' },
   { date: '07/11/26', time: '14:00', competition: 'BSD4', opponent: 'Imperial A', venue: 'A', ground: 'Venue TBC' },
