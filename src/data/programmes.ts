@@ -1390,6 +1390,11 @@ const programmeExtras2026_27: Record<string, ProgrammeExtras> = {
     pdfUrl:
       'https://3p4oewzml4cd0fez.public.blob.vercel-storage.com/Filton%20Athletic%20-%20Match%20Day%20Programme%20-%2003.pdf',
   },
+  'totterdown-united': {
+    number: 4,
+    pdfUrl:
+      'https://3p4oewzml4cd0fez.public.blob.vercel-storage.com/Filton%20Athletic%20-%20Match%20Day%20Programme%20-%2004.pdf',
+  },
 }
 
 /** 2026/27 home first-team fixtures, each turned into a programme, in date order. */
