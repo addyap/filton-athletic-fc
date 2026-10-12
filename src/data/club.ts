@@ -149,7 +149,7 @@ export const firstTeamFixtures: Fixture[] = [
   { date: '15/09/26', time: '19:45', competition: 'GCL', opponent: 'Longlevens AFC', venue: 'A', ground: 'Saw Mills End, GL4 3DG', matchdayImage: matchdayLonglevensReservesPhoto, awayProgrammeUrl: 'https://3p4oewzml4cd0fez.public.blob.vercel-storage.com/Longlevens%20Reserves%20vs.%20%20Filton%20Athletic%20-%20Matchday%20Programme-2.pdf', result: 'L 2-1', scorers: 'S Hassan' },
   { date: '26/09/26', time: '14:00', competition: 'CC', opponent: 'Oldland Abbotonians Reserves', venue: 'A', ground: 'Aitchison Playing Fields, BS30 9SZ', result: 'W (walkover)' },
   { date: '03/10/26', time: '15:00', competition: 'GCL', opponent: 'Wick', venue: 'A', ground: 'Wick Playing Fields, BS30 5RJ', matchdayImage: weekendFixtures2026_10_03, result: 'W 2-1', scorers: 'T Anderson, T Merrett', attendance: 52 },
-  { date: '10/10/26', time: '15:00', competition: 'GCL', opponent: 'Totterdown United', venue: 'H', matchdayImage: weekendFixtures2026_10_10, result: 'D 2-2' },
+  { date: '10/10/26', time: '15:00', competition: 'GCL', opponent: 'Totterdown United', venue: 'H', matchdayImage: weekendFixtures2026_10_10, result: 'D 2-2', scorers: 'T Merrett, F Venables' },
   { date: '17/10/26', time: '14:00', competition: 'CC', opponent: 'Shirehampton Reserves', venue: 'H' },
   { date: '31/10/26', time: '15:00', competition: 'GCL', opponent: 'Henbury & Rockleaze', venue: 'H' },
   { date: '07/11/26', time: '14:00', competition: 'GCL', opponent: 'Frampton United', venue: 'H' },
