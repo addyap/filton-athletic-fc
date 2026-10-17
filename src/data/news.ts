@@ -47,11 +47,11 @@ export type NewsItem = {
 export const news: NewsItem[] = [
   {
     slug: 'matchday-roundup-17-october',
-    title: 'Saturday round-up: Cup exits for the Reserves and A’s',
+    title: 'Saturday round-up: Cup wins for the First Team and A’s',
     date: '2026-10-17',
-    teams: ['reserves', 'as'],
+    teams: ['first-team', 'reserves', 'as'],
     excerpt:
-      'A tough afternoon in the cups. The Reserves went out of the GFA Senior Amateur Cup after a 5-0 defeat away at Cribbs Reserves, and the A’s were edged out 2-1 at Cosmos UK Saturday Reserves in the Len Bartlett Cup, with all three goals coming before half-time. The First Team’s County Cup tie with Shirehampton Reserves at Elm Park will follow once the result is confirmed. #FATS #UTF',
+      'A good day in the cups. The First Team beat Shirehampton Reserves 3-1 at Elm Park to go through in the County Cup, and the A’s won 5-2 away at Cosmos UK Saturday Reserves in the Len Bartlett Cup, with all seven goals coming before half-time. It was a tougher afternoon for the Reserves, who went out of the GFA Senior Amateur Cup after a 5-0 defeat at Cribbs Reserves. #FATS #UTF',
     link: { href: '/#club-calendar', label: 'See the latest results and tables' },
   },
   {
