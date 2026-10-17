@@ -151,7 +151,7 @@ export const firstTeamFixtures: Fixture[] = [
   { date: '26/09/26', time: '14:00', competition: 'CC', opponent: 'Oldland Abbotonians Reserves', venue: 'A', ground: 'Aitchison Playing Fields, BS30 9SZ', result: 'W (walkover)' },
   { date: '03/10/26', time: '15:00', competition: 'GCL', opponent: 'Wick', venue: 'A', ground: 'Wick Playing Fields, BS30 5RJ', matchdayImage: weekendFixtures2026_10_03, result: 'W 2-1', scorers: 'T Anderson, T Merrett', attendance: 52 },
   { date: '10/10/26', time: '15:00', competition: 'GCL', opponent: 'Totterdown United', venue: 'H', matchdayImage: weekendFixtures2026_10_10, result: 'D 2-2', scorers: 'T Merrett, F Venables' },
-  { date: '17/10/26', time: '14:00', competition: 'CC', opponent: 'Shirehampton Reserves', venue: 'H', matchdayImage: weekendFixtures2026_10_17, result: 'W 3-1' },
+  { date: '17/10/26', time: '14:00', competition: 'CC', opponent: 'Shirehampton Reserves', venue: 'H', matchdayImage: weekendFixtures2026_10_17, result: 'W 3-1', scorers: 'F Venables, F Fraser, T Anderson' },
   { date: '31/10/26', time: '15:00', competition: 'GCL', opponent: 'Henbury & Rockleaze', venue: 'H' },
   { date: '07/11/26', time: '14:00', competition: 'GCL', opponent: 'Frampton United', venue: 'H' },
   { date: '21/11/26', time: '14:00', competition: 'GCL', opponent: 'Chalford', venue: 'A' },

@@ -51,7 +51,7 @@ export const news: NewsItem[] = [
     date: '2026-10-17',
     teams: ['first-team', 'reserves', 'as'],
     excerpt:
-      'A good day in the cups. The First Team beat Shirehampton Reserves 3-1 at Elm Park to go through in the County Cup, and the A’s won 5-2 away at Cosmos UK Saturday Reserves in the Len Bartlett Cup, with all seven goals coming before half-time. It was a tougher afternoon for the Reserves, who went out of the GFA Senior Amateur Cup after a 5-0 defeat at Cribbs Reserves. #FATS #UTF',
+      'A good day in the cups. The First Team beat Shirehampton Reserves 3-1 at Elm Park to go through in the County Cup, with Venables, Fraser and Anderson on the mark, and the A’s won 5-2 away at Cosmos UK Saturday Reserves in the Len Bartlett Cup, with all seven goals coming before half-time. It was a tougher afternoon for the Reserves, who went out of the GFA Senior Amateur Cup after a 5-0 defeat at Cribbs Reserves. #FATS #UTF',
     link: { href: '/#club-calendar', label: 'See the latest results and tables' },
   },
   {
