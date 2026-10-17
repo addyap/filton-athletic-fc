@@ -484,7 +484,7 @@ export const aTeamFixtures: ReserveFixture[] = [
   { date: '19/09/26', time: '14:00', competition: 'BSD4', opponent: 'Shaftesbury Crusade A', venue: 'A', ground: 'Pen Park Sports Ground, BS10 6WF', matchdayImage: matchdayLionShaftesburyPhoto, result: 'L 8-0' },
   { date: '03/10/26', time: '14:00', competition: 'BSD4', opponent: 'Severn Beach Wanderers Reserves', venue: 'H', ground: 'BAWA Leisure, BS34 7RG', matchdayImage: weekendFixtures2026_10_03, result: 'L (walkover)' },
   { date: '10/10/26', time: '14:00', competition: 'BSD4', opponent: 'Eighty One United 1st', venue: 'H', ground: 'BAWA Leisure, BS34 7RG', matchdayImage: weekendFixtures2026_10_10, result: 'L 0-4' },
-  { date: '17/10/26', time: '14:00', competition: 'CC', opponent: 'Cosmos UK Reserves', venue: 'A', ground: 'Somerdale Pavilion, BS31 2FW', matchdayImage: weekendFixtures2026_10_17 },
+  { date: '17/10/26', time: '14:00', competition: 'LBC', opponent: 'Cosmos UK Saturday Reserves', venue: 'A', ground: 'Somerdale Pavilion, BS31 2FW', matchdayImage: weekendFixtures2026_10_17, result: 'L 2-1' },
   { date: '24/10/26', time: '14:00', competition: 'CC', opponent: 'Iron Acton A', venue: 'H', ground: 'BAWA Leisure' },
   { date: '31/10/26', time: '14:00', competition: 'BSD4', opponent: 'St Vallier First', venue: 'A', ground: 'Lockleaze Sports Club' },
   { date: '07/11/26', time: '14:00', competition: 'BSD4', opponent: 'Imperial A', venue: 'A', ground: 'Venue TBC' },

@@ -68,6 +68,7 @@ const competitionNames: Record<string, string> = {
   CC: 'County Cup',
   SEN: 'Bristol & Suburban Senior League',
   ABC: 'Alf Bosley Cup',
+  LBC: 'Len Bartlett Cup',
   BSP: 'Bristol & Suburban Premier Division',
   BSPC: 'Bristol & Suburban League Cup',
   BSD4: 'Bristol & Suburban League, Division Four',
