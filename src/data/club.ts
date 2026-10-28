@@ -486,7 +486,7 @@ export const aTeamFixtures: ReserveFixture[] = [
   { date: '03/10/26', time: '14:00', competition: 'BSD4', opponent: 'Severn Beach Wanderers Reserves', venue: 'H', ground: 'BAWA Leisure, BS34 7RG', matchdayImage: weekendFixtures2026_10_03, result: 'L (walkover)' },
   { date: '10/10/26', time: '14:00', competition: 'BSD4', opponent: 'Eighty One United 1st', venue: 'H', ground: 'BAWA Leisure, BS34 7RG', matchdayImage: weekendFixtures2026_10_10, result: 'L 0-4' },
   { date: '17/10/26', time: '14:00', competition: 'LBC', opponent: 'Cosmos UK Saturday Reserves', venue: 'A', ground: 'Somerdale Pavilion, BS31 2FW', matchdayImage: weekendFixtures2026_10_17, result: 'W 2-5' },
-  { date: '24/10/26', time: '14:00', competition: 'CC', opponent: 'Iron Acton A', venue: 'H', ground: 'BAWA Leisure' },
+  { date: '24/10/26', time: '14:00', competition: 'CC', opponent: 'Iron Acton A', venue: 'H', ground: 'BAWA Leisure', result: 'L 0-1' },
   { date: '31/10/26', time: '14:00', competition: 'BSD4', opponent: 'St Vallier First', venue: 'A', ground: 'Lockleaze Sports Club' },
   { date: '07/11/26', time: '14:00', competition: 'BSD4', opponent: 'Imperial A', venue: 'A', ground: 'Venue TBC' },
   { date: '14/11/26', time: '14:00', competition: 'BSD4', opponent: 'Cutters Friday Reserves', venue: 'H', ground: 'BAWA Leisure' },

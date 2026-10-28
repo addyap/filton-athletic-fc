@@ -46,6 +46,15 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'matchday-roundup-24-october',
+    title: 'A’s edged out 1-0 in the County Cup',
+    date: '2026-10-24',
+    teams: ['as'],
+    excerpt:
+      'The A’s bowed out of the GFA Primary Cup on Saturday, edged out 1-0 at home by Iron Acton A at BAWA in a tight tie. The First Team and Reserves were not in action. #FATS #UTF',
+    link: { href: '/as-team', label: 'See the A’s Division Four table' },
+  },
+  {
     slug: 'matchday-roundup-17-october',
     title: 'Saturday round-up: Cup wins for the First Team and A’s',
     date: '2026-10-17',
