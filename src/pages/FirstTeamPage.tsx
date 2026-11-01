@@ -10,7 +10,6 @@ import PreSeasonSection from '../components/sections/PreSeasonSection'
 import FixturesSection from '../components/sections/FixturesSection'
 import FirstTeamProgrammesSection from '../components/FirstTeamProgrammesSection'
 import TableSection from '../components/sections/TableSection'
-import LeagueResultsSection from '../components/sections/LeagueResultsSection'
 import { officials, squad } from '../data/club'
 import { playerPhotos2025_26 as playerPhotos } from '../data/playerPhotos'
 
@@ -94,7 +93,6 @@ function FirstTeamPage() {
       <FixturesSection headingLevel="h2" />
       <FirstTeamProgrammesSection />
       <TableSection headingLevel="h2" />
-      <LeagueResultsSection headingLevel="h2" />
 
       <section className="mx-auto max-w-6xl px-6 py-14">
         <SectionHeading icon="chat" title="Latest First Team news" className="justify-center" as="h2" />

@@ -66,9 +66,9 @@ function LatestResultsSection() {
         </div>
 
         <p className="mt-6 text-center text-sm text-slate-600">
-          Looking for every score, scorer and the current table?{' '}
-          <Link to="/first-team#league-results" className="font-semibold text-[#0b2d52] underline">
-            View the complete First Team results &amp; table &rarr;
+          Looking for all our results, scorers and the current table?{' '}
+          <Link to="/first-team#fixtures" className="font-semibold text-[#0b2d52] underline">
+            View First Team results &amp; table &rarr;
           </Link>
         </p>
       </Reveal>
