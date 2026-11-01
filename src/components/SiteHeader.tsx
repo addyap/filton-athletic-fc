@@ -159,6 +159,7 @@ function SiteHeader() {
           @keyframes sponsor-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
           .sponsor-ticker { animation: sponsor-scroll 35s linear infinite; }
           .sponsor-ticker:hover { animation-play-state: paused; }
+          @media (prefers-reduced-motion: reduce) { .sponsor-ticker { animation: none; } }
         `}</style>
         <span className="shrink-0 border-r border-white/10 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-slate-400 sm:px-4 sm:py-2 sm:text-xs">
           Sponsors
@@ -181,6 +182,7 @@ function SiteHeader() {
                         href={s.website}
                         target="_blank"
                         rel="noreferrer"
+                        tabIndex={-1}
                         className={`text-sm tracking-wide transition hover:underline sm:text-base ${
                           main.includes(s.name) ? 'font-semibold text-[#e8c76a]' : 'text-slate-400 hover:text-white'
                         }`}
@@ -190,6 +192,7 @@ function SiteHeader() {
                     ) : (
                       <a
                         href="/#sponsors"
+                        tabIndex={-1}
                         className="text-sm tracking-wide text-slate-400 transition hover:text-white hover:underline sm:text-base"
                       >
                         {s.name}

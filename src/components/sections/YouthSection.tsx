@@ -39,7 +39,7 @@ function YouthSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
             </div>
             <div className="mt-6 flex justify-center lg:justify-start">
               <div className="inline-flex items-center gap-3 rounded-lg bg-white px-4 py-3 shadow-sm ring-1 ring-white/20">
-                <img
+                <img loading="lazy" decoding="async"
                   src={accreditedClubBadge}
                   alt="FA Accredited Club — part of England Football"
                   className="h-10 w-auto"
@@ -52,7 +52,7 @@ function YouthSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:w-[580px] lg:flex-none">
             <div>
-              <img
+              <img loading="lazy" decoding="async"
                 src={u8sPlayersWantedFlyer}
                 alt="Players wanted — join Filton Athletic U8s for the 2026/27 season, boys and girls welcome. Date of birth range: 1 September 2018 to 31 August 2019 (players must be 7 on or before 31 August 2026). Interested? Contact Coach Tristen on 07858 225172 or email filtonathleticfc@outlook.com."
                 className="mx-auto w-full max-w-[280px] rounded-lg border border-white/20 shadow-sm lg:mx-0"
@@ -62,7 +62,7 @@ function YouthSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
               </p>
             </div>
             <div>
-              <img
+              <img loading="lazy" decoding="async"
                 src={u13sGirlsTeamFlyer}
                 alt="Filton Athletic Youth are looking to create a U13s girls team. Date of birth range for the 26/27 season (school year 8): 1 September 2013 to 31 August 2014, with players up to a year older or younger welcome. Training and friendlies in 26/27, looking to join a league for 27/28. FA qualified and UEFA licensed coaches. Interested? Call 07429 595476 or email filtonathleticfc@outlook.com."
                 className="mx-auto w-full max-w-[280px] rounded-lg border border-white/20 shadow-sm lg:mx-0"
@@ -83,7 +83,7 @@ function YouthSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
               <div key={s.team} className="flex flex-col rounded-2xl bg-white p-6 text-center shadow-md ring-1 ring-white/20 transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl sm:p-8">
                 <span className="mb-5 inline-flex self-center rounded-full bg-[#0b2d52] px-5 py-1.5 text-base font-extrabold uppercase tracking-wide text-white">{s.team}</span>
                 <div className="flex flex-1 items-center justify-center">
-                  <img src={s.logo} alt={`${s.name} — ${s.team} team sponsor`} className="h-40 w-full object-contain sm:h-48" />
+                  <img loading="lazy" decoding="async" src={s.logo} alt={`${s.name} — ${s.team} team sponsor`} className="h-40 w-full object-contain sm:h-48" />
                 </div>
                 <p className="mt-5 text-xl font-bold text-[#0b2d52]">{s.name}</p>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">{s.blurb}</p>

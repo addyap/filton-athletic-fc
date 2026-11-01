@@ -39,7 +39,7 @@ function TeamSeasonArchivePage({ team }: { team: Team }) {
     return (
       <div className="min-h-screen bg-white text-slate-900">
         <SiteHeader />
-        <main className="mx-auto max-w-6xl px-6 py-14 text-center">
+        <main id="main" tabIndex={-1} className="mx-auto max-w-6xl px-6 py-14 text-center">
           <p className="font-semibold text-[#0b2d52]">Season not found</p>
           <p className="mt-2 text-sm text-slate-500">
             <Link to={hubPath} className="underline">
@@ -82,7 +82,7 @@ function TeamSeasonArchivePage({ team }: { team: Team }) {
         </div>
       </section>
 
-      <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
+      <main id="main" tabIndex={-1} className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
         <SectionHeading icon="standings" title="Final league table" className="justify-center" />
         <div className="mt-6">
           <LeagueTableWidget rows={table} highlight={highlight} />
@@ -134,7 +134,7 @@ function TeamSeasonArchivePage({ team }: { team: Team }) {
             <SectionHeading icon="shirt" title={`${data.label} team photos`} className="justify-center" />
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {data.teamPhotos.map((src, i) => (
-                <img
+                <img loading="lazy" decoding="async"
                   key={i}
                   src={src}
                   alt={`Filton Athletic FC first team, ${data.label} season`}
@@ -152,7 +152,7 @@ function TeamSeasonArchivePage({ team }: { team: Team }) {
               {data.squad.map((p) => (
                 <div key={p.name} className="overflow-hidden rounded-lg border border-slate-200">
                   {data.playerPhotos?.[p.name] && (
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={data.playerPhotos[p.name]}
                       alt={`${p.name} — Filton Athletic FC, ${data.label} season`}
                       className="aspect-square w-full object-cover object-top"

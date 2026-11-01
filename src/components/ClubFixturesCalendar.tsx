@@ -171,7 +171,7 @@ function ClubFixturesCalendar() {
                   onClick={() => changeMonth(-1)}
                   disabled={selectedMonthIndex <= 0}
                   aria-label="Show previous fixture month"
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-lg text-[#0b2d52] transition hover:border-[#0b2d52] hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-35"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-lg text-[#0b2d52] transition hover:border-[#0b2d52] hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-35"
                 >
                   &larr;
                 </button>
@@ -181,7 +181,7 @@ function ClubFixturesCalendar() {
                   onClick={() => changeMonth(1)}
                   disabled={selectedMonthIndex >= calendarMonths.length - 1}
                   aria-label="Show next fixture month"
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-lg text-[#0b2d52] transition hover:border-[#0b2d52] hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-35"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-lg text-[#0b2d52] transition hover:border-[#0b2d52] hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-35"
                 >
                   &rarr;
                 </button>
@@ -197,7 +197,7 @@ function ClubFixturesCalendar() {
                     type="button"
                     onClick={() => setTeamFilter(filter.id)}
                     aria-pressed={isActive}
-                    className={`rounded-full px-3 py-1.5 text-sm font-semibold transition ${
+                    className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
                       isActive
                         ? 'bg-[#0b2d52] text-white shadow-sm'
                         : 'border border-slate-200 bg-white text-slate-600 hover:border-[#0b2d52] hover:text-[#0b2d52]'
@@ -225,7 +225,7 @@ function ClubFixturesCalendar() {
             </div>
           </div>
 
-          <div className="mt-4 overflow-x-auto rounded-xl border border-slate-200 bg-slate-100/70">
+          <div className="mt-4 hidden overflow-x-auto rounded-xl border border-slate-200 bg-slate-100/70 md:block">
             <div className="min-w-[760px]">
               <div className="grid grid-cols-7 border-b border-slate-200 bg-slate-50">
                 {weekdayLabels.map((weekday) => (

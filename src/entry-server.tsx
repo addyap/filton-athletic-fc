@@ -1,6 +1,6 @@
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom'
-import AppRoutes from './AppRoutes'
+import AppRoutes, { preloadRoute } from './AppRoutes'
 import { headForPath, type PageHead } from './head'
 import { programmes } from './data/programmes'
 import { posts } from './data/posts'
@@ -8,8 +8,11 @@ import { seasons } from './data/seasons'
 import { opponentPreviews } from './data/opponents'
 import { historicTeamPhotos } from './data/historicTeamPhotos'
 
+export { findDataProblems } from './dataChecks'
+
 /** Render a single route to static HTML plus its resolved <head> metadata. */
-export function render(url: string): { appHtml: string; head: PageHead } {
+export async function render(url: string): Promise<{ appHtml: string; head: PageHead }> {
+  await preloadRoute(url)
   const appHtml = renderToString(
     <StaticRouter location={url}>
       <AppRoutes />

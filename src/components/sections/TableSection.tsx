@@ -3,7 +3,7 @@ import SectionHeading from '../SectionHeading'
 import LeagueTableWidget from '../LeagueTableWidget'
 import Reveal from '../Reveal'
 import { PodiumMark } from '../SectionArt'
-import { leagueTable } from '../../data/club'
+import { leagueTable, tablesUpdatedAfter } from '../../data/club'
 
 function TableSection({ headingLevel }: { headingLevel?: 'h1' | 'h2' | 'h3' } = {}) {
   return (
@@ -19,7 +19,7 @@ function TableSection({ headingLevel }: { headingLevel?: 'h1' | 'h2' | 'h3' } = 
         </div>
       ) : (
         <div className="mt-6">
-          <LeagueTableWidget rows={leagueTable} highlight="Filton Athletic" />
+          <LeagueTableWidget rows={leagueTable} highlight="Filton Athletic" updatedAfter={tablesUpdatedAfter} />
         </div>
       )}
       {leagueTable.length > 0 && (

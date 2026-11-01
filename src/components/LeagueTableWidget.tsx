@@ -17,20 +17,24 @@ function LeagueTableWidget({
   rows,
   highlight,
   accent = 'green',
+  updatedAfter,
 }: {
   rows: TableRow[]
   highlight: string
   /** Colour of the highlighted (own team) row — 'sky' ties into the crest's sky-blue background. */
   accent?: 'green' | 'sky'
+  /** ISO date of the fixtures this table includes; shown beneath current tables. */
+  updatedAfter?: string
 }) {
   const highlightCls = accent === 'sky' ? 'bg-[#e3ebf8] text-[#1c3f6e]' : 'bg-[#e7f0e9] text-[#0b2d52]'
   return (
+    <>
     <div className="overflow-x-auto rounded-lg border border-slate-200">
       <table className="min-w-full text-sm">
         <thead className="bg-[#0b2d52] text-white">
           <tr>
             {leagueColumns.map((c) => (
-              <th key={c.key} className={`px-3 py-2 text-left font-semibold ${c.cls ?? ''}`}>
+              <th key={c.key} scope="col" className={`px-3 py-2 text-left font-semibold ${c.cls ?? ''}`}>
                 {c.label}
               </th>
             ))}
@@ -52,6 +56,13 @@ function LeagueTableWidget({
         </tbody>
       </table>
     </div>
+    {updatedAfter && (
+      <p className="mt-2 text-center text-xs font-medium text-slate-500">
+        Includes results up to{' '}
+        {new Date(`${updatedAfter}T12:00:00`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}.
+      </p>
+    )}
+    </>
   )
 }
 

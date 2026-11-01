@@ -73,3 +73,8 @@ html {
     background-color: rgb(254 243 199); /* amber-100 — settles into the :target hold */
   }
 }
+
+/* Focused by the skip link; no visible ring around the whole page. */
+main:focus {
+  outline: none;
+}

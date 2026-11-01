@@ -221,7 +221,7 @@ function ProgrammePage() {
     return (
       <div className="min-h-screen bg-white text-slate-900">
         <SiteHeader />
-        <main className="mx-auto max-w-3xl px-6 py-20 text-center">
+        <main id="main" tabIndex={-1} className="mx-auto max-w-3xl px-6 py-20 text-center">
           <h1 className="text-2xl font-bold text-[#0b2d52]">Programme not found</h1>
           <p className="mt-3 text-slate-600">That match may not have a programme yet.</p>
           <Link to="/programmes" className="mt-6 inline-block text-[#0b2d52] underline">
@@ -247,6 +247,7 @@ function ProgrammePage() {
   return (
     <div className="programme-print min-h-screen bg-white text-slate-900">
       <SiteHeader />
+      <main id="main" tabIndex={-1}>
 
       <article className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
         <Link to="/programmes" className="text-sm text-[#0b2d52] underline print:hidden">
@@ -259,7 +260,7 @@ function ProgrammePage() {
             <span>Official matchday programme</span>
             {extras.number != null && <span>No. {extras.number}</span>}
           </div>
-          <img src={crest} alt="Filton Athletic FC crest" className="mx-auto mt-6 h-24 w-24 object-contain sm:h-28 sm:w-28" />
+          <img loading="lazy" decoding="async" src={crest} alt="Filton Athletic FC crest" className="mx-auto mt-6 h-24 w-24 object-contain sm:h-28 sm:w-28" />
           <h1 className="mt-6 text-2xl font-bold sm:text-4xl">
             Filton Athletic <span className="block text-base font-normal text-slate-300 sm:inline sm:text-2xl">vs</span>{' '}
             {fixture.opponent}
@@ -490,7 +491,7 @@ function ProgrammePage() {
 
         {/* Ground */}
         <Section id="ground" title="Matchday & ground" icon="pin">
-          <img
+          <img loading="lazy" decoding="async"
             src={elmParkPitch}
             alt="The pitch at BBS Park North, Elm Park, Filton"
             className="mb-4 aspect-video w-full rounded-lg object-cover"
@@ -514,6 +515,8 @@ function ProgrammePage() {
           <ShareBar programme={programme} />
         </div>
       </article>
+
+      </main>
 
       <div className="print:hidden">
         <SiteFooter />

@@ -108,7 +108,7 @@ function ProgrammesIndex() {
         </div>
       </section>
 
-      <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
+      <main id="main" tabIndex={-1} className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
         <h3 className="text-lg font-bold text-[#0b2d52]">2026/27 home fixtures</h3>
         <ProgrammeGrid items={programmes2026_27} />
 

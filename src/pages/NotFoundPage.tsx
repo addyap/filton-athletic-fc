@@ -24,7 +24,7 @@ function NotFoundPage() {
   return (
     <div className="flex min-h-screen flex-col bg-white text-slate-900">
       <SiteHeader />
-      <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col items-center justify-center px-6 py-20 text-center">
+      <main id="main" tabIndex={-1} className="mx-auto flex w-full max-w-3xl flex-1 flex-col items-center justify-center px-6 py-20 text-center">
         <p className="font-mono text-sm font-bold uppercase tracking-[0.2em] text-[#3f8a5b]">Error 404</p>
         <h1 className="mt-3 text-4xl font-black tracking-tight text-[#0b2d52] sm:text-5xl">Page not found</h1>
         <p className="mt-4 max-w-xl text-base text-slate-600 sm:text-lg">

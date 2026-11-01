@@ -71,7 +71,7 @@ function PostPage() {
     return (
       <div className="min-h-screen bg-white text-slate-900">
         <SiteHeader />
-        <main className="mx-auto max-w-3xl px-6 py-20 text-center">
+        <main id="main" tabIndex={-1} className="mx-auto max-w-3xl px-6 py-20 text-center">
           <h1 className="text-2xl font-bold text-[#0b2d52]">Post not found</h1>
           <p className="mt-3 text-slate-600">That post may have been removed or the link is wrong.</p>
           <Link to="/#join" className="mt-6 inline-block text-[#0b2d52] underline">
@@ -88,6 +88,7 @@ function PostPage() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <SiteHeader />
+      <main id="main" tabIndex={-1}>
 
       <article className="mx-auto max-w-3xl px-6 py-12">
         <Link to="/#join" className="text-sm text-[#0b2d52] underline">
@@ -137,6 +138,7 @@ function PostPage() {
           </div>
         )}
       </article>
+      </main>
 
       <SiteFooter />
     </div>

@@ -11,7 +11,10 @@ function TablePage() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <SiteHeader />
+      <main id="main" tabIndex={-1}>
       <TableSection headingLevel="h1" />
+      </main>
+
       <SiteFooter />
     </div>
   )

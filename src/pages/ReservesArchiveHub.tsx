@@ -31,7 +31,7 @@ function ReservesArchiveHub() {
         </div>
       </section>
 
-      <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
+      <main id="main" tabIndex={-1} className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
         <SectionHeading icon="standings" title="Choose a season" className="justify-center" />
         {reserveSeasons.length === 0 ? (
           <div className="mt-6 rounded-lg border border-dashed border-slate-300 bg-white p-8 text-center">

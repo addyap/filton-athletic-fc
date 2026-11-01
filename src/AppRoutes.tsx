@@ -1,58 +1,83 @@
-import { Routes, Route } from 'react-router-dom'
+import { Suspense } from 'react'
+import { Routes, Route, matchPath } from 'react-router-dom'
 import { usePageHead } from './usePageHead'
-import Home from './pages/Home'
-import PostPage from './pages/PostPage'
-import ProgrammesIndex from './pages/ProgrammesIndex'
-import ProgrammePage from './pages/ProgrammePage'
-import OpponentPreviewPage from './pages/OpponentPreviewPage'
-import FixturesPage from './pages/FixturesPage'
-import FirstTeamPage from './pages/FirstTeamPage'
-import TablePage from './pages/TablePage'
-import YouthPage from './pages/YouthPage'
-import ContactPage from './pages/ContactPage'
-import ArchivePage from './pages/ArchivePage'
-import FirstTeamArchiveHub from './pages/FirstTeamArchiveHub'
-import ReservesArchiveHub from './pages/ReservesArchiveHub'
-import TeamSeasonArchivePage from './pages/TeamSeasonArchivePage'
-import ReservesPage from './pages/ReservesPage'
-import AsTeamPage from './pages/AsTeamPage'
-import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
-import SafeguardingPage from './pages/SafeguardingPage'
-import EveningPost2009ArchivePage from './pages/EveningPost2009ArchivePage'
-import TeamPhotographArchivePage from './pages/TeamPhotographArchivePage'
-import HistoricTeamPhotoPage from './pages/HistoricTeamPhotoPage'
-import NotFoundPage from './pages/NotFoundPage'
+import { lazyPage } from './lazyPage'
+
+const Home = lazyPage(() => import('./pages/Home'))
+const PostPage = lazyPage(() => import('./pages/PostPage'))
+const ProgrammesIndex = lazyPage(() => import('./pages/ProgrammesIndex'))
+const ProgrammePage = lazyPage(() => import('./pages/ProgrammePage'))
+const OpponentPreviewPage = lazyPage(() => import('./pages/OpponentPreviewPage'))
+const FixturesPage = lazyPage(() => import('./pages/FixturesPage'))
+const FirstTeamPage = lazyPage(() => import('./pages/FirstTeamPage'))
+const TablePage = lazyPage(() => import('./pages/TablePage'))
+const YouthPage = lazyPage(() => import('./pages/YouthPage'))
+const ContactPage = lazyPage(() => import('./pages/ContactPage'))
+const ArchivePage = lazyPage(() => import('./pages/ArchivePage'))
+const FirstTeamArchiveHub = lazyPage(() => import('./pages/FirstTeamArchiveHub'))
+const ReservesArchiveHub = lazyPage(() => import('./pages/ReservesArchiveHub'))
+const TeamSeasonArchivePage = lazyPage(() => import('./pages/TeamSeasonArchivePage'))
+const ReservesPage = lazyPage(() => import('./pages/ReservesPage'))
+const AsTeamPage = lazyPage(() => import('./pages/AsTeamPage'))
+const PrivacyPolicyPage = lazyPage(() => import('./pages/PrivacyPolicyPage'))
+const SafeguardingPage = lazyPage(() => import('./pages/SafeguardingPage'))
+const EveningPost2009ArchivePage = lazyPage(() => import('./pages/EveningPost2009ArchivePage'))
+const TeamPhotographArchivePage = lazyPage(() => import('./pages/TeamPhotographArchivePage'))
+const HistoricTeamPhotoPage = lazyPage(() => import('./pages/HistoricTeamPhotoPage'))
+const NotFoundPage = lazyPage(() => import('./pages/NotFoundPage'))
+
+const pages = [
+  { path: '/', page: Home, element: <Home /> },
+  { path: '/join/:slug', page: PostPage, element: <PostPage /> },
+  { path: '/archive', page: ArchivePage, element: <ArchivePage /> },
+  { path: '/archive/filton-athletic-evening-post-2009', page: EveningPost2009ArchivePage, element: <EveningPost2009ArchivePage /> },
+  { path: '/archive/team-photographs', page: TeamPhotographArchivePage, element: <TeamPhotographArchivePage /> },
+  { path: '/archive/team-photographs/:slug', page: HistoricTeamPhotoPage, element: <HistoricTeamPhotoPage /> },
+  { path: '/archive/first-team', page: FirstTeamArchiveHub, element: <FirstTeamArchiveHub /> },
+  { path: '/archive/reserves', page: ReservesArchiveHub, element: <ReservesArchiveHub /> },
+  { path: '/archive/first-team/:season', page: TeamSeasonArchivePage, element: <TeamSeasonArchivePage team="first-team" /> },
+  { path: '/archive/reserves/:season', page: TeamSeasonArchivePage, element: <TeamSeasonArchivePage team="reserves" /> },
+  { path: '/programmes', page: ProgrammesIndex, element: <ProgrammesIndex /> },
+  { path: '/programme/:slug', page: ProgrammePage, element: <ProgrammePage /> },
+  { path: '/preview/:slug', page: OpponentPreviewPage, element: <OpponentPreviewPage /> },
+  { path: '/first-team', page: FirstTeamPage, element: <FirstTeamPage /> },
+  { path: '/fixtures', page: FixturesPage, element: <FixturesPage /> },
+  { path: '/table', page: TablePage, element: <TablePage /> },
+  { path: '/reserves', page: ReservesPage, element: <ReservesPage /> },
+  { path: '/as-team', page: AsTeamPage, element: <AsTeamPage /> },
+  { path: '/youth', page: YouthPage, element: <YouthPage /> },
+  { path: '/contact', page: ContactPage, element: <ContactPage /> },
+  { path: '/privacy-policy', page: PrivacyPolicyPage, element: <PrivacyPolicyPage /> },
+  { path: '/safeguarding', page: SafeguardingPage, element: <SafeguardingPage /> },
+]
+
+/** Load the page for a path before rendering it, so the first render isn't blank. */
+export function preloadRoute(pathname: string): Promise<void> {
+  const route = pages.find(({ path }) => matchPath(path, pathname))
+  return (route?.page ?? NotFoundPage).preload()
+}
 
 /** Route table shared by the browser (BrowserRouter) and the prerenderer (StaticRouter). */
 function AppRoutes() {
   usePageHead()
 
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/join/:slug" element={<PostPage />} />
-      <Route path="/archive" element={<ArchivePage />} />
-      <Route path="/archive/filton-athletic-evening-post-2009" element={<EveningPost2009ArchivePage />} />
-      <Route path="/archive/team-photographs" element={<TeamPhotographArchivePage />} />
-      <Route path="/archive/team-photographs/:slug" element={<HistoricTeamPhotoPage />} />
-      <Route path="/archive/first-team" element={<FirstTeamArchiveHub />} />
-      <Route path="/archive/reserves" element={<ReservesArchiveHub />} />
-      <Route path="/archive/first-team/:season" element={<TeamSeasonArchivePage team="first-team" />} />
-      <Route path="/archive/reserves/:season" element={<TeamSeasonArchivePage team="reserves" />} />
-      <Route path="/programmes" element={<ProgrammesIndex />} />
-      <Route path="/programme/:slug" element={<ProgrammePage />} />
-      <Route path="/preview/:slug" element={<OpponentPreviewPage />} />
-      <Route path="/first-team" element={<FirstTeamPage />} />
-      <Route path="/fixtures" element={<FixturesPage />} />
-      <Route path="/table" element={<TablePage />} />
-      <Route path="/reserves" element={<ReservesPage />} />
-      <Route path="/as-team" element={<AsTeamPage />} />
-      <Route path="/youth" element={<YouthPage />} />
-      <Route path="/contact" element={<ContactPage />} />
-      <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-      <Route path="/safeguarding" element={<SafeguardingPage />} />
-      <Route path="*" element={<NotFoundPage />} />
-    </Routes>
+    <>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[60] focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:font-semibold focus:text-[#0b2d52] focus:shadow-lg"
+      >
+        Skip to main content
+      </a>
+      <Suspense fallback={null}>
+        <Routes>
+          {pages.map(({ path, element }) => (
+            <Route key={path} path={path} element={element} />
+          ))}
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
+    </>
   )
 }
 

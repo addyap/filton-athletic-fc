@@ -562,6 +562,9 @@ export const reserveFixtures2025_26: ReserveFixture[] = [
   { date: '02/05/26', time: '14:00', competition: 'SEN', opponent: 'Broad Plain House Reserves', venue: 'A', ground: 'Filwood Park Playing Fields', result: 'W (walkover)' },
 ]
 
+/** The fixtures date the current league tables were last refreshed for. Update with the tables. */
+export const tablesUpdatedAfter = '2026-10-31'
+
 export type TableRow = { pos: number; team: string; p: number; w: number; d: number; l: number; f: number; a: number; gd: number; pts: number }
 
 /**

@@ -56,7 +56,7 @@ function MatchdaySection() {
       <section id="matchday" aria-label="Matchday" className="border-b border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-6xl px-4 pt-10 sm:px-6">
           <figure className="overflow-hidden rounded-2xl shadow-lg ring-1 ring-slate-200">
-            <img
+            <img decoding="async"
               src={matchdayAllTeams}
               alt="Filton Athletic FC matchday — the squad in a pre-match huddle, framed by club sponsors."
               className="w-full object-cover"
@@ -109,7 +109,7 @@ function MatchdaySection() {
 
       <div className="mx-auto max-w-6xl px-4 pt-4 sm:px-6">
         <figure className="overflow-hidden rounded-2xl shadow-lg ring-1 ring-slate-200">
-          <img
+          <img decoding="async"
             src={matchdayAllTeams}
             alt="Filton Athletic FC matchday — the squad in a pre-match huddle, framed by club sponsors."
             className="w-full object-cover"
@@ -126,7 +126,7 @@ function MatchdaySection() {
       <div className={`mx-auto grid max-w-6xl gap-6 px-4 pb-10 pt-4 sm:px-6 ${last ? 'lg:grid-cols-3 lg:items-start' : ''}`}>
         {next && (
           <div className={`relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#1c3f6e] via-[#0f2c52] to-[#0a2340] text-white shadow-lg ${last ? 'lg:col-span-2' : ''}`}>
-            <img
+            <img loading="lazy" decoding="async"
               src={crestTrimmed}
               alt=""
               aria-hidden="true"
@@ -134,7 +134,7 @@ function MatchdaySection() {
             />
             <div className="relative flex flex-col sm:flex-row">
               {next.matchdayImage && (
-                <img
+                <img loading="lazy" decoding="async"
                   src={next.matchdayImage}
                   alt={`Matchday graphic — ${next.opponent} vs Filton Athletic`}
                   className="aspect-square w-full object-contain p-4 sm:w-72 sm:shrink-0 sm:p-6 lg:w-80"
@@ -194,7 +194,7 @@ function MatchdaySection() {
               )}
 
               {!next.matchdayImage && next.venue === 'H' && (
-                <img
+                <img loading="lazy" decoding="async"
                   src={elmParkPitch}
                   alt={`The pitch at ${groundInfo.name}`}
                   className="mt-4 h-24 w-40 rounded-lg object-cover ring-1 ring-white/20 sm:h-28 sm:w-48"

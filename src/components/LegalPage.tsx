@@ -42,6 +42,7 @@ function LegalPage({
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <SiteHeader />
+      <main id="main" tabIndex={-1}>
       <section className="mx-auto max-w-3xl px-6 py-14">
         <SectionHeading icon={icon} title={title} as="h1" />
         <p className="mt-4 text-sm text-slate-500">Last updated: {lastUpdated}</p>
@@ -59,6 +60,8 @@ function LegalPage({
 
         <div className="mt-8 space-y-6 text-slate-700">{children}</div>
       </section>
+      </main>
+
       <SiteFooter />
     </div>
   )

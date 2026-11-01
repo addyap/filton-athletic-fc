@@ -50,7 +50,7 @@ function LatestNewsBanner() {
           <Link
             key={index}
             to="/#news"
-            className="block truncate text-base font-medium text-white hover:underline"
+            className="block truncate py-1 text-base font-medium text-white hover:underline"
             style={reduced ? undefined : { animation: 'latest-fade 400ms ease' }}
           >
             {item.title}

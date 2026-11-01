@@ -28,7 +28,7 @@ function EveningPost2009ArchivePage() {
         </div>
       </section>
 
-      <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
+      <main id="main" tabIndex={-1} className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(280px,0.72fr)] lg:items-start">
           <article className="order-2 lg:order-1">
             <SectionHeading icon="clock" title="A club on the way up" />
@@ -106,7 +106,7 @@ function EveningPost2009ArchivePage() {
           <aside className="order-1 lg:order-2 lg:sticky lg:top-6">
             <figure className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
               <a href={newspaperScanUrl} target="_blank" rel="noreferrer" className="block bg-slate-100">
-                <img
+                <img loading="lazy" decoding="async"
                   src={newspaperScanUrl}
                   alt="Scanned Evening Post page from 20 October 2009 featuring a Filton Athletic team photograph and historical report."
                   className="h-auto w-full"

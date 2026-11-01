@@ -4,7 +4,7 @@ import LeagueTableWidget from '../LeagueTableWidget'
 import Reveal from '../Reveal'
 import MatchGallery from '../MatchGallery'
 import VenueTag from '../VenueTag'
-import { asTeamTable, aTeamFixtures, matchGalleryItems, officials } from '../../data/club'
+import { asTeamTable, tablesUpdatedAfter, aTeamFixtures, matchGalleryItems, officials } from '../../data/club'
 import { aTeamPreSeason2026 } from '../../data/preseason'
 
 function resultBadge(result?: string, cancelled?: boolean) {
@@ -38,7 +38,7 @@ function AsTeamSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
 
       {matchday && (
         <div className="mx-auto mt-8 max-w-2xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-          <img
+          <img loading="lazy" decoding="async"
             src={matchday.matchdayImage}
             alt={`Matchday graphic — Filton Athletic A Team vs ${matchday.opponent}`}
             className="w-full object-contain"
@@ -142,7 +142,7 @@ function AsTeamSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
         </div>
       ) : (
         <div className="mt-8">
-          <LeagueTableWidget rows={asTeamTable} highlight="Filton Athletic A" accent="sky" />
+          <LeagueTableWidget rows={asTeamTable} highlight="Filton Athletic A" accent="sky" updatedAfter={tablesUpdatedAfter} />
         </div>
       )}
 

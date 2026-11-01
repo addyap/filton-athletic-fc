@@ -11,7 +11,7 @@ const shopUrl = 'https://www.boca-uk.com/webshop/club-shops/filton-athletic-fc/'
 const xUrl = 'https://x.com/FiltonAthletic'
 const facebookUrl = 'https://www.facebook.com/FiltonAthleticFC'
 
-function SiteFooter({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
+function SiteFooter({ headingLevel = 'h2' }: { headingLevel?: 'h1' | 'h2' | 'h3' } = {}) {
   return (
     <>
       <footer id="contact" className="border-t border-slate-200 bg-slate-50">
@@ -19,8 +19,10 @@ function SiteFooter({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
           <SectionHeading icon="pin" title="Contact & ground" className="justify-center" as={headingLevel} />
           <div className="mt-6 grid gap-8 lg:grid-cols-5 lg:items-start">
             <div className="lg:col-span-2">
-              <img
+              <img decoding="async"
                 src={elmParkPitch}
+                width={1000}
+                height={563}
                 alt="The pitch at BBS Park North, Elm Park, Filton"
                 className="mb-4 aspect-video w-full rounded-lg object-cover"
                 loading="lazy"
@@ -29,7 +31,7 @@ function SiteFooter({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
               <p className="text-slate-700">{groundInfo.name}</p>
               <p className="text-slate-700">{groundInfo.address}</p>
               <a
-                className="mt-2 inline-block text-sm font-semibold text-[#0b2d52] underline"
+                className="mt-2 inline-block py-1.5 text-sm font-semibold text-[#0b2d52] underline"
                 href={mapsUrl}
                 target="_blank"
                 rel="noreferrer"

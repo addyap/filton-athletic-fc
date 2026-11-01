@@ -115,7 +115,7 @@ function OpponentPreviewInner({ preview }: { preview: OpponentPreview }) {
             </>
           )}
         </div>
-        <img src={crest} alt="Filton Athletic FC crest" className="mx-auto mt-6 h-24 w-24 object-contain sm:h-28 sm:w-28" />
+        <img loading="lazy" decoding="async" src={crest} alt="Filton Athletic FC crest" className="mx-auto mt-6 h-24 w-24 object-contain sm:h-28 sm:w-28" />
         <h1 className="mt-6 text-2xl font-bold sm:text-4xl">
           Filton Athletic{' '}
           <span className="block text-base font-normal text-slate-300 sm:inline sm:text-2xl">vs</span>{' '}
@@ -242,7 +242,7 @@ function OpponentPreviewPage() {
       {preview ? (
         <OpponentPreviewInner preview={preview} />
       ) : (
-        <main className="mx-auto max-w-3xl px-6 py-20 text-center">
+        <main id="main" tabIndex={-1} className="mx-auto max-w-3xl px-6 py-20 text-center">
           <h1 className="text-2xl font-bold text-[#0b2d52]">Preview not found</h1>
           <p className="mt-3 text-slate-600">There&rsquo;s no opponent preview at this address.</p>
           <Link to="/first-team#fixtures" className="mt-6 inline-block text-[#0b2d52] underline">

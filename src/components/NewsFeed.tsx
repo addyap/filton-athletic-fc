@@ -60,10 +60,10 @@ function NewsFeed({ team, limit, emptyMessage }: Props) {
             >
               {item.images.length <= 2
                 ? item.images.map((img) => (
-                    <img key={img.src} src={img.src} alt={img.alt} className="max-h-96 w-full object-cover" />
+                    <img loading="lazy" decoding="async" key={img.src} src={img.src} alt={img.alt} className="max-h-96 w-full object-cover" />
                   ))
                 : item.images.map((img, i) => (
-                    <img
+                    <img loading="lazy" decoding="async"
                       key={img.src}
                       src={img.src}
                       alt={img.alt}
@@ -92,14 +92,14 @@ function NewsFeed({ team, limit, emptyMessage }: Props) {
                   href={item.link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-3 inline-block text-sm font-semibold text-[#0b2d52] underline"
+                  className="mt-2 inline-block py-1.5 text-sm font-semibold text-[#0b2d52] underline"
                 >
                   {item.link.label} &rarr;
                 </a>
               ) : (
                 <Link
                   to={item.link.href}
-                  className="mt-3 inline-block text-sm font-semibold text-[#0b2d52] underline"
+                  className="mt-2 inline-block py-1.5 text-sm font-semibold text-[#0b2d52] underline"
                 >
                   {item.link.label} &rarr;
                 </Link>

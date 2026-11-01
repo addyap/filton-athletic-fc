@@ -17,9 +17,16 @@ const template = readFileSync(join(DIST, 'index.html'), 'utf-8')
  */
 const DEFAULT_OG_IMAGE = 'https://filtonathletic.co.uk/og-image.jpg'
 
-const { render, getRoutePaths } = await import(
+const { render, getRoutePaths, findDataProblems } = await import(
   pathToFileURL(join(process.cwd(), 'dist-ssr', 'entry-server.js')).href
 )
+
+const dataProblems = findDataProblems()
+if (dataProblems.length > 0) {
+  console.error('\nMatch data needs fixing before this can deploy:')
+  for (const problem of dataProblems) console.error(`  - ${problem}`)
+  process.exit(1)
+}
 
 function escapeHtml(s) {
   return s
@@ -103,7 +110,7 @@ const today = new Date().toISOString().slice(0, 10)
 const sitemapPaths = []
 let count = 0
 for (const path of paths) {
-  const { appHtml, head } = render(path)
+  const { appHtml, head } = await render(path)
   let html = applyHead(template, head)
   html = html.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
 
@@ -122,7 +129,7 @@ for (const path of paths) {
 // removed from vercel.json, Vercel serves this for any unknown URL with a real
 // 404 status instead of a soft-404 homepage. Not added to the sitemap.
 {
-  const { appHtml, head } = render('/404')
+  const { appHtml, head } = await render('/404')
   let notFound = applyHead(template, head)
   notFound = notFound.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
   writeFileSync(join(DIST, '404.html'), notFound)

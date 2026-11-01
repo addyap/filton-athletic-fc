@@ -4,7 +4,7 @@ import LeagueTableWidget from '../LeagueTableWidget'
 import Reveal from '../Reveal'
 import MatchGallery from '../MatchGallery'
 import VenueTag from '../VenueTag'
-import { reserveTable, reserveFixtures, matchGalleryItems, officials } from '../../data/club'
+import { reserveTable, tablesUpdatedAfter, reserveFixtures, matchGalleryItems, officials } from '../../data/club'
 import { reserveTeamPreSeason2026 } from '../../data/preseason'
 
 function resultBadge(result?: string, cancelled?: boolean) {
@@ -38,7 +38,7 @@ function ReservesSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) 
 
       {matchday && (
         <div className="mx-auto mt-8 max-w-2xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-          <img
+          <img loading="lazy" decoding="async"
             src={matchday.matchdayImage}
             alt={`Matchday graphic — Filton Athletic Reserves vs ${matchday.opponent}`}
             className="w-full object-contain"
@@ -107,7 +107,7 @@ function ReservesSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) 
         <>
           {reserveTable.length > 0 && (
             <div className="mt-6">
-              <LeagueTableWidget rows={reserveTable} highlight="Filton Athletic Reserves" />
+              <LeagueTableWidget rows={reserveTable} highlight="Filton Athletic Reserves" updatedAfter={tablesUpdatedAfter} />
             </div>
           )}
 

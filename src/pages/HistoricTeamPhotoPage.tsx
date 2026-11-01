@@ -17,7 +17,7 @@ function HistoricTeamPhotoPage() {
     return (
       <div className="min-h-screen bg-white text-slate-900">
         <SiteHeader />
-        <main className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+        <main id="main" tabIndex={-1} className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
           <SectionHeading icon="camera" title="Photograph not found" />
           <p className="mt-4 text-slate-600">This historic team-photograph record is not available.</p>
           <Link to="/archive/team-photographs" className="mt-6 inline-block font-semibold text-[#0b2d52] underline hover:text-[#2f6b45]">
@@ -43,7 +43,7 @@ function HistoricTeamPhotoPage() {
         </div>
       </section>
 
-      <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
+      <main id="main" tabIndex={-1} className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(290px,0.72fr)] lg:items-start">
           <article className="order-2 lg:order-1">
             <SectionHeading icon="clock" title="A preserved club record" />
@@ -134,7 +134,7 @@ function HistoricTeamPhotoPage() {
           <aside className="order-1 lg:order-2 lg:sticky lg:top-6">
             <figure className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
               <a href={photo.originalImageUrl} target="_blank" rel="noreferrer" className="block bg-slate-100 p-2">
-                <img src={photo.imageUrl} alt={photo.alt} className="h-auto w-full rounded-xl" />
+                <img loading="lazy" decoding="async" src={photo.imageUrl} alt={photo.alt} className="h-auto w-full rounded-xl" />
               </a>
               <figcaption className="p-4">
                 <p className="text-sm font-semibold text-[#0b2d52]">Presentation crop</p>

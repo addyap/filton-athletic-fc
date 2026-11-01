@@ -266,7 +266,7 @@ function YouthFixturesCalendar() {
                     <span className={`rounded-full px-2 py-0.5 text-[10px] font-extrabold tracking-wide ${teamDetails[team].chipClass}`}>
                       {teamDetails[team].label}
                     </span>
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={sponsor.logo}
                       alt={`${sponsor.name} — ${teamDetails[team].label} team sponsor`}
                       className="h-10 w-auto max-w-[130px] rounded object-contain"

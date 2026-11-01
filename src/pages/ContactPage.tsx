@@ -10,6 +10,9 @@ function ContactPage() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <SiteHeader />
+      <main id="main" tabIndex={-1}>
+      </main>
+
       <SiteFooter headingLevel="h1" />
     </div>
   )

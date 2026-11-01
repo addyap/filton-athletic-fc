@@ -29,7 +29,7 @@ function MatchGallery({ matches, headingLevel }: Props) {
               </h3>
               <div className="mt-4 grid grid-cols-2 gap-1.5 sm:grid-cols-4 lg:grid-cols-5">
                 {m.photos.map((p, i) => (
-                  <img
+                  <img loading="lazy" decoding="async"
                     key={p.src}
                     src={p.src}
                     alt={p.alt}

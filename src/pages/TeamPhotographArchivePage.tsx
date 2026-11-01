@@ -24,7 +24,7 @@ function TeamPhotographArchivePage() {
         </div>
       </section>
 
-      <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
+      <main id="main" tabIndex={-1} className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <SectionHeading icon="camera" title="Browse the collection" />
@@ -44,7 +44,7 @@ function TeamPhotographArchivePage() {
               className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-[#2f6b45] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[#2f6b45] focus:ring-offset-2"
             >
               <div className="aspect-[16/10] bg-slate-100 p-2">
-                <img src={photo.imageUrl} alt="" className="h-full w-full rounded-xl object-contain" loading="lazy" />
+                <img decoding="async" src={photo.imageUrl} alt="" className="h-full w-full rounded-xl object-contain" loading="lazy" />
               </div>
               <div className="p-5">
                 <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#2f6b45]">{photo.team}</p>

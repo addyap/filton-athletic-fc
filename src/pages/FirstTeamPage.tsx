@@ -28,6 +28,7 @@ function FirstTeamPage() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <SiteHeader />
+      <main id="main" tabIndex={-1}>
 
       <section className="relative overflow-hidden border-b border-slate-200 bg-slate-50">
         <JerseyMark className="pointer-events-none absolute -right-6 -top-6 h-48 w-48 text-[#0b2d52]/[0.06] sm:h-64 sm:w-64" />
@@ -65,7 +66,7 @@ function FirstTeamPage() {
               {squad.map((player) => (
                 <article key={player.name} className="overflow-hidden rounded-lg border border-slate-200 bg-white transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
                   {playerPhotos[player.name] && (
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={playerPhotos[player.name]}
                       alt={`${player.name} — Filton Athletic FC`}
                       className="aspect-square w-full object-cover object-top"
@@ -98,6 +99,7 @@ function FirstTeamPage() {
         <SectionHeading icon="chat" title="Latest First Team news" className="justify-center" as="h2" />
         <NewsFeed team="first-team" emptyMessage="No First Team news yet — check back soon." />
       </section>
+      </main>
 
       <SiteFooter />
     </div>

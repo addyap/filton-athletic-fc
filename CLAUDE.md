@@ -16,6 +16,11 @@ is what scrolls in the hero banner, so make it a short, punchy headline leading 
 the standout result. Summarise each team's result (with scorers) in the `excerpt`,
 sign off `#FATS #UTF`, and link to the relevant section. Do this every match.
 
+## When results change, update all of these
+Fixture results, the three league tables and `tablesUpdatedAfter` in `club.ts`, the
+newest round at the top of `leagueResults.ts`, and the round-up in `news.ts`. Write
+scores home team first. `src/dataChecks.ts` fails the build if these disagree.
+
 ## Validate before pushing
 `npm run lint` and `npm run build` (the build runs tsc, the SSR build and the
 prerender — 68 routes). Push results straight to `main`; Vercel deploys from it.

@@ -13,11 +13,14 @@ function AsTeamPage() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <SiteHeader />
+      <main id="main" tabIndex={-1}>
       <AsTeamSection headingLevel="h1" />
       <section className="mx-auto max-w-6xl px-6 pb-14">
         <SectionHeading icon="chat" title="Latest news" className="justify-center" />
         <NewsFeed team="as" emptyMessage="No A's news yet — check back soon." />
       </section>
+      </main>
+
       <SiteFooter />
     </div>
   )
