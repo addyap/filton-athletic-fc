@@ -196,7 +196,7 @@ export const historicTeamPhotos: HistoricTeamPhoto[] = [
       groups: [
         {
           label: 'Names listed on the supplied display',
-          people: ['Jim Phillips', 'Jack Osbourne', 'Billy Bennett', 'Kieran Daniels', 'Mike Humby', 'James Lowe', 'Kirk Waldron', 'Taylor Anderson', 'Ali Williams', 'Alex Cafearo', 'Luke Selman', 'Kieran Cooper', 'Jack Willmor', 'Mark Loftus', 'Paulo Missiato', 'Ryan Nixon'],
+          people: ['Jim Phillips', 'Jack Osbourne', 'Billy Bennett', 'Kieran Daniels', 'Mike Humby', 'James Lowe', 'Kirk Waldron', 'Taylor Anderson', 'Ali Williams', 'Alex Cafearo', 'Luke Selman', 'Kieran Cooper', 'Jack Wilmor', 'Mark Loftus', 'Paulo Missiato', 'Ryan Nixon'],
         },
       ],
     },

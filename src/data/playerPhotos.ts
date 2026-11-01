@@ -21,7 +21,7 @@ import kieranCooperPhoto from '../assets/img/players/kieran-cooper.webp'
 export const playerPhotos2025_26: Record<string, string> = {
   'Chris Hillyer': chrisHillyerPhoto,
   'Jack Cole': jackColePhoto,
-  'Jack Willmor': jackWillmorPhoto,
+  'Jack Wilmor': jackWillmorPhoto,
   'Tom Fry': tomFryPhoto,
   'Joe Mitchell': joeMitchellPhoto,
   'Kieran Daniels': kieranDanielsPhoto,
