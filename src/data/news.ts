@@ -46,6 +46,15 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'matchday-roundup-31-october',
+    title: 'Waugh and Cooper fire First Team past Henbury',
+    date: '2026-10-31',
+    teams: ['first-team', 'reserves', 'as'],
+    excerpt:
+      'The First Team beat Henbury & Rockleaze 2-1 at Elm Park on Saturday, with Waugh and Cooper on the mark, to move up to ninth in the County League. It was tougher on the road: the Reserves were edged out 2-1 at Avonmouth Reserves despite a Blundell goal, and the A’s lost 6-1 at St Vallier, with Keeble on target. #FATS #UTF',
+    link: { href: '/#club-calendar', label: 'See the latest results and tables' },
+  },
+  {
     slug: 'matchday-roundup-24-october',
     title: 'A’s edged out 1-0 in the County Cup',
     date: '2026-10-24',
@@ -60,7 +69,7 @@ export const news: NewsItem[] = [
     date: '2026-10-17',
     teams: ['first-team', 'reserves', 'as'],
     excerpt:
-      'A good day in the cups. The First Team beat Shirehampton Reserves 3-1 at Elm Park to go through in the County Cup, with Venables, Fraser and Anderson on the mark, and the A’s won 5-2 away at Cosmos UK Saturday Reserves in the Len Bartlett Cup, with all seven goals coming before half-time. It was a tougher afternoon for the Reserves, who went out of the GFA Senior Amateur Cup after a 5-0 defeat at Cribbs Reserves. #FATS #UTF',
+      'A good day in the cups. The First Team beat Shirehampton Reserves 3-1 at Elm Park to go through in the County Cup, with Venables, Frazer and Anderson on the mark, and the A’s won 5-2 away at Cosmos UK Saturday Reserves in the Len Bartlett Cup, with all seven goals coming before half-time. It was a tougher afternoon for the Reserves, who went out of the GFA Senior Amateur Cup after a 5-0 defeat at Cribbs Reserves. #FATS #UTF',
     link: { href: '/#club-calendar', label: 'See the latest results and tables' },
   },
   {
