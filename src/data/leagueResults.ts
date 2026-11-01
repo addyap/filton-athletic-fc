@@ -22,6 +22,66 @@ export type LeagueRound = {
 
 export const leagueResults2026_27: LeagueRound[] = [
   {
+    label: 'Saturday 31 October',
+    iso: '2026-10-31',
+    matches: [
+      {
+        home: 'Filton Athletic',
+        away: 'Henbury & Rockleaze',
+        homeScore: 2,
+        awayScore: 1,
+        homeScorers: 'R Waugh, K Cooper',
+        awayScorers: 'Own goal',
+      },
+      {
+        home: 'Quedgeley Wanderers',
+        away: 'University of Bristol',
+        homeScore: 1,
+        awayScore: 4,
+        homeScorers: 'A Pledger',
+        awayScorers: 'T Swift, S Tolosa, J Wintour, E Earnshaw',
+      },
+      {
+        home: 'Broadwell Amateurs',
+        away: 'Tewkesbury Town',
+        homeScore: 1,
+        awayScore: 3,
+        homeScorers: 'J Creed',
+        awayScorers: 'A Roder, B Cronin, L Llewelyn',
+      },
+      {
+        home: 'Longlevens Reserves',
+        away: 'Stoke Gifford SGS United',
+        homeScore: 7,
+        awayScore: 0,
+        homeScorers: 'L Marsden-Green 2, J Beardsell, F Rankin 4',
+      },
+      {
+        home: 'Ruardean Hill Rangers',
+        away: 'Wick',
+        homeScore: 4,
+        awayScore: 1,
+        homeScorers: 'L Brown 2, M Telling, A Stephens',
+        awayScorers: 'B Rudge',
+      },
+      {
+        home: 'Frampton United',
+        away: 'Bishops Cleeve Development',
+        homeScore: 1,
+        awayScore: 1,
+        homeScorers: 'J Rowsell',
+        awayScorers: 'H Davis',
+      },
+      {
+        home: 'Chalford',
+        away: 'AFC Mangotsfield Rocks',
+        homeScore: 2,
+        awayScore: 2,
+        homeScorers: 'R Harry, B Pring',
+      },
+    ],
+  },
+  {
     label: 'Matchday 4',
     iso: '2026-08-22',
     matches: [
