@@ -59,9 +59,21 @@ function NewsFeed({ team, limit, emptyMessage }: Props) {
               }
             >
               {item.images.length <= 2
-                ? item.images.map((img) => (
-                    <img loading="lazy" decoding="async" key={img.src} src={img.src} alt={img.alt} className="max-h-96 w-full object-cover" />
-                  ))
+                ? item.images.map((img) =>
+                    img.fit === 'contain' ? (
+                      <a key={img.src} href={img.src} target="_blank" rel="noreferrer" className="block bg-slate-50">
+                        <img
+                          loading="lazy"
+                          decoding="async"
+                          src={img.src}
+                          alt={img.alt}
+                          className="mx-auto max-h-[34rem] w-full object-contain"
+                        />
+                      </a>
+                    ) : (
+                      <img loading="lazy" decoding="async" key={img.src} src={img.src} alt={img.alt} className="max-h-96 w-full object-cover" />
+                    ),
+                  )
                 : item.images.map((img, i) => (
                     <img loading="lazy" decoding="async"
                       key={img.src}

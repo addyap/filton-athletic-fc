@@ -15,8 +15,14 @@ import matchStokeGifford2 from '../assets/img/match-stoke-gifford-2.webp'
 import matchStokeGifford3 from '../assets/img/match-stoke-gifford-3.webp'
 import matchStokeGifford4 from '../assets/img/match-stoke-gifford-4.webp'
 import matchStokeGifford5 from '../assets/img/match-stoke-gifford-5.webp'
+import quizcoFlyer from '../assets/img/quizco-fundraiser-2026.webp'
 
-export type NewsImage = { src: string; alt: string }
+export type NewsImage = {
+  src: string
+  alt: string
+  /** 'contain' shows the whole image without cropping (e.g. a poster/flyer). Default 'cover'. */
+  fit?: 'cover' | 'contain'
+}
 
 export type NewsItem = {
   slug: string
@@ -45,6 +51,21 @@ export type NewsItem = {
  * edits required.
  */
 export const news: NewsItem[] = [
+  {
+    slug: 'filton-quizco-fundraiser',
+    title: 'Filton QuizCo: quiz & disco fundraiser — Saturday 28 November',
+    date: '2026-11-06',
+    teams: ['club'],
+    excerpt:
+      'Back the club at Filton QuizCo, our quiz and disco fundraising night. Saturday 28 November, 7pm until late at the Mile Straight Sports Club. It’s £10 per person including quiz entry, with teams of four drawn at random — and everyone is welcome: players, ex-players, partners and friends. Rounds on sport, music, general knowledge and more, then a disco to finish. Secure your place by paying £10 to Filton Athletic (sort code 52-10-05, account 99080958) with the reference QUIZCO. #FATS #UTF',
+    images: [
+      {
+        src: quizcoFlyer,
+        alt: 'Filton QuizCo quiz and disco fundraising night poster — Saturday 28 November, 7pm until late at the Mile Straight Sports Club. £10 entry per person including quiz entry, teams of four selected at random, all welcome.',
+        fit: 'contain',
+      },
+    ],
+  },
   {
     slug: 'matchday-roundup-31-october',
     title: 'Waugh and Cooper fire First Team past Henbury',
