@@ -76,6 +76,12 @@ function SiteFooter({ headingLevel = 'h2' }: { headingLevel?: 'h1' | 'h2' | 'h3'
                   Safeguarding
                 </Link>
               </p>
+              <p className="mt-2 text-xs text-slate-500">
+                Website by{' '}
+                <a className="underline" href="https://thevitrine.fr/en/" target="_blank" rel="noopener">
+                  The Vitrine
+                </a>
+              </p>
             </div>
             <a
               href={mapsUrl}
