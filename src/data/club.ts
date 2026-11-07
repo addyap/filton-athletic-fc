@@ -490,7 +490,7 @@ export const aTeamFixtures: ReserveFixture[] = [
   { date: '17/10/26', time: '14:00', competition: 'LBC', opponent: 'Cosmos UK Saturday Reserves', venue: 'A', ground: 'Somerdale Pavilion, BS31 2FW', matchdayImage: weekendFixtures2026_10_17, result: 'W 2-5' },
   { date: '24/10/26', time: '14:00', competition: 'CC', opponent: 'Iron Acton A', venue: 'H', ground: 'BAWA Leisure', result: 'L 0-1' },
   { date: '31/10/26', time: '14:00', competition: 'BSD4', opponent: 'St Vallier First', venue: 'A', ground: 'Lockleaze Sports Club, BS7 9XF', matchdayImage: weekendFixtures2026_10_31, result: 'L 6-1', scorers: 'O Keeble' },
-  { date: '07/11/26', time: '14:00', competition: 'BSD4', opponent: 'Cutters Friday Reserves', venue: 'H', ground: 'BAWA Leisure, BS34 7RG', matchdayImage: weekendFixtures2026_11_07 },
+  { date: '07/11/26', time: '14:00', competition: 'BSD4', opponent: 'Cutters Friday Reserves', venue: 'H', ground: 'BAWA Leisure, BS34 7RG', result: 'P-P' },
   { date: '14/11/26', time: '14:00', competition: 'BSD4', opponent: 'Imperial A', venue: 'A', ground: 'Venue TBC' },
   { date: '21/11/26', time: '14:00', competition: 'BSD4', opponent: 'Avonmouth A', venue: 'A', ground: 'Venue TBC' },
   { date: '28/11/26', time: '14:00', competition: 'BSD4', opponent: 'Stoke Gifford SGS United A', venue: 'A', ground: 'Venue TBC' },
