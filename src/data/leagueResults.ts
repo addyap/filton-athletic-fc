@@ -22,6 +22,19 @@ export type LeagueRound = {
 
 export const leagueResults2026_27: LeagueRound[] = [
   {
+    label: 'Saturday 7 November',
+    iso: '2026-11-07',
+    matches: [
+      {
+        home: 'Filton Athletic',
+        away: 'Frampton United',
+        homeScore: 6,
+        awayScore: 1,
+        homeScorers: 'T Merrett 3, F Venables 2, F Fraser',
+      },
+    ],
+  },
+  {
     label: 'Saturday 31 October',
     iso: '2026-10-31',
     matches: [

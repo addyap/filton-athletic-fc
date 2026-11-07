@@ -155,7 +155,7 @@ export const firstTeamFixtures: Fixture[] = [
   { date: '10/10/26', time: '15:00', competition: 'GCL', opponent: 'Totterdown United', venue: 'H', matchdayImage: weekendFixtures2026_10_10, result: 'D 2-2', scorers: 'T Merrett, OG' },
   { date: '17/10/26', time: '14:00', competition: 'CC', opponent: 'Shirehampton Reserves', venue: 'H', matchdayImage: weekendFixtures2026_10_17, result: 'W 3-1', scorers: 'F Venables, F Frazer, T Anderson' },
   { date: '31/10/26', time: '14:00', competition: 'GCL', opponent: 'Henbury & Rockleaze', venue: 'H', matchdayImage: weekendFixtures2026_10_31, result: 'W 2-1', scorers: 'R Waugh, K Cooper' },
-  { date: '07/11/26', time: '14:00', competition: 'GCL', opponent: 'Frampton United', venue: 'H', matchdayImage: weekendFixtures2026_11_07 },
+  { date: '07/11/26', time: '14:00', competition: 'GCL', opponent: 'Frampton United', venue: 'H', matchdayImage: weekendFixtures2026_11_07, result: 'W 6-1', scorers: 'T Merrett 3, F Venables 2, F Fraser' },
   { date: '21/11/26', time: '14:00', competition: 'GCL', opponent: 'Chalford', venue: 'A' },
   { date: '28/11/26', time: '14:00', competition: 'GCL', opponent: 'Quedgeley Wanderers', venue: 'H' },
   { date: '05/12/26', time: '14:00', competition: 'GCL', opponent: 'Broadwell Amateurs', venue: 'A' },
@@ -318,7 +318,7 @@ export const reserveFixtures: ReserveFixture[] = [
   { date: '03/10/26', time: '14:00', competition: 'PREM', opponent: 'AFC Bohemia First', venue: 'H', ground: 'Elm Park, BS34 7PS', matchdayImage: weekendFixtures2026_10_03, result: 'D 3-3', scorers: 'M Hoare, F Dorrington, R Evans' },
   { date: '17/10/26', time: '14:00', competition: 'CC', opponent: 'Cribbs Reserves', venue: 'A', ground: 'Mile Straight Sports & Social Club', matchdayImage: weekendFixtures2026_10_17, result: 'L 5-0' },
   { date: '31/10/26', time: '14:00', competition: 'PREM', opponent: 'Avonmouth Reserves', venue: 'A', ground: 'King George V Recreation Ground, BS11 9ND', matchdayImage: weekendFixtures2026_10_31, result: 'L 2-1', scorers: 'P Blundell' },
-  { date: '07/11/26', time: '14:00', competition: 'PREM', opponent: 'Warmley Rangers First', venue: 'A', ground: 'Warmley Rangers FC, Oldland Common, BS30 9TL', matchdayImage: weekendFixtures2026_11_07 },
+  { date: '07/11/26', time: '14:00', competition: 'PREM', opponent: 'Warmley Rangers First', venue: 'A', ground: 'Warmley Rangers FC, Oldland Common, BS30 9TL', matchdayImage: weekendFixtures2026_11_07, result: 'L 2-0' },
   { date: '14/11/26', time: '14:00', competition: 'PREM', opponent: 'Shaftesbury Crusade First', venue: 'H', ground: 'Elm Park, BS34 7PS' },
   { date: '21/11/26', time: '14:00', competition: 'PREM', opponent: 'Jamaica Bell', venue: 'H', ground: 'Elm Park, BS34 7PS' },
   { date: '28/11/26', time: '14:00', competition: 'PREM', opponent: 'Mendip Broadwalk Res', venue: 'A', ground: 'Filwood Park Playing Fields' },
@@ -564,7 +564,7 @@ export const reserveFixtures2025_26: ReserveFixture[] = [
 ]
 
 /** The fixtures date the current league tables were last refreshed for. Update with the tables. */
-export const tablesUpdatedAfter = '2026-10-31'
+export const tablesUpdatedAfter = '2026-11-07'
 
 export type TableRow = { pos: number; team: string; p: number; w: number; d: number; l: number; f: number; a: number; gd: number; pts: number }
 
@@ -581,9 +581,9 @@ export const leagueTable: TableRow[] = [
   { pos: 5, team: 'Bishops Cleeve Development', p: 10, w: 5, d: 2, l: 3, f: 19, a: 16, gd: 3, pts: 17 },
   { pos: 6, team: 'Tewkesbury Town', p: 6, w: 5, d: 1, l: 0, f: 13, a: 5, gd: 8, pts: 16 },
   { pos: 7, team: 'Henbury & Rockleaze', p: 10, w: 5, d: 1, l: 4, f: 16, a: 16, gd: 0, pts: 16 },
-  { pos: 8, team: 'Stoke Gifford SGS United', p: 12, w: 3, d: 3, l: 6, f: 20, a: 27, gd: -7, pts: 12 },
-  { pos: 9, team: 'Filton Athletic', p: 9, w: 2, d: 5, l: 2, f: 15, a: 15, gd: 0, pts: 11 },
-  { pos: 10, team: 'Frampton United', p: 9, w: 2, d: 4, l: 3, f: 14, a: 17, gd: -3, pts: 10 },
+  { pos: 8, team: 'Filton Athletic', p: 10, w: 3, d: 5, l: 2, f: 21, a: 16, gd: 5, pts: 14 },
+  { pos: 9, team: 'Stoke Gifford SGS United', p: 12, w: 3, d: 3, l: 6, f: 20, a: 27, gd: -7, pts: 12 },
+  { pos: 10, team: 'Frampton United', p: 10, w: 2, d: 4, l: 4, f: 15, a: 23, gd: -8, pts: 10 },
   { pos: 11, team: 'AFC Mangotsfield Rocks', p: 10, w: 2, d: 3, l: 5, f: 17, a: 18, gd: -1, pts: 9 },
   { pos: 12, team: 'Ruardean Hill Rangers', p: 7, w: 3, d: 0, l: 4, f: 11, a: 19, gd: -8, pts: 9 },
   { pos: 13, team: 'Wick', p: 12, w: 1, d: 4, l: 7, f: 12, a: 25, gd: -13, pts: 7 },
@@ -653,8 +653,8 @@ export const reserveTable: TableRow[] = [
   { pos: 1, team: 'Shaftesbury Crusade First', p: 6, w: 5, d: 1, l: 0, f: 17, a: 7, gd: 10, pts: 16 },
   { pos: 2, team: 'Wessex Wanderers First', p: 6, w: 4, d: 1, l: 1, f: 21, a: 8, gd: 13, pts: 13 },
   { pos: 3, team: 'Avonmouth Reserves', p: 5, w: 4, d: 0, l: 1, f: 16, a: 9, gd: 7, pts: 12 },
-  { pos: 4, team: 'Almondsbury Reserves', p: 5, w: 3, d: 1, l: 1, f: 13, a: 6, gd: 7, pts: 10 },
-  { pos: 5, team: 'Warmley Rangers First', p: 5, w: 3, d: 0, l: 2, f: 14, a: 11, gd: 3, pts: 9 },
+  { pos: 4, team: 'Warmley Rangers First', p: 6, w: 4, d: 0, l: 2, f: 16, a: 11, gd: 5, pts: 12 },
+  { pos: 5, team: 'Almondsbury Reserves', p: 5, w: 3, d: 1, l: 1, f: 13, a: 6, gd: 7, pts: 10 },
   { pos: 6, team: 'Mendip Broadwalk Res', p: 4, w: 2, d: 2, l: 0, f: 12, a: 8, gd: 4, pts: 8 },
   { pos: 7, team: 'Southmead First', p: 3, w: 2, d: 1, l: 0, f: 12, a: 4, gd: 8, pts: 7 },
   { pos: 8, team: 'Jamaica Bell, The First', p: 6, w: 2, d: 1, l: 3, f: 6, a: 8, gd: -2, pts: 7 },
@@ -663,7 +663,7 @@ export const reserveTable: TableRow[] = [
   { pos: 11, team: 'Old Cothamians First', p: 6, w: 1, d: 1, l: 4, f: 7, a: 15, gd: -8, pts: 4 },
   { pos: 12, team: 'Cosmos UK Saturday First', p: 6, w: 1, d: 0, l: 5, f: 7, a: 20, gd: -13, pts: 3 },
   { pos: 13, team: 'Phoenix NextGen First', p: 6, w: 1, d: 0, l: 5, f: 2, a: 16, gd: -14, pts: 3 },
-  { pos: 14, team: 'Filton Athletic Reserves', p: 4, w: 0, d: 2, l: 2, f: 5, a: 8, gd: -3, pts: 2 },
+  { pos: 14, team: 'Filton Athletic Reserves', p: 5, w: 0, d: 2, l: 3, f: 5, a: 10, gd: -5, pts: 2 },
 ]
 
 /** 2026/27 A's division table — Bristol & Suburban League, Division Four, from FA Full-Time. */

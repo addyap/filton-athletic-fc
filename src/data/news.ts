@@ -52,6 +52,15 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'matchday-roundup-7-november',
+    title: 'Saturday round-up: First Team hit six past Frampton',
+    date: '2026-11-07',
+    teams: ['first-team', 'reserves'],
+    excerpt:
+      'A big afternoon at Elm Park as the First Team put Frampton United to the sword, running out 6-1 winners through a Trey Merrett hat-trick, two from Fraser Venables and one from Freddie Fraser. It was a harder day for the Reserves, beaten 2-0 away at Warmley Rangers. The A’s trip was called off, their tie with Cutters Friday Reserves postponed. #FATS #UTF',
+    link: { href: '/#club-calendar', label: 'See the latest results and tables' },
+  },
+  {
     slug: 'filton-quizco-fundraiser',
     title: 'Filton QuizCo: quiz & disco fundraiser — Saturday 28 November',
     date: '2026-11-06',
