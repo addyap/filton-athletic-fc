@@ -1,70 +1,30 @@
 import { useEffect, useState } from 'react'
+import { Poppy, REMEMBRANCE_START, REMEMBRANCE_END } from './remembrance'
 
 /**
- * Remembrance Sunday lookover — a dignified, self-expiring banner.
+ * Remembrance lookover — a dignified, self-expiring banner above the header.
  *
- * It shows only during Remembrance Sunday (8 November 2026, local time) and
- * removes itself at midnight: the window is checked against the viewer's clock
- * on mount, and a timer clears it at midnight if the tab is left open. Because
- * the gate is client-side, the solemn treatment appears and disappears on time
- * without needing a redeploy — the prerendered HTML renders nothing.
+ * Shares its window with the rest of the treatment (see ./remembrance): the whole
+ * of 8–11 Nov 2026, checked against the viewer's clock and cleared at midnight, so
+ * it appears and removes itself with no redeploy. The prerendered HTML renders
+ * nothing.
  */
 
-// Local-time window: the whole of Sun 8 Nov 2026, finishing at midnight.
-const START = new Date(2026, 10, 8, 0, 0, 0).getTime()
-const END = new Date(2026, 10, 9, 0, 0, 0).getTime()
 const DISMISS_KEY = 'remembrance-2026'
-
-/** One poppy — four crimson petals, a dark seeded heart. */
-function Poppy({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 100 100" className={className} aria-hidden="true">
-      <defs>
-        <radialGradient id="poppyPetal" cx="50%" cy="42%" r="62%">
-          <stop offset="0%" stopColor="#ef2b3d" />
-          <stop offset="62%" stopColor="#c8102e" />
-          <stop offset="100%" stopColor="#8f0b20" />
-        </radialGradient>
-      </defs>
-      <g transform="translate(50 50)">
-        {[0, 72, 144, 216, 288].map((deg) => (
-          <ellipse
-            key={deg}
-            cx="0"
-            cy="-21"
-            rx="19"
-            ry="24"
-            fill="url(#poppyPetal)"
-            transform={`rotate(${deg})`}
-          />
-        ))}
-        {/* seeded heart */}
-        <circle r="12.5" fill="#140a06" />
-        <g stroke="#2a1a12" strokeWidth="1.4" strokeLinecap="round">
-          {[0, 45, 90, 135, 180, 225, 270, 315].map((deg) => (
-            <line key={deg} x1="0" y1="0" x2="0" y2="-9.5" transform={`rotate(${deg})`} />
-          ))}
-        </g>
-        <circle r="3.6" fill="#241208" />
-      </g>
-    </svg>
-  )
-}
 
 function RemembranceBanner() {
   const [show, setShow] = useState(false)
 
   useEffect(() => {
     const now = Date.now()
-    if (now < START || now >= END) return
+    if (now < REMEMBRANCE_START || now >= REMEMBRANCE_END) return
     try {
       if (localStorage.getItem(DISMISS_KEY) === 'dismissed') return
     } catch {
       /* storage may be unavailable — show anyway */
     }
     setShow(true)
-    // Fold the banner away the moment the day ends, even on an open tab.
-    const timer = window.setTimeout(() => setShow(false), END - now)
+    const timer = window.setTimeout(() => setShow(false), REMEMBRANCE_END - now)
     return () => window.clearTimeout(timer)
   }, [])
 
@@ -82,7 +42,7 @@ function RemembranceBanner() {
   return (
     <aside
       role="region"
-      aria-label="Remembrance Sunday"
+      aria-label="Remembrance"
       className="rb relative overflow-hidden border-b border-[#c8102e]/40 bg-[#0a0a0c] text-slate-100 print:hidden"
     >
       <style>{`
@@ -120,7 +80,7 @@ function RemembranceBanner() {
       <span className="rb-petal" style={{ left: '88%', animationDuration: '12s', animationDelay: '3.2s' }} />
 
       <div className="relative mx-auto flex max-w-6xl items-center gap-4 px-4 py-4 sm:gap-6 sm:px-6 sm:py-5">
-        <Poppy className="rb-poppy h-12 w-12 shrink-0 drop-shadow-[0_2px_10px_rgba(200,16,46,.45)] sm:h-16 sm:w-16" />
+        <Poppy bloom className="h-12 w-12 shrink-0 drop-shadow-[0_2px_10px_rgba(200,16,46,.45)] sm:h-16 sm:w-16" />
 
         <div className="min-w-0 flex-1">
           <p className="rb-fade rb-d1 text-[11px] font-bold uppercase tracking-[0.3em] text-[#ef5a67] sm:text-xs">
@@ -134,8 +94,8 @@ function RemembranceBanner() {
               &ldquo;They shall grow not old, as we that are left grow old; age shall not weary them, nor the years
               condemn.&rdquo;{' '}
             </span>
-            This Remembrance Sunday, Filton Athletic FC remembers all who served and gave their lives. The two-minute
-            silence is observed at 11am.
+            Through Remembrance Sunday and Armistice Day, Filton Athletic FC remembers all who served and gave their
+            lives. The two-minute silence is observed at 11am.
           </p>
         </div>
 

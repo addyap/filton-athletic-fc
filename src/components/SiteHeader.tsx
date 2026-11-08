@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import crest from '../assets/img/filton-athletic-crest-transparent.webp'
 import { sponsors } from '../data/club'
+import { Poppy, useRemembranceActive } from './remembrance'
 
 type NavLink = { href: string; label: string; external?: boolean }
 
@@ -66,6 +67,7 @@ function NavigationLink({
 
 function SiteHeader() {
   const location = useLocation()
+  const remembrance = useRemembranceActive()
   const [menuOpen, setMenuOpen] = useState(false)
   const [hidden, setHidden] = useState(false)
   const [activeId, setActiveId] = useState('')
@@ -208,7 +210,12 @@ function SiteHeader() {
       <div className="border-b border-white/10 bg-[#0b2d52]">
         <div className="flex items-center justify-between gap-4 py-2 pl-0 pr-2 sm:pr-3">
           <Link to="/" onClick={closeMenu} className="flex items-center gap-3 sm:gap-5">
-            <img src={crest} alt="Filton Athletic FC crest" className="h-16 w-16 object-contain sm:h-24 sm:w-24" />
+            <span className="relative shrink-0">
+              <img src={crest} alt="Filton Athletic FC crest" className="h-16 w-16 object-contain sm:h-24 sm:w-24" />
+              {remembrance && (
+                <Poppy className="absolute -bottom-0.5 -right-0.5 h-6 w-6 drop-shadow-[0_1px_4px_rgba(0,0,0,.5)] sm:h-9 sm:w-9" />
+              )}
+            </span>
             <div>
               <p className="text-2xl font-bold leading-tight sm:text-4xl lg:text-5xl">Filton Athletic FC</p>
               <p className="text-xs text-slate-300 sm:text-base lg:text-lg">Est. Filton, Bristol &middot; #FATS #UTF</p>

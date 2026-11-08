@@ -3,6 +3,7 @@ import { groundInfo } from '../data/club'
 import elmParkPitch from '../assets/img/elm-park-pitch.jpg'
 import BackToTop from './BackToTop'
 import SectionHeading from './SectionHeading'
+import { Poppy, useRemembranceActive } from './remembrance'
 
 const mapsQuery = encodeURIComponent(`${groundInfo.name}, ${groundInfo.address}`)
 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`
@@ -12,10 +13,24 @@ const xUrl = 'https://x.com/FiltonAthletic'
 const facebookUrl = 'https://www.facebook.com/FiltonAthleticFC'
 
 function SiteFooter({ headingLevel = 'h2' }: { headingLevel?: 'h1' | 'h2' | 'h3' } = {}) {
+  const remembrance = useRemembranceActive()
   return (
     <>
       <footer id="contact" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-6xl px-6 py-14">
+          {remembrance && (
+            <div className="mx-auto mb-12 max-w-2xl rounded-2xl border border-[#c8102e]/25 bg-[#0b0b0d] px-6 py-7 text-center text-slate-100 shadow-sm">
+              <Poppy className="mx-auto h-11 w-11 drop-shadow-[0_2px_8px_rgba(200,16,46,.4)]" />
+              <p className="mt-3 font-serif text-xl font-semibold text-white">We will remember them</p>
+              <p className="mt-1.5 text-[11px] font-bold uppercase tracking-[0.3em] text-[#ef5a67]">
+                Lest we forget
+              </p>
+              <p className="mx-auto mt-3 max-w-md text-sm italic leading-relaxed text-slate-300">
+                Filton Athletic FC pays tribute to all who served and gave their lives. They shall grow not old, as we
+                that are left grow old.
+              </p>
+            </div>
+          )}
           <SectionHeading icon="pin" title="Contact & ground" className="justify-center" as={headingLevel} />
           <div className="mt-6 grid gap-8 lg:grid-cols-5 lg:items-start">
             <div className="lg:col-span-2">
