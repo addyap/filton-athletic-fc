@@ -2,6 +2,7 @@ import { Suspense } from 'react'
 import { Routes, Route, matchPath } from 'react-router-dom'
 import { usePageHead } from './usePageHead'
 import { lazyPage } from './lazyPage'
+import RemembranceBanner from './components/RemembranceBanner'
 
 const Home = lazyPage(() => import('./pages/Home'))
 const PostPage = lazyPage(() => import('./pages/PostPage'))
@@ -69,6 +70,7 @@ function AppRoutes() {
       >
         Skip to main content
       </a>
+      <RemembranceBanner />
       <Suspense fallback={null}>
         <Routes>
           {pages.map(({ path, element }) => (
