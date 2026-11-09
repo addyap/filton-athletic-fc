@@ -260,7 +260,6 @@ export function headForPath(pathname: string): PageHead {
       ...base,
       title: 'Safeguarding — Filton Athletic FC',
       description: "Filton Athletic FC's safeguarding policy for young players.",
-      noindex: true,
     }
   }
 
