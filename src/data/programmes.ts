@@ -72,6 +72,7 @@ const competitionNames: Record<string, string> = {
   BSP: 'Bristol & Suburban Premier Division',
   BSPC: 'Bristol & Suburban League Cup',
   BSD4: 'Bristol & Suburban League, Division Four',
+  FR: 'Friendly',
 }
 
 export function competitionName(code: string): string {
