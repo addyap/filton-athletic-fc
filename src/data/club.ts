@@ -745,7 +745,7 @@ export const sponsors = [
   { name: 'Seamless Floors', blurb: 'Carpet, vinyl, LVT & laminate — 07901 751755', website: 'https://www.seamlessfloorsbristol.co.uk/' },
   { name: 'A1 Home Improvement', blurb: 'Building & renovation — 01174 018 412', website: 'https://a1home.uk/' },
   { name: 'A1 Land Improvement', blurb: 'Landscaping & driveways — 01174 018 412', website: 'https://a1land.uk/' },
-  { name: 'James Antony Flooring', blurb: 'Beautiful floors, expertly fitted — 357 Filton Avenue BS7 0BD · 07584 674101' },
+  { name: 'James Antony Flooring', blurb: 'Beautiful floors, expertly fitted — 357 Filton Avenue BS7 0BD · 07584 674101', website: 'https://jamesantonyflooring.co.uk/' },
   { name: 'Optimum Flooring', blurb: 'All types of commercial & domestic flooring undertaken — 07925 588068' },
   { name: 'Packhouse', blurb: 'Non-league football intel — @packhousefooty', website: 'https://x.com/packhousefooty' },
 ]
