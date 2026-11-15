@@ -4,7 +4,7 @@ import LeagueTableWidget from '../LeagueTableWidget'
 import Reveal from '../Reveal'
 import MatchGallery from '../MatchGallery'
 import VenueTag from '../VenueTag'
-import { reserveTable, tablesUpdatedAfter, reserveFixtures, matchGalleryItems, officials } from '../../data/club'
+import { bristolSuburbanFullTime, reserveTable, tablesUpdatedAfter, reserveFixtures, matchGalleryItems, officials } from '../../data/club'
 import { reserveTeamPreSeason2026 } from '../../data/preseason'
 
 function resultBadge(result?: string, cancelled?: boolean) {
@@ -108,6 +108,13 @@ function ReservesSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) 
           {reserveTable.length > 0 && (
             <div className="mt-6">
               <LeagueTableWidget rows={reserveTable} highlight="Filton Athletic Reserves" updatedAfter={tablesUpdatedAfter} />
+              <p className="mt-3 text-center text-xs text-slate-400">
+                Updated from FA Full-Time. For the live table plus every result and goalscorer, see the{' '}
+                <a href={bristolSuburbanFullTime.premierTable} target="_blank" rel="noreferrer" className="font-medium text-[#0b2d52] underline">
+                  official Bristol &amp; Suburban Premier Division page on FA Full-Time
+                </a>
+                .
+              </p>
             </div>
           )}
 

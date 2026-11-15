@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import crest from '../assets/img/filton-athletic-crest-transparent.webp'
-import { sponsors } from '../data/club'
+import { bristolSuburbanFullTime, sponsors } from '../data/club'
 import { Poppy, useRemembranceActive } from './remembrance'
 
 type NavLink = { href: string; label: string; external?: boolean }
@@ -230,6 +230,9 @@ function SiteHeader() {
             <a href={fullTimeUrl} target="_blank" rel="noreferrer" className="hover:text-white hover:underline">
               FA Full-Time &mdash; league tables &amp; results
             </a>
+            <a href={bristolSuburbanFullTime.league} target="_blank" rel="noreferrer" className="hover:text-white hover:underline">
+              Bristol &amp; Suburban League &mdash; Reserves &amp; A&rsquo;s
+            </a>
           </div>
 
           <button
@@ -334,6 +337,9 @@ function SiteHeader() {
                 </a>
                 <a href={fullTimeUrl} target="_blank" rel="noreferrer" onClick={closeMenu} className={mobileClass(false)}>
                   FA Full-Time &mdash; league tables &amp; results
+                </a>
+                <a href={bristolSuburbanFullTime.league} target="_blank" rel="noreferrer" onClick={closeMenu} className={mobileClass(false)}>
+                  Bristol &amp; Suburban League &mdash; Reserves &amp; A&rsquo;s
                 </a>
               </div>
             </div>

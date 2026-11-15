@@ -4,7 +4,7 @@ import LeagueTableWidget from '../LeagueTableWidget'
 import Reveal from '../Reveal'
 import MatchGallery from '../MatchGallery'
 import VenueTag from '../VenueTag'
-import { asTeamTable, tablesUpdatedAfter, aTeamFixtures, matchGalleryItems, officials } from '../../data/club'
+import { asTeamTable, bristolSuburbanFullTime, tablesUpdatedAfter, aTeamFixtures, matchGalleryItems, officials } from '../../data/club'
 import { aTeamPreSeason2026 } from '../../data/preseason'
 
 function resultBadge(result?: string, cancelled?: boolean) {
@@ -143,6 +143,13 @@ function AsTeamSection({ headingLevel }: { headingLevel?: 'h1' | 'h3' } = {}) {
       ) : (
         <div className="mt-8">
           <LeagueTableWidget rows={asTeamTable} highlight="Filton Athletic A" accent="sky" updatedAfter={tablesUpdatedAfter} />
+          <p className="mt-3 text-center text-xs text-slate-400">
+            Updated from FA Full-Time. For the live table plus every result and goalscorer, see the{' '}
+            <a href={bristolSuburbanFullTime.divisionFourTable} target="_blank" rel="noreferrer" className="font-medium text-[#0b2d52] underline">
+              official Bristol &amp; Suburban Division Four page on FA Full-Time
+            </a>
+            .
+          </p>
         </div>
       )}
 

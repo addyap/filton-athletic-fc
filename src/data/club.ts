@@ -565,6 +565,17 @@ export const reserveFixtures2025_26: ReserveFixture[] = [
   { date: '02/05/26', time: '14:00', competition: 'SEN', opponent: 'Broad Plain House Reserves', venue: 'A', ground: 'Filwood Park Playing Fields', result: 'W (walkover)' },
 ]
 
+/**
+ * Bristol & Suburban League on FA Full-Time — the Reserves (Premier Division)
+ * and A's (Division Four) leagues. The table links carry the 2026/27 season and
+ * division ids, so update them when a new season starts.
+ */
+export const bristolSuburbanFullTime = {
+  league: 'https://fulltime.thefa.com/index.html?league=646510641',
+  premierTable: 'https://fulltime.thefa.com/table.html?league=646510641&selectedSeason=745534446&selectedDivision=387220239&selectedCompetition=0',
+  divisionFourTable: 'https://fulltime.thefa.com/table.html?league=646510641&selectedSeason=745534446&selectedDivision=316938592&selectedCompetition=0',
+}
+
 /** The fixtures date the current league tables were last refreshed for. Update with the tables. */
 export const tablesUpdatedAfter = '2026-11-14'
 
