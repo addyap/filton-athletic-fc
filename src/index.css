@@ -52,6 +52,16 @@ html {
   }
 }
 
+/* Latest-news banner: progress bar showing time until the next headline. */
+@keyframes latest-progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 /* Latest-news banner: gentle fade/rise as each headline rotates in. */
 @keyframes latest-fade {
   from {
