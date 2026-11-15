@@ -4,7 +4,7 @@ const MAIN_SPONSORS = ['BBS Plumbing & Heating Supplies', 'First Auto Care Techs
 
 /**
  * Scrolling strip of club sponsors, main sponsors first. `dark` sits in the site
- * header on inner pages; `light` sits just under the hero on the home page.
+ * header on inner pages; `light` (a bolder navy-and-gold band) sits just under the hero on the home page.
  * Pauses on hover and stays still for users who prefer reduced motion.
  */
 function SponsorTicker({ variant = 'dark' }: { variant?: 'dark' | 'light' }) {
@@ -16,14 +16,16 @@ function SponsorTicker({ variant = 'dark' }: { variant?: 'dark' | 'light' }) {
   const items = [...ordered, ...ordered]
 
   const wrapClass = light
-    ? 'border-y border-slate-200 bg-slate-50 text-[#0b2d52]'
+    ? 'border-y-2 border-[#c9a84c] bg-[#0b2d52] text-white shadow-[0_6px_20px_-8px_rgba(11,45,82,0.6)]'
     : 'border-b border-white/[0.06] bg-[#071e38] text-white'
   const labelClass = light
-    ? 'border-r border-slate-200 bg-[#0b2d52] text-white'
+    ? 'bg-gradient-to-r from-[#c9a84c] to-[#e8c76a] text-[#0b2d52]'
     : 'border-r border-white/10 text-slate-400'
-  const mainClass = light ? 'font-bold text-[#0b2d52]' : 'font-semibold text-[#e8c76a]'
-  const otherClass = light ? 'text-slate-500 hover:text-[#0b2d52]' : 'text-slate-400 hover:text-white'
-  const size = light ? 'py-2.5 sm:py-3' : 'py-1.5 sm:py-2'
+  const mainClass = light ? 'font-extrabold text-[#f4d98a]' : 'font-semibold text-[#e8c76a]'
+  const otherClass = light ? 'font-semibold text-white hover:text-[#f4d98a]' : 'text-slate-400 hover:text-white'
+  const size = light ? 'py-3.5 sm:py-4' : 'py-1.5 sm:py-2'
+  const text = light ? 'text-base sm:text-lg' : 'text-sm sm:text-base'
+  const labelText = light ? 'text-[11px] font-extrabold sm:px-5 sm:text-sm' : 'text-[10px] font-bold sm:px-4 sm:text-xs'
 
   return (
     <div className={`flex items-stretch ${wrapClass}`} aria-hidden="true">
@@ -34,7 +36,7 @@ function SponsorTicker({ variant = 'dark' }: { variant?: 'dark' | 'light' }) {
         @media (prefers-reduced-motion: reduce) { .sponsor-ticker { animation: none; } }
       `}</style>
       <span
-        className={`flex shrink-0 items-center px-3 text-[10px] font-bold uppercase tracking-widest sm:px-4 sm:text-xs ${labelClass}`}
+        className={`flex shrink-0 items-center px-3 uppercase tracking-widest ${labelText} ${labelClass}`}
       >
         {light ? 'Our sponsors' : 'Sponsors'}
       </span>
@@ -51,7 +53,7 @@ function SponsorTicker({ variant = 'dark' }: { variant?: 'dark' | 'light' }) {
                   href={s.website ?? '/#sponsors'}
                   {...(s.website ? { target: '_blank', rel: 'noreferrer' } : {})}
                   tabIndex={-1}
-                  className={`text-sm tracking-wide transition hover:underline sm:text-base ${
+                  className={`${text} tracking-wide transition hover:underline ${
                     s.website && isMain ? mainClass : otherClass
                   }`}
                 >
