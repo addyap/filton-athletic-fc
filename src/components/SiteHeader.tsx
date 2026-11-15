@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import crest from '../assets/img/filton-athletic-crest-transparent.webp'
-import { bristolSuburbanFullTime, sponsors } from '../data/club'
+import { bristolSuburbanFullTime } from '../data/club'
+import SponsorTicker from './SponsorTicker'
 import { Poppy, useRemembranceActive } from './remembrance'
 
 type NavLink = { href: string; label: string; external?: boolean }
@@ -155,58 +156,8 @@ function SiteHeader() {
 
   return (
     <header className={`sticky top-0 z-50 text-white print:hidden ${transformClasses}`}>
-      {/* Sponsor ticker */}
-      <div className="flex items-center border-b border-white/[0.06] bg-[#071e38]" aria-hidden="true">
-        <style>{`
-          @keyframes sponsor-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-          .sponsor-ticker { animation: sponsor-scroll 35s linear infinite; }
-          .sponsor-ticker:hover { animation-play-state: paused; }
-          @media (prefers-reduced-motion: reduce) { .sponsor-ticker { animation: none; } }
-        `}</style>
-        <span className="shrink-0 border-r border-white/10 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-slate-400 sm:px-4 sm:py-2 sm:text-xs">
-          Sponsors
-        </span>
-        <div className="flex min-w-0 flex-1 overflow-hidden">
-          {(() => {
-            const main = ['BBS Plumbing & Heating Supplies', 'First Auto Care Techs']
-            const ordered = [
-              ...sponsors.filter(s => main.includes(s.name)),
-              ...sponsors.filter(s => !main.includes(s.name)),
-            ]
-            const items = [...ordered, ...ordered]
-            return (
-              <div className="sponsor-ticker flex shrink-0 items-center whitespace-nowrap py-1.5 sm:py-2">
-                {items.map((s, i) => (
-                  <span key={i} className="flex items-center">
-                    <span className="mx-3 text-[9px] text-[#c9a84c] sm:mx-5 sm:text-xs" aria-hidden="true">◆</span>
-                    {s.website ? (
-                      <a
-                        href={s.website}
-                        target="_blank"
-                        rel="noreferrer"
-                        tabIndex={-1}
-                        className={`text-sm tracking-wide transition hover:underline sm:text-base ${
-                          main.includes(s.name) ? 'font-semibold text-[#e8c76a]' : 'text-slate-400 hover:text-white'
-                        }`}
-                      >
-                        {s.name}
-                      </a>
-                    ) : (
-                      <a
-                        href="/#sponsors"
-                        tabIndex={-1}
-                        className="text-sm tracking-wide text-slate-400 transition hover:text-white hover:underline sm:text-base"
-                      >
-                        {s.name}
-                      </a>
-                    )}
-                  </span>
-                ))}
-              </div>
-            )
-          })()}
-        </div>
-      </div>
+      {/* Sponsor ticker — on the home page it sits under the hero instead */}
+      {location.pathname !== '/' && <SponsorTicker />}
       <div className="border-b border-white/10 bg-[#0b2d52]">
         <div className="flex items-center justify-between gap-4 py-2 pl-0 pr-2 sm:pr-3">
           <Link to="/" onClick={closeMenu} className="flex items-center gap-3 sm:gap-5">

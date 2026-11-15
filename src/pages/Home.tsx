@@ -15,6 +15,7 @@ import bsfProgrammePage from '../assets/img/bsf-programme-page.webp'
 import SiteHeader from '../components/SiteHeader'
 import SiteFooter from '../components/SiteFooter'
 import Hero from '../components/Hero'
+import SponsorTicker from '../components/SponsorTicker'
 import MatchdaySection from '../components/MatchdaySection'
 import SocialSection from '../components/SocialSection'
 import NewsFeed from '../components/NewsFeed'
@@ -92,6 +93,7 @@ function Home() {
 
       {/* Hero */}
       <Hero />
+      <SponsorTicker variant="light" />
 
       <MatchdaySection />
       <LatestResultsSection />
