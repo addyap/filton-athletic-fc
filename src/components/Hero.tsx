@@ -415,8 +415,9 @@ function Hero() {
         </div>
       </div>
 
-      {/* Flight-strip: league identity as flight data */}
-      <div className="fah-fs pointer-events-none absolute bottom-6 right-5 z-20 text-right font-mono text-[11px] leading-relaxed tracking-[0.03em] text-[#9fb6d6] sm:right-6">
+      {/* Flight-strip: league identity as flight data. On phones it sits in the flow
+          under the buttons (absolute positioning there overlapped them). */}
+      <div className="fah-fs pointer-events-none relative z-20 mx-auto mb-12 w-full max-w-6xl px-5 text-left font-mono text-[11px] leading-relaxed tracking-[0.03em] text-[#9fb6d6] sm:absolute sm:bottom-6 sm:right-6 sm:mb-0 sm:w-auto sm:max-w-none sm:px-0 sm:text-right">
         <span className="font-medium text-white">MARCLIFF GLOS. COUNTY LEAGUE</span>
         <br />
         3 adult teams · youth section · <span className="text-[#f4a94b]">est. 1960s</span>
