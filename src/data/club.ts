@@ -157,7 +157,7 @@ export const firstTeamFixtures: Fixture[] = [
   { date: '17/10/26', time: '14:00', competition: 'CC', opponent: 'Shirehampton Reserves', venue: 'H', matchdayImage: weekendFixtures2026_10_17, result: 'W 3-1', scorers: 'F Venables, F Frazer, T Anderson' },
   { date: '31/10/26', time: '14:00', competition: 'GCL', opponent: 'Henbury & Rockleaze', venue: 'H', matchdayImage: weekendFixtures2026_10_31, result: 'W 2-1', scorers: 'R Waugh, K Cooper' },
   { date: '07/11/26', time: '14:00', competition: 'GCL', opponent: 'Frampton United', venue: 'H', matchdayImage: weekendFixtures2026_11_07, result: 'W 6-1', scorers: 'T Merrett 3, F Venables 2, F Fraser' },
-  { date: '14/11/26', time: '14:00', competition: 'FR', opponent: 'Warmley Rangers', venue: 'A', ground: 'Warmley Rangers FC, Oldland Common, BS30 9TL', matchdayImage: weekendFixtures2026_11_14 },
+  { date: '14/11/26', time: '14:00', competition: 'FR', opponent: 'Warmley Rangers', venue: 'A', ground: 'Warmley Rangers FC, Oldland Common, BS30 9TL', matchdayImage: weekendFixtures2026_11_14, result: 'W 1-5', scorers: 'T Merrett 3, T Fry, D Quick' },
   { date: '21/11/26', time: '14:00', competition: 'GCL', opponent: 'Chalford', venue: 'A' },
   { date: '28/11/26', time: '14:00', competition: 'GCL', opponent: 'Quedgeley Wanderers', venue: 'H' },
   { date: '05/12/26', time: '14:00', competition: 'GCL', opponent: 'Broadwell Amateurs', venue: 'A' },
@@ -321,7 +321,7 @@ export const reserveFixtures: ReserveFixture[] = [
   { date: '17/10/26', time: '14:00', competition: 'CC', opponent: 'Cribbs Reserves', venue: 'A', ground: 'Mile Straight Sports & Social Club', matchdayImage: weekendFixtures2026_10_17, result: 'L 5-0' },
   { date: '31/10/26', time: '14:00', competition: 'PREM', opponent: 'Avonmouth Reserves', venue: 'A', ground: 'King George V Recreation Ground, BS11 9ND', matchdayImage: weekendFixtures2026_10_31, result: 'L 2-1', scorers: 'P Blundell' },
   { date: '07/11/26', time: '14:00', competition: 'PREM', opponent: 'Warmley Rangers First', venue: 'A', ground: 'Warmley Rangers FC, Oldland Common, BS30 9TL', matchdayImage: weekendFixtures2026_11_07, result: 'L 2-0' },
-  { date: '14/11/26', time: '14:00', competition: 'PREM', opponent: 'Shaftesbury Crusade First', venue: 'H', ground: 'Elm Park, BS34 7PS', matchdayImage: weekendFixtures2026_11_14 },
+  { date: '14/11/26', time: '14:00', competition: 'PREM', opponent: 'Shaftesbury Crusade First', venue: 'H', ground: 'Elm Park, BS34 7PS', matchdayImage: weekendFixtures2026_11_14, result: 'L 1-3', scorers: 'W Abdullah' },
   { date: '21/11/26', time: '14:00', competition: 'PREM', opponent: 'Jamaica Bell', venue: 'H', ground: 'Elm Park, BS34 7PS' },
   { date: '28/11/26', time: '14:00', competition: 'PREM', opponent: 'Mendip Broadwalk Res', venue: 'A', ground: 'Filwood Park Playing Fields' },
   { date: '05/12/26', time: '14:00', competition: 'PREM', opponent: 'Old Cothamians First', venue: 'H', ground: 'Elm Park, BS34 7PS' },
@@ -493,7 +493,7 @@ export const aTeamFixtures: ReserveFixture[] = [
   { date: '24/10/26', time: '14:00', competition: 'CC', opponent: 'Iron Acton A', venue: 'H', ground: 'BAWA Leisure', result: 'L 0-1' },
   { date: '31/10/26', time: '14:00', competition: 'BSD4', opponent: 'St Vallier First', venue: 'A', ground: 'Lockleaze Sports Club, BS7 9XF', matchdayImage: weekendFixtures2026_10_31, result: 'L 6-1', scorers: 'O Keeble' },
   { date: '07/11/26', time: '14:00', competition: 'BSD4', opponent: 'Cutters Friday Reserves', venue: 'H', ground: 'BAWA Leisure, BS34 7RG', result: 'P-P' },
-  { date: '14/11/26', time: '14:00', competition: 'BSD4', opponent: 'Cutters Friday Reserves', venue: 'H', ground: 'BAWA Leisure, BS34 7RG', matchdayImage: weekendFixtures2026_11_14 },
+  { date: '14/11/26', time: '14:00', competition: 'BSD4', opponent: 'Cutters Friday Reserves', venue: 'H', ground: 'BAWA Leisure, BS34 7RG', matchdayImage: weekendFixtures2026_11_14, result: 'W 5-2', scorers: 'S Bulger 2, A Brown, H Bailey, K Henry' },
   { date: '21/11/26', time: '14:00', competition: 'BSD4', opponent: 'Avonmouth A', venue: 'A', ground: 'Venue TBC' },
   { date: '28/11/26', time: '14:00', competition: 'BSD4', opponent: 'Stoke Gifford SGS United A', venue: 'A', ground: 'Venue TBC' },
   { date: '12/12/26', time: '14:00', competition: 'BSD4', opponent: 'Made For Ever Development', venue: 'A', ground: 'Venue TBC' },
@@ -566,7 +566,7 @@ export const reserveFixtures2025_26: ReserveFixture[] = [
 ]
 
 /** The fixtures date the current league tables were last refreshed for. Update with the tables. */
-export const tablesUpdatedAfter = '2026-11-07'
+export const tablesUpdatedAfter = '2026-11-14'
 
 export type TableRow = { pos: number; team: string; p: number; w: number; d: number; l: number; f: number; a: number; gd: number; pts: number }
 
@@ -652,7 +652,7 @@ export const leagueTable2025_26: TableRow[] = [
 
 /** 2026/27 reserve league table — Bristol & Suburban Premier Division, from FA Full-Time. */
 export const reserveTable: TableRow[] = [
-  { pos: 1, team: 'Shaftesbury Crusade First', p: 6, w: 5, d: 1, l: 0, f: 17, a: 7, gd: 10, pts: 16 },
+  { pos: 1, team: 'Shaftesbury Crusade First', p: 7, w: 6, d: 1, l: 0, f: 20, a: 8, gd: 12, pts: 19 },
   { pos: 2, team: 'Wessex Wanderers First', p: 6, w: 4, d: 1, l: 1, f: 21, a: 8, gd: 13, pts: 13 },
   { pos: 3, team: 'Avonmouth Reserves', p: 5, w: 4, d: 0, l: 1, f: 16, a: 9, gd: 7, pts: 12 },
   { pos: 4, team: 'Warmley Rangers First', p: 6, w: 4, d: 0, l: 2, f: 16, a: 11, gd: 5, pts: 12 },
@@ -665,7 +665,7 @@ export const reserveTable: TableRow[] = [
   { pos: 11, team: 'Old Cothamians First', p: 6, w: 1, d: 1, l: 4, f: 7, a: 15, gd: -8, pts: 4 },
   { pos: 12, team: 'Cosmos UK Saturday First', p: 6, w: 1, d: 0, l: 5, f: 7, a: 20, gd: -13, pts: 3 },
   { pos: 13, team: 'Phoenix NextGen First', p: 6, w: 1, d: 0, l: 5, f: 2, a: 16, gd: -14, pts: 3 },
-  { pos: 14, team: 'Filton Athletic Reserves', p: 5, w: 0, d: 2, l: 3, f: 5, a: 10, gd: -5, pts: 2 },
+  { pos: 14, team: 'Filton Athletic Reserves', p: 6, w: 0, d: 2, l: 4, f: 6, a: 13, gd: -7, pts: 2 },
 ]
 
 /** 2026/27 A's division table — Bristol & Suburban League, Division Four, from FA Full-Time. */
@@ -674,10 +674,10 @@ export const asTeamTable: TableRow[] = [
   { pos: 2, team: 'St Vallier First', p: 6, w: 5, d: 0, l: 1, f: 39, a: 11, gd: 28, pts: 15 },
   { pos: 3, team: 'Shaftesbury Crusade A', p: 5, w: 4, d: 1, l: 0, f: 24, a: 7, gd: 17, pts: 13 },
   { pos: 4, team: 'Eighty One United 1st', p: 5, w: 4, d: 1, l: 0, f: 24, a: 8, gd: 16, pts: 13 },
-  { pos: 5, team: 'Avonmouth A', p: 4, w: 2, d: 0, l: 2, f: 16, a: 13, gd: 3, pts: 6 },
-  { pos: 6, team: 'Filton Athletic A', p: 6, w: 2, d: 0, l: 4, f: 9, a: 18, gd: -9, pts: 6 },
+  { pos: 5, team: 'Filton Athletic A', p: 7, w: 3, d: 0, l: 4, f: 14, a: 20, gd: -6, pts: 9 },
+  { pos: 6, team: 'Avonmouth A', p: 4, w: 2, d: 0, l: 2, f: 16, a: 13, gd: 3, pts: 6 },
   { pos: 7, team: 'Severn Beach Wanderers Reserves', p: 5, w: 1, d: 2, l: 2, f: 2, a: 17, gd: -15, pts: 5 },
-  { pos: 8, team: 'Cutters Friday Reserves', p: 5, w: 1, d: 1, l: 3, f: 11, a: 25, gd: -14, pts: 4 },
+  { pos: 8, team: 'Cutters Friday Reserves', p: 6, w: 1, d: 1, l: 4, f: 13, a: 30, gd: -17, pts: 4 },
   { pos: 9, team: 'Made For Ever Development', p: 4, w: 1, d: 0, l: 3, f: 9, a: 16, gd: -7, pts: 3 },
   { pos: 10, team: 'Parson Street Old Boys Reserves', p: 6, w: 1, d: 0, l: 5, f: 10, a: 31, gd: -21, pts: 3 },
   { pos: 11, team: 'Imperial A', p: 5, w: 0, d: 2, l: 3, f: 5, a: 14, gd: -9, pts: 2 },

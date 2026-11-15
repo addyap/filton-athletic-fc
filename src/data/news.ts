@@ -52,6 +52,15 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'matchday-roundup-14-november',
+    title: 'Saturday round-up: Merrett hat-trick as First Team hit five at Warmley',
+    date: '2026-11-14',
+    teams: ['first-team', 'reserves', 'as'],
+    excerpt:
+      'Trey Merrett was at it again, firing a hat-trick as the First Team won 5-1 away at Warmley Rangers, with Tom Fry and Dylan Quick also on the scoresheet. The A’s made it a winning double, beating Cutters Friday Reserves 5-2 at BAWA thanks to a Shane Bulger brace plus goals from Ashley Brown, Harrison Bailey and Kris Henry. The Reserves went down 3-1 at Elm Park to league leaders Shaftesbury Crusade, Waleed Abdullah scoring. #FATS #UTF',
+    link: { href: '/#club-calendar', label: 'See the latest results and tables' },
+  },
+  {
     slug: 'matchday-roundup-7-november',
     title: 'Saturday round-up: First Team hit six past Frampton',
     date: '2026-11-07',
