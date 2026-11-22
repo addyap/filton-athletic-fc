@@ -22,6 +22,35 @@ export type LeagueRound = {
 
 export const leagueResults2026_27: LeagueRound[] = [
   {
+    label: 'Saturday 21 November',
+    iso: '2026-11-21',
+    matches: [
+      {
+        home: 'Chalford',
+        away: 'Filton Athletic',
+        homeScore: 3,
+        awayScore: 1,
+        homeScorers: 'R Barney 2, A Maryon',
+        awayScorers: 'C Hillyer',
+      },
+      {
+        home: 'Broadwell Amateurs',
+        away: 'AFC Mangotsfield Rocks',
+        homeScore: 6,
+        awayScore: 1,
+        homeScorers: 'K Skidmore 2, J Creed 2, B Lear, E Dunscombe',
+        awayScorers: 'T Ellisson-Sackett',
+      },
+      {
+        home: 'Tewkesbury Town',
+        away: 'University of Bristol',
+        homeScore: 5,
+        awayScore: 0,
+        homeScorers: 'B Cronin, S Danter, J Groom, N Newland-Galloway, J Goodwin',
+      },
+    ],
+  },
+  {
     label: 'Saturday 7 November',
     iso: '2026-11-07',
     matches: [

@@ -52,6 +52,15 @@ export type NewsItem = {
  */
 export const news: NewsItem[] = [
   {
+    slug: 'matchday-roundup-21-november',
+    title: 'Saturday round-up: Hillyer on target but First Team beaten at Chalford',
+    date: '2026-11-21',
+    teams: ['first-team', 'reserves', 'as'],
+    excerpt:
+      'A tough afternoon on the road for the First Team, beaten 3-1 at Chalford despite a Chris Hillyer goal, leaving Filton 8th in Division 1. The Reserves also came up short at Elm Park, losing 3-0 to Jamaica Bell. The A’s result away at Parsons Street Reserves is still to come through on Full-Time. #FATS #UTF',
+    link: { href: '/#club-calendar', label: 'See the latest results and tables' },
+  },
+  {
     slug: 'matchday-roundup-14-november',
     title: 'Saturday round-up: Merrett hat-trick as First Team hit five at Warmley',
     date: '2026-11-14',
