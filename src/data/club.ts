@@ -10,6 +10,7 @@ import weekendFixtures2026_10_31 from '../assets/img/weekend-fixtures-2026-10-31
 import weekendFixtures2026_11_07 from '../assets/img/weekend-fixtures-2026-11-07.webp'
 import weekendFixtures2026_11_14 from '../assets/img/weekend-fixtures-2026-11-14.jpg'
 import weekendFixtures2026_11_21 from '../assets/img/weekend-fixtures-2026-11-21.webp'
+import weekendFixtures2026_11_28 from '../assets/img/weekend-fixtures-2026-11-28.webp'
 import matchdayReservesAsHomeOpenerPhoto from '../assets/img/matchday-reserves-as-home-opener.jpg'
 import matchdayLionShaftesburyPhoto from '../assets/img/matchday-lion-shaftesbury.jpg'
 import matchStokeGifford1 from '../assets/img/match-stoke-gifford-1.webp'
@@ -160,7 +161,7 @@ export const firstTeamFixtures: Fixture[] = [
   { date: '07/11/26', time: '14:00', competition: 'GCL', opponent: 'Frampton United', venue: 'H', matchdayImage: weekendFixtures2026_11_07, result: 'W 6-1', scorers: 'T Merrett 3, F Venables 2, F Fraser' },
   { date: '14/11/26', time: '14:00', competition: 'FR', opponent: 'Warmley Rangers', venue: 'A', ground: 'Warmley Rangers FC, Oldland Common, BS30 9TL', matchdayImage: weekendFixtures2026_11_14, result: 'W 1-5', scorers: 'T Merrett 3, T Fry, D Quick' },
   { date: '21/11/26', time: '14:00', competition: 'GCL', opponent: 'Chalford', venue: 'A', ground: 'Chalford Sports & Social, GL6 8LZ', matchdayImage: weekendFixtures2026_11_21, result: 'L 3-1', scorers: 'C Hillyer', officials: 'Edward Roberts' },
-  { date: '28/11/26', time: '14:00', competition: 'GCL', opponent: 'Quedgeley Wanderers', venue: 'H' },
+  { date: '28/11/26', time: '14:00', competition: 'GCL', opponent: 'Quedgeley Wanderers', venue: 'H', matchdayImage: weekendFixtures2026_11_28 },
   { date: '05/12/26', time: '14:00', competition: 'GCL', opponent: 'Broadwell Amateurs', venue: 'A' },
   { date: '12/12/26', time: '14:00', competition: 'GCL', opponent: 'University of Bristol', venue: 'A' },
   { date: '19/12/26', time: '14:00', competition: 'GCL', opponent: 'AFC Mangotsfield Rocks', venue: 'H' },
@@ -324,7 +325,7 @@ export const reserveFixtures: ReserveFixture[] = [
   { date: '07/11/26', time: '14:00', competition: 'PREM', opponent: 'Warmley Rangers First', venue: 'A', ground: 'Warmley Rangers FC, Oldland Common, BS30 9TL', matchdayImage: weekendFixtures2026_11_07, result: 'L 2-0' },
   { date: '14/11/26', time: '14:00', competition: 'PREM', opponent: 'Shaftesbury Crusade First', venue: 'H', ground: 'Elm Park, BS34 7PS', matchdayImage: weekendFixtures2026_11_14, result: 'L 1-3', scorers: 'W Abdullah' },
   { date: '21/11/26', time: '14:00', competition: 'PREM', opponent: 'Jamaica Bell', venue: 'H', ground: 'Elm Park, BS34 7PS', matchdayImage: weekendFixtures2026_11_21, result: 'L 0-3' },
-  { date: '28/11/26', time: '14:00', competition: 'PREM', opponent: 'Mendip Broadwalk Res', venue: 'A', ground: 'Filwood Park Playing Fields' },
+  { date: '28/11/26', time: '14:00', competition: 'PREM', opponent: 'Mendip Broadwalk Res', venue: 'A', ground: 'Filwood Park Playing Fields, BS4 1UA', matchdayImage: weekendFixtures2026_11_28 },
   { date: '05/12/26', time: '14:00', competition: 'PREM', opponent: 'Old Cothamians First', venue: 'H', ground: 'Elm Park, BS34 7PS' },
   { date: '05/12/26', time: '14:00', competition: 'ABC', opponent: 'Warmley Rangers First', venue: 'H', ground: 'Elm Park, BS34 7PS' },
   { date: '12/12/26', time: '14:00', competition: 'PREM', opponent: 'Wessex Wanderers First', venue: 'H', ground: 'Elm Park, BS34 7PS' },
@@ -496,7 +497,7 @@ export const aTeamFixtures: ReserveFixture[] = [
   { date: '07/11/26', time: '14:00', competition: 'BSD4', opponent: 'Cutters Friday Reserves', venue: 'H', ground: 'BAWA Leisure, BS34 7RG', result: 'P-P' },
   { date: '14/11/26', time: '14:00', competition: 'BSD4', opponent: 'Cutters Friday Reserves', venue: 'H', ground: 'BAWA Leisure, BS34 7RG', matchdayImage: weekendFixtures2026_11_14, result: 'W 5-2', scorers: 'S Bulger 2, A Brown, H Bailey, K Henry' },
   { date: '21/11/26', time: '14:00', competition: 'BSD4', opponent: 'Parsons Street Reserves', venue: 'A', ground: 'Ashton Vale, BS3 2TY', matchdayImage: weekendFixtures2026_11_21 },
-  { date: '28/11/26', time: '14:00', competition: 'BSD4', opponent: 'Stoke Gifford SGS United A', venue: 'A', ground: 'Venue TBC' },
+  { date: '28/11/26', time: '14:00', competition: 'BSD4', opponent: 'Stoke Gifford SGS United A', venue: 'A', ground: 'Stoke Gifford Cricket Club, BS34 8PE', matchdayImage: weekendFixtures2026_11_28 },
   { date: '12/12/26', time: '14:00', competition: 'BSD4', opponent: 'Made For Ever Development', venue: 'A', ground: 'Venue TBC' },
   { date: '19/12/26', time: '14:00', competition: 'BSD4', opponent: 'Hanham Abbotonians Reserves', venue: 'A', ground: 'Lees Hill' },
   { date: '02/01/27', time: '14:00', competition: 'BSD4', opponent: 'Parson Street Old Boys Reserves', venue: 'A', ground: 'Ashton Vale' },
